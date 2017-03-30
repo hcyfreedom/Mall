@@ -3,12 +3,14 @@
  */
 import React from 'react';  //导入react相关模块
 import ReactDOM from 'react-dom';
-
 import { BrowserRouter as Router, Route, Link  } from 'react-router-dom';
 import TouristPage from './Page/TouristPage'
 ReactDOM.render(
-    <div>
-        <TouristPage/>
-    </div>
+    (<Router>
+        <div>
+            <Route exact path="/" component={TouristPage}/>
+            {/*<Route path="/about" component={AboutUs}/>*/}
+        </div>
+    </Router>
 
-    ,document.getElementById("app"));
+    ),document.getElementById("app"));

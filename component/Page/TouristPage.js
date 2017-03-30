@@ -7,7 +7,10 @@ import Slider from '../Slider/Slider'
 import Brand from '../Brand/Brand'
 import Classify from '../Classify/Classify'
 import Block from '../Block/Block'
-
+import Production from '../Production/Production'
+import BottomNav from "../Nav/BottomNav";
+import Suspension from '../Nav/Suspension'
+import Slide from "../Slider/Slide";
 let  slides = [{
     background: "../imgs/1.jpg",
     link:"www.baidu.com"
@@ -33,6 +36,9 @@ export default class  TouristPage extends React.Component{
                 <Brand/>
                 <Classify/>
                 <Block src="../imgs/a2.png"/>
+                <Production/>
+                <BottomNav/>
+                <Suspension/>
             </div>
         )
     }
