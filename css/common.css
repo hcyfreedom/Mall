@@ -98,10 +98,10 @@ a{
     /*justify-content: center;*/
 }
 .pBox img{
-    width: 240px;
+    width: 200px;
     height: 120px;
-    padding-left: 20px;
-    /*margin: 0 auto;*/
+    padding-left: 40px;
+    /* margin: 0 auto; */
     margin-top: 40px;
 
 }
@@ -224,4 +224,49 @@ a{
 .SusDetail{
     font-size: 20px;
     color: red;
+}
+
+/*ShowYOU*/
+.showIcon{
+    width: 300px;
+    height: 273px;
+    border:1px solid gray;
+    /*background: url("../imgs/p_bg.png") no-repeat;*/
+    /*background-position: 40px 10px;*/
+    font-size: 18px;
+}
+.showBox img {
+    width: 180px;
+    height: 180px;
+    margin: 0 auto;
+    display: inherit;
+}
+.showEnter{
+    width: 150px;
+    height: 32px;
+    background-color: #0f5ca8;
+    color: white;
+    font-size: 20px;
+    border-radius: 5px;
+    text-align: center;
+    margin: 0 auto;
+    line-height: 32px;
+}
+.showBanner{
+    width: 100%;
+    height: 44px;
+    position: relative;
+}
+.showBanner img{
+    margin: 0 auto;
+    display: block;
+    padding-top: 20px;
+}
+.showBanner span{
+    /* float: right; */
+    width: 50px;
+    height: 34px;
+    position: absolute;
+    right: 55px;
+    bottom: -10px;
 }

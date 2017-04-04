@@ -21,7 +21,7 @@ export default class Nav extends React.Component{
         return(
             <div style={navStyle}>
                 <div style={parentStyle}>
-                    <div style={divStyle}>
+                    <div style={divStyle} >
                         <img src="../imgs/searchIcon.png" style={imgStyle}/>
                         <input style={searchStyle} value={this.state.value} onChange={(event) => this.handleChange(event)}/></div>搜索
                 </div>
@@ -50,8 +50,8 @@ const parentStyle = {
     fontSize:'60px'
 }
 const divStyle = {
-    width:'420px',
     height:'48px',
+    width : '420px',
     display:'inline-block',
     marginRight:'10px',
     borderRadius:'30px',

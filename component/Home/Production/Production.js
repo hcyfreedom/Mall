@@ -28,18 +28,6 @@ export default class Production extends React.Component{
                 fakePrice :"888",
                 price:"111",
                 minPrice:"666"
-            },{
-                src:'../imgs/p1.png',
-                detail:"华信雪原康",
-                fakePrice :"888",
-                price:"111",
-                minPrice:"666"
-            },{
-                src:'../imgs/p1.png',
-                detail:"华信雪原康",
-                fakePrice :"888",
-                price:"111",
-                minPrice:"666"
             }
 
         ]

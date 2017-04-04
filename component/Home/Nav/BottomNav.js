@@ -11,12 +11,12 @@ export default class BottomNav extends React.Component {  //定义组件，也�
             {
                 src:'../imgs/b1.png',
                 hoverSrc:'../imgs/b11.png',
-                href: '/',
+                href: '/HomePage',
             },
             {
                 src:'../imgs/b2.png',
                 hoverSrc:'../imgs/b22.png',
-                href: '/',
+                href: '/CategoryPage',
             },{
                 src:'../imgs/b3.png',
                 hoverSrc:'../imgs/b33.png',
