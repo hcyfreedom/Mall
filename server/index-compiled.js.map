@@ -1,0 +1,1 @@
+{"version":3,"sources":["index.js"],"names":[],"mappings":"AAAA,IAAI,UAAU,QAAQ,WAAR,CAAd;;AAEA,IAAI,QAAQ,QAAR,EAAkB,EAAC,MAAM,IAAP,EAAlB,CAAJ,EAAqC;AACjC;AACH","file":"index-compiled.js","sourcesContent":["var express = require('./express');\n\nif (require('piping')({hook: true})) {\n    express();\n}\n"]}

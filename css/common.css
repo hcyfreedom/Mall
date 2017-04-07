@@ -46,7 +46,7 @@ a{
 
 /*Classify*/
 .classifyIcon{
-/*padding: 30px;*/
+    /*padding: 30px;*/
 }
 .classifyIcon img{
     width: 120px;
@@ -83,6 +83,7 @@ a{
     background: url("../imgs/p_bg.png") no-repeat;
     background-position: 40px 10px;
     font-size: 18px;
+    background-color: white;
 }
 
 .space{
@@ -94,8 +95,8 @@ a{
     font-size: 18px;
 }
 .pBox{
-    /*display: flex;*/
-    /*justify-content: center;*/
+    /* display: flex; */
+    /* flex-wrap: wrap; */
 }
 .pBox img{
     width: 200px;
@@ -137,8 +138,9 @@ a{
 
 .pRow{
     display: flex;
-    justify-content: space-around;
     margin-top: 20px;
+    flex-wrap: wrap;
+    justify-content: space-around;
 }
 .AllProductionBox{
     background-color: white;
@@ -269,4 +271,62 @@ a{
     position: absolute;
     right: 55px;
     bottom: -10px;
+}
+
+/*GoodBrand*/
+.goodBrandIcon{
+    width: 210px;
+    height: 210px;
+    background-color: white;
+    border-radius: 50px;
+}
+.goodBrandIcon img{
+    width: 100px;
+    height: 100px;
+    margin: 0 auto;
+    padding-top: 30px;
+    padding-bottom: 30px;
+    display: inherit;
+}
+.goodBrandIcon p{
+    text-align: center;
+}
+.goodBrandBox{
+    position: absolute;
+    left: 140px;
+    top: 480px;
+    width: 80%;
+    padding-bottom: 198px;
+}
+.spaceBrand{
+    width: 210px;
+    height: 210px;
+}
+.gRow{
+    display: flex;
+    margin-top: 20px;
+    flex-wrap: wrap;
+    justify-content: space-between;
+}
+/*HealthCare*/
+.HealthBox{
+    width: 70%;
+    position: absolute;
+    left: 200px;
+    top: 480px;
+    padding-bottom: 198px;
+}
+.pHeal{
+    display: flex;
+    margin-top: 20px;
+    flex-wrap: wrap;
+    justify-content: space-between;
+}
+
+
+.goBack{
+    color: white;
+    font-size: 5em;
+    line-height: 60px;
+    padding-left: 50px;
 }

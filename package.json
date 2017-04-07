@@ -2,8 +2,14 @@
   "name": "re",
   "version": "1.0.0",
   "description": "",
-  "main": "index.js",
+  "main": "result.js",
   "scripts": {
+    "dist:webpack-alpha": "NODE_ENV=production webpack --config config/webpack.dev.js",
+    "dist:webpack": "NODE_ENV=production webpack --config config/webpack.pro.js",
+    "dist": "npm run clean && npm run dist:webpack",
+    "dist-alpha": "npm run clean && npm run dist:webpack-alpha",
+    "clean": "rimraf dist",
+    "start": "node server",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "author": "",
@@ -13,11 +19,22 @@
     "babel-loader": "^6.4.1",
     "babel-preset-es2015": "^6.24.0",
     "babel-preset-react": "^6.23.0",
+    "history": "^4.6.1",
     "material-ui": "^0.17.1",
     "react": "^15.4.2",
     "react-dom": "^15.4.2",
+    "react-redux": "^4.4.7",
     "react-router": "^4.0.0",
     "react-router-dom": "^4.0.0",
-    "react-tap-event-plugin": "^2.0.1"
+    "react-tap-event-plugin": "^2.0.1",
+    "redux": "^3.6.0",
+    "redux-logger": "^2.3.1",
+    "redux-thunk": "^1.0.3",
+    "webpack-dev-middleware": "^1.4.0",
+    "webpack-dev-server": "^2.4.2",
+    "webpack-hot-middleware": "^2.6.0",
+    "webpack": "^2.2.1",
+    "body-parser": "^1.17.1",
+    "piping": "^0.3.0"
   }
 }
