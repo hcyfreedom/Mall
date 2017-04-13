@@ -2,32 +2,40 @@
  * Created by hcy on 2017/4/6.
  */
 import React from 'react'
-import ShopHome from './Shop/ShopHome/ShopHome'
-import ShopNav from './Shop/ShopHome/ShopNav'
-import { BrowserRouter as Router, Route, Link  } from 'react-router-dom';
-export default class ShopPage extends React.Component{
+import ShopNav from './Shop/ShopNav'
+import ShowBlock from './Shop/ShowBlock'
+import ShowSelector from './Shop/ShowSelector'
+import ShowBottom from './Shop/ShowBottom'
+import {connect} from 'react-redux';
+import {bindActionCreators} from 'redux';
+import {get} from "../http/http"
+import * as mallActions from '../action/mallActions'
+ class ShopPage extends React.Component{
     constructor(props){
         super(props)
-    }
 
+    }
+    componentDidMount(){
+        let actions = bindActionCreators(mallActions,this.props.dispatch);
+        get('/MallMore/getShopMainPage',(res) => {
+            actions.getShopMainPage(res.data)
+        })
+
+    }
     render(){
 
-        let ShopChild = React.createClass({
-            render(){
-                return <div></div>
-            }
-        });
-
-        if(this.props.match.params.id == "index"){
-            ShopChild = React.createClass({
-                render(){
-                    return <ShopNav/>
-                }
-            })
-        }
+        let {shopHeadImgUrl} = this.props.homeReducer;
+        let actions = bindActionCreators(mallActions,this.props.dispatch)
 
         return(
-            <ShopChild/>
+            <div>
+                <ShopNav/>
+                <ShowBlock src={shopHeadImgUrl}/>
+                <ShowSelector/>
+                <div style={{width:'100%',height:'150px'}}></div>
+                <ShowBottom/>
+            </div>
         )
     }
 }
+export default connect((state) =>state)(ShopPage)

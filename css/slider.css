@@ -5,6 +5,12 @@
     overflow: hidden;
     top:80px;
 }
+.sliderMore{
+    width: 100%;
+    height: 40vw;
+    position: relative;
+    overflow: hidden;
+}
 .slider_slide{
     -webkit-transition: all 0.4s ease-in-out;
     -moz-transition: all 0.4s ease-in-out ;

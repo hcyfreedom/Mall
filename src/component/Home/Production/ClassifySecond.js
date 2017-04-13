@@ -2,9 +2,6 @@
  * Created by hcy on 2017/4/12.
  */
 /**
- * Created by hcy on 2017/4/12.
- */
-/**
  * Created by hcy on 2017/3/29.
  */
 /**
@@ -17,7 +14,7 @@ import {connect} from 'react-redux';
 import {bindActionCreators} from 'redux';
 import {get} from "../../../http/http"
 import * as mallActions from '../../../action/mallActions'
-class Production extends React.Component{
+class ClassifySecond extends React.Component{
     constructor(props){
         super(props)
 
@@ -26,9 +23,6 @@ class Production extends React.Component{
         let actions = bindActionCreators(mallActions,this.props.dispatch);
         get('/MallMore/getGood',(res) => {
             actions.getGood(res.data)
-        })
-        get('/MallMore/getClassify',(res) => {
-            actions.getClassify(res.data)
         })
 
     }
@@ -56,4 +50,4 @@ function mapStateToProps(state) {
     return state
 }
 
-export default connect(mapStateToProps)(Production)
+export default connect(mapStateToProps)(ClassifySecond)

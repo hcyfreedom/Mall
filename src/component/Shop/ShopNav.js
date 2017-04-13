@@ -1,13 +1,18 @@
 /**
+ * Created by hcy on 2017/4/6.
+ */
+/**
  * Created by hcy on 2017/3/28.
  */
 import React from 'react'
+import {Link} from 'react-router-dom';
 
-export default class Nav extends React.Component{
+
+export default class ShopNav extends React.Component{
     constructor(){
         super();
         this.state = {
-            value : '富硒康'
+            value : '店内搜索'
         }
     }
 
@@ -16,10 +21,15 @@ export default class Nav extends React.Component{
             value : event.target.value
         })
     }
+    handleClick(){
+        window.history.go(-1)
+    }
 
     render(){
         return(
             <div style={navStyle}>
+                {/*<Link to="/home/index"><span className="goBack">&lt;</span></Link>*/}
+                <span className="goBack" onClick={this.handleClick.bind(this)}>&lt;</span>
                 <div style={parentStyle}>
                     <div style={divStyle} >
                         <img src="../imgs/searchIcon.png" style={imgStyle}/>
@@ -46,12 +56,12 @@ const parentStyle = {
     float:'right',
     color:'white',
     lineHeight:'80px',
-    marginRight :'20px',
+    // marginRight :'20px',
     fontSize:'60px'
 }
 const divStyle = {
     height:'48px',
-    width : '420px',
+    width : '720px',
     display:'inline-block',
     marginRight:'10px',
     borderRadius:'30px',
@@ -59,7 +69,7 @@ const divStyle = {
     position:'relative'
 }
 const searchStyle = {
-    width:'375px',
+    width:'675px',
     height:'48px',
     lineHeight:'80px',
     outline : 'medium',

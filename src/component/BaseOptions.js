@@ -2,19 +2,13 @@
  * Created by hcy on 2017/4/4.
  */
 import React from 'react';  //导入react相关模块
-import ReactDOM from 'react-dom';
 import BottomNav from './Home/Nav/BottomNav'
-import { BrowserRouter as Router, Route, Link  } from 'react-router-dom';
-import Nav from './Home/Nav/Nav'
+import Nav from './Search/Nav'
 import Slider from './Home/Slider/Slider'
 import HomePage from './Home/HomePage'
 import Selector from './Category/SlideSelector/Selector'
-import injectTapEventPlugin from 'react-tap-event-plugin';
-import ShopPage from "./ShopPage";
-import GoodBrand from "./Category/CatePart/GoodBrand";
-import ShopNav from "./Shop/ShopHome/ShopNav";
-import HealthCare from "./Category/CatePart/HealthCare";
-injectTapEventPlugin();
+import CateMain from './Category/CatePart/CateMain'
+
 let  slides = [{
     background: "../imgs/1.jpg",
     link:"www.baidu.com"
@@ -54,26 +48,20 @@ export default class BaseOptions extends React.Component{
                 }
             })
 
-        }else if (this.props.match.params.id == "cate"){
+        }else {
             Node = React.createClass({
                 render(){
-                    return  <div><Selector/><GoodBrand/></div>
+                    return  <div><Selector/><CateMain/></div>
                 }
             })
 
-        }else if(this.props.match.params.id == "healthycare"){
-            Node = React.createClass({
-                render(){
-                    return  <div><Selector/><HealthCare/></div>
-                }
-            })
         }
 
 
         return(
             <div>
                 <Nav/>
-                <Slider slides = {slides} time="2000" />
+                <Slider slides = {slides} time="2000"/>
                 <Node/>
                 <BottomNav/>
             </div>

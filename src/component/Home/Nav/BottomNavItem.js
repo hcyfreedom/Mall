@@ -12,8 +12,6 @@ export default class BottomNavItem extends React.Component {
 
     }
     componentWillMount(){
-        // console.log(this.props)
-        // console.log(this.props.homeReducer.bottomNavItemUrl)
         this.props.actions.getBottomNav(this.props.element.src,this.props.index)
     }
     handleTouch(){

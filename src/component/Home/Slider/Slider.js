@@ -53,17 +53,34 @@ export default class Slider extends React.Component{
             )
         })
 
-        return(
-            <div className="slider">
-                {slide}
-                <div className="slider_next" onClick={ev =>{this.nextSlide()}}>
-                    <a href="javascript:;" className="arrow">&gt;</a>
-                </div>
-                <div className="slider_previous">
-                    <a href="javascript:;" id="prev" className="arrow" onClick={ev => this.previousSlide()}>&lt;</a>
-                </div>
+        const path = window.location.pathname;
+        // if(path == "/home/index" ||path == "/home/:id"){
+            return(
+                <div className="slider">
+                    {slide}
+                    <div className="slider_next" onClick={ev =>{this.nextSlide()}}>
+                        <a href="javascript:;" className="arrow">&gt;</a>
+                    </div>
+                    <div className="slider_previous">
+                        <a href="javascript:;" id="prev" className="arrow" onClick={ev => this.previousSlide()}>&lt;</a>
+                    </div>
 
-            </div>
-        )
+                </div>
+            )
+        // }
+        // else {
+        //     return(
+        //         <div className="sliderMore">
+        //             {slide}
+        //             <div className="slider_next" onClick={ev =>{this.nextSlide()}}>
+        //                 <a href="javascript:;" className="arrow">&gt;</a>
+        //             </div>
+        //             <div className="slider_previous">
+        //                 <a href="javascript:;" id="prev" className="arrow" onClick={ev => this.previousSlide()}>&lt;</a>
+        //             </div>
+        //
+        //         </div>
+        //     )
+        // }
     }
 }

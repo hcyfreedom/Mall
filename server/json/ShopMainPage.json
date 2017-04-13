@@ -1,0 +1,29 @@
+{
+  "code": 200,
+  "msg": {
+    "headImgUrl": "/imgs/3.jpg",
+    "goods": [
+      {
+        "id": 1,
+        "name": "test1",
+        "classifyId": 1,
+        "classifyName": "美容产品",
+        "shopId": 1,
+        "originPrice": 1000,
+        "stock": 1000,
+        "salesVolume": 1000,
+        "minPrice": 100,
+        "newPrice": 170,
+        "maxPoint": 100,
+        "minPoint": 100,
+        "maxCoin": 100,
+        "minCoin": 100,
+        "headImg": "aaaaaaa",
+        "contentImg": "/imgs/1.jpg",
+        "content": "lll",
+        "status": 1
+      }
+    ],
+    "mainImgUrl": "/imgs/1.jpg"
+  }
+}

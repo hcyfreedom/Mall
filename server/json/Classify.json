@@ -1,0 +1,17 @@
+{
+  "code": 200,
+  "msg": [
+    {
+      "id": 0,
+      "classifyName": "优品牌"
+    },
+   {
+      "id": 1,
+      "classifyName": "保健品"
+    },
+    {
+      "id": 2,
+      "classifyName": "美容产品"
+    }
+  ]
+}

@@ -2,11 +2,11 @@
  * Created by hcy on 2017/3/29.
  */
 import React from 'react'
-import ClassifyItem from "./ClassifyItem";
+import ClassifyItem from "./ClassifyBarItem";
 import {connect} from 'react-redux';
 import {bindActionCreators} from 'redux';
 import * as mallActions from '../../../action/mallActions'
-class Classify extends React.Component{
+class ClassifyBar extends React.Component{
     constructor(props){
         super(props)
     }
@@ -25,4 +25,4 @@ class Classify extends React.Component{
         )
     }
 }
-export default connect((state)=>state)(Classify)
+export default connect((state)=>state)(ClassifyBar)

@@ -1,10 +1,4 @@
 /**
- * Created by hcy on 2017/4/12.
- */
-/**
- * Created by hcy on 2017/4/12.
- */
-/**
  * Created by hcy on 2017/3/29.
  */
 /**
@@ -17,7 +11,7 @@ import {connect} from 'react-redux';
 import {bindActionCreators} from 'redux';
 import {get} from "../../../http/http"
 import * as mallActions from '../../../action/mallActions'
-class Production extends React.Component{
+class ClassifyFirst extends React.Component{
     constructor(props){
         super(props)
 
@@ -27,19 +21,14 @@ class Production extends React.Component{
         get('/MallMore/getGood',(res) => {
             actions.getGood(res.data)
         })
-        get('/MallMore/getClassify',(res) => {
-            actions.getClassify(res.data)
-        })
 
     }
     render(){
-        let {classifySecond} = this.props.homeReducer;
+        let {classifyFirst} = this.props.homeReducer;
         let actions = bindActionCreators(mallActions,this.props.dispatch);
-
-        const productionItems = classifySecond.map((ele,id) =>{
+        const productionItems = classifyFirst.map((ele,id) =>{
             return <Link to={'/information/shop'+ele.shopId+"/"+ele.id} key={id}><div className="pRow"> <ProductionItem src={ele} key={id} actions={actions}/></div></Link>
         });
-
 
         return(
             <div>
@@ -56,4 +45,4 @@ function mapStateToProps(state) {
     return state
 }
 
-export default connect(mapStateToProps)(Production)
+export default connect(mapStateToProps)(ClassifyFirst)

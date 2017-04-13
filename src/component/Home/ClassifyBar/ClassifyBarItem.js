@@ -8,7 +8,7 @@ export default class ClassifyItem extends React.Component {
     }
 
     componentWillMount() {
-        this.props.actions.getClassify(this.props.src.src,this.props.src.detail,this.props.index)
+        this.props.actions.getClassifyBar(this.props.src.src,this.props.src.detail,this.props.index)
     }
 
 

@@ -2,17 +2,17 @@
  * Created by hcy on 2017/3/30.
  */
 import React from 'react'
-import Production from  '../Production/Production'
-
+import ClassifySecond from  '../Production/ClassifySecond'
+import {Link} from 'react-router-dom'
 export default class ShowBAO extends React.Component{
     render(){
         return(
             <div>
                 <div className="showBanner">
                     <img src="../imgs/m2.png"/>
-                    <span>&nbsp;>more</span>
+                    <Link to="/home/cate"><span>&nbsp;>more</span></Link>
                 </div>
-                <Production/>
+                <ClassifySecond/>
                 <div style={{width:'100%',height:'198px'}}>
 
                 </div>
