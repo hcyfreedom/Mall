@@ -1,7 +1,7 @@
 {
   "code": 200,
   "msg": {
-    "headImgUrl": "/imgs/3.jpg",
+    "headImgUrl": "头图地址1",
     "goods": [
       {
         "id": 1,
@@ -19,11 +19,11 @@
         "maxCoin": 100,
         "minCoin": 100,
         "headImg": "aaaaaaa",
-        "contentImg": "/imgs/1.jpg",
-        "content": "lll",
+        "contentImg": "aaaaaa",
+        "content": "啊啊啊啊啊啊啊啊啊啊啊啊啊啊啊啊啊啊啊啊啊啊",
         "status": 1
       }
     ],
-    "mainImgUrl": "/imgs/1.jpg"
+    "mainImgUrl": "主页图片地址1"
   }
 }

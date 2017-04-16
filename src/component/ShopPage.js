@@ -16,15 +16,16 @@ import * as mallActions from '../action/mallActions'
 
     }
     componentDidMount(){
+        let {shopHeadImgUrl,shopMainShopId} = this.props.homeReducer;
         let actions = bindActionCreators(mallActions,this.props.dispatch);
-        get('/MallMore/getShopMainPage',(res) => {
+        get('/shop/getShopMainPage/'+shopMainShopId,(res) => {
             actions.getShopMainPage(res.data)
         })
 
     }
     render(){
 
-        let {shopHeadImgUrl} = this.props.homeReducer;
+        let {shopHeadImgUrl,shopMainShopId} = this.props.homeReducer;
         let actions = bindActionCreators(mallActions,this.props.dispatch)
 
         return(

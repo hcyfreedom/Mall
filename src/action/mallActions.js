@@ -24,15 +24,6 @@ export function getProduction(data,idx) {
     }
 }
 
-
-
-export function getIntroDetail(data) {
-    return{
-        type:'TNTRO_DETAIL',
-        payload:data
-    }
-}
-
 export function getHistory(data,idx) {
     return{
         type:'HISTORY_ITEM',
@@ -98,6 +89,47 @@ export function getActivityImgUrl(data) {
 export function getTelephone(data) {
     return{
         type:"TELEPHONE",
+        payload:data
+    }
+}
+
+export function changeOpenTrue(){
+    return{
+        type:"CHANGE_OPEN_TRUE"
+    }
+}
+export function changeOpenFalse() {
+    return{
+        type:'CHANGE_OPEN_FALSE'
+    }
+}
+
+export function getGoodContent(data) {
+    return{
+        type:'GOOD_CONTENT',
+        payload:data
+    }
+}
+
+export function getSileIndex(data) {
+    return{
+        type:"SLIDE_INDEX",
+        payload:data
+    }
+}
+export function getMainPageGoods(data) {
+    return{
+        type:"MAIN_PAGE_GOODS",
+        payload:data
+    }
+}
+
+
+
+
+export function addGoodToCart(data) {
+    return{
+        type:'ADD_TO_CART',
         payload:data
     }
 }

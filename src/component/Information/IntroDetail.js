@@ -11,20 +11,10 @@ import ShowBlock from "../Shop/ShowBlock"
     constructor(props){
         super(props)
     }
-    componentDidMount(){
-        let actions = bindActionCreators(mallActions,this.props.dispatch);
-        get('/MallMore/getIntroDetail',(res) => {
-            actions.getIntroDetail(res.data)
-        })
-
-    }
 
     render(){
-
-        const {introDetail,introPrice,introTsprice,introSales,introLow} = this.props.homeReducer;
+        let {introDetail,introPrice,introTsprice,introSales,introLow} = this.props.homeReducer;
         let actions = bindActionCreators(mallActions,this.props.dispatch);
-
-
         return(
             <div className="introWrap">
                 <div className="introOne">

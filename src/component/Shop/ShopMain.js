@@ -15,18 +15,19 @@ class ShopMain extends React.Component{
     }
     componentDidMount(){
         let actions = bindActionCreators(mallActions,this.props.dispatch);
-        get('/MallMore/getShopMainPage',(res) => {
+        let {shopHeadImgUrl,shopMainGoods,shopMainImgUrl,shopMainShopId} = this.props.homeReducer;
+        get('/shop/getShopMainPage/'+shopMainShopId,(res) => {
             actions.getShopMainPage(res.data)
         })
 
     }
     render(){
 
-        let {shopHeadImgUrl,shopMainGoods,shopMainImgUrl} = this.props.homeReducer;
+        let {shopHeadImgUrl,shopMainGoods,shopMainImgUrl,shopMainShopId} = this.props.homeReducer;
         let actions = bindActionCreators(mallActions,this.props.dispatch)
 
         const productionItems = shopMainGoods.map((ele,id) =>{
-            return <Link to={'/information/shop'+ele.shopId+"/"+ele.id} key={id}><div className="pRow"> <ProductionItem src={ele} key={id} actions={actions}/></div></Link>
+            return <Link to={'/information/'+ele.shopId+"/"+ele.id} key={id}><div className="pRow"> <ProductionItem src={ele} key={id} actions={actions}/></div></Link>
         });
 
         const listContainer = [];

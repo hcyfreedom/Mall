@@ -16,8 +16,9 @@ class CateMain extends React.Component{
     }
     componentDidMount(){
         let actions = bindActionCreators(mallActions,this.props.dispatch);
-        get('/MallMore/getClassifyGood',(res) => {
-            actions.getClassifyGood(res.data)
+        let {classifyGOODS,classifyGOODSId} = this.props.homeReducer;
+        get('/classify/getGoods?'+classifyGOODSId,(res) => {
+            actions.getClassifyGood(res.data);
         })
 
     }
@@ -25,26 +26,14 @@ class CateMain extends React.Component{
 
         let {classifyGOODS} = this.props.homeReducer;
         let actions = bindActionCreators(mallActions,this.props.dispatch);
-
-        let path = window.location.pathname;
-        let postfix = path.substring(14);
-
         const list = [];
-        const list1 = [];
         for(let key in classifyGOODS){
             const items = classifyGOODS[key];
             list.push(items)
         }
-        list.map((ele,id)=>{
-            if(ele.classifyId == postfix){
-                list1.push(ele)
-            }
-        })
 
-
-
-         const listItems1 =   list1.map((ele,id)=>{
-            return <Link to={'/information/shop'+ele.shopId+"/"+ele.id} key={id}><div className="pRow"> <ProductionItem src={ele} key={id} ctions={actions}/></div></Link>
+         const listItems1 =   list.map((ele,id)=>{
+            return <Link to={'/information/'+ele.shopId+"/"+ele.id} key={id}><div className="pRow"> <ProductionItem src={ele} key={id} ctions={actions}/></div></Link>
         })
 
         const listContainer = [];

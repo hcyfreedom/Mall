@@ -15,8 +15,8 @@ class ShowYOU extends React.Component{
     }
     componentDidMount(){
         let actions = bindActionCreators(mallActions,this.props.dispatch);
-        get('/MallMore/getGood',(res) => {
-            actions.getGood(res.data)
+        get('/main/getMainPageGoods',(res) => {
+            actions.getMainPageGoods(res.data)
         })
 
     }
@@ -26,10 +26,10 @@ class ShowYOU extends React.Component{
         let actions = bindActionCreators(mallActions,this.props.dispatch);
 
         const productionItems = outstanding_shop_goods.slice(0,3).map((ele,id) =>{
-            return <Link to={'/information/shop'+ele.shopId+"/"+"/"+ele.id} key={id}><div className="pRow"> <ProductionItem src={ele} key={id} actions={actions}/></div></Link>
+            return <Link to={'/information/'+ele.shopId+"/"+"/"+ele.id} key={id}><div className="pRow"> <ProductionItem src={ele} key={id} actions={actions}/></div></Link>
         });
         const productionItems2= outstanding_shop_goods.slice(3,6).map((ele,id) =>{
-            return <Link to={'/information/shop'+ele.shopId+"/"+ele.id} key={id}><div className="pRow"> <ProductionItem src={ele} key={id} actions={actions}/></div></Link>
+            return <Link to={'/information/'+ele.shopId+"/"+ele.id} key={id}><div className="pRow"> <ProductionItem src={ele} key={id} actions={actions}/></div></Link>
         });
 
         return(
@@ -41,7 +41,7 @@ class ShowYOU extends React.Component{
 
                 <div style={{width:"100%",height:'60px',backgroundColor:'white',display:'flex',justifyContent:'space-between',borderBottom:'1px solid grey',fontSize:'20px',lineHeight:'60px'}}>
                     &nbsp;&nbsp;&nbsp;{outstanding_shop_info.outstanding_shop_name}
-                    <Link to={'/shop/shop'+outstanding_shop_info.outstanding_shop_id}>
+                    <Link to={'/shop/'+outstanding_shop_info.outstanding_shop_id}>
                         <div>&gt;进入店铺&nbsp;&nbsp;&nbsp;</div>
                     </Link>
                 </div>

@@ -20,20 +20,21 @@ class ShowBottom extends React.Component {
     }
     componentDidMount() {
         let actions = bindActionCreators(mallActions, this.props.dispatch);
-        get('/MallMore/getTelephone', (res) => {
+        let {allShopItems} = this.props.homeReducer;
+        const shopId = allShopItems['shopId'];
+        get('/shop/getTelephone/'+shopId, (res) => {
             actions.getTelephone(res.data)
         })
 
-
     }
     handleTouchTap(){
-        this.props.homeReducer.open = true;
-        console.log(this.props.homeReducer.open)
+        let actions = bindActionCreators(mallActions, this.props.dispatch);
+        actions.changeOpenTrue()
     };
 
     handleRequestClose(){
-        this.props.homeReducer.open = true;
-        console.log(this.props.homeReducer.open)
+        let actions = bindActionCreators(mallActions, this.props.dispatch);
+        actions.changeOpenFalse();
     };
 
     render() {
@@ -43,18 +44,16 @@ class ShowBottom extends React.Component {
             return (
                 <MuiThemeProvider>
                     <div>
-                        {/*<RaisedButton*/}
-                        {/*onTouchTap={this.handleTouchTap.bind(this)}*/}
-                        {/*label="Add to my calendar"*/}
-                        {/*/>*/}
+
                         <div className="showBottom" onTouchTap={this.handleTouchTap.bind(this)}>
                             <img src="/imgs/a1.png"/><span>联系客服</span>
                         </div>
                         <Snackbar
-                            open={this.props.homeReducer.open}
+                            open={open}
                             message={shopTel}
                             autoHideDuration={4000}
                             onRequestClose={this.handleRequestClose.bind(this)}
+                            style={{textAlign:'center'}}
                         />
                     </div>
                 </MuiThemeProvider>

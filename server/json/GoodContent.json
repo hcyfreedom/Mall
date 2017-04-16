@@ -1,0 +1,24 @@
+{
+  "code": 200,
+  "msg": {
+    "id": 1,
+    "name": "test1",
+    "classifyId": 1,
+    "classifyName": "美容产品",
+    "shopId": 1,
+    "originPrice": 1000,
+    "stock": 1000,
+    "salesVolume": 1000,
+    "minPrice": 100,
+    "newPrice": 170,
+    "maxPoint": 100,
+    "minPoint": 100,
+    "maxCoin": 100,
+    "minCoin": 100,
+    "headImg": "aaaaaaa",
+    "contentImg": "/imgs/1.jpg",
+    "content": "啊啊啊啊啊啊啊啊啊啊啊啊啊啊啊啊啊啊啊啊啊啊",
+    "status": 0,
+    "telephone":123456789
+  }
+}

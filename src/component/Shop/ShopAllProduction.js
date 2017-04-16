@@ -16,9 +16,12 @@ class ShowAllProduction extends React.Component{
     }
     componentDidMount(){
         let actions = bindActionCreators(mallActions,this.props.dispatch);
-        get('/MallMore/getShopItemsAll',(res) => {
+        let {allShopItems} = this.props.homeReducer;
+        const shopId = allShopItems['shopId'];
+        get('/shop/getAll/'+shopId,(res) => {
             actions.getShopItemsAll(res.data)
         })
+
 
     }
     render(){
@@ -26,24 +29,18 @@ class ShowAllProduction extends React.Component{
         let {allShopItems} = this.props.homeReducer;
         let actions = bindActionCreators(mallActions,this.props.dispatch)
 
-        let path = window.location.pathname;
-        let postfix = path.substring(10);
+
         const list = [];
-        const list1 = [];
         for(let key in allShopItems){
             const items = allShopItems[key];
             list.push(items)
         }
-        list.map((ele,id)=>{
-            if(ele.shopId == postfix){
-                list1.push(ele)
-            }
-        })
 
 
 
-        const productionItems = list1.map((ele,id) =>{
-            return <Link to={'/information/shop'+ele.shopId+"/"+ele.id} key={id}><div className="pRow"> <ProductionItem src={ele} key={id} actions={actions}/></div></Link>
+
+        const productionItems = list.map((ele,id) =>{
+            return <Link to={'/information/'+ele.shopId+"/"+ele.id} key={id}><div className="pRow"> <ProductionItem src={ele} key={id} actions={actions}/></div></Link>
         });
 
         const listContainer = [];

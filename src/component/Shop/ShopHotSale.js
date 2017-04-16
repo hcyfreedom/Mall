@@ -19,16 +19,16 @@ class ShopHotSale extends React.Component{
     }
     componentDidMount(){
         let actions = bindActionCreators(mallActions,this.props.dispatch);
-        get('/MallMore/getHotSale',(res) => {
+        let {hotSale,hotSaleShopId} = this.props.homeReducer;
+        get('/shop/getHotSale/'+hotSaleShopId,(res) => {
             actions.getHotSale(res.data)
         })
 
     }
     render(){
 
-        let {hotSale} = this.props.homeReducer;
+        let {hotSale,hotSaleShopId} = this.props.homeReducer;
         let actions = bindActionCreators(mallActions,this.props.dispatch)
-
         let path = window.location.pathname;
         let postfix = path.substring(10);
         const list = [];
@@ -45,8 +45,8 @@ class ShopHotSale extends React.Component{
 
 
 
-        const productionItems = list1.map((ele,id) =>{
-            return <Link to={'/information/shop'+ele.shopId+"/"+ele.id} key={id}><div className="pRow"> <ProductionItem src={ele} key={id} actions={actions}/></div></Link>
+        const productionItems = list.map((ele,id) =>{
+            return <Link to={'/information/'+ele.shopId+"/"+ele.id} key={id}><div className="pRow"> <ProductionItem src={ele} key={id} actions={actions}/></div></Link>
         });
 
         const listContainer = [];

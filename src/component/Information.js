@@ -9,7 +9,6 @@ export default class Information extends React.Component{
         return(
             <div>
                 <Intro/>
-                <IntroBottom/>
             </div>
         )
     }

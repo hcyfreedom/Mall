@@ -16,18 +16,18 @@ class Advertising extends React.Component{
     }
     componentDidMount(){
         let actions = bindActionCreators(mallActions,this.props.dispatch);
-        get('/MallMore/getGood',(res) => {
-            actions.getGood(res.data)
+        get('/main/getMainPageGoods',(res) => {
+            actions.getMainPageGoods(res.data)
         })
 
     }
     render(){
 
-        let {allProduction} = this.props.homeReducer;
+        let {mainPageGoods} = this.props.homeReducer;
         let actions = bindActionCreators(mallActions,this.props.dispatch);
         const list = [];
-        for(let key in allProduction){
-            const items = allProduction[key];
+        for(let key in mainPageGoods){
+            const items = mainPageGoods[key];
         //    console.log(items);
             for(let i = 0;i<items.length;i++){
                  const items2 = items[i];
@@ -37,7 +37,7 @@ class Advertising extends React.Component{
 
         }
         const productionItems = list.slice(0,3).map((ele,id) =>{
-            return <Link to={'/information/shop'+ele.shopId+"/"+ele.id} key={id}><div className="pRow"> <ProductionItem src={ele} key={id} actions={actions}/></div></Link>
+            return <Link to={'/information/'+ele.shopId+"/"+ele.id} key={id}><div className="pRow"> <ProductionItem src={ele} key={id} actions={actions}/></div></Link>
         });
 
 

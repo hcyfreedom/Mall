@@ -18,14 +18,15 @@ class ShopActivity extends React.Component{
     }
     componentDidMount(){
         let actions = bindActionCreators(mallActions,this.props.dispatch);
-        get('/MallMore/getActivityImgUrl',(res) => {
+        let {activityImgUrl,activityShopId} = this.props.homeReducer;
+        get('/shop/getActivityImgUrl/'+activityShopId,(res) => {
             actions.getActivityImgUrl(res.data)
         })
 
     }
     render(){
 
-        let {activityImgUrl} = this.props.homeReducer;
+        let {activityImgUrl,activityShopId} = this.props.homeReducer;
         let actions = bindActionCreators(mallActions,this.props.dispatch)
         return(
             <img src={activityImgUrl} style={{width:'100%',height:'400px'}} />

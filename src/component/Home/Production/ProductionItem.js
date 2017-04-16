@@ -7,16 +7,12 @@ export default class ProductionItem extends React.Component{
     constructor(pros){
         super(pros)
     }
-
-
      render(){
-
-
          return(
              <span className="productionIcon">
                  <div className="pBox">
                     <img src={this.props.src.contentImg}/>
-                    <p className="pDetail">{this.props.src.content}</p>
+                    <p className="pDetail">{this.props.src.name}</p>
                  </div>
                  <div className="priceBox">
                      <p className="fakePrice">市场价<span className="fakePriceChild">￥{this.props.src.originPrice}</span></p>

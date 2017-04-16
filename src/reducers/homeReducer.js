@@ -1,4 +1,5 @@
 const initState = {
+    mainPageGoods:[],
     allProduction:[],
     classifyFirst:[],
     classifySecond:[],
@@ -7,20 +8,39 @@ const initState = {
     outstanding_shop_info:[],
     classify:[],
     classifyGOODS:[],
+    classifyGOODSId:[],
     allShopItems:[],
     bottomNavItemUrl : [],
     hotSale:[],
+    hotSaleShopId:[],
     shopHeadImgUrl:[],
     shopMainGoods:[],
     shopMainImgUrl:[],
+    shopMainShopId:[],
     activityImgUrl:[],
+    activityShopId:[],
     shopTel:[],
     open:false,
+    slideIndex:0,
+    introGood:[],
+    introCode:[],
+    introGoodId:[],
     introDetail:[],
     introPrice:[],
     introTsprice:[],
     introSales:[],
     introLow:[],
+    contentImg:[],
+    introContent:[],
+    introShopId:[],
+    introShopTel:[],
+    addToCart:[],
+    badge:{
+        position:'absolute',
+        bottom:'20px',
+        right:'50px',
+        display:'none'
+    },
     items : [
         {
             src:'/imgs/b1.png',
@@ -34,7 +54,7 @@ const initState = {
         },{
             src:'/imgs/b3.png',
             hoverSrc:'/imgs/b33.png',
-            href: '/kings',
+            href: '/cart',
         },{
             src:'/imgs/b4.png',
             hoverSrc:'/imgs/b44.png',
@@ -103,7 +123,7 @@ const initState = {
                 history:"裤子",
                 href:"/information/intro"
             }
-    ]
+    ],
 }
 
 export default function homeReducer(state = initState, action = {}) {
@@ -119,15 +139,6 @@ export default function homeReducer(state = initState, action = {}) {
             clone.brandItem.detail = payload;
             return clone;
 
-
-        case "TNTRO_DETAIL":
-            clone.introDetail = payload.detail;
-            clone.introPrice = payload.price;
-            clone.introTsprice = payload.tsprice;
-            clone.introSales = payload.sales;
-            clone.introLow = payload.low;
-            return clone;
-
         case "HISTORY_ITEM":
             clone.historyItem.history = payload;
             clone.historyItem.href = payload;
@@ -135,11 +146,7 @@ export default function homeReducer(state = initState, action = {}) {
 
         case "GOOD_ITEM":
             clone.allProduction = payload.msg;
-            clone.classifyFirst = payload.msg['1'];
-            clone.classifySecond = payload.msg['2'];
-            clone.classifyThird = payload.msg['3'];
-            clone.outstanding_shop_goods = payload.msg['outstanding_shop_goods'];
-            clone.outstanding_shop_info = payload.msg['outstanding_shop_info'];
+
             return clone;
 
         case "CLASSIFY_BAR":
@@ -153,6 +160,7 @@ export default function homeReducer(state = initState, action = {}) {
 
         case "CLASSIFY_GOOD":
             clone.classifyGOODS = payload.msg;
+            clone.classifyGOODSId = payload.msg['classifyId'];
             return clone;
 
         case "SHOP_ITEMS_ALL":
@@ -161,20 +169,71 @@ export default function homeReducer(state = initState, action = {}) {
 
         case "HOT_SALE":
             clone.hotSale = payload.msg;
+            clone.hotSaleShopId = payload.msg['shopId'];
             return clone;
 
         case "SHOP_MAIN_PAGE":
             clone.shopHeadImgUrl = payload.msg['headImgUrl'];
             clone.shopMainGoods = payload.msg['goods'];
             clone.shopMainImgUrl = payload.msg['mainImgUrl'];
+            clone.shopMainShopId = payload.msg['shopId'];
             return clone;
 
         case "ACTIVITY_IMG_URL":
             clone.activityImgUrl = payload.msg;
+            clone.activityShopId = payload.msg['shopId'];
             return clone;
 
         case "TELEPHONE" :
             clone.shopTel = payload.msg;
+            return clone;
+
+        case "CHANGE_OPEN_TRUE":
+            clone.open = true;
+            return clone;
+
+        case "CHANGE_OPEN_FALSE":
+            clone.open = false;
+            return clone;
+
+        case "GOOD_CONTENT":
+            clone.introCode = payload;
+            clone.introGood = payload.msg;
+            clone.introGoodId = payload.msg['id'];
+            clone.introDetail = payload.msg['name'];
+            clone.introPrice = payload.msg['originPrice'];
+            clone.introTsprice = payload.msg['newPrice'];
+            clone.introSales = payload.msg['salesVolume'];
+            clone.introLow = payload.msg['minPrice'];
+            clone.contentImg = payload.msg['contentImg'];
+            clone.introContent = payload.msg['content'];
+            clone.introShopId = payload.msg['shopId'];
+            clone.introShopTel = payload.msg['telephone'];
+            return clone;
+
+        case "SLIDE_INDEX":
+            clone.slideIndex = payload;
+            return  clone;
+
+        case "MAIN_PAGE_GOODS":
+            clone.mainPageGoods = payload.msg;
+            console.log(clone.mainPageGoods)
+            clone.classifyFirst = payload.msg['1'];
+            clone.classifySecond = payload.msg['2'];
+            clone.classifyThird = payload.msg['3'];
+            clone.outstanding_shop_goods = payload.msg['outstanding_shop_goods'];
+            clone.outstanding_shop_info = payload.msg['outstanding_shop_info'];
+            return clone;
+
+
+        case  "ADD_TO_CART" :
+            clone.addToCart = payload;
+            clone.badge = {
+                position:'absolute',
+                bottom:'20px',
+                right:'50px',
+                display:'block'
+            };
             return clone;
     }
     return clone;
