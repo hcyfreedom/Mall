@@ -25,7 +25,7 @@ class AddToCar extends React.Component{
     }
 
     handleClick(){
-        let {addToCart} = this.props.homeReducer;
+        let {addToCartCount} = this.props.homeReducer;
         let actions = bindActionCreators(mallActions,this.props.dispatch);
         let path = window.location.pathname;
         let goodId = path.split("/")[3];
@@ -50,7 +50,7 @@ class AddToCar extends React.Component{
     }
     render(){
         let actions = bindActionCreators(mallActions,this.props.dispatch);
-        let {addToCart,badge} = this.props.homeReducer;
+        let {addToCartCount,badge} = this.props.homeReducer;
         return(
             <MuiThemeProvider>
                 <div  onClick={this.handleClick.bind(this)}>
@@ -58,7 +58,7 @@ class AddToCar extends React.Component{
                         加入购物车
                     </div>
                     <Badge
-                        badgeContent={4}
+                        badgeContent={addToCartCount}
                         primary={true}
                         style={badge}
                     >

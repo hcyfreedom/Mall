@@ -133,3 +133,10 @@ export function addGoodToCart(data) {
         payload:data
     }
 }
+
+export function getOrdersInCart(data) {
+    return{
+        type:'ORDERS_IN_CART',
+        payload:data
+    }
+}

@@ -2,7 +2,6 @@
  * Created by hcy on 2017/4/12.
  */
 import React from 'react'
-
 import ProductionItem from "../Production/ProductionItem";
 import {Link} from 'react-router-dom'
 import {connect} from 'react-redux';

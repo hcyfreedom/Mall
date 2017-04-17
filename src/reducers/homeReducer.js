@@ -34,7 +34,8 @@ const initState = {
     introContent:[],
     introShopId:[],
     introShopTel:[],
-    addToCart:[],
+    addToCartCount:[],
+    ordersInCart:[],
     badge:{
         position:'absolute',
         bottom:'20px',
@@ -217,7 +218,6 @@ export default function homeReducer(state = initState, action = {}) {
 
         case "MAIN_PAGE_GOODS":
             clone.mainPageGoods = payload.msg;
-            console.log(clone.mainPageGoods)
             clone.classifyFirst = payload.msg['1'];
             clone.classifySecond = payload.msg['2'];
             clone.classifyThird = payload.msg['3'];
@@ -227,7 +227,7 @@ export default function homeReducer(state = initState, action = {}) {
 
 
         case  "ADD_TO_CART" :
-            clone.addToCart = payload;
+            clone.addToCartCount = payload.msg['count'];
             clone.badge = {
                 position:'absolute',
                 bottom:'20px',
@@ -235,6 +235,11 @@ export default function homeReducer(state = initState, action = {}) {
                 display:'block'
             };
             return clone;
+
+        case "ORDERS_IN_CART":
+            clone.ordersInCart = payload.msg;
+            return clone;
+
     }
     return clone;
 

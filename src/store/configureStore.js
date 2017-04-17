@@ -8,7 +8,6 @@ let finalApplyMiddleware;
 
 finalApplyMiddleware = applyMiddleware(thunk);
 
-
 finalCreateStore = finalApplyMiddleware(createStore);
 
 export default function configureStore(initialState) {

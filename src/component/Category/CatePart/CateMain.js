@@ -14,7 +14,7 @@ class CateMain extends React.Component{
         super(props)
 
     }
-    componentDidMount(){
+    componentDidMount (){
         let actions = bindActionCreators(mallActions,this.props.dispatch);
         let {classifyGOODS,classifyGOODSId} = this.props.homeReducer;
         get('/classify/getGoods?'+classifyGOODSId,(res) => {
