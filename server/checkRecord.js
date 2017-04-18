@@ -39,4 +39,7 @@ module.exports = function (app) {
     app.use("/good/changeOrderCount/*",(req,res) => {
         res.json(require('./json/OrderCount.json'))
     })
+    app.use("/good/deleteGoodFromCart",(req,res) => {
+        res.json(require('./json/DeleteGoodFromCart.json'))
+    })
 }

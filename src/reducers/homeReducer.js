@@ -36,6 +36,9 @@ const initState = {
     introShopTel:[],
     addToCartCount:[],
     ordersInCart:[],
+    orderId:[],
+    orderCount:[],
+    goodCountInCart:[],
     badge:{
         position:'absolute',
         bottom:'20px',
@@ -240,6 +243,32 @@ export default function homeReducer(state = initState, action = {}) {
             clone.ordersInCart = payload.msg;
             return clone;
 
+        case "CHANGE_ORDER_COUNT":
+            let index = payload.index;
+            let count = payload.count;
+            let tmp = undefined;
+            for(let i = 0;i<clone.ordersInCart.length;i++){
+                if(clone.ordersInCart[i].goodId == index){
+                    tmp = clone.ordersInCart[i];
+                    break;
+                }
+
+            }
+            tmp.goodCount = count;
+            return clone;
+
+        case "DELETE_AFTER":
+            let deleteIndex = payload.index;
+            for(let i = 0;i<clone.ordersInCart.length;i++){
+                if(clone.ordersInCart[i].goodId == deleteIndex){
+
+                    console.log(clone.ordersInCart[i])
+                    // delete clone.ordersInCart[i];
+                    break;
+                }
+
+            }
+            return clone;
     }
     return clone;
 

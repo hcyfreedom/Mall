@@ -603,3 +603,14 @@ a{
     border-right:1px solid grey;
     text-align: center;
 }
+.cartDelete{
+    width: 115px;
+    background-color: #EA2735;
+    position: absolute;
+    right:0;
+    height: 222px;
+    line-height: 222px;
+    color: white;
+    font-size: 25px;
+    text-align: center;
+}

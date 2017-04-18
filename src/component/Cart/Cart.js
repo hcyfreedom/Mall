@@ -54,7 +54,7 @@ class CarIndex extends React.Component{
         for(let key in result){
 
             const items  = result[key].lists.map((ele,id) => {
-                    return <CartItems key={id} ele={ele}/>
+                    return <CartItems key={id} ele={ele} index={ele.goodId}/>
             })
 
             const  itemsW = <div key={key}>
@@ -67,7 +67,6 @@ class CarIndex extends React.Component{
             </div>
              itemsWrap.push(itemsW);
         }
-console.log(itemsWrap)
 
         return(
            <div>

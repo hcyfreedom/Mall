@@ -140,3 +140,17 @@ export function getOrdersInCart(data) {
         payload:data
     }
 }
+
+export function changeOrderCount(data) {
+    return{
+        type:'CHANGE_ORDER_COUNT',
+        payload:data
+    }
+}
+
+export function deleteAfter(data) {
+    return{
+        type:'DELETE_AFTER',
+        payload:data
+    }
+}

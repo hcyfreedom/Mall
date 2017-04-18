@@ -13,9 +13,13 @@ class CartShopName extends React.Component{
         super(props)
     }
 
+    handleClick(){
+        window.history.go(-1)
+    }
+
     render(){
         return(
-            <div className="cartShopName"><div className="cartCircle"></div><img src="/imgs/1.jpg"/><p>{this.props.ele.shopName}</p><div className="goTo">&gt;</div>
+            <div className="cartShopName"><div className="cartCircle"></div><img src="/imgs/1.jpg"/><p>{this.props.ele.shopName}</p><div className="goTo" onClick={this.handleClick.bind(this)}>&gt;</div>
                 <div className="cartEditor">编辑</div>
             </div>
         )

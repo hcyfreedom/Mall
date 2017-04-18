@@ -37,7 +37,7 @@ class AddToCar extends React.Component{
         },(res) => {
             //成功的回调函数
             let data = res.data;
-            if (data.code == "200"){
+            if (data.code == 200){
                 console.log("success")
                 actions.addGoodToCart(res.data)
             }else {
