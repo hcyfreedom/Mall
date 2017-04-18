@@ -521,15 +521,11 @@ a{
     display: flex;
     flex-direction: column;
     justify-content: center;
-    resize: vertical;
-    overflow: auto;
+    border-bottom: 30px solid white;
 }
 .cartItems{
     width:100%;
     height: 180px;
-    /*background-color: red;*/
-    resize: vertical;
-    overflow: auto;
     position: relative;
 }
 
@@ -557,14 +553,14 @@ a{
 .carItemsTitle{
     font-size: 28px;
     color: #000;
-    padding-bottom: 10px;
+    padding-bottom: 20px;
     padding-top: 10px;
 }
 
 .carItemsReal{
     font-size: 24px;
     color: #EA2735;
-    padding-bottom: 10px;
+    padding-bottom: 20px;
 }
 .cartItemsLow{
     width: 230px;
@@ -575,6 +571,35 @@ a{
     font-weight:bold;
     font-size: 24px;
     text-align: center;
-    padding-bottom: 10px;
-    line-height: 40px;
+}
+
+.cartBody{
+    width: 60%;
+    height: 100%;
+    float: left;
+}
+
+.changeWrap{
+    width: 154px;
+    height: 44px;
+    border:1px solid grey;
+    position: absolute;
+    right: 250px;
+    /* bottom: 570px; */
+    transform: translateY(50px);
+    line-height: 44px;
+}
+.changeSub , .changePlus{
+    width: 44px;
+    height: 44px;
+    float: left;
+    text-align: center;
+}
+.changeCount{
+    width: 62px;
+    height: 44px;
+    float: left;
+    border-left: 1px solid grey;
+    border-right:1px solid grey;
+    text-align: center;
 }
