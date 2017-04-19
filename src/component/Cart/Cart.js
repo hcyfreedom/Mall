@@ -3,7 +3,6 @@
  */
 import React from 'react'
 import CartItems from './CartItems'
-import CartShopName from './CartShopName'
 import {Link} from 'react-router-dom'
 import {connect} from 'react-redux';
 import {bindActionCreators} from 'redux';
@@ -22,9 +21,18 @@ class CarIndex extends React.Component{
             actions.getOrdersInCart(res.data);
         })
     }
+
+    handleEditor(){
+        console.log("qwe")
+        let actions = bindActionCreators(mallActions,this.props.dispatch);
+        let {editorFlag} = this.props.homeReducer;
+        editorFlag == "编辑" ? actions.willDelete() : actions.willComplete()
+
+    }
+
     render(){
         let actions = bindActionCreators(mallActions,this.props.dispatch);
-        let {ordersInCart} = this.props.homeReducer;
+        let {ordersInCart,editorFlag} = this.props.homeReducer;
 
         const result = {};//分组后的对象。
         function group(data,str) {
@@ -56,11 +64,14 @@ class CarIndex extends React.Component{
             const items  = result[key].lists.map((ele,id) => {
                     return <CartItems key={id} ele={ele} index={ele.goodId}/>
             })
-
             const  itemsW = <div key={key}>
                 <div style={{position:'relative',top:'80px'}}>
-                             <div className="cartShopName"><div className="cartCircle"></div><img src="/imgs/1.jpg"/><p>{result[key].shopName}</p><div className="goTo">&gt;</div>
-                                 <div className="cartEditor">编辑</div>
+                             <div className="cartShopName"><div className="cartCircle"></div>
+                                 <Link to={'/shop/'+result[key].shopId}>
+                                     <img src="/imgs/1.jpg"/><p>{result[key].shopName}</p>
+                                 <div className="goTo">&gt;</div>
+                                 </Link>
+                                 <div className="cartEditor" onClick={this.handleEditor.bind(this)}>{editorFlag}</div>
                              </div>
                              {items}
                 </div>

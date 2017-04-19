@@ -104,16 +104,33 @@ class CartItems extends React.Component{
         })
     }
 
+    circleIconClick(){
+        let actions = bindActionCreators(mallActions,this.props.dispatch);
+        let {cartCircleIcon} = this.props.homeReducer;
+        let index = this.props.index;
+        console.log(index)
+        console.log(this.refs)
+        let id = undefined;
+        for(let i in this.refs){
+            id = i;
+        }
+        console.log(id)
 
+        if(id == index){
+            actions.totalPrice();
+        }
+
+
+    }
 
     render(){
-        let {deleteBefore} = this.props.homeReducer;
+        let {cartCircleIcon,cartDelete} = this.props.homeReducer;
         let actions = bindActionCreators(mallActions,this.props.dispatch);
         return(
             <div>
                 <div className="cartWrap">
                     <div className="cartItems">
-                        <div className="cartCircleIcon"></div>
+                        <div className="cartCircleIcon" style={cartCircleIcon} onClick={this.circleIconClick.bind(this)} ref={this.props.ele.goodId} ></div>
                         <Link to={'/information/' + this.props.ele.shopId + this.props.ele.goodId} >
                             <div className="cartBody">
                                 <img className="cartImg" src="/imgs/a1.png"/>
@@ -130,7 +147,7 @@ class CartItems extends React.Component{
                         <div className="changeCount">{this.props.ele.goodCount}</div>
                         <div className="changePlus" onClick={this.handlePlusClick.bind(this)}> + </div>
                     </div>
-                    <div className="cartDelete" onClick={this.deleteClick.bind(this)}>
+                    <div className="cartDelete" style={cartDelete} onClick={this.deleteClick.bind(this)}>
                         删&nbsp;&nbsp;除
                     </div>
                 </div>

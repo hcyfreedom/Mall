@@ -513,6 +513,9 @@ a{
     float: right;
     padding-right: 50px;
     color: gray;
+    width: 50px;
+    height: 100%;
+    padding-left: 50px;
 }
 .cartWrap{
     width: 100%;
@@ -538,6 +541,7 @@ a{
     border:1px solid gray;
     margin: 80px 20px 0 20px;
     float: left;
+    background-color: transparent;
 }
 .cartImg{
     width: 180px;
@@ -613,4 +617,29 @@ a{
     color: white;
     font-size: 25px;
     text-align: center;
+}
+.cartTotal{
+    width: 100%;
+    height: 98px;
+    position: fixed;
+    bottom: 98px;
+    background-color: #eeeeee;
+    font-size: 24px;
+    color: grey;
+}
+.totalShow{
+    float: right;
+    text-align: right;
+    margin-top: 10px;
+    line-height: 40px;
+}
+.totalBtn{
+    width: 250px;
+    height: 100%;
+    float: right;
+    background-color: #EA2735;
+    line-height: 98px;
+    text-align: center;
+    margin-left: 30px;
+    color: white;
 }

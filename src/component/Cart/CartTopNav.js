@@ -4,10 +4,13 @@
 import React from 'react'
 
 export default  class CartTopNav extends React.Component{
+    handleGoBack(){
+        window.history.go(-1)
+    }
     render(){
         return(
             <div style={navStyle}>
-                <div className="goBack">
+                <div className="goBack" onClick={this.handleGoBack.bind(this)}>
                     &lt;
                 </div>
                 <div style={navTitle}>

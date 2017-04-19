@@ -8,7 +8,7 @@ import Slider from './Home/Slider/Slider'
 import HomePage from './Home/HomePage'
 import Selector from './Category/SlideSelector/Selector'
 import CateMain from './Category/CatePart/CateMain'
-
+import CartHomePage from './Cart/CartHomePage'
 let  slides = [{
     background: "../imgs/1.jpg",
     link:"www.baidu.com"
@@ -44,14 +44,24 @@ export default class BaseOptions extends React.Component{
           Node = React.createClass({
                 render(){
 
-                    return  <HomePage/>
+                    return <div><Nav/><Slider slides = {slides} time="2000"/><HomePage/></div>
                 }
             })
 
-        }else {
+        }else if(this.props.match.params.id == "cart"){
             Node = React.createClass({
                 render(){
-                    return  <div><Selector/><CateMain/></div>
+                    return <CartHomePage/>
+                }
+            })
+        }
+
+
+
+        else {
+            Node = React.createClass({
+                render(){
+                    return  <div><Nav/><Slider slides = {slides} time="2000"/><Selector/><CateMain/></div>
                 }
             })
 
@@ -60,8 +70,7 @@ export default class BaseOptions extends React.Component{
 
         return(
             <div>
-                <Nav/>
-                <Slider slides = {slides} time="2000"/>
+
                 <Node/>
                 <BottomNav/>
             </div>

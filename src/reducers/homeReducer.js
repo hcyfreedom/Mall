@@ -39,6 +39,10 @@ const initState = {
     orderId:[],
     orderCount:[],
     goodCountInCart:[],
+    cartCircleIcon:{backgroundColor:"transparent"},
+    cartDelete:{display:'none'},
+    editorFlag:"编辑",
+    totalPrice:"0.00",
     badge:{
         position:'absolute',
         bottom:'20px',
@@ -58,7 +62,7 @@ const initState = {
         },{
             src:'/imgs/b3.png',
             hoverSrc:'/imgs/b33.png',
-            href: '/cart',
+            href: '/home/cart',
         },{
             src:'/imgs/b4.png',
             hoverSrc:'/imgs/b44.png',
@@ -259,15 +263,41 @@ export default function homeReducer(state = initState, action = {}) {
 
         case "DELETE_AFTER":
             let deleteIndex = payload.index;
-            for(let i = 0;i<clone.ordersInCart.length;i++){
-                if(clone.ordersInCart[i].goodId == deleteIndex){
+            let pointer = undefined;
+             pointer = clone.ordersInCart.filter(function (item) {
+                     return   item.goodId != deleteIndex
 
-                    console.log(clone.ordersInCart[i])
-                    // delete clone.ordersInCart[i];
-                    break;
-                }
+                })
 
-            }
+            clone.ordersInCart = pointer;
+            return clone;
+
+        case "WILL_DELETE":
+            clone.cartCircleIcon = {
+                backgroundColor:"#ee4037"
+            };
+            clone.cartDelete = {
+                display:"block"
+            };
+            clone.editorFlag = "完成";
+
+            return clone;
+
+        case "WILL_COMPLETE":
+            clone.cartCircleIcon = {
+                backgroundColor:"transparent"
+            };
+            clone.cartDelete = {
+                display:"none"
+            };
+            clone.editorFlag = "编辑";
+
+            return clone;
+
+        case "TOTAL_PRICE":
+            clone.cartCircleIcon = {
+                backgroundColor:"#ee4037"
+            };
             return clone;
     }
     return clone;

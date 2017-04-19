@@ -154,3 +154,22 @@ export function deleteAfter(data) {
         payload:data
     }
 }
+
+export function willDelete() {
+    return{
+        type:'WILL_DELETE'
+    }
+}
+export function willComplete() {
+    return{
+        type:'WILL_COMPLETE'
+    }
+}
+
+export function totalPrice(data) {
+    return{
+        type:"TOTAL_PRICE",
+        payload:data
+
+    }
+}

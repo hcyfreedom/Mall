@@ -7,7 +7,8 @@ import BaseOptions from './BaseOptions'
 import ShopPage from './ShopPage'
 import Information from './Information'
 import SearchIndex from "./Search/SearchIndex"
-import CartHomePage from './CartHomePage'
+
+import AddressMain from './AddressMain'
 import { BrowserRouter as Router, Route, Redirect,Link  } from 'react-router-dom';
 import createHistory from 'history/createBrowserHistory'
 import {Provider} from 'react-redux';
@@ -35,7 +36,7 @@ class Main extends React.Component{
                             <Route  path="/shop/:id" component={ShopPage}/>
                             <Route path="/information/:id" component={Information}/>
                             <Route path="/search/:id" component={SearchIndex}/>
-                            <Route path="/cart" component={CartHomePage}/>
+                            <Route path="/address/:id" component={AddressMain}/>
                         </div>
                     </Router>
                 </Provider>
