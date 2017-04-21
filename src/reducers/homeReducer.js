@@ -70,7 +70,7 @@ const initState = {
         },{
             src:'/imgs/b5.png',
             hoverSrc:'/imgs/b55.png',
-            href: '/queens',
+            href: '/wallet',
         }
     ],
     classifyItem : [

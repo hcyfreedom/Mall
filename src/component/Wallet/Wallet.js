@@ -3,8 +3,9 @@
  */
 import React from 'react'
 import Nav from '../Cart/CartTopNav'
-import HeaderBefore from './HeaderBefore'
+import HeaderBefore from './before/HeaderBefore'
 import Tribe from './Tribe'
+import TriOption from './TriOption'
 export default class Wallet extends React.Component{
     render(){
         return(
@@ -13,6 +14,7 @@ export default class Wallet extends React.Component{
                 <div style={{position:'relative',top:'79px' }}>
                     <HeaderBefore/>
                     <Tribe/>
+                    <TriOption/>
                 </div>
             </div>
         )
