@@ -11,9 +11,10 @@ import * as mallActions from '../../action/mallActions'
 class CarIndex extends React.Component{
     constructor(props){
         super(props)
+        this.state = {
+            selectedID: new Set(),
+        }
     }
-
-
     componentWillMount (){
         let actions = bindActionCreators(mallActions,this.props.dispatch);
         let {ordersInCart} = this.props.homeReducer;
@@ -21,6 +22,14 @@ class CarIndex extends React.Component{
             actions.getOrdersInCart(res.data);
         })
     }
+
+
+
+    componentDidMount() {
+        let actions = bindActionCreators(mallActions,this.props.dispatch);
+        actions.totalPrice('0.00');
+    }
+
 
     handleEditor(){
         console.log("qwe")
@@ -49,7 +58,6 @@ class CarIndex extends React.Component{
                         lists : []
                     };
                 }
-
                 //将这个条目添加到这个以key为键名的对象lists里面
                 result[key].lists.push(data[i]);
             }
@@ -57,12 +65,30 @@ class CarIndex extends React.Component{
         }
 
         group(ordersInCart,'shopId');
-
         const itemsWrap = [];
         for(let key in result){
-
             const items  = result[key].lists.map((ele,id) => {
-                    return <CartItems key={id} ele={ele} index={ele.goodId}/>
+                    return <CartItems key={id} ele={ele} index={ele.goodId} selectedID={this.state.selectedID} select={(id) => {
+                        let target = this.state.selectedID;
+                        if(!this.state.selectedID.has(id))
+                            target.add(id)
+                        else
+                            target.delete(id);
+                        this.setState({selectedID: target})
+                        let total = 0;
+                        for(let i of target) {
+                            for(let item in result) {
+                                let re = result[item].lists.find(e => e.goodId == i);
+                                if (re)
+                                    total += re.minPrice * re.goodCount;
+                            }
+                        }
+                        let actions = bindActionCreators(mallActions,this.props.dispatch);
+                        actions.totalPrice(total.toFixed(2));
+                        this.setState({total:　total.toFixed(2)});
+                        console.log(total);
+                    }
+                    } />
             })
             const  itemsW = <div key={key}>
                 <div style={{position:'relative',top:'80px'}}>

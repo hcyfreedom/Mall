@@ -43,6 +43,7 @@ const initState = {
     cartDelete:{display:'none'},
     editorFlag:"编辑",
     totalPrice:"0.00",
+    selectedID: new Set(),
     badge:{
         position:'absolute',
         bottom:'20px',
@@ -296,7 +297,7 @@ export default function homeReducer(state = initState, action = {}) {
 
         case "TOTAL_PRICE":
             clone.cartCircleIcon = {
-                backgroundColor:"#ee4037"
+                totalPrice: payload,
             };
             return clone;
     }

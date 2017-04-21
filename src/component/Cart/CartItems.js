@@ -63,7 +63,6 @@ class CartItems extends React.Component{
                 count: subCount
             },(res) => {
                 //成功的回调函数
-
                 let data = res.data;
 
                 if (data.code == 200){
@@ -104,33 +103,18 @@ class CartItems extends React.Component{
         })
     }
 
-    circleIconClick(){
-        let actions = bindActionCreators(mallActions,this.props.dispatch);
-        let {cartCircleIcon} = this.props.homeReducer;
-        let index = this.props.index;
-        console.log(index)
-        console.log(this.refs)
-        let id = undefined;
-        for(let i in this.refs){
-            id = i;
-        }
-        console.log(id)
-
-        if(id == index){
-            actions.totalPrice();
-        }
-
-
-    }
-
-    render(){
+        render(){
         let {cartCircleIcon,cartDelete} = this.props.homeReducer;
         let actions = bindActionCreators(mallActions,this.props.dispatch);
         return(
             <div>
                 <div className="cartWrap">
                     <div className="cartItems">
-                        <div className="cartCircleIcon" style={cartCircleIcon} onClick={this.circleIconClick.bind(this)} ref={this.props.ele.goodId} ></div>
+                        <div className="cartCircleIcon"
+                             style={{backgroundColor : this.props.selectedID.has(this.props.ele.goodId) ?　'#ee4037' : 'transparent' }}
+                             onClick={() => this.props.select(this.props.ele.goodId)}
+                            ref={this.props.ele.goodId} >
+                        </div>
                         <Link to={'/information/' + this.props.ele.shopId + this.props.ele.goodId} >
                             <div className="cartBody">
                                 <img className="cartImg" src="/imgs/a1.png"/>

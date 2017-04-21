@@ -254,7 +254,24 @@ ul li .inputAdd{
     margin-top: 20px;
 }
 
+/*结账付款*/
+.pay{
+    width: 100%;
+    height: 100px;
+    background-color: white;
+    border-bottom: 1px solid grey;
+    font-size: 30px;
+    color: gray;
+}
+.pay img{
+    vertical-align: middle;
+    padding: 24px 40px 30px 70px;
+}
 
 
-
-
+.payAll{
+    float: right;
+    font-size: 30px;
+    padding-top: 20px;
+    padding-right: 40px;
+}

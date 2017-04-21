@@ -13,6 +13,10 @@ import Delivery from './Delivery/Delivery'
 
 import Register from './Register/Register'
 import Wallet from './Wallet/Wallet'
+import PersonalSetting from './PersonalSetting/PersonalSetting'
+import ModifyLogPass from './PersonalSetting/ModifyLogPass'
+import ModifyPhoneVeri from './PersonalSetting/ModifyPhoneVeri'
+import Payment from './Payment/Payment'
 
 import { BrowserRouter as Router, Route, Redirect,Link  } from 'react-router-dom';
 import createHistory from 'history/createBrowserHistory'
@@ -45,6 +49,10 @@ class Main extends React.Component{
                             <Route path="/delivery" component={Delivery}/>
                             <Route path="/register" component={Register}/>
                             <Route path="/wallet" component={Wallet}/>
+                            <Route exact path="/person" component={PersonalSetting}/>
+                            <Route path="/person/pass" component={ModifyLogPass}/>
+                            <Route path="/person/phone" component={ModifyPhoneVeri}/>
+                            <Route path="/payment" component={Payment}/>
                         </div>
                     </Router>
                 </Provider>
