@@ -9,6 +9,11 @@ import Information from './Information'
 import SearchIndex from "./Search/SearchIndex"
 
 import AddressMain from './AddressMain'
+import Delivery from './Delivery/Delivery'
+
+import Register from './Register/Register'
+import Wallet from './Wallet/Wallet'
+
 import { BrowserRouter as Router, Route, Redirect,Link  } from 'react-router-dom';
 import createHistory from 'history/createBrowserHistory'
 import {Provider} from 'react-redux';
@@ -37,6 +42,9 @@ class Main extends React.Component{
                             <Route path="/information/:id" component={Information}/>
                             <Route path="/search/:id" component={SearchIndex}/>
                             <Route path="/address/:id" component={AddressMain}/>
+                            <Route path="/delivery" component={Delivery}/>
+                            <Route path="/register" component={Register}/>
+                            <Route path="/wallet" component={Wallet}/>
                         </div>
                     </Router>
                 </Provider>

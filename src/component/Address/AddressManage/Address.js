@@ -3,6 +3,7 @@
  */
 import React from 'react'
 import AddressItem from './AddressItem'
+import AddressBottom from '../AddressBottom'
 export default class Address extends React.Component{
     render(){
         return(
@@ -11,6 +12,7 @@ export default class Address extends React.Component{
                     <AddressItem/>
                     <AddressItem/>
                     <div className="addNew"><img src="/imgs/add2.jpg"/>新增收货地址</div>
+                    <AddressBottom detail="确认并返回"/>
                 </div>
 
         )

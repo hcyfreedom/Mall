@@ -4,6 +4,7 @@
 import React from 'react'
 import Nav from './Cart/CartTopNav'
 import Address from './Address/AddressManage/Address'
+import AddressEditor from './Address/AddressEditor/AddressEditor'
 export default class AddressMain extends React.Component{
     render(){
         let Node = React.createClass({
@@ -25,7 +26,7 @@ export default class AddressMain extends React.Component{
         }else {
             Node = React.createClass({
                 render(){
-                    return
+                    return <AddressEditor/>
                 }
             })
         }
