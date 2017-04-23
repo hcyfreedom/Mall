@@ -11,9 +11,6 @@ import * as mallActions from '../../action/mallActions'
 class CarIndex extends React.Component{
     constructor(props){
         super(props)
-        this.state = {
-            selectedID: new Set(),
-        }
     }
     componentWillMount (){
         let actions = bindActionCreators(mallActions,this.props.dispatch);
@@ -32,7 +29,6 @@ class CarIndex extends React.Component{
 
 
     handleEditor(){
-        console.log("qwe")
         let actions = bindActionCreators(mallActions,this.props.dispatch);
         let {editorFlag} = this.props.homeReducer;
         editorFlag == "编辑" ? actions.willDelete() : actions.willComplete()
@@ -41,7 +37,7 @@ class CarIndex extends React.Component{
 
     render(){
         let actions = bindActionCreators(mallActions,this.props.dispatch);
-        let {ordersInCart,editorFlag} = this.props.homeReducer;
+        let {ordersInCart,editorFlag,selectedID} = this.props.homeReducer;
 
         const result = {};//分组后的对象。
         function group(data,str) {
@@ -68,25 +64,30 @@ class CarIndex extends React.Component{
         const itemsWrap = [];
         for(let key in result){
             const items  = result[key].lists.map((ele,id) => {
-                    return <CartItems key={id} ele={ele} index={ele.goodId} selectedID={this.state.selectedID} select={(id) => {
-                        let target = this.state.selectedID;
-                        if(!this.state.selectedID.has(id))
+                    return <CartItems key={id} ele={ele} index={ele.goodId} selectedID={selectedID} select={(id) => {
+                        let target = selectedID;
+
+                        if(!selectedID.has(id))
                             target.add(id)
                         else
                             target.delete(id);
-                        this.setState({selectedID: target})
+                        let actions = bindActionCreators(mallActions,this.props.dispatch);
+                        actions.targetSelectedID(target);
+
                         let total = 0;
+                        let orderList = [];
                         for(let i of target) {
-                            for(let item in result) {
-                                let re = result[item].lists.find(e => e.goodId == i);
+                            //for(let item in result) {
+                                let re = ordersInCart.find(e => e.goodId == i);
                                 if (re)
                                     total += re.minPrice * re.goodCount;
-                            }
+
+                                orderList.push(re);
+                            //}
                         }
-                        let actions = bindActionCreators(mallActions,this.props.dispatch);
+                        actions.targetOrders(orderList)
                         actions.totalPrice(total.toFixed(2));
-                        this.setState({total:　total.toFixed(2)});
-                        console.log(total);
+
                     }
                     } />
             })
@@ -94,7 +95,7 @@ class CarIndex extends React.Component{
                 <div style={{position:'relative',top:'80px'}}>
                              <div className="cartShopName"><div className="cartCircle"></div>
                                  <Link to={'/shop/'+result[key].shopId}>
-                                     <img src="/imgs/1.jpg"/><p>{result[key].shopName}</p>
+                                     <img src="/imgs/shop.png"/><p>{result[key].shopName}</p>
                                  <div className="goTo">&gt;</div>
                                  </Link>
                                  <div className="cartEditor" onClick={this.handleEditor.bind(this)}>{editorFlag}</div>

@@ -9,7 +9,7 @@ import Information from './Information'
 import SearchIndex from "./Search/SearchIndex"
 
 import AddressMain from './AddressMain'
-import Delivery from './Delivery/Delivery'
+import Delivery from './Orders/Delivery/Delivery'
 
 import Register from './Register/Register'
 import Wallet from './Wallet/Wallet'
@@ -17,6 +17,9 @@ import PersonalSetting from './PersonalSetting/PersonalSetting'
 import ModifyLogPass from './PersonalSetting/ModifyLogPass'
 import ModifyPhoneVeri from './PersonalSetting/ModifyPhoneVeri'
 import Payment from './Payment/Payment'
+import PaymentSuccess from './Payment/PaymentSuccess'
+import PaymentFail from './Payment/PaymentFail'
+import OrderConfirm from './Orders/Confirm/OrderConfirm'
 
 import { BrowserRouter as Router, Route, Redirect,Link  } from 'react-router-dom';
 import createHistory from 'history/createBrowserHistory'
@@ -43,7 +46,7 @@ class Main extends React.Component{
                             <Route path="/home/:id" component={BaseOptions}/>
                             {/*<Redirect from="/" to="/home/index"/>*/}
                             <Route  path="/shop/:id" component={ShopPage}/>
-                            <Route path="/information/:id" component={Information}/>
+                            <Route path="/information/:shopId/:id" component={Information}/>
                             <Route path="/search/:id" component={SearchIndex}/>
                             <Route path="/address/:id" component={AddressMain}/>
                             <Route path="/delivery" component={Delivery}/>
@@ -52,7 +55,10 @@ class Main extends React.Component{
                             <Route exact path="/person" component={PersonalSetting}/>
                             <Route path="/person/pass" component={ModifyLogPass}/>
                             <Route path="/person/phone" component={ModifyPhoneVeri}/>
-                            <Route path="/payment" component={Payment}/>
+                            <Route exact path="/payment" component={Payment}/>
+                            <Route path="/payment/succeed" component={PaymentSuccess}/>
+                            <Route path="/payment/failed" component={PaymentFail}/>
+                            <Route path="/orderConfirm" component={OrderConfirm}/>
                         </div>
                     </Router>
                 </Provider>

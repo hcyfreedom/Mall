@@ -18,7 +18,8 @@ import * as mallActions from '../action/mallActions'
     componentDidMount(){
         let {shopHeadImgUrl,shopMainShopId} = this.props.homeReducer;
         let actions = bindActionCreators(mallActions,this.props.dispatch);
-        get('/shop/getShopMainPage/'+shopMainShopId,(res) => {
+      let  pathParams=this.props.match.params.id;
+        get('/shop/getShopMainPage/'+pathParams,(res) => {
             actions.getShopMainPage(res.data)
         })
 
@@ -32,9 +33,9 @@ import * as mallActions from '../action/mallActions'
             <div>
                 <ShopNav/>
                 <ShowBlock src={shopHeadImgUrl}/>
-                <ShowSelector/>
+                <ShowSelector pathParams={this.props.match.params}/>
                 <div style={{width:'100%',height:'150px'}}></div>
-                <ShowBottom/>
+                <ShowBottom pathParams={this.props.match.params}/>
             </div>
         )
     }

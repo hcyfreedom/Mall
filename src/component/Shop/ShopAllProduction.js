@@ -17,8 +17,9 @@ class ShowAllProduction extends React.Component{
     componentDidMount(){
         let actions = bindActionCreators(mallActions,this.props.dispatch);
         let {allShopItems} = this.props.homeReducer;
-        const shopId = allShopItems['shopId'];
-        get('/shop/getAll/'+shopId,(res) => {
+        console.log("全部" +this.props.path.id)
+
+        get('/shop/getAll/'+this.props.path.id,(res) => {
             actions.getShopItemsAll(res.data)
         })
 

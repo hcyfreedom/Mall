@@ -16,7 +16,7 @@ class CartTotal extends React.Component{
         return(
             <div className="cartTotal">
 
-                <Link to="/payment">
+                <Link to="/orderConfirm">
                     <div className="totalBtn">
                         结&nbsp;&nbsp;算
                     </div>

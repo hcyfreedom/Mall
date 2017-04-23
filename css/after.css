@@ -52,8 +52,12 @@ a{
 }
 .addDetail{
     width: 65%;
-    height:100%;
+    height: 80%;
     float: left;
+    display: flex;
+    justify-content: space-around;
+    flex-direction: column;
+    padding-left: 50px;
 }
 .addDetailTop{
     width: 100%;
@@ -267,11 +271,104 @@ ul li .inputAdd{
     vertical-align: middle;
     padding: 24px 40px 30px 70px;
 }
-
-
 .payAll{
     float: right;
     font-size: 30px;
     padding-top: 20px;
     padding-right: 40px;
+}
+.paySuccess img{
+    width: 290px;
+    height: 360px;
+    margin: 0 auto;
+    display: flex;
+    padding-top: 220px;
+    padding-bottom: 200px;
+}
+.payBtnWrap{
+    display: flex;
+    justify-content: space-around;
+}
+.payButton{
+    width: 312px;
+    height: 85px;
+    border-radius: 10px;
+    font-size: 32px;
+    line-height: 85px;
+    text-align: center;
+}
+/*确认订单*/
+.conAdd{
+    width: 100%;
+    height: 149px;
+    background-color: white;
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 50px;
+}
+
+.conAdd img{
+    width: 47px;
+    height: 54px;
+    padding: 60px 0 60px 20px;
+}
+.conAddGo{
+    font-size: 40px;
+    color: black;
+    line-height: 149px;
+    padding-right: 40px;
+}
+.conCount{
+    position: absolute;
+    right: 40px;
+    top: 100px;
+}
+.conSelect{
+    width: 100%;
+    height: 34px;
+    display: flex;
+    justify-content: space-around;
+    padding-top: 20px;
+}
+.conCoin {
+    font-size: 24px;
+}
+.conCoin input{
+    width: 171px;
+    height: 34px;
+    /* border: 1px solid grey; */
+    background-color: #eeeeee;
+    padding-left: 5px;
+    border-radius: 2px;
+    font-size: 24px;
+}
+.conCircleIcon{
+    width: 20px;
+    height: 20px;
+    -webkit-border-radius: 10px;
+    -moz-border-radius: 10px;
+    border-radius: 10px;
+    border:1px solid gray;
+    display: inline-block;
+}
+.conCoin span{
+    padding-left: 10px;
+    padding-right: 10px;
+}
+.conReally{
+    margin-right: 50px;
+    margin-top: 20px;
+    float: right;
+    font-size: 24px;
+}
+.conReally span{
+    color:#EA2735;
+}
+.conDelivery{
+    width: 90%;
+    height: 68px;
+    margin: 0 auto;
+    display: flex;
+    justify-content: space-between;
+    line-height: 68px;
 }

@@ -5,12 +5,14 @@ import React from 'react'
 import Toggle from 'material-ui/Toggle';
 import MuiThemeProvider from 'material-ui/styles/MuiThemeProvider';
 
-import AddressBottom from '../AddressBottom'
+import AddressBottom from './AddressBottom'
 export default class AddressEditor extends React.Component{
     constructor(props) {
         super(props);
     }
-
+handleClick(){
+        window.history.go(-1);
+}
     render(){
         return(
             <MuiThemeProvider>
@@ -30,7 +32,7 @@ export default class AddressEditor extends React.Component{
                                 </span>
                         </li>
                     </ul>
-                    <AddressBottom detail="保存并返回"/>
+                    <AddressBottom detail="保存并返回" handleClick={this.handleClick.bind(this)}/>
                 </div>
             </MuiThemeProvider>
         )

@@ -27,7 +27,7 @@ export default class Slider extends React.Component{
         })
     }
 
-    componentDidMount(){
+    componentWillMount(){
        this.setInterval =  setInterval(() =>this.nextSlide(),this.props.time)
     }
     componentWillUnmount(){

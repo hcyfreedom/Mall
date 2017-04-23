@@ -10,6 +10,7 @@ var config = {
     output: {
         path:path.resolve(__dirname,""),
         filename: 'result.js',
+        publicPath:"/static/"
     },
 
     devServer: {

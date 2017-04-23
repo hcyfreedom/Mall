@@ -173,3 +173,59 @@ export function totalPrice(data) {
 
     }
 }
+export function targetSelectedID(data) {
+    return{
+        type:"TARGET_SELECTED_ID",
+        payload:data
+    }
+}
+
+export function targetOrders(data) {
+    return{
+        type:"TARGET_ORDERS",
+        payload:data
+    }
+}
+
+export function confirmOrders(data) {
+    return{
+        type:"CONFIRM_ORDERS",
+        payload:data
+    }
+
+}
+
+export function changeCoin(data) {
+    return{
+        type:'CHANGE_COIN',
+        payload:data
+    }
+}
+
+export function changePoint(data) {
+    return{
+        type:'CHANGE_POINT',
+        payload:data
+    }
+}
+
+export function getRate(data) {
+    return{
+        type:"GET_RATE",
+        payload:data
+    }
+}
+
+export function getDeliveryWay(data) {
+    return{
+        type:'GET_DELIVERY_WAY',
+        payload:data
+    }
+}
+
+export function getAddress(data) {
+    return {
+        type:'GET_ADDRESS',
+        payload:data
+    }
+}

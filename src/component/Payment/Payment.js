@@ -8,6 +8,7 @@ import {bindActionCreators} from 'redux';
 import {post} from "../../http/http"
 import * as mallActions from '../../action/mallActions'
 import Nav from '../Cart/CartTopNav'
+
 class Payment extends React.Component{
     render(){
 
@@ -29,6 +30,9 @@ class Payment extends React.Component{
                     <div className="payAll">
                         付款金额：<span style={{color:'#EA2735'}}>￥{totalPrice}</span>
                     </div>
+                </div>
+                <div className="addBottom">
+                    确认付款
                 </div>
             </div>
         )

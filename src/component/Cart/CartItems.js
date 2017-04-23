@@ -18,10 +18,9 @@ class CartItems extends React.Component{
 
 
     handlePlusClick(){
-        let {orderCount,ordersInCart} = this.props.homeReducer;
+        let {orderCount,ordersInCart,selectedID} = this.props.homeReducer;
         let actions = bindActionCreators(mallActions,this.props.dispatch);
         let index = this.props.index;
-
 
         const plusCount = this.props.ele.goodCount + 1;
         post('/good/changeOrderCount/'+this.props.ele.goodId,{
@@ -39,6 +38,20 @@ class CartItems extends React.Component{
                     index: index
                 }
                 actions.changeOrderCount(payload)
+                let total = 0;
+                let orderList = [];
+                let target = selectedID;
+                for(let i of target) {
+                    //for(let item in result) {
+                    let re = ordersInCart.find(e => e.goodId == i);
+                    if (re)
+                        total += re.minPrice * re.goodCount;
+
+                    orderList.push(re);
+                    //}
+                }
+                actions.targetOrders(orderList)
+                actions.totalPrice(total.toFixed(2));
             }else {
                 console.log("failed")
             }
@@ -51,8 +64,8 @@ class CartItems extends React.Component{
     }
 
     handleSubClick(){
-            let {orderCount,ordersInCart} = this.props.homeReducer;
-            let actions = bindActionCreators(mallActions,this.props.dispatch);
+        let {orderCount,ordersInCart,selectedID} = this.props.homeReducer;
+        let actions = bindActionCreators(mallActions,this.props.dispatch);
             let index = this.props.index;
 
 
@@ -71,7 +84,21 @@ class CartItems extends React.Component{
                         index: index
                     }
                     console.log("success")
-                    actions.changeOrderCount(payload)
+                    actions.changeOrderCount(payload);
+                    let total = 0;
+                    let orderList = [];
+                    let target = selectedID;
+                    for(let i of target) {
+                        //for(let item in result) {
+                        let re = ordersInCart.find(e => e.goodId == i);
+                        if (re)
+                            total += re.minPrice * re.goodCount;
+
+                        orderList.push(re);
+                        //}
+                    }
+                    actions.targetOrders(orderList)
+                    actions.totalPrice(total.toFixed(2));
                 }else {
                     console.log("failed")
                 }
@@ -89,7 +116,7 @@ class CartItems extends React.Component{
         let index = this.props.index;
 
         post('/good/deleteGoodFromCart',{
-                orderId:this.props.ele.goodId
+                orderId:this.props.ele.orderId
         },(res) => {
             if (res.data.code == 200){
                 let payload = {
@@ -115,7 +142,7 @@ class CartItems extends React.Component{
                              onClick={() => this.props.select(this.props.ele.goodId)}
                             ref={this.props.ele.goodId} >
                         </div>
-                        <Link to={'/information/' + this.props.ele.shopId + this.props.ele.goodId} >
+                        <Link to={'/information/' + this.props.ele.shopId +'/'+ this.props.ele.goodId} >
                             <div className="cartBody">
                                 <img className="cartImg" src="/imgs/a1.png"/>
                                 <div className="cartContent">

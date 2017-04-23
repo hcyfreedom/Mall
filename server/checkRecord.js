@@ -42,4 +42,13 @@ module.exports = function (app) {
     app.use("/good/deleteGoodFromCart",(req,res) => {
         res.json(require('./json/DeleteGoodFromCart.json'))
     })
+    app.use("/good/abandonOrder",(req,res) => {
+        res.json(require('./json/AbandonOrder.json'))
+    })
+    app.use("/good/getRate",(req,res) => {
+        res.json(require('./json/Rate.json'))
+    })
+    app.use("/account/getAddress",(req,res) =>{
+        res.json(require('./json/GetAddress.json'))
+    })
 }

@@ -20,7 +20,8 @@ class ShopHotSale extends React.Component{
     componentDidMount(){
         let actions = bindActionCreators(mallActions,this.props.dispatch);
         let {hotSale,hotSaleShopId} = this.props.homeReducer;
-        get('/shop/getHotSale/'+hotSaleShopId,(res) => {
+        console.log("热销"+this.props.path.id)
+        get('/shop/getHotSale/'+this.props.path.id,(res) => {
             actions.getHotSale(res.data)
         })
 

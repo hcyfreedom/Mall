@@ -1,0 +1,23 @@
+{
+  "code": 200,
+  "msg": [
+    {
+      "id": 1,
+      "userId": 1,
+      "reciever": "于景洋",
+      "address": "山东省济南市历下区舜华路1500号",
+      "recieverTelephone": "17621181235",
+      "mailNumber": "lovesyxfuffy@gmail.com",
+      "status": 0
+    },
+    {
+      "id": 1,
+      "userId": 1,
+      "reciever": "韩楚怡",
+      "address": "山东省济南市历下区舜华路1500号",
+      "recieverTelephone": "17621181235",
+      "mailNumber": "lovesyxfuffy@gmail.com",
+      "status": 0
+    }
+  ]
+}

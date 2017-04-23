@@ -26,7 +26,7 @@ class ShowYOU extends React.Component{
         let actions = bindActionCreators(mallActions,this.props.dispatch);
 
         const productionItems = outstanding_shop_goods.slice(0,3).map((ele,id) =>{
-            return <Link to={'/information/'+ele.shopId+"/"+"/"+ele.id} key={id}><div className="pRow"> <ProductionItem src={ele} key={id} actions={actions}/></div></Link>
+            return <Link to={'/information/'+ele.shopId+"/"+ele.id} key={id}><div className="pRow"> <ProductionItem src={ele} key={id} actions={actions}/></div></Link>
         });
         const productionItems2= outstanding_shop_goods.slice(3,6).map((ele,id) =>{
             return <Link to={'/information/'+ele.shopId+"/"+ele.id} key={id}><div className="pRow"> <ProductionItem src={ele} key={id} actions={actions}/></div></Link>

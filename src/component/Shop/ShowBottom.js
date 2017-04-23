@@ -20,9 +20,9 @@ class ShowBottom extends React.Component {
     }
     componentDidMount() {
         let actions = bindActionCreators(mallActions, this.props.dispatch);
-        let {allShopItems} = this.props.homeReducer;
-        const shopId = allShopItems['shopId'];
-        get('/shop/getTelephone/'+shopId, (res) => {
+
+        let id= this.props.pathParams.id;
+        get('/shop/getTelephone/'+id, (res) => {
             actions.getTelephone(res.data)
         })
 

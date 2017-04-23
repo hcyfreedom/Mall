@@ -25,12 +25,9 @@ class Intro extends React.Component{
 
     }
     componentWillMount(){
-        let {introCode,introGood,introGoodId,slideIndex,introShopId} = this.props.homeReducer;
         let actions = bindActionCreators(mallActions,this.props.dispatch);
-        post('/good/getGoodContent/'+introGoodId,{
-            //req没有 就不用传 否则就
-            //goodId:xxx 一个js对象
-        },(res) => {
+        let pathName =this.props.pathParams.id;
+        get('/good/getGoodContent/'+pathName,(res) => {
             //成功的回调函数
             let data = res.data;
             if (data.code == 200){
@@ -62,6 +59,8 @@ class Intro extends React.Component{
         window.history.go(-1)
     }
     render(){
+        console.log(this.props)
+
         let actions = bindActionCreators(mallActions,this.props.dispatch);
         let {introDetail,slideIndex,contentImg,introContent,introShopId,introPrice,introTsprice,introSales,introLow,introShopTel,open} = this.props.homeReducer;
         return(

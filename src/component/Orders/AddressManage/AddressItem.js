@@ -10,13 +10,15 @@ export default class AddressItem extends React.Component{
                 <div className="addCircleIcon"></div>
                 <div className="addDetail">
                     <div className="addDetailTop">
-                        <span>张三</span><span style={{paddingLeft:'100px'}}>17861486454854</span>
+                        <span>{this.props.ele.reciever}</span><span style={{paddingLeft:'100px'}}>{this.props.ele.recieverTelephone}</span>
                     </div>
                     <div className="addDetailBottom">
-                        hdweggcewgfyewgfgewyfgewgvjshvchjdsbgvhjdsbgjhdsgbvjhdsbgvchjsb
+                        {this.props.ele.address}
                     </div>
                 </div>
-                <div className="addEditor"><img src="/imgs/add3.jpg"/></div>
+                <Link to="/address/editor">
+                    <div className="addEditor"><img src="/imgs/add3.jpg"/></div>
+                </Link>
             </div>
         )
     }

@@ -25,7 +25,7 @@ class ShowBAO extends React.Component{
         let actions = bindActionCreators(mallActions,this.props.dispatch);
 
         const productionItems = classifySecond.slice(0,3).map((ele,id) =>{
-            return <Link to={'/information/'+ele.shopId+"/"+"/"+ele.id} key={id}><div className="pRow"> <ProductionItem src={ele} key={id} actions={actions}/></div></Link>
+            return <Link to={'/information/'+ele.shopId+"/"+ele.id} key={id}><div className="pRow"> <ProductionItem src={ele} key={id} actions={actions}/></div></Link>
         });
 
         return(

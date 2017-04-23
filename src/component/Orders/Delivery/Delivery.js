@@ -2,9 +2,23 @@
  * Created by hcy on 2017/4/20.
  */
 import React from 'react'
-import Nav from '../Cart/CartTopNav'
+import Nav from '../../Cart/CartTopNav'
+import {Link} from 'react-router-dom'
+import {connect} from 'react-redux';
+import {bindActionCreators} from 'redux';
+import {post} from '../../../http/http'
+import {get} from "../../../http/http"
+import * as mallActions from '../../../action/mallActions'
+class Delivery extends React.Component{
+    constructor(props){
+        super(props)
+    }
+    componentWillMount(){
 
-export default class Delivery extends React.Component{
+    }
+    handleClick(){
+        let actions = bindActionCreators(mallActions,this.props.dispatch);
+    }
     render(){
         return(
             <div className="deli">
@@ -19,3 +33,4 @@ export default class Delivery extends React.Component{
         )
     }
 }
+export default  connect((state) => state)(Delivery)

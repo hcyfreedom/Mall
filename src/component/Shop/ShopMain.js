@@ -15,8 +15,8 @@ class ShopMain extends React.Component{
     }
     componentDidMount(){
         let actions = bindActionCreators(mallActions,this.props.dispatch);
-        let {shopHeadImgUrl,shopMainGoods,shopMainImgUrl,shopMainShopId} = this.props.homeReducer;
-        get('/shop/getShopMainPage/'+shopMainShopId,(res) => {
+        console.log("首页" +this.props.path.id)
+        get('/shop/getShopMainPage/'+this.props.path.id,(res) => {
             actions.getShopMainPage(res.data)
         })
 

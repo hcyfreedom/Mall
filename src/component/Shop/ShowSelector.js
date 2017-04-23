@@ -35,16 +35,16 @@ export default class ShowSelector extends React.Component{
                     </Tabs>
                     <SwipeableViews index={this.state.slideIndex} onChangeIndex={this.handleChange.bind(this)}>
                         <div>
-                            <ShopMain/>
+                            <ShopMain path={this.props.pathParams}/>
                         </div>
                         <div>
-                            <ShowAllProduction/>
+                            <ShowAllProduction path={this.props.pathParams}/>
                         </div>
                         <div>
-                            <ShopHotSale/>
+                            <ShopHotSale path={this.props.pathParams}/>
                         </div>
                         <div>
-                            <ShopActivity/>
+                            <ShopActivity path={this.props.pathParams}/>
                         </div>
                     </SwipeableViews>
                     </div>

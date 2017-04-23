@@ -70,7 +70,6 @@ export default class BaseOptions extends React.Component{
 
         return(
             <div>
-
                 <Node/>
                 <BottomNav/>
             </div>

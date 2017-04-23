@@ -44,6 +44,15 @@ const initState = {
     editorFlag:"编辑",
     totalPrice:"0.00",
     selectedID: new Set(),
+    orderList:[],
+    confirmOrders:[],
+    lastOrders:[],
+    saveCount:[],
+    selectCoin:'',
+    selectPoint:'',
+    pointRate:'',
+    coinRate:'',
+    deliveryWay:'',
     badge:{
         position:'absolute',
         bottom:'20px',
@@ -208,6 +217,7 @@ export default function homeReducer(state = initState, action = {}) {
         case "GOOD_CONTENT":
             clone.introCode = payload;
             clone.introGood = payload.msg;
+            console.log(payload.msg['id'])
             clone.introGoodId = payload.msg['id'];
             clone.introDetail = payload.msg['name'];
             clone.introPrice = payload.msg['originPrice'];
@@ -299,6 +309,35 @@ export default function homeReducer(state = initState, action = {}) {
             clone.cartCircleIcon = {
                 totalPrice: payload,
             };
+            return clone;
+        case "TARGET_SELECTED_ID":
+            clone.selectedID = payload;
+            return clone;
+
+        case "TARGET_ORDERS":
+            clone.orderList = payload;
+            clone.confirmOrders = clone.orderList;
+            return clone;
+
+        case "CONFIRM_ORDERS":
+            clone.lastOrders = payload;
+            return clone;
+
+        case "CHANGE_COIN":
+            clone.selectCoin = payload;
+            return clone;
+
+        case "CHANGE_POINT":
+            clone.selectPoint = payload;
+            return clone;
+
+        case "GET_RATE":
+            clone.pointRate = payload.msg.pointRate;
+            clone.coinRate = payload.msg.coinRate;
+            return clone;
+
+        case "GET_DELIVERY_WAY":
+            clone.deliveryWay = payload[0];
             return clone;
     }
     return clone;

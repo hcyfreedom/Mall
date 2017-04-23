@@ -8,7 +8,7 @@ export default class Information extends React.Component{
     render(){
         return(
             <div>
-                <Intro/>
+                <Intro pathParams={this.props.match.params}/>
             </div>
         )
     }
