@@ -22,7 +22,7 @@ import PaymentFail from './Payment/PaymentFail'
 import OrderConfirm from './Orders/Confirm/OrderConfirm'
 import Intro from './Information/Intro'
 
-import {Switch, HashRouter as Router, Route, Redirect,Link  } from 'react-router-dom';
+import {Switch, HashRouter as Router, Route, Redirect, Link} from 'react-router-dom';
 import createHistory from 'history/createHashHistory'
 import {Provider} from 'react-redux';
 import configureStore from '../store/configureStore';
@@ -30,23 +30,23 @@ import injectTapEventPlugin from 'react-tap-event-plugin';
 injectTapEventPlugin();
 
 
-
 let store = configureStore();
 const history = createHistory();
 
-class Main extends React.Component{
-    constructor(props){
+class Main extends React.Component {
+    constructor(props) {
         super(props)
     }
 
-    render(){
-            return(
-                <Provider store={store}>
-                    <Router history={history}>
-                        <div>
+    render() {
+        return (
+            <Provider store={store}>
+                <Router history={history}>
+                    <div>
+                        <Switch>
                             <Route path="/information/:shopId/:id" component={Intro}/>
                             <Route path="/home/:id" component={BaseOptions}/>
-                            <Route  path="/shop/:id" component={ShopPage}/>
+                            <Route path="/shop/:id" component={ShopPage}/>
                             <Route path="/search/:id" component={SearchIndex}/>
                             <Route path="/address/:id" component={AddressMain}/>
                             <Route path="/delivery" component={Delivery}/>
@@ -59,15 +59,16 @@ class Main extends React.Component{
                             <Route path="/payment/succeed" component={PaymentSuccess}/>
                             <Route path="/payment/failed" component={PaymentFail}/>
                             <Route path="/orderConfirm" component={OrderConfirm}/>
+                            <Redirect exact from="/" to="/home/index"/>
+                        </Switch>
 
-
-                        </div>
-                    </Router>
-                </Provider>
-            )
+                    </div>
+                </Router>
+            </Provider>
+        )
 
     }
 }
 
-ReactDOM.render(<Main/>,document.getElementById("app"));
+ReactDOM.render(<Main/>, document.getElementById("app"));
 
