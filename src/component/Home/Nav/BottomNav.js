@@ -23,12 +23,11 @@ class BottomNav extends React.Component {  //定义组件，也可以用React.cr
             return <Link key= {idx} to={ele.href}><BottomNavItem key={idx} index={idx} element={ele} {...this.props} actions={actions}/></Link>
         });
         return(
-            <div>
-
+            <div style={{zIndex:'3'}}>
                 {this.props.children}
-            <div className="bBox">
-                {bottomNavItems}
-            </div>
+                <div className="bBox">
+                    {bottomNavItems}
+                </div>
             </div>
         )
     }

@@ -16,14 +16,17 @@ export default class BottomNavItem extends React.Component {
     }
     handleTouch(){
         this.props.actions.getBottomNav(this.props.element.hoverSrc,this.props.index)
+        console.log(        this.props.actions.getBottomNav(this.props.element.hoverSrc,this.props.index)
+        )
     }
-    handleTouched(){
+    handleTouchMove(){
         this.props.actions.getBottomNav(this.props.element.src,this.props.index)
+        console.log(this.props.actions.getBottomNav(this.props.element.src,this.props.index))
     }
 
     render() {
         return (
-                <img className="bottomItems" src={this.props.homeReducer.bottomNavItemUrl[this.props.index]} onTouchStart={this.handleTouch.bind(this)} onTouchMove={this.handleTouched.bind(this)} />
+                <img className="bottomItems" src={this.props.homeReducer.bottomNavItemUrl[this.props.index]} onTouchStart={this.handleTouch.bind(this)} onTouchMove={this.handleTouchMove.bind(this)} onTouchEnd={this.handleTouchMove.bind(this)} />
 
         )
     }

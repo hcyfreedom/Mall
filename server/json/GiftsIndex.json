@@ -1,0 +1,27 @@
+{
+  "code": 200,
+  "msg": [
+    {
+      "id": 1,
+      "thumbnail": "/imgs/gift.png",
+      "name": "礼包商城商品1",
+      "headImg": "head",
+      "content": "礼包商城商品测试内容",
+      "cost": 1,
+      "pointValue": 1000,
+      "coinValue": 1000,
+      "telephone": "123456789"
+    },
+    {
+      "id": 2,
+      "thumbnail": "/imgs/gift.png",
+      "name": "礼包商城商品2",
+      "headImg": "head",
+      "content": "礼包商城商品测试内容2",
+      "cost": 1,
+      "pointValue": 1200,
+      "coinValue": 1300,
+      "telephone": "1234567891"
+    }
+  ]
+}

@@ -4,6 +4,7 @@
 import React from 'react';  //导入react相关模块
 import BottomNav from './Home/Nav/BottomNav'
 import Nav from './Search/Nav'
+import GiftBagMall from './GiftBag/GiftBag'
 import Slider from './Home/Slider/Slider'
 import HomePage from './Home/HomePage'
 import Selector from './Category/SlideSelector/Selector'
@@ -38,12 +39,18 @@ export default class BaseOptions extends React.Component {
 
     render() {
         let node = ()=> (
-            <div><Nav/><Slider slides={slides} time="2000"/><HomePage/></div>
+            <div><Nav location={this.props.location}/><Slider slides={slides} time="2000"/><HomePage/></div>
         );
 
         let nodeMainCate = ()=> (
-            <div><Nav/><Slider slides={slides} time="2000"/><Selector/><CateMain location = {this.props.location}/></div>
+            <div><Nav location={this.props.location}/><Slider slides={slides} time="2000"/><Selector/><CateMain location = {this.props.location}/></div>
         );
+
+        let nodeGift = () => (
+            <div><Nav location={this.props.location}/><Slider slides={slides} time="2000"/><GiftBagMall/></div>
+
+        )
+
 
         return (
                     <div>
@@ -51,6 +58,7 @@ export default class BaseOptions extends React.Component {
                             <Route path="/home/index" component={node}/>
                             <Route path="/home/cart" component={CartHomePage}/>
                             <Route path="/home/classify/:id" component={nodeMainCate}/>
+                            <Route path="/home/giftBagMall" component={nodeGift}/>
                             <Route path="/home/:id" component={nodeMainCate}/>
                         </Switch>
                         <BottomNav/>

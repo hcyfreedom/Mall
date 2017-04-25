@@ -46,7 +46,7 @@ class ShowBottom extends React.Component {
                     <div>
 
                         <div className="showBottom" onTouchTap={this.handleTouchTap.bind(this)}>
-                            <img src="/imgs/a1.png"/><span>联系客服</span>
+                            <img src="/imgs/tel.png"/><span>联系客服</span>
                         </div>
                         <Snackbar
                             open={open}

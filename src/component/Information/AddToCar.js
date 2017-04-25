@@ -38,10 +38,10 @@ class AddToCar extends React.Component{
             //成功的回调函数
             let data = res.data;
             if (data.code == 200){
-                console.log("success")
+                console.log("add to cart success")
                 actions.addGoodToCart(res.data)
             }else {
-                console.log("failed")
+                console.log("add to cart failed")
             }
         },()=>{
             //失败的回调函数
@@ -51,6 +51,8 @@ class AddToCar extends React.Component{
     render(){
         let actions = bindActionCreators(mallActions,this.props.dispatch);
         let {addToCartCount,badge} = this.props.homeReducer;
+        console.log(addToCartCount)
+        console.log(badge)
         return(
             <MuiThemeProvider>
                 <div  onClick={this.handleClick.bind(this)}>

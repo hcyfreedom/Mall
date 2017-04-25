@@ -30,7 +30,7 @@ module.exports = function (app) {
     app.use("/good/getGoodContent/*",(req,res) => {
         res.json(require('./json/GoodContent.json'))
     })
-    app.use("/shop/addGoodToCart",(req,res) => {
+    app.use("/good/addGoodToCart",(req,res) => {
         res.json(require('./json/AddGoodToCart.json'))
     })
     app.use("/good/getOrdersInCart",(req,res) => {
@@ -50,5 +50,8 @@ module.exports = function (app) {
     })
     app.use("/account/getAddress",(req,res) =>{
         res.json(require('./json/GetAddress.json'))
+    })
+    app.use("/good/getGifts",(req,res) =>{
+        res.json(require('./json/GiftsIndex.json'))
     })
 }

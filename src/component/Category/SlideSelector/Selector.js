@@ -31,13 +31,13 @@ class Selector extends React.Component{
         let actions = bindActionCreators(mallActions,this.props.dispatch);
 
          const selectorItems = classify.map((ele,id) =>{
-             return <Link to={"/home/classify/"+ele.id} key={id}><MenuItem primaryText={ele.classifyName} key={id} /></Link>
+             return <Link to={"/home/classify/"+ele.id} key={id}><MenuItem style={{fontSize:"25px",minHeight:'60px',lineHeight:'60px',paddingLeft:'12px'}} primaryText={ele.classifyName} key={id} /></Link>
         });
 
         return(
-            <MuiThemeProvider>
-                <Paper style={style}>
-                    <Menu listStyle={{}}>
+            <MuiThemeProvider >
+                <Paper style={style} >
+                    <Menu >
                         {selectorItems}
                     </Menu>
                 </Paper>
@@ -50,6 +50,7 @@ export default connect((state) => state)(Selector);
 
 const style = {
     display: 'inline-block',
-    margin: '76px 0 16px 0',
-    width:'150px'
+    margin: '116px 0 16px 0',
+    width:'180px',
+    fontSize:'25px'
 };

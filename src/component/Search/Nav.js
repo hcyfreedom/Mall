@@ -3,7 +3,8 @@
  */
 import React from 'react'
 import ReactDOM from 'react-dom';
-import { BrowserRouter as Router, Route, Redirect,Link  } from 'react-router-dom';
+import {Switch, HashRouter as Router, Route, Redirect, Link} from 'react-router-dom';
+
 export default class Nav extends React.Component{
     constructor(){
         super();
@@ -34,7 +35,8 @@ export default class Nav extends React.Component{
 
 
     render(){
-        const path = window.location.pathname;
+        const path = this.props.location.pathname;
+
        if(path=="/home/index"){
            return(
                <div style={navStyle}>

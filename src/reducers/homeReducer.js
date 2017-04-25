@@ -76,7 +76,7 @@ const initState = {
         },{
             src:'/imgs/b4.png',
             hoverSrc:'/imgs/b44.png',
-            href: '/',
+            href: '/home/giftBagMall',
         },{
             src:'/imgs/b5.png',
             hoverSrc:'/imgs/b55.png',
@@ -157,7 +157,7 @@ export default function homeReducer(state = initState, action = {}) {
 
         case "CLASSIFY" :
             clone.classify = payload.msg;
-            clone.classifyItem = payload.msg;
+            clone.classifyItem = payload.msg
             return clone;
 
         case "CLASSIFY_GOOD":

@@ -57,7 +57,7 @@ export default class ShowBlock extends React.Component{
     }
 }
 const ShareButton = {
-    position: 'absolute',
+    position: 'relative',
     right: '0',
     bottom: '0'
 }
