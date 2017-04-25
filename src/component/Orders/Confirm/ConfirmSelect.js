@@ -24,11 +24,8 @@ class ConfirmSelect extends React.Component{
 
     changeCoin(event){
         let actions = bindActionCreators(mallActions,this.props.dispatch);
-        let index = this.props.index +1;
-        if(index == this.props.ele.orderId){
             actions.changeCoin(event.target.value);
 
-        }
 
         if(event.target.value>this.props.ele.maxCoin){
             actions.changeCoin('没有那么多哦')
@@ -40,11 +37,8 @@ class ConfirmSelect extends React.Component{
     }
     changePoint(event){
         let actions = bindActionCreators(mallActions,this.props.dispatch);
-        let index = this.props.index +1;
-        if(index == this.props.ele.orderId){
             actions.changePoint(event.target.value);
 
-        }
 
         if(event.target.value>this.props.ele.maxPoint){
             actions.changePoint('没有那么多哦')
