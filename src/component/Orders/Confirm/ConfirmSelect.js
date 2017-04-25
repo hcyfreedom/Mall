@@ -39,10 +39,7 @@ class ConfirmSelect extends React.Component{
         let actions = bindActionCreators(mallActions,this.props.dispatch);
             actions.changePoint(event.target.value);
 
-<<<<<<< HEAD
-=======
 
->>>>>>> 9cc7910192dbc8ff0adfb3edef617140530fc58f
         if(event.target.value>this.props.ele.maxPoint){
             actions.changePoint('没有那么多哦')
         }
