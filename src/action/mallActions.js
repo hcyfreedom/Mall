@@ -229,3 +229,10 @@ export function getAddress(data) {
         payload:data
     }
 }
+
+export function changeReallyPrice(data) {
+    return{
+        type:'CHANGE_REALLY_PRICE',
+        payload:data
+    }
+}
