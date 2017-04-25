@@ -39,7 +39,7 @@ class ConfirmOrderItem extends React.Component{
                         </div>
                     </Link>
                     <ConfirmCount ele={this.props.ele}/>
-                   <ConfirmSelect ele={this.props.ele} onClick={() => this.props.changeSelect(this.props.ele.goodId)} />
+                   <ConfirmSelect ele={this.props.ele} index={this.props.index} onClick={() => this.props.changeSelect(this.props.ele.goodId)} />
                 </div>
             </div>
         )

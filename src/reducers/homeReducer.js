@@ -1,78 +1,80 @@
 const initState = {
-    mainPageGoods:[],
-    allProduction:[],
-    classifyFirst:[],
-    classifySecond:[],
-    classifyThird:[],
-    outstanding_shop_goods:[],
-    outstanding_shop_info:[],
-    classify:[],
-    classifyGOODS:[],
-    classifyGOODSId:[],
-    allShopItems:[],
-    bottomNavItemUrl : [],
-    hotSale:[],
-    hotSaleShopId:[],
-    shopHeadImgUrl:[],
-    shopMainGoods:[],
-    shopMainImgUrl:[],
-    shopMainShopId:[],
-    activityImgUrl:[],
-    activityShopId:[],
-    shopTel:[],
-    open:false,
-    slideIndex:0,
-    introGood:[],
-    introCode:[],
-    introGoodId:[],
-    introDetail:[],
-    introPrice:[],
-    introTsprice:[],
-    introSales:[],
-    introLow:[],
-    contentImg:[],
-    introContent:[],
-    introShopId:[],
-    introShopTel:[],
-    addToCartCount:[],
-    ordersInCart:[],
-    orderId:[],
-    orderCount:[],
-    goodCountInCart:[],
-    cartCircleIcon:{backgroundColor:"transparent"},
-    cartDelete:{display:'none'},
-    editorFlag:"编辑",
-    totalPrice:"0.00",
+    mainPageGoods: [],
+    allProduction: [],
+    classifyFirst: [],
+    classifySecond: [],
+    classifyThird: [],
+    outstanding_shop_goods: [],
+    outstanding_shop_info: [],
+    classify: [],
+    classifyGOODS: [],
+    classifyGOODSId: [],
+    allShopItems: [],
+    bottomNavItemUrl: [],
+    hotSale: [],
+    hotSaleShopId: [],
+    shopHeadImgUrl: [],
+    shopMainGoods: [],
+    shopMainImgUrl: [],
+    shopMainShopId: [],
+    activityImgUrl: [],
+    activityShopId: [],
+    shopTel: [],
+    open: false,
+    slideIndex: 0,
+    introGood: [],
+    introCode: [],
+    introGoodId: [],
+    introDetail: [],
+    introPrice: [],
+    introTsprice: [],
+    introSales: [],
+    introLow: [],
+    contentImg: [],
+    introContent: [],
+    introShopId: [],
+    introShopTel: [],
+    addToCartCount: [],
+    ordersInCart: [],
+    orderId: [],
+    orderCount: [],
+    goodCountInCart: [],
+    cartCircleIcon: {backgroundColor: "transparent"},
+    cartDelete: {display: 'none'},
+    editorFlag: "编辑",
+    totalPrice: "0.00",
     selectedID: new Set(),
-    orderList:[],
-    confirmOrders:[],
-    lastOrders:[],
-    saveCount:[],
-    selectCoin:'',
-    selectPoint:'',
-    pointRate:'',
-    coinRate:'',
-    deliveryWay:'',
-    badge:{
-        position:'absolute',
-        bottom:'20px',
-        right:'50px',
-        display:'none'
+    orderList: [],
+    confirmOrders: [],
+    lastOrders: [],
+    saveCount: [],
+    selectCoin: [],
+    selectPoint: [],
+    orderReallyPrice:[],
+    pointRate: '',
+    coinRate: '',
+    deliveryWay: '',
+    badge: {
+        position: 'absolute',
+        bottom: '20px',
+        right: '50px',
+        display: 'none'
     },
-    items : [
+    items: [
         {
-            src:'/imgs/b1.png',
-            hoverSrc:'/imgs/b11.png',
+            src: '/imgs/b1.png',
+            hoverSrc: '/imgs/b11.png',
             href: '/home/index',
         },
         {
-            src:'/imgs/b2.png',
-            hoverSrc:'/imgs/b22.png',
+            src: '/imgs/b2.png',
+            hoverSrc: '/imgs/b22.png',
             href: '/home/cate',
-        },{
-            src:'/imgs/b3.png',
-            hoverSrc:'/imgs/b33.png',
+        }, {
+            src: '/imgs/b3.png',
+            hoverSrc: '/imgs/b33.png',
             href: '/home/cart',
+<<<<<<< HEAD
         },{
             src:'/imgs/b4.png',
             hoverSrc:'/imgs/b44.png',
@@ -80,50 +82,58 @@ const initState = {
         },{
             src:'/imgs/b5.png',
             hoverSrc:'/imgs/b55.png',
+=======
+        }, {
+            src: '/imgs/b4.png',
+            hoverSrc: '/imgs/b44.png',
+            href: '/',
+        }, {
+            src: '/imgs/b5.png',
+            hoverSrc: '/imgs/b55.png',
+>>>>>>> 57bb7ff95dcc8f066699844fa23a3629e27efd2c
             href: '/wallet',
         }
     ],
-    classifyItem : [
-            ],
-     brandItem :[
+    classifyItem: [],
+    brandItem: [
         {
-            src:'../imgs/icon1.png',
-            detail:"众品联动"
-        },{
-            src:'../imgs/icon2.png',
-            detail:'品牌直供'
-        },{
-            src:'../imgs/icon3.png',
-            detail:'地道品质'
+            src: '../imgs/icon1.png',
+            detail: "众品联动"
+        }, {
+            src: '../imgs/icon2.png',
+            detail: '品牌直供'
+        }, {
+            src: '../imgs/icon3.png',
+            detail: '地道品质'
         }
 
     ],
 
-    showyouItem : [
+    showyouItem: [
         {
-            src:'../imgs/p1.png',
-            shopHref:'/shop/index'
-        },{
-            src:'../imgs/p1.png',
-            shopHref:'/shop/index'
-        },{
-            src:'../imgs/p1.png',
-            shopHref:'/shop/index'
+            src: '../imgs/p1.png',
+            shopHref: '/shop/index'
+        }, {
+            src: '../imgs/p1.png',
+            shopHref: '/shop/index'
+        }, {
+            src: '../imgs/p1.png',
+            shopHref: '/shop/index'
         }
 
     ],
-    historyItem:[
-            {
-                history:"《JavaScript高级程序设计》",
-                href:"/information/intro"
-            },
-            {
-                history:"裙子",
-                href:"/information/intro"
-            },{
-                history:"裤子",
-                href:"/information/intro"
-            }
+    historyItem: [
+        {
+            history: "《JavaScript高级程序设计》",
+            href: "/information/intro"
+        },
+        {
+            history: "裙子",
+            href: "/information/intro"
+        }, {
+            history: "裤子",
+            href: "/information/intro"
+        }
     ],
 }
 
@@ -136,7 +146,7 @@ export default function homeReducer(state = initState, action = {}) {
             return clone;
 
         case "BRAND":
-            clone.brandItem.src= payload;
+            clone.brandItem.src = payload;
             clone.brandItem.detail = payload;
             return clone;
 
@@ -151,7 +161,7 @@ export default function homeReducer(state = initState, action = {}) {
             return clone;
 
         case "CLASSIFY_BAR":
-            clone.classifyItem.src= payload;
+            clone.classifyItem.src = payload;
             clone.classifyItem.detail = payload;
             return clone;
 
@@ -216,7 +226,7 @@ export default function homeReducer(state = initState, action = {}) {
 
         case "SLIDE_INDEX":
             clone.slideIndex = payload;
-            return  clone;
+            return clone;
 
         case "MAIN_PAGE_GOODS":
             clone.mainPageGoods = payload.msg;
@@ -231,10 +241,10 @@ export default function homeReducer(state = initState, action = {}) {
         case  "ADD_TO_CART" :
             clone.addToCartCount = payload.msg['count'];
             clone.badge = {
-                position:'absolute',
-                bottom:'20px',
-                right:'50px',
-                display:'block'
+                position: 'absolute',
+                bottom: '20px',
+                right: '50px',
+                display: 'block'
             };
             return clone;
 
@@ -246,8 +256,8 @@ export default function homeReducer(state = initState, action = {}) {
             let index = payload.index;
             let count = payload.count;
             let tmp = undefined;
-            for(let i = 0;i<clone.ordersInCart.length;i++){
-                if(clone.ordersInCart[i].goodId == index){
+            for (let i = 0; i < clone.ordersInCart.length; i++) {
+                if (clone.ordersInCart[i].goodId == index) {
                     tmp = clone.ordersInCart[i];
                     break;
                 }
@@ -259,20 +269,20 @@ export default function homeReducer(state = initState, action = {}) {
         case "DELETE_AFTER":
             let deleteIndex = payload.index;
             let pointer = undefined;
-             pointer = clone.ordersInCart.filter(function (item) {
-                     return   item.goodId != deleteIndex
+            pointer = clone.ordersInCart.filter(function (item) {
+                return item.goodId != deleteIndex
 
-                })
+            })
 
             clone.ordersInCart = pointer;
             return clone;
 
         case "WILL_DELETE":
             clone.cartCircleIcon = {
-                backgroundColor:"#ee4037"
+                backgroundColor: "#ee4037"
             };
             clone.cartDelete = {
-                display:"block"
+                display: "block"
             };
             clone.editorFlag = "完成";
 
@@ -280,10 +290,10 @@ export default function homeReducer(state = initState, action = {}) {
 
         case "WILL_COMPLETE":
             clone.cartCircleIcon = {
-                backgroundColor:"transparent"
+                backgroundColor: "transparent"
             };
             clone.cartDelete = {
-                display:"none"
+                display: "none"
             };
             clone.editorFlag = "编辑";
 
@@ -308,11 +318,11 @@ export default function homeReducer(state = initState, action = {}) {
             return clone;
 
         case "CHANGE_COIN":
-            clone.selectCoin = payload;
+            clone.selectCoin[payload.index] = payload.value;
             return clone;
 
         case "CHANGE_POINT":
-            clone.selectPoint = payload;
+            clone.selectPoint[payload.index] = payload.value;
             return clone;
 
         case "GET_RATE":
@@ -323,6 +333,13 @@ export default function homeReducer(state = initState, action = {}) {
         case "GET_DELIVERY_WAY":
             clone.deliveryWay = payload[0];
             return clone;
+
+        case "CHANGE_REALLY_PRICE":
+            console.log(payload)
+            clone.orderReallyPrice[payload.index] = payload.value;
+            return clone;
+
+
     }
     return clone;
 
