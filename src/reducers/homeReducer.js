@@ -74,15 +74,7 @@ const initState = {
             src: '/imgs/b3.png',
             hoverSrc: '/imgs/b33.png',
             href: '/home/cart',
-<<<<<<< HEAD
-        },{
-            src:'/imgs/b4.png',
-            hoverSrc:'/imgs/b44.png',
-            href: '/home/giftBagMall',
-        },{
-            src:'/imgs/b5.png',
-            hoverSrc:'/imgs/b55.png',
-=======
+
         }, {
             src: '/imgs/b4.png',
             hoverSrc: '/imgs/b44.png',
@@ -90,7 +82,6 @@ const initState = {
         }, {
             src: '/imgs/b5.png',
             hoverSrc: '/imgs/b55.png',
->>>>>>> 57bb7ff95dcc8f066699844fa23a3629e27efd2c
             href: '/wallet',
         }
     ],
