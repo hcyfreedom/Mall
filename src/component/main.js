@@ -20,6 +20,7 @@ import Payment from './Payment/Payment'
 import PaymentSuccess from './Payment/PaymentSuccess'
 import PaymentFail from './Payment/PaymentFail'
 import OrderConfirm from './Orders/Confirm/OrderConfirm'
+import Intro from './Information/Intro'
 
 import {Switch, BrowserRouter as Router, Route, Redirect,Link  } from 'react-router-dom';
 import createHistory from 'history/createBrowserHistory'
@@ -43,9 +44,9 @@ class Main extends React.Component{
                 <Provider store={store}>
                     <Router history={history}>
                         <div>
-                            <Route path="/home/:id/:others" component={BaseOptions}/>
+                            <Route path="/information/:shopId/:id" component={Intro}/>
+                            <Route path="/home/:id" component={BaseOptions}/>
                             <Route  path="/shop/:id" component={ShopPage}/>
-                            <Route path="/information/:shopId/:id" component={Information}/>
                             <Route path="/search/:id" component={SearchIndex}/>
                             <Route path="/address/:id" component={AddressMain}/>
                             <Route path="/delivery" component={Delivery}/>
@@ -53,7 +54,7 @@ class Main extends React.Component{
                             <Route path="/wallet" component={Wallet}/>
                             <Route exact path="/person" component={PersonalSetting}/>
                             <Route path="/person/pass" component={ModifyLogPass}/>
-                            <Route path="/persohn/phone" component={ModifyPhoneVeri}/>
+                            <Route path="/person/phone" component={ModifyPhoneVeri}/>
                             <Route exact path="/payment" component={Payment}/>
                             <Route path="/payment/succeed" component={PaymentSuccess}/>
                             <Route path="/payment/failed" component={PaymentFail}/>

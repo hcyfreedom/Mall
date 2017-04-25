@@ -9,6 +9,9 @@ import HomePage from './Home/HomePage'
 import Selector from './Category/SlideSelector/Selector'
 import CateMain from './Category/CatePart/CateMain'
 import {BrowserRouter as Router, Route, Switch,Redirect, Link} from 'react-router-dom';
+import createHistory from 'history/createBrowserHistory'
+
+const history = createHistory()
 
 import CartHomePage from './Cart/CartHomePage'
 let slides = [{
@@ -34,17 +37,16 @@ export default class BaseOptions extends React.Component {
     }
 
     render() {
+        console.log(this.props)
         let node = ()=> (
             <div><Nav/><Slider slides={slides} time="2000"/><HomePage/></div>
         );
 
         let nodeMainCate = ()=> (
-            <div><Nav/><Slider slides={slides} time="2000"/><Selector/><CateMain /></div>
+            <div><Nav/><Slider slides={slides} time="2000"/><Selector/><CateMain location = {this.props.location}/></div>
         );
 
         return (
-            <div>
-                <Router history={this.props.history}>
                     <div>
                         <Switch>
                             <Route path="/home/index" component={node}/>
@@ -54,8 +56,6 @@ export default class BaseOptions extends React.Component {
                             <BottomNav/>
                         </Switch>
                     </div>
-                </Router>
-            </div>
         )
 
 

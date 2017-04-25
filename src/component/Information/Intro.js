@@ -22,11 +22,12 @@ import * as mallActions from '../../action/mallActions'
 class Intro extends React.Component{
     constructor(props){
         super(props);
-
+        console.log("constructor")
     }
-    componentWillMount(){
+    componentDidMount(){
+        console.log("mounted")
         let actions = bindActionCreators(mallActions,this.props.dispatch);
-        let pathName =this.props.pathParams.id;
+        let pathName =this.props.match.params.id;
         get('/good/getGoodContent/'+pathName,(res) => {
             //成功的回调函数
             let data = res.data;
@@ -59,9 +60,7 @@ class Intro extends React.Component{
         window.history.go(-1)
     }
     render(){
-        console.log(this.props)
-
-        let actions = bindActionCreators(mallActions,this.props.dispatch);
+        console.log("render")
         let {introDetail,slideIndex,contentImg,introContent,introShopId,introPrice,introTsprice,introSales,introLow,introShopTel,open} = this.props.homeReducer;
         return(
             <MuiThemeProvider>
