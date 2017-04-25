@@ -15,7 +15,6 @@ module.exports = {
                 }
                 if(res.data.code && res.data.code !== 200){
                     failCallback&&failCallback(res);
-                    gritter.error(res.data.msg);
                     return;
                 }
                 callback(res);

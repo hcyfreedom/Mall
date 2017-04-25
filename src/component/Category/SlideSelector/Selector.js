@@ -32,7 +32,7 @@ class Selector extends React.Component{
         let actions = bindActionCreators(mallActions,this.props.dispatch);
 
          const selectorItems = classify.map((ele,id) =>{
-             return <Link to={"/home/classify"+ele.id} key={id}><MenuItem primaryText={ele.classifyName} key={id} /></Link>
+             return <Link to={"/home/classify/"+ele.id} key={id}><MenuItem primaryText={ele.classifyName} key={id} /></Link>
         });
 
         return(

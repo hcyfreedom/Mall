@@ -30,7 +30,7 @@ class AddToCar extends React.Component{
         let path = window.location.pathname;
         let goodId = path.split("/")[3];
 
-        post('/shop/addGoodToCart',{
+        post('/good/addGoodToCart',{
             //req没有 就不用传 否则就
             //goodId:xxx 一个js对象
             goodId:goodId

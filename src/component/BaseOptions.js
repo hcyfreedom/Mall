@@ -8,70 +8,53 @@ import Slider from './Home/Slider/Slider'
 import HomePage from './Home/HomePage'
 import Selector from './Category/SlideSelector/Selector'
 import CateMain from './Category/CatePart/CateMain'
+import {BrowserRouter as Router, Route, Switch,Redirect, Link} from 'react-router-dom';
+
 import CartHomePage from './Cart/CartHomePage'
-let  slides = [{
+let slides = [{
     background: "../imgs/1.jpg",
-    link:"www.baidu.com"
+    link: "www.baidu.com"
 }, {
     background: "../imgs/a2.png",
-    link:"www.baidu.com"
+    link: "www.baidu.com"
 }, {
     background: "../imgs/3.jpg",
-    link:"www.baidu.com"
-},{
+    link: "www.baidu.com"
+}, {
     background: "../imgs/4.jpg",
-    link:"www.baidu.com"
-},{
-    background:'../imgs/a1.png',
-    link:"www.baidu.com"
+    link: "www.baidu.com"
+}, {
+    background: '../imgs/a1.png',
+    link: "www.baidu.com"
 }];
 
-export default class BaseOptions extends React.Component{
-    constructor(props){
+export default class BaseOptions extends React.Component {
+    constructor(props) {
         super(props);
     }
-    render(){
 
-        let Node = React.createClass({
-            render(){
-                return(
-                    <div></div>
-                )
-            }
-        })
-        if(this.props.match.params.id == "index"){
+    render() {
+        let node = ()=> (
+            <div><Nav/><Slider slides={slides} time="2000"/><HomePage/></div>
+        );
 
-          Node = React.createClass({
-                render(){
+        let nodeMainCate = ()=> (
+            <div><Nav/><Slider slides={slides} time="2000"/><Selector/><CateMain /></div>
+        );
 
-                    return <div><Nav/><Slider slides = {slides} time="2000"/><HomePage/></div>
-                }
-            })
-
-        }else if(this.props.match.params.id == "cart"){
-            Node = React.createClass({
-                render(){
-                    return <CartHomePage/>
-                }
-            })
-        }
-
-
-
-        else {
-            Node = React.createClass({
-                render(){
-                    return  <div><Nav/><Slider slides = {slides} time="2000"/><Selector/><CateMain/></div>
-                }
-            })
-
-        }
-
-
-        return(
+        return (
             <div>
-                <Node/>
-                <BottomNav/>
+                <Router history={this.props.history}>
+                    <div>
+                        <Switch>
+                            <Route path="/home/index" component={node}/>
+                            <Route path="/home/cart" component={CartHomePage}/>
+                            <Route path="/home/classify/:id" component={nodeMainCate}/>
+                            <Route path="/home/:id" component={nodeMainCate}/>
+                            <BottomNav/>
+                        </Switch>
+                    </div>
+                </Router>
             </div>
         )
 

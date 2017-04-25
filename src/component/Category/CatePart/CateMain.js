@@ -16,6 +16,8 @@ class CateMain extends React.Component{
     }
     componentDidMount (){
         let actions = bindActionCreators(mallActions,this.props.dispatch);
+        console.log(this.props.match)
+
         get('/classify/getGoods?'+classifyGOODSId,(res) => {
             actions.getClassifyGood(res.data);
         })

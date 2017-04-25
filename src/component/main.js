@@ -21,7 +21,7 @@ import PaymentSuccess from './Payment/PaymentSuccess'
 import PaymentFail from './Payment/PaymentFail'
 import OrderConfirm from './Orders/Confirm/OrderConfirm'
 
-import { BrowserRouter as Router, Route, Redirect,Link  } from 'react-router-dom';
+import {Switch, BrowserRouter as Router, Route, Redirect,Link  } from 'react-router-dom';
 import createHistory from 'history/createBrowserHistory'
 import {Provider} from 'react-redux';
 import configureStore from '../store/configureStore';
@@ -43,7 +43,7 @@ class Main extends React.Component{
                 <Provider store={store}>
                     <Router history={history}>
                         <div>
-                            <Route path="/home/:id" component={BaseOptions}/>
+                            <Route path="/home/:id/:others" component={BaseOptions}/>
                             <Route  path="/shop/:id" component={ShopPage}/>
                             <Route path="/information/:shopId/:id" component={Information}/>
                             <Route path="/search/:id" component={SearchIndex}/>
@@ -60,8 +60,6 @@ class Main extends React.Component{
                             <Route path="/orderConfirm" component={OrderConfirm}/>
 
 
-
-                            {/*<Redirect exact from="/" to="/home/index"/>*/}
                         </div>
                     </Router>
                 </Provider>

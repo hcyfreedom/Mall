@@ -1,1 +1,0 @@
-{"version":3,"sources":["api.js"],"names":[],"mappings":"AAAA,OAAO,OAAP,GAAiB,UAAU,GAAV,EAAe;AAC5B,YAAQ,eAAR,EAAyB,GAAzB;AACH,CAFD","file":"api-compiled.js","sourcesContent":["module.exports = function (app) {\n    require('./checkRecord')(app)\n};\n"]}
