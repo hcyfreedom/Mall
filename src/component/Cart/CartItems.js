@@ -23,7 +23,7 @@ class CartItems extends React.Component{
         let index = this.props.index;
 
         const plusCount = this.props.ele.goodCount + 1;
-        post('/good/changeOrderCount/'+this.props.ele.goodId,{
+        post('/good/changeOrderCount/'+this.props.ele.orderId,{
             //req没有 就不用传 否则就
             //goodId:xxx 一个js对象
             count: plusCount
@@ -70,7 +70,7 @@ class CartItems extends React.Component{
 
 
             const subCount = this.props.ele.goodCount - 1;
-            post('/good/changeOrderCount/'+this.props.ele.goodId,{
+            post('/good/changeOrderCount/'+this.props.ele.orderId,{
                 //req没有 就不用传 否则就
                 //goodId:xxx 一个js对象
                 count: subCount

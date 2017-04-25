@@ -17,8 +17,8 @@ export default class  HomePage extends React.Component{
                 <ClassifyBar/>
                 <Advertising/>
                 <Suspension/>
-                <ShowYOU/>
-                <ShowBAO/>
+                {/*<ShowYOU/>*/}
+                {/*<ShowBAO/>*/}
             </div>
         )
     }
