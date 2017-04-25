@@ -38,7 +38,7 @@ class Selector extends React.Component{
         return(
             <MuiThemeProvider>
                 <Paper style={style}>
-                    <Menu>
+                    <Menu listStyle={{}}>
                         {selectorItems}
                     </Menu>
                 </Paper>
@@ -51,6 +51,6 @@ export default connect((state) => state)(Selector);
 
 const style = {
     display: 'inline-block',
-    margin: '76px 32px 16px 0',
-    width:'100px'
+    margin: '76px 0 16px 0',
+    width:'150px'
 };
