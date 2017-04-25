@@ -16,38 +16,6 @@ import {get} from "../../../http/http"
 import * as mallActions from '../../../action/mallActions'
 class OrderConfirm extends React.Component{
     handleGoBack(){
-//         let actions = bindActionCreators(mallActions,this.props.dispatch);
-//         actions.targetOrders();
-//         let {confirmOrders} = this.props.homeReducer;
-//         let orderIds =[];
-//         for(let i = 0;i<confirmOrders.length;i++){
-//             for(let key in confirmOrders[i]){
-//                 orderIds.push(confirmOrders[i].orderId)
-//             }
-//         }
-//         let orderIdList = [];
-//         const s = new Set();
-//         orderIds.forEach(item => s.add(item));
-//         for(let i of s){
-//             orderIdList.push(i);
-//         }
-// console.log(orderIdList)
-//         post('/good/abandonOrder',{
-//             //req没有 就不用传 否则就
-//             //goodId:xxx 一个js对象
-//             orderIds:orderIdList
-//
-//         },(res) => {
-//             //成功的回调函数
-//             let data = res.data;
-//             if (data.code == 200){
-//                 console.log("success")
-//             }else {
-//                 console.log("failed")
-//             }
-//         },()=>{
-//             //失败的回调函数
-//         })
         window.history.go(-1)
     }
 
