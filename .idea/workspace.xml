@@ -2,8 +2,23 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="60115ae9-4845-4b67-b104-5edd896d89a6" name="Default" comment="">
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/.gitignore" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/imgs/cc1.png" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/imgs/cc2.png" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/imgs/cc3.png" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/imgs/cc4.png" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/imgs/cc5.png" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/gitignore.patch" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.gitignore" afterPath="$PROJECT_DIR$/.gitignore" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/css/common.css" afterPath="$PROJECT_DIR$/css/common.css" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/server/json/Classify.json" afterPath="$PROJECT_DIR$/server/json/Classify.json" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/component/BaseOptions.js" afterPath="$PROJECT_DIR$/src/component/BaseOptions.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/component/Category/CatePart/CateMain.js" afterPath="$PROJECT_DIR$/src/component/Category/CatePart/CateMain.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/component/Category/SlideSelector/Selector.js" afterPath="$PROJECT_DIR$/src/component/Category/SlideSelector/Selector.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/component/Home/ClassifyBar/ClassifyBar.js" afterPath="$PROJECT_DIR$/src/component/Home/ClassifyBar/ClassifyBar.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/component/Home/ClassifyBar/ClassifyBarItem.js" afterPath="$PROJECT_DIR$/src/component/Home/ClassifyBar/ClassifyBarItem.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/component/Home/HomePage.js" afterPath="$PROJECT_DIR$/src/component/Home/HomePage.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/component/Orders/Confirm/ConfirmSelect.js" afterPath="$PROJECT_DIR$/src/component/Orders/Confirm/ConfirmSelect.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/reducers/homeReducer.js" afterPath="$PROJECT_DIR$/src/reducers/homeReducer.js" />
     </list>
     <ignored path="Mall.iws" />
     <ignored path=".idea/workspace.xml" />
@@ -41,7 +56,7 @@
         <entry file="file://$PROJECT_DIR$/src/component/BaseOptions.js">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="1204">
-              <caret line="52" column="69" selection-start-line="52" selection-start-column="69" selection-end-line="52" selection-end-column="69" />
+              <caret line="50" column="69" selection-start-line="50" selection-start-column="69" selection-end-line="50" selection-end-column="69" />
               <folding>
                 <element signature="e#81#125#0" expanded="true" />
               </folding>
@@ -64,8 +79,8 @@
       <file leaf-file-name=".gitignore" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/.gitignore">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="84">
-              <caret line="3" column="0" selection-start-line="3" selection-start-column="0" selection-end-line="3" selection-end-column="0" />
+            <state relative-caret-position="112">
+              <caret line="4" column="0" selection-start-line="4" selection-start-column="0" selection-end-line="4" selection-end-column="0" />
               <folding />
             </state>
           </provider>
@@ -98,9 +113,20 @@
         <entry file="file://$PROJECT_DIR$/src/component/Orders/Confirm/ConfirmSelect.js">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="924">
-              <caret line="41" column="0" selection-start-line="41" selection-start-column="0" selection-end-line="41" selection-end-column="0" />
+              <caret line="45" column="0" selection-start-line="45" selection-start-column="0" selection-end-line="45" selection-end-column="0" />
               <folding>
-                <element signature="n#!!doc" expanded="true" />
+                <marker date="1493109137000" expanded="true" signature="0:39" ph="/** Created by hcy on 2017/4/22. ...*/" />
+                <marker date="1493109137000" expanded="true" signature="1005:1420" ph="{...}" />
+                <marker date="1493109137000" expanded="true" signature="1261:1314" ph="{...}" />
+                <marker date="1493109137000" expanded="true" signature="1323:1413" ph="//..." />
+                <marker date="1493109137000" expanded="true" signature="1434:2683" ph="{...}" />
+                <marker date="1493109137000" expanded="true" signature="1782:2667" ph="&lt;xml/&gt;" />
+                <marker date="1493109137000" expanded="true" signature="1803:2534" ph="&lt;xml/&gt;" />
+                <marker date="1493109137000" expanded="true" signature="1850:2169" ph="&lt;xml/&gt;" />
+                <marker date="1493109137000" expanded="true" signature="1899:1960" ph="&lt;xml/&gt;" />
+                <marker date="1493109137000" expanded="true" signature="2190:2512" ph="&lt;xml/&gt;" />
+                <marker date="1493109137000" expanded="true" signature="2239:2300" ph="&lt;xml/&gt;" />
+                <marker date="1493109137000" expanded="true" signature="2550:2649" ph="&lt;xml/&gt;" />
               </folding>
             </state>
           </provider>
@@ -109,9 +135,11 @@
       <file leaf-file-name="homeReducer.js" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/reducers/homeReducer.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="7196">
-              <caret line="257" column="26" selection-start-line="257" selection-start-column="26" selection-end-line="257" selection-end-column="26" />
-              <folding />
+            <state relative-caret-position="6748">
+              <caret line="241" column="26" selection-start-line="241" selection-start-column="26" selection-end-line="241" selection-end-column="26" />
+              <folding>
+                <marker date="1493109137000" expanded="true" signature="3733:8841" ph="{...}" />
+              </folding>
             </state>
           </provider>
         </entry>
@@ -460,16 +488,16 @@
       <workItem from="1492934580307" duration="4453000" />
       <workItem from="1492940749257" duration="9000" />
       <workItem from="1492940774756" duration="13491000" />
-      <workItem from="1493108717248" duration="292000" />
+      <workItem from="1493108717248" duration="395000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="18245000" />
+    <option name="totallyTimeSpent" value="18348000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="0" y="23" width="1440" height="793" extended-state="6" />
-    <editor active="false" />
+    <editor active="true" />
     <layout>
       <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.24947146" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
@@ -477,7 +505,7 @@
       <window_info id="npm" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="true" content_ui="tabs" />
       <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
-      <window_info id="Terminal" active="true" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.33238232" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
+      <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.33238232" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Favorites" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="true" content_ui="tabs" />
       <window_info id="Cvs" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
       <window_info id="Message" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
@@ -812,9 +840,11 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/src/reducers/homeReducer.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="7196">
-          <caret line="257" column="26" selection-start-line="257" selection-start-column="26" selection-end-line="257" selection-end-column="26" />
-          <folding />
+        <state relative-caret-position="6748">
+          <caret line="241" column="26" selection-start-line="241" selection-start-column="26" selection-end-line="241" selection-end-column="26" />
+          <folding>
+            <marker date="1493109137000" expanded="true" signature="3733:8841" ph="{...}" />
+          </folding>
         </state>
       </provider>
     </entry>
@@ -829,7 +859,7 @@
     <entry file="file://$PROJECT_DIR$/src/component/BaseOptions.js">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="1204">
-          <caret line="52" column="69" selection-start-line="52" selection-start-column="69" selection-end-line="52" selection-end-column="69" />
+          <caret line="50" column="69" selection-start-line="50" selection-start-column="69" selection-end-line="50" selection-end-column="69" />
           <folding>
             <element signature="e#81#125#0" expanded="true" />
           </folding>
@@ -847,9 +877,20 @@
     <entry file="file://$PROJECT_DIR$/src/component/Orders/Confirm/ConfirmSelect.js">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="924">
-          <caret line="41" column="0" selection-start-line="41" selection-start-column="0" selection-end-line="41" selection-end-column="0" />
+          <caret line="45" column="0" selection-start-line="45" selection-start-column="0" selection-end-line="45" selection-end-column="0" />
           <folding>
-            <element signature="n#!!doc" expanded="true" />
+            <marker date="1493109137000" expanded="true" signature="0:39" ph="/** Created by hcy on 2017/4/22. ...*/" />
+            <marker date="1493109137000" expanded="true" signature="1005:1420" ph="{...}" />
+            <marker date="1493109137000" expanded="true" signature="1261:1314" ph="{...}" />
+            <marker date="1493109137000" expanded="true" signature="1323:1413" ph="//..." />
+            <marker date="1493109137000" expanded="true" signature="1434:2683" ph="{...}" />
+            <marker date="1493109137000" expanded="true" signature="1782:2667" ph="&lt;xml/&gt;" />
+            <marker date="1493109137000" expanded="true" signature="1803:2534" ph="&lt;xml/&gt;" />
+            <marker date="1493109137000" expanded="true" signature="1850:2169" ph="&lt;xml/&gt;" />
+            <marker date="1493109137000" expanded="true" signature="1899:1960" ph="&lt;xml/&gt;" />
+            <marker date="1493109137000" expanded="true" signature="2190:2512" ph="&lt;xml/&gt;" />
+            <marker date="1493109137000" expanded="true" signature="2239:2300" ph="&lt;xml/&gt;" />
+            <marker date="1493109137000" expanded="true" signature="2550:2649" ph="&lt;xml/&gt;" />
           </folding>
         </state>
       </provider>
@@ -896,8 +937,8 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/.gitignore">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="84">
-          <caret line="3" column="0" selection-start-line="3" selection-start-column="0" selection-end-line="3" selection-end-column="0" />
+        <state relative-caret-position="112">
+          <caret line="4" column="0" selection-start-line="4" selection-start-column="0" selection-end-line="4" selection-end-column="0" />
           <folding />
         </state>
       </provider>

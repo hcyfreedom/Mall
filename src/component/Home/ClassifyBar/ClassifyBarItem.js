@@ -7,17 +7,14 @@ export default class ClassifyItem extends React.Component {
         super(props)
     }
 
-    componentWillMount() {
-        this.props.actions.getClassifyBar(this.props.src.src,this.props.src.detail,this.props.index)
-    }
-
-
     render() {
         return (
-            <span className="classifyIcon">
-                <img src={this.props.src.src}/>
-                <p>{this.props.src.detail}</p>
-            </span>
+           <div>
+               <div className="classifyIcon">
+                   <img src={this.props.src.classifyImg}/>
+               </div>
+               <p className="classifyIconP">{this.props.src.classifyName}</p>
+           </div>
         )
     }
 }

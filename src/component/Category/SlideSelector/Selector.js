@@ -17,12 +17,11 @@ class Selector extends React.Component{
     constructor(props){
         super(props)
     }
-    componentWillMount(){
+    componentDidMount(){
         let actions = bindActionCreators(mallActions,this.props.dispatch);
         get('/main/getClassify',(res) => {
             actions.getClassify(res.data)
         })
-
     }
 
 
