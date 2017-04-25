@@ -2,16 +2,54 @@
   "code": 200,
   "msg": [
     {
-      "id": 0,
-      "classifyName": "优品牌"
-    },
-   {
       "id": 1,
-      "classifyName": "保健品"
+      "classifyName": "保健品",
+      "classifyImg":"/imgs/cc1.png"
     },
     {
       "id": 2,
-      "classifyName": "美容产品"
+      "classifyName": "美容产品",
+      "classifyImg":"/imgs/cc1.png"
+    },
+    {
+      "id": 3,
+      "classifyName": "美容产品",
+      "classifyImg":"/imgs/cc1.png"
+    },
+    {
+      "id": 4,
+      "classifyName": "美容产品",
+      "classifyImg":"/imgs/cc2.png"
+    },
+    {
+      "id": 5,
+      "classifyName": "美容产品",
+      "classifyImg":"/imgs/cc3.png"
+    },
+    {
+      "id": 6,
+      "classifyName": "美容产品",
+      "classifyImg":"/imgs/cc4.png"
+    },
+    {
+      "id": 7,
+      "classifyName": "美容产品",
+      "classifyImg":"/imgs/cc5.png"
+    },
+    {
+      "id": 8,
+      "classifyName": "美容产品",
+      "classifyImg":"/imgs/cc5.png"
+    },
+    {
+      "id": 9,
+      "classifyName": "美容产品",
+      "classifyImg":"/imgs/cc5.png"
+    },
+    {
+      "id": 10,
+      "classifyName": "美容产品",
+      "classifyImg":"/imgs/cc5.png"
     }
   ]
 }

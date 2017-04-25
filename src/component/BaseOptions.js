@@ -37,7 +37,6 @@ export default class BaseOptions extends React.Component {
     }
 
     render() {
-        console.log(this.props)
         let node = ()=> (
             <div><Nav/><Slider slides={slides} time="2000"/><HomePage/></div>
         );

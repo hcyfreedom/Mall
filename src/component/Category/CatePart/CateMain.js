@@ -21,7 +21,6 @@ class CateMain extends React.Component{
         let classifyId = path[path.length-1];
         if(classifyId == "cate")
             classifyId = 0;
-        console.log(classifyId);
         get('/classify/getGoods?'+classifyId,(res) => {
             actions.getClassifyGood(res.data);
         })

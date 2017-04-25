@@ -84,24 +84,7 @@ const initState = {
         }
     ],
     classifyItem : [
-        {
-            src:'../imgs/c1.png',
-            detail:"优品牌"
-        },{
-            src:'../imgs/c2.png',
-            detail:'保健坊'
-        },{
-            src:'../imgs/c3.png',
-            detail:'美容产品'
-        },{
-            src:'../imgs/c4.png',
-            detail:'百货'
-        },{
-            src:'../imgs/c5.png',
-            detail:'全部'
-        }
-
-    ],
+            ],
      brandItem :[
         {
             src:'../imgs/icon1.png',
@@ -174,6 +157,7 @@ export default function homeReducer(state = initState, action = {}) {
 
         case "CLASSIFY" :
             clone.classify = payload.msg;
+            clone.classifyItem = payload.msg;
             return clone;
 
         case "CLASSIFY_GOOD":
