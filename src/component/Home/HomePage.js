@@ -10,6 +10,7 @@ import ShowYOU from './ShowHome/ShowYOU'
 import ShowBAO from './ShowHome/ShowBAO'
 export default class  HomePage extends React.Component{
     render(){
+        console.log("render home")
         return(
             <div>
                 <Brand/>
