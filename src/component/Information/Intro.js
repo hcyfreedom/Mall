@@ -59,6 +59,12 @@ class Intro extends React.Component{
     handleClick(){
         window.history.go(-1)
     }
+
+    handleOnClick(){
+        let {introShopTel} = this.props.homeReducer;
+        alert(introShopTel)
+    }
+
     render(){
         console.log("render")
         let {introDetail,slideIndex,contentImg,introContent,introShopId,introPrice,introTsprice,introSales,introLow,introShopTel,open} = this.props.homeReducer;
@@ -102,20 +108,13 @@ class Intro extends React.Component{
                         </SwipeableViews>
                     </div>
                     <div style={{position:'fixed',bottom:'0',width:'100%',height:'100px',backgroundColor:"grey",fontSize:'20px'}}>
-                        <div style={{width:'25%',backgroundColor:'#E5E5E5',height:'100%',float:'left',textAlign:'center'}} onTouchTap={this.handleTouchTap.bind(this)}>
-                            <img src="/imgs/1.jpg" style={{width:'40px',height:'40px',marginTop:'20px'}}/>
+                        <div onTouchStart={this.handleOnClick.bind(this)} style={{width:'25%',backgroundColor:'#E5E5E5',height:'100%',float:'left',textAlign:'center'}} onTouchTap={this.handleTouchTap.bind(this)}>
+                            <img src="/imgs/phone.png" style={{width:'40px',height:'40px',marginTop:'20px'}}/>
                             <p>联系</p>
                         </div>
-                        <Snackbar
-                            open={open}
-                            message={introShopTel}
-                            autoHideDuration={4000}
-                            onRequestClose={this.handleRequestClose.bind(this)}
-                            style={{textAlign:'center'}}
-                        />
                         <Link to={"/shop/"+introShopId}>
                             <div style={{width:'25%',backgroundColor:'#E5E5E5',height:'100%',float:'left',textAlign:'center'}}>
-                                <img src="/imgs/1.jpg" style={{width:'40px',height:'40px',marginTop:'20px'}}/>
+                                <img src="/imgs/shopIcon.png" style={{width:'40px',height:'40px',marginTop:'20px'}}/>
                                 <p>店铺</p>
                             </div>
                         </Link>

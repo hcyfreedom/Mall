@@ -27,9 +27,16 @@ class  GiftBag extends React.Component{
             console.log(ele)
             return <GiftBagItems ele={ele} key={id}/>
         })
+        const listContainer = [];
+
+        for(let i = 0;i < items.length; i= i +2){
+
+            listContainer.push(<div key={i} className="gRow" style={{justifyContent:'space-around'}}>{items.slice(i,i+2)}</div>) ;
+        }
+
         return(
-            <div style={{}}>
-                {items}
+            <div style={{position:'relative',top:'100px',marginBottom:'120px'}}>
+                {listContainer}
             </div>
         )
     }

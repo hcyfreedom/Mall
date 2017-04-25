@@ -7,3 +7,10 @@ export function getGiftsIndex(data) {
         payload:data
     }
 }
+
+export function getGiftsDetail(data) {
+    return{
+        type:"GET_GIFTS_DETAIL",
+        payload:data
+    }
+}

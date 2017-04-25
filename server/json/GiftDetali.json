@@ -1,0 +1,14 @@
+{
+  "code": 200,
+  "msg": {
+    "id": 1,
+    "thumbnail": "imgthumb1",
+    "name": "礼包商城商品1",
+    "headImg": "/imgs/giftHead.png",
+    "content": "礼包商城商品测试内容",
+    "cost": 1,
+    "pointValue": 1000,
+    "coinValue": 1000,
+    "telephone": "123456789"
+  }
+}

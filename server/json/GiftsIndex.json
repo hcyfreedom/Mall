@@ -22,6 +22,50 @@
       "pointValue": 1200,
       "coinValue": 1300,
       "telephone": "1234567891"
+    },
+    {
+      "id": 3,
+      "thumbnail": "/imgs/gift.png",
+      "name": "礼包商城商品2",
+      "headImg": "head",
+      "content": "礼包商城商品测试内容2",
+      "cost": 1,
+      "pointValue": 1200,
+      "coinValue": 1300,
+      "telephone": "1234567891"
+    },
+    {
+      "id": 4,
+      "thumbnail": "/imgs/gift.png",
+      "name": "礼包商城商品2",
+      "headImg": "head",
+      "content": "礼包商城商品测试内容2",
+      "cost": 1,
+      "pointValue": 1200,
+      "coinValue": 1300,
+      "telephone": "1234567891"
+    },
+    {
+      "id": 5,
+      "thumbnail": "/imgs/gift.png",
+      "name": "礼包商城商品2",
+      "headImg": "head",
+      "content": "礼包商城商品测试内容5",
+      "cost": 1,
+      "pointValue": 1200,
+      "coinValue": 1300,
+      "telephone": "1234567891"
+    },
+    {
+      "id": 6,
+      "thumbnail": "/imgs/gift.png",
+      "name": "礼包商城商品2",
+      "headImg": "head",
+      "content": "礼包商城商品测试内容5",
+      "cost": 1,
+      "pointValue": 1200,
+      "coinValue": 1300,
+      "telephone": "1234567891"
     }
   ]
 }

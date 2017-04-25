@@ -54,4 +54,7 @@ module.exports = function (app) {
     app.use("/good/getGifts",(req,res) =>{
         res.json(require('./json/GiftsIndex.json'))
     })
+    app.use("/good/getGift/*",(req,res) =>{
+        res.json(require('./json/GiftDetali.json'))
+    })
 }

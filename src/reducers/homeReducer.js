@@ -78,7 +78,7 @@ const initState = {
         }, {
             src: '/imgs/b4.png',
             hoverSrc: '/imgs/b44.png',
-            href: '/',
+            href: '/home/giftBagMall',
         }, {
             src: '/imgs/b5.png',
             hoverSrc: '/imgs/b55.png',

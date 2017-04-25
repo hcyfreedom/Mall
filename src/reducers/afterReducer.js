@@ -4,7 +4,7 @@
 const initState = {
     allAddress:[],
     giftsEle:[],
-
+    giftsDetail:[],
 }
 
 export default function afterReducer(state = initState, action = {}) {
@@ -17,6 +17,10 @@ export default function afterReducer(state = initState, action = {}) {
 
         case "GET_GIFTS_INDEX":
             clone.giftsEle = payload.msg;
+            return clone;
+
+        case "GET_GIFTS_DETAIL":
+            clone.giftsDetail = payload.msg;
             return clone;
     }
     return clone;
