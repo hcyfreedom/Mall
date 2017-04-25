@@ -3,7 +3,6 @@
  */
 import React from 'react'
 import Intro from './Information/Intro'
-import IntroBottom from './Information/IntroBottom'
 export default class Information extends React.Component{
     render(){
         return(

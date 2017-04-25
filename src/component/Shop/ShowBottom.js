@@ -27,39 +27,23 @@ class ShowBottom extends React.Component {
         })
 
     }
-    handleTouchTap(){
-        let actions = bindActionCreators(mallActions, this.props.dispatch);
-        actions.changeOpenTrue()
-    };
+    handleOnClick(){
 
-    handleRequestClose(){
-        let actions = bindActionCreators(mallActions, this.props.dispatch);
-        actions.changeOpenFalse();
-    };
+        let {shopTel} = this.props.homeReducer;
+        let actions = bindActionCreators(mallActions,this.props.dispatch)
+        alert(shopTel)
+    }
 
     render() {
-        let {shopTel,open} = this.props.homeReducer;
-        let actions = bindActionCreators(mallActions,this.props.dispatch)
 
             return (
-                <MuiThemeProvider>
                     <div>
 
-                        <div className="showBottom" onTouchTap={this.handleTouchTap.bind(this)}>
+                        <div className="showBottom" onTouchStart={this.handleOnClick.bind(this)}>
                             <img src="/imgs/tel.png"/><span>联系客服</span>
                         </div>
-                        <Snackbar
-                            open={open}
-                            message={shopTel}
-                            autoHideDuration={4000}
-                            onRequestClose={this.handleRequestClose.bind(this)}
-                            style={{textAlign:'center'}}
-                        />
                     </div>
-                </MuiThemeProvider>
             );
-
-
 
     }
 }
