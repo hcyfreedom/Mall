@@ -50,7 +50,7 @@ const initState = {
     saveCount: [],
     selectCoin: [],
     selectPoint: [],
-    orderReallyPrice:[],
+    orderReallyPrice: [],
     pointRate: '',
     coinRate: '',
     deliveryWay: '',
@@ -126,6 +126,9 @@ const initState = {
             href: "/information/intro"
         }
     ],
+    addressToEdit: {
+        status: 0
+    }
 }
 
 export default function homeReducer(state = initState, action = {}) {
@@ -330,6 +333,13 @@ export default function homeReducer(state = initState, action = {}) {
             clone.orderReallyPrice[payload.index] = payload.value;
             return clone;
 
+        case "GET_ADDRESS":
+            clone.addressToEdit = payload
+            return clone;
+
+        case "CHANGE_ADDRESS":
+            clone.addressToEdit[payload.index] = payload.value
+            return clone
 
     }
     return clone;

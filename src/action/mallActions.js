@@ -236,3 +236,17 @@ export function changeReallyPrice(data) {
         payload:data
     }
 }
+
+export function getAddressToEdit(data) {
+    return{
+        type:'GET_ADDRESS',
+        payload:data
+    }
+}
+
+export function changeAddressToEdit(data) {
+    return{
+        type:'CHANGE_ADDRESS',
+        payload:data
+    }
+}

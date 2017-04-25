@@ -14,6 +14,8 @@ export default class AddressMain extends React.Component{
                 )
             }
         })
+        console.log(this.props)
+
         if(this.props.match.params.id == "manage"){
 
             Node = React.createClass({
@@ -24,9 +26,10 @@ export default class AddressMain extends React.Component{
             })
 
         }else {
+            let location = this.props.location;
             Node = React.createClass({
                 render(){
-                    return <AddressEditor/>
+                    return <AddressEditor location = {location}/>
                 }
             })
         }
