@@ -4,47 +4,70 @@
 import React from 'react'
 import ReactDOM from 'react-dom';
 import {Switch, BrowserRouter as Router, Route, Redirect, Link} from 'react-router-dom';
+import {connect} from 'react-redux';
+import {bindActionCreators} from 'redux';
+import {post,get} from "../../http/http"
+import * as afterActions from '../../action/afterActions'
 
-export default class Nav extends React.Component{
-    constructor(){
-        super();
-        this.state = {
-            value : '富硒康'
-        }
+ class Nav extends React.Component{
+    constructor(props){
+        super(props);
 
     }
 
-    handleChange(event){
-        this.setState({
-            value : event.target.value
+    componentWillMount(){
+        let {saveSearch} = this.props.afterReducer;
+    }
 
-        })
+
+    handleChange(event){
+        let actions = bindActionCreators(afterActions,this.props.dispatch)
+       actions.saveSearch(event.target.value)
 
     }
     handleClick(){
-        const input = ReactDOM.findDOMNode(this.refs.searchInput);
-        const searchInput = input.value;
-        console.log(searchInput)
-        if(searchInput !==""){
-            window.location.href = "http://localhost:3001/search/out"
-        }else {
-            alert("请输入搜索内容")
-        }
+        let {saveSearch} = this.props.afterReducer;
+
+        let actions = bindActionCreators(afterActions,this.props.dispatch)
+        post('/good/search',{
+            //req没有 就不用传 否则就
+            //goodId:xxx 一个js对象
+            goodName: saveSearch
+        },(res) => {
+            //成功的回调函数
+
+            if(saveSearch !==""){
+                actions.searchOut(res.data);
+                localStorage.setItem('history', saveSearch);
+                window.location.href = "http://localhost:3001/search/out"
+
+            }else {
+                alert("请输入搜索内容")
+            }
+
+        },()=>{
+            //失败的回调函数
+        })
+
+
+
 
     }
 
 
     render(){
         const path = this.props.location.pathname;
+        let {saveSearch} = this.props.afterReducer;
 
-       if(path=="/home/index"){
+
+        if(path=="/home/index"){
            return(
                <div style={navStyle}>
                    <Link to="/search/index">
                        <div style={parentStyle}>
                            <div style={divStyle} >
                                <img src="../imgs/searchIcon.png" style={imgStyle}/>
-                               <input  style={searchStyle} value={this.state.value} onChange={(event) => this.handleChange(event)}/></div>搜索
+                               <input  style={searchStyle} value={saveSearch} onChange={(event) => this.handleChange(event)}/></div>搜索
                        </div>
                    </Link>
                </div>
@@ -56,7 +79,7 @@ export default class Nav extends React.Component{
                        <div style={parentStyle}>
                            <div style={divStyle2} >
                                <img src="../imgs/searchIcon.png" style={imgStyle}/>
-                               <input ref="searchInput" style={searchStyle2} value={this.state.value} onChange={(event) => this.handleChange(event)}  /></div>
+                               <input ref="searchInput" style={searchStyle2} value={saveSearch} onChange={(event) => this.handleChange(event)}  /></div>
                            <span onClick={this.handleClick.bind(this)}>搜索</span>
                        </div>
                    </div>
@@ -65,6 +88,8 @@ export default class Nav extends React.Component{
        }
     }
 }
+
+export default connect((state) => state)(Nav)
 
 const navStyle = {
     width : '100%',

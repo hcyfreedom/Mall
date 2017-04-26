@@ -39,6 +39,7 @@ const navTitle = {
     margin:'0 auto',
     fontSize:'40px',
     color:'white',
-    marginTop:'-45px',
-    textAlign:'center'
+    textAlign:'center',
+    position:"relative",
+    top:'12px'
 }

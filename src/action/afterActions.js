@@ -54,3 +54,32 @@ export function selfInviteCode(data) {
         payload:data
     }
 }
+
+export function checkLogin(data) {
+    return{
+        type:"CHECK_LOGIN",
+        payload:data
+    }
+}
+
+export function allOrders(data) {
+    return{
+        type:'ALL_ORDERS',
+        payload:data
+    }
+}
+
+export function saveSearch(data) {
+    return{
+        type:'SAVE_SEARCH',
+        payload:data
+    }
+}
+
+export function searchOut(data) {
+    return{
+        type:"SEARCH_OUT",
+        payload:data
+    }
+}
+

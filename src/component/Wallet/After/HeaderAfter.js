@@ -3,7 +3,7 @@
  */
 import React from 'react'
 import Nav from '../../Cart/CartTopNav'
-
+import TriOption from '../before/TriOption'
 import {connect} from 'react-redux';
 import {bindActionCreators} from 'redux';
 import {post,get} from "../../../http/http"
@@ -16,7 +16,7 @@ import {Link} from 'react-router-dom'
 
     componentDidMount(){
         let actions = bindActionCreators(afterActions,this.props.dispatch);
-        get(' /main/getUserInfo',(res) => {
+        get('/main/getUserInfo',(res) => {
             actions.getUserInfo(res.data)
         });
         get("/account/getAdminCode",(res) => {
@@ -44,6 +44,9 @@ import {Link} from 'react-router-dom'
                     <div className="headImg">
                         <img src={userInfo.headImg}/>
                     </div>
+                    <div className="headName">
+                        {userInfo.userName}
+                    </div>
                 </div>
 
                 <div className="tribeWrap">
@@ -63,35 +66,18 @@ import {Link} from 'react-router-dom'
                         <p>{userInfo.point}</p>
                     </div>
                 </div>
-                <div className="tribeWrap" style={{marginTop:'20px'}}>
-                    <div className="triZuan">
-                        <img src="/imgs/dfk.png"/>
-                        <p>代付款</p>
-                    </div>
-                    <div className="triZuan">
-                        <img src="/imgs/dfh.png"/>
-                        <p>代发货</p>
-                    </div>
-                    <div className="triZuan">
-                        <img src="/imgs/dsh.png"/>
-                        <p>待收货</p>
-                    </div>
-                    <div className="triZuan">
-                        <img src="/imgs/wdrm.png"/>
-                        <p>我的人脉</p>
-                    </div>
-                </div>
-                <div className="optionsWallet">
+                <Link to="/orderPage"><TriOption/></Link>
+                <Link to="/orderPage"><div className="optionsWallet">
                     <span style={{paddingLeft:'95px'}}><img style={{width:'28px',height:'31px'}} src="/imgs/icon.png"/>&nbsp;&nbsp;全部订单</span>
                     <img  className="walletImgs" src="/imgs/rightArrow.png"/>
-                </div>
+                </div>                    </Link>
 
+
+                <Link to="/orderConfirm">
                 <div className="optionsWallet">
-                    <Link to="/orderConfirm">
                         <span style={{paddingLeft:'95px'}}><img style={{width:'28px',height:'31px'}} src="/imgs/addressIcon.png"/>&nbsp;&nbsp;管理收货地址</span>
                         <img  className="walletImgs" src="/imgs/rightArrow.png"/>
-                    </Link>
-                </div>
+                </div>                    </Link>
 
                 <div className="optionsWallet">
                     <span  onTouchStart={this.onClickInviteCode.bind(this)} style={{paddingLeft:'95px'}}><img style={{width:'28px',height:'31px'}} src="/imgs/sendIntivate.png"/>&nbsp;&nbsp;发送邀请</span>
@@ -100,7 +86,8 @@ import {Link} from 'react-router-dom'
 
                <div className="wrapOptions">
                    <div className="logOut" onTouchStart={this.handleLogOut.bind(this)}><span>退出登录</span></div>
-                   <div className="personalSetting"><span>个人设置</span></div>
+                   <Link to="/person" className="personalSetting"><span>个人设置</span>
+                   </Link>
                </div>
             </div>
 

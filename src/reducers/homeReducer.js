@@ -88,19 +88,7 @@ const initState = {
         }
 
     ],
-    historyItem: [
-        {
-            history: "《JavaScript高级程序设计》",
-            href: "/information/intro"
-        },
-        {
-            history: "裙子",
-            href: "/information/intro"
-        }, {
-            history: "裤子",
-            href: "/information/intro"
-        }
-    ],
+
     addressToEdit: {
         status: 0
     },
@@ -120,10 +108,7 @@ export default function homeReducer(state = initState, action = {}) {
             clone.brandItem.detail = payload;
             return clone;
 
-        case "HISTORY_ITEM":
-            clone.historyItem.history = payload;
-            clone.historyItem.href = payload;
-            return clone;
+
 
         case "GOOD_ITEM":
             clone.allProduction = payload.msg;

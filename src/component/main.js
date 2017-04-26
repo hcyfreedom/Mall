@@ -22,7 +22,7 @@ import PaymentSuccess from './Payment/PaymentSuccess'
 import PaymentFail from './Payment/PaymentFail'
 import OrderConfirm from './Orders/Confirm/OrderConfirm'
 import Intro from './Information/Intro'
-import GiftsBagDetail from './GiftBag/GiftBagDetail'
+import OrderPage from './Orders/OrdersManage/OrderPage'
 
 import {Switch, BrowserRouter as Router, Route, Redirect, Link} from 'react-router-dom';
 import createHistory from 'history/createBrowserHistory'
@@ -62,6 +62,7 @@ class Main extends React.Component {
                             <Route path="/payment/succeed" component={PaymentSuccess}/>
                             <Route path="/payment/failed" component={PaymentFail}/>
                             <Route path="/orderConfirm" component={OrderConfirm}/>
+                            <Route path="/orderPage" component={OrderPage}/>
                             <Redirect exact from="/" to="/home/index"/>
                         </Switch>
 

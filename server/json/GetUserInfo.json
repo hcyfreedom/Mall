@@ -2,6 +2,7 @@
   "code": 200,
   "msg": {
     "headImg":"/imgs/1.jpg",
+    "userName":"test",
     "point": 100,
     "price": 70,
     "coin": 100

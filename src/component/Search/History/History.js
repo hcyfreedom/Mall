@@ -5,7 +5,7 @@ import  React from 'react'
 import {Link} from 'react-router-dom'
 import {connect} from 'react-redux';
 import {bindActionCreators} from 'redux';
-import * as mallActions from '../../../action/mallActions'
+import * as afterActions from '../../../action/afterActions'
 import HistoryItem from './HistoryItem'
  class History extends React.Component{
      constructor(props){
@@ -15,15 +15,16 @@ import HistoryItem from './HistoryItem'
 
 
     render(){
-        let {historyItem} = this.props.homeReducer;
-        let actions = bindActionCreators(mallActions,this.props.dispatch);
-        const historyItems = historyItem.map((ele,idx) =>{
-            return <Link to={ele.href} key={idx}><HistoryItem src={ele} actions={actions}/></Link>
-        });
+        const history = localStorage.history;
+
+        console.log(history)
+        // const historyItems = history.map((ele,idx) =>{
+        //     return <HistoryItem ele={ele} key={idx}/>
+        // });
         return(
                 <div>
                     <div className="historySe" style={{color:'#0c4ca3'}}><span>历史搜索</span></div>
-                    {historyItems}
+                    {/*{historyItems}*/}
                 </div>
         )
     }

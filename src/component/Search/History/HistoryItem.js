@@ -7,14 +7,10 @@ export default class HistoryItem extends React.Component{
         super(pros)
     }
 
-    componentWillMount() {
-        this.props.actions.getHistory(this.props.src.history,this.props.src.href,this.props.index)
-    }
-
     render(){
 
         return(
-            <div className="historySe" ><span>{this.props.src.history}</span></div>
+            <div className="historySe" ><span>{this.props.ele}</span></div>
         )
     }
 

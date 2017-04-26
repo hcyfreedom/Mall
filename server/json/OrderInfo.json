@@ -1,0 +1,32 @@
+{
+  "code": 200,
+  "msg": [
+    {
+      "orderId":1,
+      "goodId": 1,
+      "goodCount": 2,
+      "userId": 1,
+      "usedCoin": null,
+      "usedPoint": null,
+      "transportWay": null,
+      "addressId": null,
+      "amountPrice": null,
+      "name": "test1",
+      "classifyId": 1,
+      "classifyName": "于景洋",
+      "shopId": 1,
+      "shopName":"山东大学",
+      "originPrice": 1000,
+      "stock": 1000,
+      "salesVolume": 1000,
+      "minPrice": 100,
+      "newPrice": 170,
+      "maxPoint": 100,
+      "minPoint": 100,
+      "maxCoin": 100,
+      "minCoin": 100,
+      "describeStatus": "交易中",
+      "headImg":"/imgs/1.jpg"
+    }
+  ]
+}

@@ -29,11 +29,15 @@ const initState = {
         }, {
             src: '/imgs/b5.png',
             hoverSrc: '/imgs/b55.png',
-            href: '/home/walletBefore',
+            href: '/home/myWallet',
         }
     ],
     userInfo:[],
-    adminCode:''
+    adminCode:'',
+    checkLogin:'false',
+    allOrders:[],
+    saveSearch:'富硒康',
+    searchOut:[],
 }
 
 export default function afterReducer(state = initState, action = {}) {
@@ -99,6 +103,24 @@ export default function afterReducer(state = initState, action = {}) {
         case "SELF_CODE":
             clone.adminCode = payload;
             return clone;
+
+        case "CHECK_LOGIN":
+            clone.checkLogin = payload.msg;
+            return clone;
+
+        case "ALL_ORDERS":
+            clone.allOrders = payload.msg;
+            return clone;
+
+        case "SAVE_SEARCH":
+            clone.saveSearch = payload;
+
+            return clone;
+
+        case "SEARCH_OUT":
+            clone.searchOut = payload;
+            return clone;
+
     }
     return clone;
 

@@ -6,7 +6,7 @@ import React from 'react'
 export default class TriOption extends React.Component{
     render(){
         return(
-            <div className="tribeWrap" style={{marginTop:'20px'}}>
+            <div className="tribeWrap" style={{marginTop:'20px'}} onClick={this.props.click}>
                 <div className="triZuan">
                     <img src="/imgs/dfk.png"/>
                     <p>代付款</p>
