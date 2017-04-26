@@ -17,6 +17,7 @@ import Wallet from './Wallet/before/Wallet'
 import PersonalSetting from './PersonalSetting/PersonalSetting'
 import ModifyLogPass from './PersonalSetting/ModifyLogPass'
 import ModifyPhoneVeri from './PersonalSetting/ModifyPhoneVeri'
+import ModifyPayPass from './PersonalSetting/ModifyPayPass'
 import Payment from './Payment/Payment'
 import PaymentSuccess from './Payment/PaymentSuccess'
 import PaymentFail from './Payment/PaymentFail'
@@ -56,7 +57,8 @@ class Main extends React.Component {
                             <Route path="/register" component={Register}/>
                             <Route path="/login" component={LogIn}/>
                             <Route exact path="/person" component={PersonalSetting}/>
-                            <Route path="/person/pass" component={ModifyLogPass}/>
+                            <Route path="/person/logpass" component={ModifyLogPass}/>
+                            <Route path="/person/paypass" component={ModifyPayPass}/>
                             <Route path="/person/phone" component={ModifyPhoneVeri}/>
                             <Route exact path="/payment" component={Payment}/>
                             <Route path="/payment/succeed" component={PaymentSuccess}/>
