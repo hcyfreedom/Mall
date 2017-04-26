@@ -18,7 +18,7 @@ class Suspension extends React.Component{
 
     componentDidMount(){
         let actions = bindActionCreators(afterActions,this.props.dispatch);
-        get('/account/checkLogin',(res) => {
+        post('/account/checkLogin',(res) => {
             actions.checkLogin(res.data)
         });
     }

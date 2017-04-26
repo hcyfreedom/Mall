@@ -20,24 +20,6 @@ class  HomePage extends React.Component{
 
     render(){
 
-        let {classifyItem} = this.props.homeReducer;
-        let Node = React.createClass({
-            render(){
-                return(
-                    <div></div>
-                )
-            }
-        })
-        for(let i of classifyItem){
-console.log(i)
-            Node = React.createClass({
-                    render(){
-                        return   <ShowClassify classifyId={i.id}/>
-                    }
-                })
-
-
-        }
 
         return(
             <div>
@@ -45,13 +27,12 @@ console.log(i)
                 <ClassifyBar/>
                 <Advertising/>
                 <ShowYOU/>
-                <Node/>
-                <Suspension/>
-                <ShowYOU/>
                 <ShowBAO/>
+                <Suspension/>
 
             </div>
         )
+
     }
 }
 export default  connect((state)=> state)(HomePage)
