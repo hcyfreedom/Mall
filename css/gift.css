@@ -83,3 +83,51 @@
     position: absolute;
     left: 40px;
 }
+
+/*我的行囊*/
+.optionsWallet{
+    width: 100%;
+    height: 68px;
+    background-color: white;
+    border-bottom: 1px solid #f9f9f9;
+    border-top: 1px solid #f9f9f9;
+    display: flex;
+    justify-content:space-between;
+    font-size: 28px;
+    margin-top: 20px;
+    line-height: 68px;
+}
+.walletImgs{
+    width: 23px;
+    height: 42px;
+    margin-top: 12px;
+    padding-right: 110px;
+    vertical-align: top;
+}
+.wrapOptions{
+    display: flex;
+    justify-content:space-between;
+    margin-top: 20px;
+    background-color: white;
+
+
+}
+.logOut{
+    width: 50%;
+    height: 72px;
+    border-top: 1px solid #f9f9f9;
+    border-bottom: 1px solid #f9f9f9;
+    border-right: 1px solid grey;
+    font-size: 28px;
+    text-align: center;
+    line-height: 72px;
+}
+.personalSetting{
+    width: 50%;
+    height: 72px;
+    border-top: 1px solid #f9f9f9;
+    border-bottom: 1px solid #f9f9f9;
+    font-size: 28px;
+    text-align: center;
+    line-height: 72px;
+}

@@ -353,8 +353,13 @@ a{
 .goBack{
     color: white;
     font-size: 5em;
+    position: relative;
     line-height: 60px;
     padding-left: 50px;
+}
+.goBack img{
+    position: absolute;
+    top: 20px;
 }
 .showBlock{
     width: 100%;

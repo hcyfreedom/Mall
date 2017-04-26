@@ -11,7 +11,7 @@ export default  class CartTopNav extends React.Component{
         return(
             <div style={navStyle}>
                 <div className="goBack" onClick={this.handleGoBack.bind(this)}>
-                    &lt;
+                    <img src="/imgs/leftArrow.png"/>
                 </div>
                 <div style={navTitle}>
                         {this.props.navTitle}

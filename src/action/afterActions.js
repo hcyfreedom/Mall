@@ -47,3 +47,10 @@ export function getInviteCode(data) {
         payload:data
     }
 }
+
+export function selfInviteCode(data) {
+    return{
+        type:'SELF_CODE',
+        payload:data
+    }
+}
