@@ -103,7 +103,8 @@ const initState = {
     ],
     addressToEdit: {
         status: 0
-    }
+    },
+    defaultAddress:{}
 }
 
 export default function homeReducer(state = initState, action = {}) {
@@ -315,6 +316,10 @@ export default function homeReducer(state = initState, action = {}) {
         case "CHANGE_ADDRESS":
             clone.addressToEdit[payload.index] = payload.value
             return clone
+
+        case "GET_DEFAULT_ADDRESS":
+            clone.defaultAddress = payload;
+            return clone;
 
     }
     return clone;
