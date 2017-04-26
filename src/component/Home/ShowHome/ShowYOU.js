@@ -24,18 +24,31 @@ class ShowYOU extends React.Component{
         let {mainPageGoods} = this.props.homeReducer;
         let actions = bindActionCreators(mallActions,this.props.dispatch);
 
-        cons
+        const ShowList = [];
+        for(let key in mainPageGoods.outstanding_shop_info){
+            const items = mainPageGoods.outstanding_shop_info[key];
+            ShowList.push(items)
 
-        const productionItems = mainPageGoods.outstanding_shop_goods.map((ele,id) =>{
+        }
+        const ShowItemList = [];
+        for(let key in mainPageGoods.outstanding_shop_goods){
+            const items = mainPageGoods.outstanding_shop_goods[key];
+            ShowItemList.push(items)
+
+        }
+
+
+
+        const productionItems = ShowItemList.map((ele,id) =>{
             return <Link to={'/information/'+ele.shopId+"/"+ele.id} key={id}><div className="pRow"> <ProductionItem src={ele} key={id} /></div></Link>
         });
 
 
         const listContainer = [];
 
-        for(let i = 0;i < listItems1.length; i= i +2){
+        for(let i = 0;i < productionItems.length; i= i +3){
 
-            listContainer.push(<div key={i} className="gRow">{listItems1.slice(i,i+2)}</div>) ;
+            listContainer.push(<div key={i} className="ggRow">{productionItems.slice(i,i+3)}</div>) ;
         }
 
 
@@ -47,18 +60,16 @@ class ShowYOU extends React.Component{
                 </div>
 
                 <div style={{width:"100%",height:'60px',backgroundColor:'white',display:'flex',justifyContent:'space-between',borderBottom:'1px solid grey',fontSize:'20px',lineHeight:'60px'}}>
-                    &nbsp;&nbsp;&nbsp;{outstanding_shop_info.outstanding_shop_name}
-                    <Link to={'/shop/'+outstanding_shop_info.outstanding_shop_id}>
+                    &nbsp;&nbsp;&nbsp;{ShowList[1]}
+                    <Link to={'/shop/'+ShowList[0]}>
                         <div>&gt;进入店铺&nbsp;&nbsp;&nbsp;</div>
                     </Link>
                 </div>
+                <div style={{backgroundColor:'white',paddingLeft:'10px',paddingRight:'10px'}}>
+                    {listContainer}
 
-                <div className="AllProductionBox">
-                    {productionItems}
                 </div>
-                <div className="AllProductionBox">
-                    {productionItems2}
-                </div>
+
             </div>
         )
     }

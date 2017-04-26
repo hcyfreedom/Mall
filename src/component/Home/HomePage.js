@@ -7,16 +7,44 @@ import ClassifyBar from './ClassifyBar/ClassifyBar'
 import Advertising from './Advertising/Advertising'
 import Suspension from './Nav/Suspension'
 import ShowYOU from './ShowHome/ShowYOU'
-import ShowBAO from './ShowHome/ShowBAO'
-export default class  HomePage extends React.Component{
+import ShowClassify from './ShowHome/ShowClassify'
+import {connect} from 'react-redux';
+import {bindActionCreators} from 'redux';
+import {get} from "../../http/http"
+import * as mallActions from '../../action/mallActions'
+class  HomePage extends React.Component{
+    constructor(props){
+        super(props)
+    }
+
     render(){
+
+        let {classifyItem} = this.props.homeReducer;
+        let Node = React.createClass({
+            render(){
+                return(
+                    <div></div>
+                )
+            }
+        })
+        for(let i of classifyItem){
+console.log(i)
+            Node = React.createClass({
+                    render(){
+                        return   <ShowClassify classifyId={i.id}/>
+                    }
+                })
+
+
+        }
+
         return(
             <div>
                 <Brand/>
                 <ClassifyBar/>
                 <Advertising/>
                 <ShowYOU/>
-
+                <Node/>
                 <Suspension/>
                 <div style={{position:'relative',bottom:'260px',width:'100%',height:'200px'}}></div>
 
@@ -24,3 +52,4 @@ export default class  HomePage extends React.Component{
         )
     }
 }
+export default  connect((state)=> state)(HomePage)

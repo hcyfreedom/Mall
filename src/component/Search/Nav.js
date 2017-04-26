@@ -67,7 +67,7 @@ import * as afterActions from '../../action/afterActions'
                    <Link to="/search/index">
                        <div style={parentStyle}>
                            <div style={divStyle} >
-                               <img src="../imgs/searchIcon.png" style={imgStyle}/>
+                               <img src="/imgs/searchIcon.png" style={imgStyle}/>
                                <input  style={searchStyle} value={saveSearch} onChange={(event) => this.handleChange(event)}/></div>搜索
                        </div>
                    </Link>
@@ -81,7 +81,7 @@ import * as afterActions from '../../action/afterActions'
                        <Link to="/search/index">
                            <div style={parentStyle}>
                                <div style={divStyle2} >
-                                   <img src="../imgs/searchIcon.png" style={imgStyle}/>
+                                   <img src="/imgs/searchIcon.png" style={imgStyle}/>
                                    <input ref="searchInput" style={searchStyle2} value={saveSearch} onChange={(event) => this.handleChange(event)}  /></div>
                                <span onClick={this.handleClick.bind(this)}>搜索</span>
                            </div>

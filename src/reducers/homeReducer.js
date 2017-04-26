@@ -92,7 +92,7 @@ const initState = {
     addressToEdit: {
         status: 0
     },
-    defaultAddress:{}
+    defaultAddress:{},
 }
 
 export default function homeReducer(state = initState, action = {}) {
@@ -122,7 +122,7 @@ export default function homeReducer(state = initState, action = {}) {
 
         case "CLASSIFY" :
             clone.classify = payload.msg;
-            clone.classifyItem = payload.msg
+            clone.classifyItem = payload.msg;
             return clone;
 
         case "CLASSIFY_GOOD":

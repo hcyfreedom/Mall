@@ -23,7 +23,6 @@ class Advertising extends React.Component{
     render(){
 
         let {mainPageGoods} = this.props.homeReducer;
-        console.log(mainPageGoods)
 
 
         const advertisementList = [];

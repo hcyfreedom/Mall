@@ -275,7 +275,7 @@ a{
     margin: 0 auto;
     line-height: 32px;
 }
-.showBanner{
+.showBanner,.showBanner2{
     width: 100%;
     height: 44px;
     position: relative;
@@ -292,6 +292,20 @@ a{
     position: absolute;
     right: 55px;
     bottom: -10px;
+}
+.showSpan{
+    width: 50px;
+    height: 34px;
+    position: absolute;
+    right: 55px;
+    bottom: -10px;
+}
+.showBannerWord{
+    color: #0f5ca8;
+    position: absolute;
+    line-height: 44px;
+    left: 47%;
+    font-size: 25px;
 }
 
 /*GoodBrand*/
@@ -326,6 +340,11 @@ a{
 .gRow{
     display: flex;
     margin-top: 20px;
+    flex-wrap: wrap;
+    justify-content: space-between;
+}
+.ggRow{
+    display: flex;
     flex-wrap: wrap;
     justify-content: space-between;
 }
