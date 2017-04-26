@@ -25,12 +25,15 @@ class ShowYOU extends React.Component{
         let {outstanding_shop_goods,outstanding_shop_info} = this.props.homeReducer;
         let actions = bindActionCreators(mallActions,this.props.dispatch);
 
-        const productionItems = outstanding_shop_goods.slice(0,3).map((ele,id) =>{
-            return <Link to={'/information/'+ele.shopId+"/"+ele.id} key={id}><div className="pRow"> <ProductionItem src={ele} key={id} actions={actions}/></div></Link>
-        });
-        const productionItems2= outstanding_shop_goods.slice(3,6).map((ele,id) =>{
-            return <Link to={'/information/'+ele.shopId+"/"+ele.id} key={id}><div className="pRow"> <ProductionItem src={ele} key={id} actions={actions}/></div></Link>
-        });
+        let productions = new Array();
+        for(let i = 0;i < outstanding_shop_goods.length;i+=3){
+            let tmp = outstanding_shop_goods.slice(i,i+3).map((ele,id) =>{
+                console.log(i+id)
+                return <Link to={'/information/'+ele.shopId+"/"+ele.id} key={id+i}><div className="pRow" key={id+i}> <ProductionItem src={ele} key={id+i} actions={actions}/></div></Link>
+            });
+            productions[i/3] = <div key={i/3} className="AllProductionBox">{tmp}</div>
+        }
+
 
         return(
             <div>
@@ -45,13 +48,7 @@ class ShowYOU extends React.Component{
                         <div>&gt;进入店铺&nbsp;&nbsp;&nbsp;</div>
                     </Link>
                 </div>
-
-                <div className="AllProductionBox">
-                    {productionItems}
-                </div>
-                <div className="AllProductionBox">
-                    {productionItems2}
-                </div>
+                {productions}
             </div>
         )
     }

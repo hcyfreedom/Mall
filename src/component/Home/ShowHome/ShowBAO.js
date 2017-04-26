@@ -8,39 +8,65 @@ import {connect} from 'react-redux';
 import {bindActionCreators} from 'redux';
 import {get} from "../../../http/http"
 import * as mallActions from '../../../action/mallActions'
-class ShowBAO extends React.Component{
-    constructor(props){
+class ShowBAO extends React.Component {
+    constructor(props) {
         super(props)
 
     }
-    componentDidMount(){
-        let actions = bindActionCreators(mallActions,this.props.dispatch);
-        get('/main/getMainPageGoods',(res) => {
+
+    componentDidMount() {
+        let actions = bindActionCreators(mallActions, this.props.dispatch);
+        get('/main/getMainPageGoods', (res) => {
             actions.getMainPageGoods(res.data)
         })
+        get('/main/getClassify', (res) => {
+            actions.getClassify(res.data)
+        })
+
 
     }
-    render(){
-        let {classifySecond} = this.props.homeReducer;
-        let actions = bindActionCreators(mallActions,this.props.dispatch);
 
-        const productionItems = classifySecond.slice(0,3).map((ele,id) =>{
-            return <Link to={'/information/'+ele.shopId+"/"+ele.id} key={id}><div className="pRow"> <ProductionItem src={ele} key={id} actions={actions}/></div></Link>
+    render() {
+        let {classify, mainPageGoods} = this.props.homeReducer;
+        let actions = bindActionCreators(mallActions, this.props.dispatch);
+        let finalComponent = new Array();
+        let MyHead = React.createClass({
+            render(){
+                return (
+                    <div className="showBanner">
+                        <img src="../imgs/m2.png"/>
+                        <Link to={"/home/classify/"+this.props.classifyId}><span>&nbsp;>more</span></Link>
+                    </div>)
+
+            }
         });
+        for (let i = 0; i < classify.length; i++) {
+            let classifyId = classify[i].id;
+            let goodsArray = mainPageGoods[classifyId];
+            let productions = new Array();
+            if (goodsArray == null || goodsArray == undefined || goodsArray == []) {
+                finalComponent[i] = <div key={i}></div>;
+                continue;
+            }
+            for (let i = 0; i < goodsArray.length; i += 3) {
+                let tmp = goodsArray.slice(i, i + 3).map((ele, id) => {
+                    return <Link to={'/information/'+ele.shopId+"/"+ele.id} key={id+i}>
+                        <div className="pRow" key={id+i}><ProductionItem src={ele} key={id+i} actions={actions}/></div>
+                    </Link>
+                });
+                productions[i / 3] = <div key={i/3} className="AllProductionBox">{tmp}</div>
+            }
+            finalComponent[i] =
+                <div key={i}>
+                    <MyHead key={i} classifyId={classifyId}/>
+                    {productions}
 
-        return(
+                </div>
+        }
+
+        return (
             <div>
-                <div className="showBanner">
-                    <img src="../imgs/m2.png"/>
-                    <Link to="/home/cate"><span>&nbsp;>more</span></Link>
-                </div>
-
-                <div className="AllProductionBox">
-                {productionItems}
-                </div>
-                <div style={{width:'100%',height:'198px'}}>
-
-                </div>
+                {finalComponent}
             </div>
         )
     }
