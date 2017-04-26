@@ -33,3 +33,17 @@ export function changeItemsHref() {
         type:'CHANGE_ITEMS_HREF'
     }
 }
+
+export function getUserInfo(data) {
+    return{
+        type:'GET_USER_INFO',
+        payload:data
+    }
+}
+
+export function getInviteCode(data) {
+    return{
+        type:"GET_INVITE_CODE",
+        payload:data
+    }
+}

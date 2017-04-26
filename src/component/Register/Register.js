@@ -43,14 +43,21 @@ onChangeCode(event){
     actions.getAuthCode(event.target.value)
 }
 
+onClickInviteCode(){
+    let actions = bindActionCreators(afterActions,this.props.dispatch);
+    get("/account/getAdminCode",(res) => {
+        actions.getInviteCode(res.data);
+    })
+}
+
 handleRegister(){
-    let {phoneNumber,authCode} = this.props.afterReducer;
+    let {phoneNumber,authCode,adminCode} = this.props.afterReducer;
     let actions = bindActionCreators(afterActions,this.props.dispatch);
 
     post('/account/register',{
         telephone:phoneNumber,
         checkCode:authCode,
-        invitationCode:'123'
+        invitationCode:adminCode
     },(res) => {
         if (res.data.code == 200){
             alert("注册成功");
@@ -63,7 +70,7 @@ handleRegister(){
     })
 }
     render(){
-        let {phoneNumber,authCode} = this.props.afterReducer;
+        let {phoneNumber,authCode,adminCode} = this.props.afterReducer;
         return(
             <div className="register">
                 <Nav navTitle="注册"/>
@@ -73,8 +80,8 @@ handleRegister(){
                         <li>验证码：<input placeholder="请输入验证码" value={authCode} style={{width:'321px'}} onChange={this.onChangeCode.bind(this)}/>
                             <button onClick={this.handleClickCode.bind(this)}>点击获取</button>
                         </li>
-                        <li>邀请码：<input placeholder="88888" style={{width:'321px'}}/>
-                            <button>借用邀请码</button>
+                        <li>邀请码：<input placeholder="88888" style={{width:'321px'}} value={adminCode}/>
+                            <button onClick={this.onClickInviteCode.bind(this)}>借用邀请码</button>
                         </li>
                     </ul>
                     <div className="regButton" onClick={this.handleRegister.bind(this)}>

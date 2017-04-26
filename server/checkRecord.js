@@ -70,4 +70,10 @@ module.exports = function (app) {
     app.use("/account/getMessage",(req,res) =>{
         res.json(require('./json/GetMessafe.json'))
     })
+    app.use("/account/getAdminCode",(req,res) =>{
+        res.json(require('./json/GetAdminCode.json'))
+    })
+    app.use(" /main/getUserInfo",(req,res) =>{
+        res.json(require('./json/GetUserInfo.json'))
+    })
 }

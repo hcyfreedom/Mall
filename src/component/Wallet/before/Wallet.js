@@ -2,8 +2,8 @@
  * Created by hcy on 2017/4/20.
  */
 import React from 'react'
-import Nav from '../Cart/CartTopNav'
-import HeaderBefore from './before/HeaderBefore'
+import Nav from '../../Cart/CartTopNav'
+import HeaderBefore from './HeaderBefore'
 import Tribe from './Tribe'
 import TriOption from './TriOption'
 export default class Wallet extends React.Component{

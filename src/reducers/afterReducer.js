@@ -32,6 +32,8 @@ const initState = {
             href: '/home/walletBefore',
         }
     ],
+    userInfo:[],
+    adminCode:''
 }
 
 export default function afterReducer(state = initState, action = {}) {
@@ -83,6 +85,15 @@ export default function afterReducer(state = initState, action = {}) {
                         href: '/home/MyWallet',
                     }
                 ];
+            return clone;
+
+
+        case "GET_USER_INFO":
+            clone.userInfo = payload.msg;
+            return clone;
+
+        case "GET_INVITE_CODE":
+            clone.adminCode = payload.msg;
             return clone;
     }
     return clone;
