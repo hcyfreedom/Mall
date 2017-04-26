@@ -94,6 +94,7 @@ export default function afterReducer(state = initState, action = {}) {
 
         case "GET_INVITE_CODE":
             clone.adminCode = payload.msg;
+            return clone;
     }
     return clone;
 

@@ -15,7 +15,7 @@ import {Link} from 'react-router-dom'
     }
 
     componentDidMount(){
-        let actions = bindActionCreators(afterActions,this.props.afterReducer)
+        let actions = bindActionCreators(afterActions,this.props.dispatch);
         get('/main/getUserInfo',(res) => {
             actions.getUserInfo(res.data);
             console.log(res.data)
