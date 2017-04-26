@@ -12,6 +12,7 @@ import AddressMain from './AddressMain'
 import Delivery from './Orders/Delivery/Delivery'
 
 import Register from './Register/Register'
+import LogIn from './Register/LogIn'
 import Wallet from './Wallet/Wallet'
 import PersonalSetting from './PersonalSetting/PersonalSetting'
 import ModifyLogPass from './PersonalSetting/ModifyLogPass'
@@ -53,7 +54,7 @@ class Main extends React.Component {
                             <Route path="/address/:id" component={AddressMain}/>
                             <Route path="/delivery" component={Delivery}/>
                             <Route path="/register" component={Register}/>
-                            <Route path="/wallet" component={Wallet}/>
+                            <Route path="/login" component={LogIn}/>
                             <Route exact path="/person" component={PersonalSetting}/>
                             <Route path="/person/pass" component={ModifyLogPass}/>
                             <Route path="/person/phone" component={ModifyPhoneVeri}/>
@@ -61,7 +62,6 @@ class Main extends React.Component {
                             <Route path="/payment/succeed" component={PaymentSuccess}/>
                             <Route path="/payment/failed" component={PaymentFail}/>
                             <Route path="/orderConfirm" component={OrderConfirm}/>
-                            <Route path="/giftsBagMall/:id" component={GiftsBagDetail}/>
                             <Redirect exact from="/" to="/home/index"/>
                         </Switch>
 

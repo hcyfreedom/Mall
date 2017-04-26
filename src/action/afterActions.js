@@ -14,3 +14,22 @@ export function getGiftsDetail(data) {
         payload:data
     }
 }
+
+export function getNumber(data) {
+    return{
+        type:"GET_NUMBER",
+        payload:data
+    }
+}
+export function getAuthCode(data) {
+    return{
+        type:'GET_AUTH_CODE',
+        payload:data
+    }
+}
+
+export function changeItemsHref() {
+    return{
+        type:'CHANGE_ITEMS_HREF'
+    }
+}

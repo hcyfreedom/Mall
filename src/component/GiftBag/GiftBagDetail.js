@@ -8,7 +8,7 @@ import React from 'react';
 import GiftBagItems from './GiftBagItems'
 import {connect} from 'react-redux';
 import {bindActionCreators} from 'redux';
-import {get} from "../../http/http"
+import {get,post} from "../../http/http"
 import * as afterActions from '../../action/afterActions'
 
 class  GiftBagDetail extends React.Component{
@@ -20,7 +20,6 @@ class  GiftBagDetail extends React.Component{
         let actions = bindActionCreators(afterActions,this.props.dispatch);
         const path  = this.props.history.location.pathname;
         const giftId = path.split('/')[2];
-        console.log(giftId)
         get('/good/getGift/'+giftId,(res) => {
             actions.getGiftsDetail(res.data)
         })
@@ -31,11 +30,31 @@ class  GiftBagDetail extends React.Component{
         alert(giftsDetail.telephone);
     }
 
+    handleGoBack(){
+        console.log("www")
+    }
+    handleExChange(){
+        let {giftsDetail} = this.props.afterReducer;
+        post('/good/exchangeGift/'+giftsDetail.id,{
+
+        },(res) => {
+            //成功的回调函数
+            let data = res.data;
+            if (data.code == 200){
+                console.log("exchange success")
+            }else {
+                console.log("exchange failed")
+            }
+        },()=>{
+            //失败的回调函数
+        })
+    }
     render(){
         let {giftsDetail} = this.props.afterReducer;
-        console.log(giftsDetail)
         return(
             <div>
+                <div className="giftIntro">介绍</div>
+                <img className="giftBack" src="/imgs/back.png" onClick={this.handleGoBack.bind(this)} />
                 <img src={giftsDetail.headImg} style={{width:'100%'}}/>
                 <div className="giftDetail">
                     <p>{giftsDetail.name}</p>
@@ -46,7 +65,7 @@ class  GiftBagDetail extends React.Component{
                     <div className="giftTel" onTouchStart={this.handleClick.bind(this)}>
                         <img src="/imgs/tel.png"/><span>联系客服</span>
                     </div>
-                    <div className="giftExchange">
+                    <div className="giftExchange" onClick={this.handleExChange.bind(this)}>
                         立即兑换
                     </div>
                 </div>

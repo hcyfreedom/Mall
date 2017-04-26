@@ -66,3 +66,20 @@
     padding-right: 20px;
 
 }
+.giftIntro{
+    width: 100%;
+    height: 80px;
+    background-color: white;
+    text-align: center;
+    font-size: 30px;
+    color: #318bc3;
+    line-height: 80px;
+    position: relative;
+}
+.giftBack{
+    width: 24px;
+    top: 19px;
+    height: 42px;
+    position: absolute;
+    left: 40px;
+}

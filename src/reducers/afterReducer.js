@@ -5,6 +5,33 @@ const initState = {
     allAddress:[],
     giftsEle:[],
     giftsDetail:[],
+    phoneNumber:'',
+    authCode:'',
+    items: [
+        {
+            src: '/imgs/b1.png',
+            hoverSrc: '/imgs/b11.png',
+            href: '/home/index',
+        },
+        {
+            src: '/imgs/b2.png',
+            hoverSrc: '/imgs/b22.png',
+            href: '/home/cate',
+        }, {
+            src: '/imgs/b3.png',
+            hoverSrc: '/imgs/b33.png',
+            href: '/home/cart',
+
+        }, {
+            src: '/imgs/b4.png',
+            hoverSrc: '/imgs/b44.png',
+            href: '/home/giftBagMall',
+        }, {
+            src: '/imgs/b5.png',
+            hoverSrc: '/imgs/b55.png',
+            href: '/home/walletBefore',
+        }
+    ],
 }
 
 export default function afterReducer(state = initState, action = {}) {
@@ -21,6 +48,41 @@ export default function afterReducer(state = initState, action = {}) {
 
         case "GET_GIFTS_DETAIL":
             clone.giftsDetail = payload.msg;
+            return clone;
+        case "GET_NUMBER":
+            clone.phoneNumber = payload;
+            return clone;
+
+        case "GET_AUTH_CODE":
+            clone.authCode = payload;
+            return clone;
+
+        case "CHANGE_ITEMS_HREF":
+            clone.items =[
+                    {
+                        src: '/imgs/b1.png',
+                        hoverSrc: '/imgs/b11.png',
+                        href: '/home/index',
+                    },
+                    {
+                        src: '/imgs/b2.png',
+                        hoverSrc: '/imgs/b22.png',
+                        href: '/home/cate',
+                    }, {
+                        src: '/imgs/b3.png',
+                        hoverSrc: '/imgs/b33.png',
+                        href: '/home/cart',
+
+                    }, {
+                        src: '/imgs/b4.png',
+                        hoverSrc: '/imgs/b44.png',
+                        href: '/home/giftBagMall',
+                    }, {
+                        src: '/imgs/b5.png',
+                        hoverSrc: '/imgs/b55.png',
+                        href: '/home/MyWallet',
+                    }
+                ];
             return clone;
     }
     return clone;

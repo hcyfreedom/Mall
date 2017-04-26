@@ -60,31 +60,6 @@ const initState = {
         right: '50px',
         display: 'none'
     },
-    items: [
-        {
-            src: '/imgs/b1.png',
-            hoverSrc: '/imgs/b11.png',
-            href: '/home/index',
-        },
-        {
-            src: '/imgs/b2.png',
-            hoverSrc: '/imgs/b22.png',
-            href: '/home/cate',
-        }, {
-            src: '/imgs/b3.png',
-            hoverSrc: '/imgs/b33.png',
-            href: '/home/cart',
-
-        }, {
-            src: '/imgs/b4.png',
-            hoverSrc: '/imgs/b44.png',
-            href: '/home/giftBagMall',
-        }, {
-            src: '/imgs/b5.png',
-            hoverSrc: '/imgs/b55.png',
-            href: '/wallet',
-        }
-    ],
     classifyItem: [],
     brandItem: [
         {

@@ -24,7 +24,6 @@ class  GiftBag extends React.Component{
     render(){
         let {giftsEle} = this.props.afterReducer;
         const items = giftsEle.map((ele,id) => {
-            console.log(ele)
             return <GiftBagItems ele={ele} key={id}/>
         })
         const listContainer = [];

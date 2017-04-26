@@ -17,7 +17,7 @@ class BottomNav extends React.Component {  //定义组件，也可以用React.cr
 
     render() {
 
-        let {items} = this.props.homeReducer;
+        let {items} = this.props.afterReducer;
         let actions = bindActionCreators(mallActions,this.props.dispatch);
         const bottomNavItems = items.map((ele,idx)=>{
             return <Link key= {idx} to={ele.href}><BottomNavItem key={idx} index={idx} element={ele} {...this.props} actions={actions}/></Link>

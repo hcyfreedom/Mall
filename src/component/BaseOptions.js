@@ -9,6 +9,8 @@ import Slider from './Home/Slider/Slider'
 import HomePage from './Home/HomePage'
 import Selector from './Category/SlideSelector/Selector'
 import CateMain from './Category/CatePart/CateMain'
+import Wallet from './Wallet/Wallet'
+
 import {BrowserRouter as Router, Route, Switch,Redirect, Link} from 'react-router-dom';
 import createHistory from 'history/createBrowserHistory'
 
@@ -49,7 +51,7 @@ export default class BaseOptions extends React.Component {
         let nodeGift = () => (
             <div><Nav location={this.props.location}/><Slider slides={slides} time="2000"/><GiftBagMall/></div>
 
-        )
+        );
 
 
         return (
@@ -59,7 +61,7 @@ export default class BaseOptions extends React.Component {
                             <Route path="/home/cart" component={CartHomePage}/>
                             <Route path="/home/classify/:id" component={nodeMainCate}/>
                             <Route path="/home/giftBagMall" component={nodeGift}/>
-                            <Route path="/home/:id" component={nodeMainCate}/>
+                            <Route path="/home/walletBefore" component={Wallet}/>
                         </Switch>
                         <BottomNav/>
 

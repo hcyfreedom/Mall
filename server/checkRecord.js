@@ -57,4 +57,17 @@ module.exports = function (app) {
     app.use("/good/getGift/*",(req,res) =>{
         res.json(require('./json/GiftDetali.json'))
     })
+    app.use("/good/exchangeGift/*",(req,res) =>{
+        res.json(require('./json/ExchangeGift.json'))
+    })
+    app.use("/account/register",(req,res) =>{
+        res.json(require('./json/Register.json'))
+    })
+    app.use("/account/login",(req,res) =>{
+        res.json(require('./json/Register.json'))
+    })
+
+    app.use("/account/getMessage",(req,res) =>{
+        res.json(require('./json/GetMessafe.json'))
+    })
 }
