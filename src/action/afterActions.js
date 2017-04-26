@@ -83,3 +83,21 @@ export function searchOut(data) {
     }
 }
 
+export function historySave(data) {
+    return{
+        type:"HISTORY_SAVE",
+        payload:data
+    }
+}
+
+export function jumpFlag() {
+    return{
+        type:"JUMP_FLAG"
+    }
+}
+
+export function jumpFalse() {
+   return{
+       type:'JUMP_NOT'
+   }
+}

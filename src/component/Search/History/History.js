@@ -15,16 +15,18 @@ import HistoryItem from './HistoryItem'
 
 
     render(){
-        const history = localStorage.history;
 
-        console.log(history)
-        // const historyItems = history.map((ele,idx) =>{
-        //     return <HistoryItem ele={ele} key={idx}/>
-        // });
+let {historyItem} = this.props.afterReducer;
+
+       const items = historyItem.map((ele,id) => {
+           return <HistoryItem ele={ele} key={id}/>
+       })
+
         return(
                 <div>
                     <div className="historySe" style={{color:'#0c4ca3'}}><span>历史搜索</span></div>
-                    {/*{historyItems}*/}
+
+                    {items}
                 </div>
         )
     }

@@ -10,7 +10,7 @@ export default class HistoryItem extends React.Component{
     render(){
 
         return(
-            <div className="historySe" ><span>{this.props.ele}</span></div>
+            <div className="historySe" ><span>{this.props.ele.item}</span></div>
         )
     }
 

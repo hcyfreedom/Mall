@@ -3,7 +3,7 @@
  */
 import React from 'react'
 import {connect} from 'react-redux';
-import Items from './SeProductionItem'
+import Items from './SearchItems'
 import {bindActionCreators} from 'redux';
 import {post,get} from "../../../http/http"
 import * as afterActions from '../../../action/afterActions'
@@ -14,12 +14,22 @@ class SearchOut extends React.Component{
     }
 
 
-
+componentWillMount(){
+    let actions = bindActionCreators(afterActions,this.props.dispatch);
+    actions.jumpFalse();
+}
 
     render(){
-        return(
-            <div>
+    let {searchOut} = this.props.afterReducer;
+    const items = searchOut.map((ele,id)=>{
+        return <Items key={id} ele={ele}/>
+    })
 
+    console.log(searchOut)
+
+        return(
+            <div style={{position:'relative',top:'100px'}}>
+                {items}
             </div>
         )
     }

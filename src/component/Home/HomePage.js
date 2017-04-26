@@ -15,9 +15,11 @@ export default class  HomePage extends React.Component{
                 <Brand/>
                 <ClassifyBar/>
                 <Advertising/>
+                <ShowYOU/>
+
                 <Suspension/>
-                {/*<ShowYOU/>*/}
-                {/*<ShowBAO/>*/}
+                <div style={{position:'relative',bottom:'260px',width:'100%',height:'200px'}}></div>
+
             </div>
         )
     }

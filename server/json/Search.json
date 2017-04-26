@@ -16,7 +16,7 @@
       "minPoint": 100,
       "maxCoin": 100,
       "minCoin": 100,
-      "headImg": "aaaaaaa",
+      "headImg": "/imgs/1.jpg",
       "contentImg": "aaaaaa",
       "content": "啊啊啊啊啊啊啊啊啊啊啊啊啊啊啊啊啊啊啊啊啊啊",
       "status": 0
@@ -36,7 +36,7 @@
       "minPoint": 100,
       "maxCoin": 100,
       "minCoin": 100,
-      "headImg": "aaaaaaa",
+      "headImg": "/imgs/1.jpg",
       "contentImg": "aaaaaa",
       "content": "啊啊啊啊啊啊啊啊啊啊啊啊啊啊啊啊啊啊啊啊啊啊",
       "status": 0

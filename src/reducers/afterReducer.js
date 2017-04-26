@@ -38,6 +38,8 @@ const initState = {
     allOrders:[],
     saveSearch:'富硒康',
     searchOut:[],
+    historyItem:[],
+    jump:false
 }
 
 export default function afterReducer(state = initState, action = {}) {
@@ -118,9 +120,20 @@ export default function afterReducer(state = initState, action = {}) {
             return clone;
 
         case "SEARCH_OUT":
-            clone.searchOut = payload;
+            clone.searchOut = payload.msg;
             return clone;
 
+        case "HISTORY_SAVE":
+            clone.historyItem.unshift(payload);
+            return clone;
+
+        case "JUMP_FLAG":
+            clone.jump = true;
+            return clone;
+
+        case "JUMP_NOT":
+            clone.jump = false;
+            return clone;
     }
     return clone;
 

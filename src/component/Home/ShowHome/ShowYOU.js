@@ -21,16 +21,23 @@ class ShowYOU extends React.Component{
 
     }
     render(){
-
-        let {outstanding_shop_goods,outstanding_shop_info} = this.props.homeReducer;
+        let {mainPageGoods} = this.props.homeReducer;
         let actions = bindActionCreators(mallActions,this.props.dispatch);
 
-        const productionItems = outstanding_shop_goods.slice(0,3).map((ele,id) =>{
-            return <Link to={'/information/'+ele.shopId+"/"+ele.id} key={id}><div className="pRow"> <ProductionItem src={ele} key={id} actions={actions}/></div></Link>
+        cons
+
+        const productionItems = mainPageGoods.outstanding_shop_goods.map((ele,id) =>{
+            return <Link to={'/information/'+ele.shopId+"/"+ele.id} key={id}><div className="pRow"> <ProductionItem src={ele} key={id} /></div></Link>
         });
-        const productionItems2= outstanding_shop_goods.slice(3,6).map((ele,id) =>{
-            return <Link to={'/information/'+ele.shopId+"/"+ele.id} key={id}><div className="pRow"> <ProductionItem src={ele} key={id} actions={actions}/></div></Link>
-        });
+
+
+        const listContainer = [];
+
+        for(let i = 0;i < listItems1.length; i= i +2){
+
+            listContainer.push(<div key={i} className="gRow">{listItems1.slice(i,i+2)}</div>) ;
+        }
+
 
         return(
             <div>

@@ -12,8 +12,7 @@ import * as afterActions from '../../action/afterActions'
  class Nav extends React.Component{
     constructor(props){
         super(props);
-
-    }
+            }
 
     componentWillMount(){
         let {saveSearch} = this.props.afterReducer;
@@ -21,7 +20,7 @@ import * as afterActions from '../../action/afterActions'
 
 
     handleChange(event){
-        let actions = bindActionCreators(afterActions,this.props.dispatch)
+        let actions = bindActionCreators(afterActions,this.props.dispatch);
        actions.saveSearch(event.target.value)
 
     }
@@ -38,9 +37,11 @@ import * as afterActions from '../../action/afterActions'
 
             if(saveSearch !==""){
                 actions.searchOut(res.data);
-                localStorage.setItem('history', saveSearch);
-                window.location.href = "http://localhost:3001/search/out"
-
+                let payload = {
+                    item : saveSearch
+                };
+                actions.historySave(payload);
+                actions.jumpFlag();
             }else {
                 alert("请输入搜索内容")
             }
@@ -57,7 +58,7 @@ import * as afterActions from '../../action/afterActions'
 
     render(){
         const path = this.props.location.pathname;
-        let {saveSearch} = this.props.afterReducer;
+        let {saveSearch,jump} = this.props.afterReducer;
 
 
         if(path=="/home/index"){
@@ -75,14 +76,18 @@ import * as afterActions from '../../action/afterActions'
        }else {
            return(
                <div>
+                   {jump ?　<Redirect to="/search/out" /> : null}
                    <div style={navStyle}>
-                       <div style={parentStyle}>
-                           <div style={divStyle2} >
-                               <img src="../imgs/searchIcon.png" style={imgStyle}/>
-                               <input ref="searchInput" style={searchStyle2} value={saveSearch} onChange={(event) => this.handleChange(event)}  /></div>
-                           <span onClick={this.handleClick.bind(this)}>搜索</span>
-                       </div>
+                       <Link to="/search/index">
+                           <div style={parentStyle}>
+                               <div style={divStyle2} >
+                                   <img src="../imgs/searchIcon.png" style={imgStyle}/>
+                                   <input ref="searchInput" style={searchStyle2} value={saveSearch} onChange={(event) => this.handleChange(event)}  /></div>
+                               <span onClick={this.handleClick.bind(this)}>搜索</span>
+                           </div>
+                       </Link>
                    </div>
+
                </div>
            )
        }
