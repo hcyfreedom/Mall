@@ -13,7 +13,7 @@ import Delivery from './Orders/Delivery/Delivery'
 
 import Register from './Register/Register'
 import LogIn from './Register/LogIn'
-import Wallet from './Wallet/Wallet'
+import Wallet from './Wallet/before/Wallet'
 import PersonalSetting from './PersonalSetting/PersonalSetting'
 import ModifyLogPass from './PersonalSetting/ModifyLogPass'
 import ModifyPhoneVeri from './PersonalSetting/ModifyPhoneVeri'
