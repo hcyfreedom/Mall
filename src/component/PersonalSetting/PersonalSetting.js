@@ -1,6 +1,12 @@
+import {
+  Redirect,
+} from 'react-router-dom'
 import React from 'react';
+import {connect} from 'react-redux';
+import {get} from '../../http/http'
+import Nav from '../Cart/CartTopNav'
 
-export default class PersonalSetting extends React.Component {
+class PersonalSetting extends React.Component {
     constructor(props) {
         super(props);
         this.lineStyle = {
@@ -13,19 +19,64 @@ export default class PersonalSetting extends React.Component {
         }
         this.arrawStyle = {
             float: "right",
-            transform: "scaleY(1.5)"
+            transform: "scaleY(1.5)",
+            marginLeft: "10%"
         }
+
+        //console.log(this.props);
 
         this.state = {
             headIcon: '/imgs/headIcon.png',
             username: '张三',
             modal: false,
+            redirect: null,
+            media: '',  //object url
+            uploadPhoto: null,
+            caping: false,
         }
+        this.media = null; //user medai stream
+    }
+
+    componentDidMount() {
+        get('/main/getUserInfo', res => {
+            console.log(res);''
+            this.setState({headIcon: res.data.msg.headImg})
+        })
+    }
+
+    capture() {
+        navigator.getUserMedia({"video": true},
+        suc => {
+            this.setState({media: URL.createObjectURL(suc)})
+            this.media = suc;
+        },
+        err => {
+            alert("无法使用摄像头")
+            this.setState({caping: false});
+        });
+    }
+
+    uploadPic(pic) {
+        fetch('/account/uploadHeadImg', {
+            method: 'POST',
+            headers: {
+                'Content-Type': 'Content-Type: multipart/form-data',
+            },
+            body: pic
+        })
+            .then(res => {
+                console.log(`upload photo api response: `, res);
+                return res.text();
+            })
+            .then(res => console.log(res))
+                .catch( err => alert(`网络错误，上传头像失败`));
     }
 
     render() {
         return (
             <div style={{margin: "0%", backgroundColor: "white"}}>
+                <Nav navTitle="个人设置" />
+                <div style={{height: "80px"}}></div>
                 {this.state.modal
                 ?
                 <div onClick={() => this.setState({modal: false})} style={{position: "fixed", height: "100%", width: "100%", backgroundColor: "black", opacity: "0.4", zIndex: 1}}></div>
@@ -34,9 +85,9 @@ export default class PersonalSetting extends React.Component {
                 {[
                     {title: '修改头像', ev: () => this.setState({modal: !this.state.modal})},
                     {title: '用户名', ev: () => ''},
-                    {title: '修改登录密码', ev: () => ''},
-                    {title: '修改支付密码', ev: () => ''},
-                    {title: '修改手机验证', ev: () => console.log()}
+                    // {title: '修改登录密码', ev: () => this.setState({redirect: 'person/logpass'})},
+                    {title: '修改支付密码', ev: () => this.setState({redirect: 'person/paypass'})},
+                    {title: '修改手机验证', ev: () => this.setState({redirect: "person/phone"})}
                 ].map( (e, idx) => {
                     let arraw = idx != 1 ? <span style={this.arrawStyle}>></span> : null;
                     let rightAppend = null;
@@ -48,16 +99,48 @@ export default class PersonalSetting extends React.Component {
                         <div key={idx} style={this.lineStyle} onClick={e.ev}><span>{e.title}</span>{arraw}<span style={{float: "right", marginRight: "2vw", width:"15%"}}>{rightAppend ? rightAppend : null}</span></div>
                     )
                 })}
+                {this.state.redirect ? <Redirect push to={this.state.redirect} /> : null}
                 <div style={{zIndex: 2, position: "absolute", bottom: "0px", display: this.state.modal ? 'block': 'none', width: "100%", height: "25%", transition: "all 0.5s"}}>
                 <div style={{zIndex: 2, width: "90%", marginLeft: "5%", backgroundColor: "white", height: "60%", textAlign: "center", fontSize: "3vh", borderRadius: "5px", lineHeight: "250%"}}>
-                    <div style={{borderBottom: "solid 1px rgb(200, 200, 200)", height: "50%"}}>拍照上传</div>
-                    <div style={{borderBottom: "solid 1px rgb(200, 200, 200)", height: "50%"}}>本地上传</div>
+                    <div style={{borderBottom: "solid 1px rgb(200, 200, 200)", height: "50%"}} onClick={() => {
+                        this.setState({caping: true});
+                        this.capture();
+                        }}>拍照上传</div>
+                    <div style={{borderBottom: "solid 1px rgb(200, 200, 200)", height: "50%"}} onClick={() => this.refs.fileInput.click()}>本地上传</div>
                 </div>
-                <div style={{zIndex: 2, width: "90%", marginLeft: "5%", backgroundColor: "white", marginTop: "1%", height: "30%", textAlign: "center", fontSize: "3vh", borderRadius: "5px", lineHeight: "250%"}}>
+                <div style={{zIndex: 2, width: "90%", marginLeft: "5%", backgroundColor: "white", marginTop: "1%", height: "30%", textAlign: "center", fontSize: "3vh", borderRadius: "5px", lineHeight: "250%", transition: "all 1s"}}>
                     <div onClick={() => this.setState({modal: false})}>取消</div>
                 </div>
+                </div>
+                <div style={{position: "fixed", width: "100%", height: "100%", left: "0px", top: "0px", display: this.state.caping ? "flex" : "none", alignItems: "center", backgroundColor: "black", zIndex: 500}}>
+                    <video autoPlay style={{width: "100%"}} src={this.state.media} ref={"vdo"} onClick={() =>{
+                        let cvs = document.createElement('canvas');
+                        let ctx = cvs.getContext('2d')
+                        ctx.drawImage(this.refs.vdo, 0, 0);
+                        cvs.toBlob(res => {
+                            this.uploadPhoto = res;
+                            this.uploadPic(res);
+                            console.log(res);
+                        })
+
+                    }} ></video>
+                    <div style={{position: "absolute", bottom: "10%", width: "100%", display: "flex", justifyContent: "space-around"}}>
+                    {/*<button style={{fontSize: "80px"}} onClick={() => {
+                            
+                        }}>确认上传</button>*/}
+                    <button style={{fontSize: "80px"}} onClick={() => {
+                        this.setState({caping: false, modal: false});
+                        }}>取消拍照</button>
+                    </div>
+                </div>
+                <div>
+                    <input type="file" style={{display: "none"}} ref="fileInput" onChange={(e) => {
+                        this.setState({modal: false});
+                        this.uploadPic(e.target.files[0]);
+                    }} />
                 </div>
             </div>
         )
     }
 }
+export default connect( state => state)(PersonalSetting)

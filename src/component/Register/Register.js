@@ -50,6 +50,10 @@ onClickInviteCode(){
     })
 }
 
+onChangeInviteCode(event){
+    let actions = bindActionCreators(afterActions,this.props.dispatch);
+    actions.selfInviteCode(event.target.value)
+}
 handleRegister(){
     let {phoneNumber,authCode,adminCode} = this.props.afterReducer;
     let actions = bindActionCreators(afterActions,this.props.dispatch);
@@ -61,9 +65,8 @@ handleRegister(){
     },(res) => {
         if (res.data.code == 200){
             alert("注册成功");
-            actions.changeItemsHref();
-            console.log(history)
-            history.replace('/')
+            // actions.changeItemsHref();
+            window.location.href='/'
         }else {
             console.log("注册失败 请重试")
         }
@@ -80,7 +83,7 @@ handleRegister(){
                         <li>验证码：<input placeholder="请输入验证码" value={authCode} style={{width:'321px'}} onChange={this.onChangeCode.bind(this)}/>
                             <button onClick={this.handleClickCode.bind(this)}>点击获取</button>
                         </li>
-                        <li>邀请码：<input placeholder="88888" style={{width:'321px'}} value={adminCode}/>
+                        <li>邀请码：<input onChange={this.onChangeInviteCode.bind(this)} placeholder="88888" style={{width:'321px'}} value={adminCode}/>
                             <button onClick={this.onClickInviteCode.bind(this)}>借用邀请码</button>
                         </li>
                     </ul>

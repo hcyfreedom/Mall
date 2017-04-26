@@ -1,69 +1,37 @@
 /**
- * Created by hcy on 2017/4/10.
+ * Created by hcy on 2017/4/26.
  */
 import React from 'react'
-import {Tabs, Tab} from 'material-ui/Tabs';
-import SwipeableViews from 'react-swipeable-views';
-import MuiThemeProvider from 'material-ui/styles/MuiThemeProvider';
-
-export default class SearchOut extends React.Component{
-    constructor(props) {
-        super(props);
-        this.state = {
-            slideIndex: 0,
-        };
+import {connect} from 'react-redux';
+import Items from './SearchItems'
+import {bindActionCreators} from 'redux';
+import {post,get} from "../../../http/http"
+import * as afterActions from '../../../action/afterActions'
+import {Link} from 'react-router-dom'
+class SearchOut extends React.Component{
+    constructor(props){
+        super(props)
     }
 
-    handleChange (value) {
-        this.setState({
-            slideIndex: value,
-        });
-    };
+
+componentWillMount(){
+    let actions = bindActionCreators(afterActions,this.props.dispatch);
+    actions.jumpFalse();
+}
+
     render(){
+    let {searchOut} = this.props.afterReducer;
+    const items = searchOut.map((ele,id)=>{
+        return <Items key={id} ele={ele}/>
+    })
+
+    console.log(searchOut)
+
         return(
-            <MuiThemeProvider>
-               <div style={{position:'relative',top:'80px'}}>
-                   <Tabs
-                       onChange={this.handleChange.bind(this)}
-                       value={this.state.slideIndex}
-                   >
-                       {/*<Tab label="Tab One" value={0} style={{backgroundColor:'#E5E5E5'}}/>*/}
-                       {/*<Tab label="Tab Two" value={1} style={{backgroundColor:'#E5E5E5'}}/>*/}
-                       {/*<Tab label="Tab Three" value={2} style={{backgroundColor:'#E5E5E5'}}/>*/}
-                       <Tab label="全部" value={0}/>
-                       <Tab label="优品牌" value={1}/>
-                       <Tab label="保健坊" value={2}/>
-                       <Tab label="美容产品" value={3}/>
-                       <Tab label="百货" value={4}/>
-                   </Tabs>
-                   <SwipeableViews
-                       index={this.state.slideIndex}
-                       onChangeIndex={this.handleChange.bind(this)}
-                   >
-                       <div>
-                           <h2 style={styles.headline}>Tabs with slide effect</h2>
-                           Swipe to see the next slide.<br />
-                       </div>
-                       <div style={styles.slide}>
-                           slide n°2
-                       </div>
-                       <div style={styles.slide}>
-                           slide n°3
-                       </div>
-                   </SwipeableViews>
-               </div>
-            </MuiThemeProvider>
+            <div style={{position:'relative',top:'100px'}}>
+                {items}
+            </div>
         )
     }
 }
-const styles = {
-    headline: {
-        fontSize: 24,
-        paddingTop: 16,
-        marginBottom: 12,
-        fontWeight: 400,
-    },
-    slide: {
-        padding: 10,
-    },
-};
+export default connect((state)=>state)(SearchOut)

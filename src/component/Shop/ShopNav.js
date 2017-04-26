@@ -32,7 +32,7 @@ export default class ShopNav extends React.Component{
                 <span className="goBack" onClick={this.handleClick.bind(this)}>&lt;</span>
                 <div style={parentStyle}>
                     <div style={divStyle} >
-                        <img src="../imgs/searchIcon.png" style={imgStyle}/>
+                        <img src="/imgs/searchIcon.png" style={imgStyle}/>
                         <input style={searchStyle} value={this.state.value} onChange={(event) => this.handleChange(event)}/></div>搜索
                 </div>
             </div>

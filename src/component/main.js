@@ -17,12 +17,13 @@ import Wallet from './Wallet/before/Wallet'
 import PersonalSetting from './PersonalSetting/PersonalSetting'
 import ModifyLogPass from './PersonalSetting/ModifyLogPass'
 import ModifyPhoneVeri from './PersonalSetting/ModifyPhoneVeri'
+import ModifyPayPass from './PersonalSetting/ModifyPayPass'
 import Payment from './Payment/Payment'
 import PaymentSuccess from './Payment/PaymentSuccess'
 import PaymentFail from './Payment/PaymentFail'
 import OrderConfirm from './Orders/Confirm/OrderConfirm'
 import Intro from './Information/Intro'
-import GiftsBagDetail from './GiftBag/GiftBagDetail'
+import OrderPage from './Orders/OrdersManage/OrderPage'
 
 import {Switch, BrowserRouter as Router, Route, Redirect, Link} from 'react-router-dom';
 import createHistory from 'history/createBrowserHistory'
@@ -56,12 +57,14 @@ class Main extends React.Component {
                             <Route path="/register" component={Register}/>
                             <Route path="/login" component={LogIn}/>
                             <Route exact path="/person" component={PersonalSetting}/>
-                            <Route path="/person/pass" component={ModifyLogPass}/>
+                            <Route path="/person/logpass" component={ModifyLogPass}/>
+                            <Route path="/person/paypass" component={ModifyPayPass}/>
                             <Route path="/person/phone" component={ModifyPhoneVeri}/>
                             <Route exact path="/payment" component={Payment}/>
                             <Route path="/payment/succeed" component={PaymentSuccess}/>
                             <Route path="/payment/failed" component={PaymentFail}/>
                             <Route path="/orderConfirm" component={OrderConfirm}/>
+                            <Route path="/orderPage" component={OrderPage}/>
                             <Redirect exact from="/" to="/home/index"/>
                         </Switch>
 

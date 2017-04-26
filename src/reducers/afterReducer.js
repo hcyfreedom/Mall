@@ -29,11 +29,17 @@ const initState = {
         }, {
             src: '/imgs/b5.png',
             hoverSrc: '/imgs/b55.png',
-            href: '/home/walletBefore',
+            href: '/home/myWallet',
         }
     ],
     userInfo:[],
-    adminCode:''
+    adminCode:'',
+    checkLogin:'false',
+    allOrders:[],
+    saveSearch:'富硒康',
+    searchOut:[],
+    historyItem:[],
+    jump:false
 }
 
 export default function afterReducer(state = initState, action = {}) {
@@ -94,6 +100,39 @@ export default function afterReducer(state = initState, action = {}) {
 
         case "GET_INVITE_CODE":
             clone.adminCode = payload.msg;
+            return clone;
+
+        case "SELF_CODE":
+            clone.adminCode = payload;
+            return clone;
+
+        case "CHECK_LOGIN":
+            clone.checkLogin = payload.msg;
+            return clone;
+
+        case "ALL_ORDERS":
+            clone.allOrders = payload.msg;
+            return clone;
+
+        case "SAVE_SEARCH":
+            clone.saveSearch = payload;
+
+            return clone;
+
+        case "SEARCH_OUT":
+            clone.searchOut = payload.msg;
+            return clone;
+
+        case "HISTORY_SAVE":
+            clone.historyItem.unshift(payload);
+            return clone;
+
+        case "JUMP_FLAG":
+            clone.jump = true;
+            return clone;
+
+        case "JUMP_NOT":
+            clone.jump = false;
             return clone;
     }
     return clone;

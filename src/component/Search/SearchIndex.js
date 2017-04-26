@@ -5,9 +5,12 @@ import React from 'react'
 import Nav from './Nav'
 import History from './History/History'
 import SearchOut from './SearchOut/SearchOut'
+import {BrowserRouter as Router, Route, Switch,Redirect, Link} from 'react-router-dom';
+import createHistory from 'history/createBrowserHistory'
+
+const history = createHistory()
 export default class SearchIndex extends React.Component{
         render(){
-            // const path = window.location.pathname;
 
             let Node = React.createClass({
                 render(){
@@ -33,10 +36,9 @@ export default class SearchIndex extends React.Component{
                 })
 
             }
-
             return(
                 <div>
-                    <Nav/>
+                    <Nav location={this.props.location}/>
                     <Node/>
                 </div>
             )

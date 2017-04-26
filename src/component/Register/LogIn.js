@@ -47,9 +47,9 @@ class LogIn extends React.Component{
         },(res) => {
             if (res.data.code == 200){
                 alert("登录成功");
-                actions.changeItemsHref();
-                // console.log(history)
-                // history.replace('/')
+                // actions.changeItemsHref();
+                window.location.href='/'
+
             }else {
                 console.log("登录失败 请重试")
             }

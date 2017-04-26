@@ -23,20 +23,16 @@ class Advertising extends React.Component{
     render(){
 
         let {mainPageGoods} = this.props.homeReducer;
-        let actions = bindActionCreators(mallActions,this.props.dispatch);
-        const list = [];
-        for(let key in mainPageGoods){
-            const items = mainPageGoods[key];
-        //    console.log(items);
-            for(let i = 0;i<items.length;i++){
-                 const items2 = items[i];
-                 //console.log(items2);
-                 list.push(items2);
-            }
+
+
+        const advertisementList = [];
+        for(let key in mainPageGoods.advertisement){
+            const items = mainPageGoods.advertisement[key];
+            advertisementList.push(items)
 
         }
-        const productionItems = list.slice(0,3).map((ele,id) =>{
-            return <Link to={'/information/'+ele.shopId+"/"+ele.id} key={id}><div className="pRow"> <ProductionItem src={ele} key={id} actions={actions}/></div></Link>
+        const advertisement = advertisementList.map((ele,id) =>{
+            return <Link to={'/information/'+ele.shopId+"/"+ele.id} key={id}><div className="pRow"> <ProductionItem src={ele} key={id} /></div></Link>
         });
 
 
@@ -45,8 +41,12 @@ class Advertising extends React.Component{
             <div>
                 <img src="/imgs/a2.png" className="block"/>
                 <div className="AllProductionBox">
-                    {productionItems}
+                    {advertisement}
                 </div>
+
+
+
+
             </div>
         )
     }

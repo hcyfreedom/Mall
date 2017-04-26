@@ -73,7 +73,16 @@ module.exports = function (app) {
     app.use("/account/getAdminCode",(req,res) =>{
         res.json(require('./json/GetAdminCode.json'))
     })
-    app.use(" /main/getUserInfo",(req,res) =>{
+    app.use("/main/getUserInfo",(req,res) =>{
         res.json(require('./json/GetUserInfo.json'))
+    })
+    app.use("/account/checkLogin",(req,res) =>{
+        res.json(require('./json/CheckLogin.json'))
+    })
+    app.use("/getOrderInfo/*",(req,res) =>{
+        res.json(require('./json/OrderInfo.json'))
+    })
+    app.use("/good/search",(req,res) =>{
+        res.json(require('./json/Search.json'))
     })
 }

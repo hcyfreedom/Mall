@@ -9,8 +9,8 @@ import Slider from './Home/Slider/Slider'
 import HomePage from './Home/HomePage'
 import Selector from './Category/SlideSelector/Selector'
 import CateMain from './Category/CatePart/CateMain'
-import Wallet from './Wallet/before/Wallet'
-import MyWallet from './Wallet/After/HeaderAfter'
+import WalletPage from './Wallet/WalletPage'
+
 
 import {BrowserRouter as Router, Route, Switch,Redirect, Link} from 'react-router-dom';
 import createHistory from 'history/createBrowserHistory'
@@ -60,11 +60,11 @@ export default class BaseOptions extends React.Component {
                         <Switch>
                             <Route path="/home/index" component={node}/>
                             <Route path="/home/cart" component={CartHomePage}/>
+                            <Route path="/home/cate" component={nodeMainCate}/>
                             <Route path="/home/classify/:id" component={nodeMainCate}/>
                             <Route path="/home/giftBagMall" component={nodeGift}/>
-                            <Route path="/home/walletBefore" component={Wallet}/>
                             <Route path="/home/cate" component = {nodeMainCate}/>
-                            <Route path="/home/myWallet" component={MyWallet}/>
+                            <Route path="/home/myWallet" component={WalletPage}/>
                         </Switch>
                         <BottomNav/>
 

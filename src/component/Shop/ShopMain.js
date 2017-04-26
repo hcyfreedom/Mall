@@ -15,7 +15,6 @@ class ShopMain extends React.Component{
     }
     componentDidMount(){
         let actions = bindActionCreators(mallActions,this.props.dispatch);
-        console.log("首页" +this.props.path.id)
         get('/shop/getShopMainPage/'+this.props.path.id,(res) => {
             actions.getShopMainPage(res.data)
         })

@@ -21,8 +21,7 @@ class ShowYOU extends React.Component{
 
     }
     render(){
-
-        let {outstanding_shop_goods,outstanding_shop_info} = this.props.homeReducer;
+        let {mainPageGoods} = this.props.homeReducer;
         let actions = bindActionCreators(mallActions,this.props.dispatch);
 
         let productions = new Array();
@@ -35,6 +34,14 @@ class ShowYOU extends React.Component{
         }
 
 
+        const listContainer = [];
+
+        for(let i = 0;i < productionItems.length; i= i +3){
+
+            listContainer.push(<div key={i} className="ggRow">{productionItems.slice(i,i+3)}</div>) ;
+        }
+
+
         return(
             <div>
                 <div className="showBanner">
@@ -43,12 +50,13 @@ class ShowYOU extends React.Component{
                 </div>
 
                 <div style={{width:"100%",height:'60px',backgroundColor:'white',display:'flex',justifyContent:'space-between',borderBottom:'1px solid grey',fontSize:'20px',lineHeight:'60px'}}>
-                    &nbsp;&nbsp;&nbsp;{outstanding_shop_info.outstanding_shop_name}
-                    <Link to={'/shop/'+outstanding_shop_info.outstanding_shop_id}>
+                    &nbsp;&nbsp;&nbsp;{ShowList[1]}
+                    <Link to={'/shop/'+ShowList[0]}>
                         <div>&gt;进入店铺&nbsp;&nbsp;&nbsp;</div>
                     </Link>
                 </div>
                 {productions}
+
             </div>
         )
     }

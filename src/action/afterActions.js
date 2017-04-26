@@ -47,3 +47,57 @@ export function getInviteCode(data) {
         payload:data
     }
 }
+
+export function selfInviteCode(data) {
+    return{
+        type:'SELF_CODE',
+        payload:data
+    }
+}
+
+export function checkLogin(data) {
+    return{
+        type:"CHECK_LOGIN",
+        payload:data
+    }
+}
+
+export function allOrders(data) {
+    return{
+        type:'ALL_ORDERS',
+        payload:data
+    }
+}
+
+export function saveSearch(data) {
+    return{
+        type:'SAVE_SEARCH',
+        payload:data
+    }
+}
+
+export function searchOut(data) {
+    return{
+        type:"SEARCH_OUT",
+        payload:data
+    }
+}
+
+export function historySave(data) {
+    return{
+        type:"HISTORY_SAVE",
+        payload:data
+    }
+}
+
+export function jumpFlag() {
+    return{
+        type:"JUMP_FLAG"
+    }
+}
+
+export function jumpFalse() {
+   return{
+       type:'JUMP_NOT'
+   }
+}
