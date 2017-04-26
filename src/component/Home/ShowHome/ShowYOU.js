@@ -24,24 +24,14 @@ class ShowYOU extends React.Component{
         let {mainPageGoods} = this.props.homeReducer;
         let actions = bindActionCreators(mallActions,this.props.dispatch);
 
-        const ShowList = [];
-        for(let key in mainPageGoods.outstanding_shop_info){
-            const items = mainPageGoods.outstanding_shop_info[key];
-            ShowList.push(items)
-
+        let productions = new Array();
+        for(let i = 0;i < outstanding_shop_goods.length;i+=3){
+            let tmp = outstanding_shop_goods.slice(i,i+3).map((ele,id) =>{
+                console.log(i+id)
+                return <Link to={'/information/'+ele.shopId+"/"+ele.id} key={id+i}><div className="pRow" key={id+i}> <ProductionItem src={ele} key={id+i} actions={actions}/></div></Link>
+            });
+            productions[i/3] = <div key={i/3} className="AllProductionBox">{tmp}</div>
         }
-        const ShowItemList = [];
-        for(let key in mainPageGoods.outstanding_shop_goods){
-            const items = mainPageGoods.outstanding_shop_goods[key];
-            ShowItemList.push(items)
-
-        }
-
-
-
-        const productionItems = ShowItemList.map((ele,id) =>{
-            return <Link to={'/information/'+ele.shopId+"/"+ele.id} key={id}><div className="pRow"> <ProductionItem src={ele} key={id} /></div></Link>
-        });
 
 
         const listContainer = [];
@@ -65,10 +55,7 @@ class ShowYOU extends React.Component{
                         <div>&gt;进入店铺&nbsp;&nbsp;&nbsp;</div>
                     </Link>
                 </div>
-                <div style={{backgroundColor:'white',paddingLeft:'10px',paddingRight:'10px'}}>
-                    {listContainer}
-
-                </div>
+                {productions}
 
             </div>
         )

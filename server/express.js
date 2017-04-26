@@ -11,6 +11,7 @@ var webpackDevConfig = require('../webpack.config');
 
 var CSS_DIR = path.join(__dirname,"..","css");
 var IMG_DIR = path.join(__dirname,"..","imgs");
+var ASSETS_DIR = path.join(__dirname,"..","assets");
 process.env.NODE_TLS_REJECT_UNAUTHORIZED = "0";
 module.exports = function () {
     var app = new express();
@@ -23,6 +24,7 @@ module.exports = function () {
 
     app.use('/css', express.static(CSS_DIR));
     app.use('/imgs', express.static(IMG_DIR));
+    app.use('/assets', express.static(ASSETS_DIR));
 
     require('./api')(app);
 

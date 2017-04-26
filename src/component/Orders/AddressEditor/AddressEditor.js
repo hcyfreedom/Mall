@@ -29,17 +29,23 @@ class AddressEditor extends React.Component {
 
     handleClick() {
         let addressToEdit = this.props.homeReducer.addressToEdit;
-        post('/account/addAddress', addressToEdit, (res)=> {
-            
-        })
-        window.history.go(-1);
+        if (addressToEdit.id != undefined && addressToEdit.id != null)
+            post('/account/updateAddress', addressToEdit, (res)=> {
+                window.history.go(-1);
+            })
+        else{
+            post('/account/addAddress', addressToEdit, (res)=> {
+                window.history.go(-1);
+            })
+
+        }
     }
 
     handleChange(event) {
         console.log(event.target.name);
         let addressToEdit = this.props.homeReducer.addressToEdit;
         let actions = bindActionCreators(mallActions, this.props.dispatch);
-        if (event.target.name == "isDefault") {
+        if (event.target.name == "status") {
             actions.changeAddressToEdit({
                 index: event.target.name,
                 value: addressToEdit.status ^ 1
@@ -77,9 +83,9 @@ class AddressEditor extends React.Component {
                         <li style={{position:'relative'}}>设为默认收货地址：
                                 <span>
                                     <Toggle
-                                        name="isDefault"
+                                        name="status"
                                         onToggle={this.handleChange.bind(this)}
-                                        defaultToggled={addressToEdit.status == 0}
+                                        defaultToggled={addressToEdit.status == 1}
                                         style={styles.toggle}
                                     />
                                 </span>

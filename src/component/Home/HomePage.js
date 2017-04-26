@@ -9,6 +9,7 @@ import Suspension from './Nav/Suspension'
 import ShowYOU from './ShowHome/ShowYOU'
 import ShowClassify from './ShowHome/ShowClassify'
 import {connect} from 'react-redux';
+import ShowBAO from './ShowHome/ShowBAO'
 import {bindActionCreators} from 'redux';
 import {get} from "../../http/http"
 import * as mallActions from '../../action/mallActions'
@@ -46,7 +47,8 @@ console.log(i)
                 <ShowYOU/>
                 <Node/>
                 <Suspension/>
-                <div style={{position:'relative',bottom:'260px',width:'100%',height:'200px'}}></div>
+                <ShowYOU/>
+                <ShowBAO/>
 
             </div>
         )

@@ -16,7 +16,7 @@ export default class AddressItem extends React.Component{
                         {this.props.ele.address}
                     </div>
                 </div>
-                <Link to="/address/editor">
+                <Link to={"/address/editor/"+this.props.ele.id}>
                     <div className="addEditor"><img src="/imgs/add3.jpg"/></div>
                 </Link>
             </div>
