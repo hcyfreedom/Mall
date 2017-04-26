@@ -10,16 +10,26 @@ import {get} from "../../../http/http"
 import * as mallActions from '../../../action/mallActions'
 
 class ConfirmAddress extends React.Component{
+
+    componentDidMount(){
+        let actions = bindActionCreators(mallActions,this.props.dispatch);
+
+        get('/account/getDefaultAddress',(res)=>{
+            actions.getDefaultAddress(res.data.msg)
+        })
+    }
+
     render(){
+        const {defaultAddress} = this.props.homeReducer;
         return(
             <div className="conAdd">
                 <img src="/imgs/add1.jpg"/>
                 <div className="addDetail" style={{marginTop:'15px'}} >
                     <div className="addDetailTop">
-                        <span>张三</span><span style={{paddingLeft:'100px'}}>17861486454854</span>
+                        <span>{defaultAddress.reciever}</span><span style={{paddingLeft:'100px'}}>{defaultAddress.recieverTelephone}</span>
                     </div>
                     <div className="addDetailBottom">
-                        hdweggcewgfyewgfgewyfgewgvjshvchjdsbgvhjdsbgjhdsgbvjhdsbgvchjsb
+                        {defaultAddress.address}
                     </div>
                 </div>
 

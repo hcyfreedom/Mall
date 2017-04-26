@@ -62,6 +62,7 @@ export default class BaseOptions extends React.Component {
                             <Route path="/home/classify/:id" component={nodeMainCate}/>
                             <Route path="/home/giftBagMall" component={nodeGift}/>
                             <Route path="/home/walletBefore" component={Wallet}/>
+                            <Route path="/home/cate" component = {nodeMainCate}/>
                         </Switch>
                         <BottomNav/>
 

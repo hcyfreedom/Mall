@@ -24,8 +24,8 @@ import OrderConfirm from './Orders/Confirm/OrderConfirm'
 import Intro from './Information/Intro'
 import GiftsBagDetail from './GiftBag/GiftBagDetail'
 
-import {Switch, HashRouter as Router, Route, Redirect, Link} from 'react-router-dom';
-import createHistory from 'history/createHashHistory'
+import {Switch, BrowserRouter as Router, Route, Redirect, Link} from 'react-router-dom';
+import createHistory from 'history/createBrowserHistory'
 import {Provider} from 'react-redux';
 import configureStore from '../store/configureStore';
 import injectTapEventPlugin from 'react-tap-event-plugin';

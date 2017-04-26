@@ -250,3 +250,10 @@ export function changeAddressToEdit(data) {
         payload:data
     }
 }
+
+export function getDefaultAddress(data) {
+    return{
+        type:'GET_DEFAULT_ADDRESS',
+        payload:data
+    }
+}

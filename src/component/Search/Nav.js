@@ -3,7 +3,7 @@
  */
 import React from 'react'
 import ReactDOM from 'react-dom';
-import {Switch, HashRouter as Router, Route, Redirect, Link} from 'react-router-dom';
+import {Switch, BrowserRouter as Router, Route, Redirect, Link} from 'react-router-dom';
 
 export default class Nav extends React.Component{
     constructor(){
