@@ -1028,10 +1028,10 @@ function getDefaultAddress(data) {
         payload: data
     };
 }
-
 function bottomNavSelect(data) {
     return {
-        type: "BOTTOM_NAV_SELECT"
+        type: "BOTTOM_NAV_SELECT",
+        payload: data
     };
 }
 
@@ -2885,7 +2885,7 @@ var ProductionItem = function (_React$Component) {
                 _react2.default.createElement(
                     "div",
                     { className: "pBox" },
-                    _react2.default.createElement("img", { src: this.props.src.contentImg }),
+                    _react2.default.createElement("img", { src: this.props.src.headImg }),
                     _react2.default.createElement(
                         "p",
                         { className: "pDetail" },
@@ -9127,12 +9127,12 @@ var divStyle = {
     fontSize: '28px',
     paddingLeft: '60px',
     background: 'url(/imgs/searchIcon.png) 20px 10px no-repeat',
-    marginLeft: '400px',
+    marginLeft: '260px',
     outline: 'medium'
 };
 var divStyle2 = {
     height: '48px',
-    width: '620px',
+    width: '560px',
     display: 'inline-block',
     marginRight: '10px',
     borderRadius: '30px',
@@ -9145,7 +9145,7 @@ var divStyle2 = {
     fontSize: '28px',
     paddingLeft: '60px',
     background: 'url(/imgs/searchIcon.png) 20px 10px no-repeat',
-    marginLeft: '200px',
+    marginLeft: '100px',
     outline: 'medium'
 
 };
@@ -12243,7 +12243,7 @@ var Intro = function (_React$Component) {
                         _react2.default.createElement(
                             'span',
                             { className: 'goBack', onClick: this.handleClick.bind(this) },
-                            '<'
+                            _react2.default.createElement('img', { src: '/imgs/leftArrow.png', style: { top: '40px' } })
                         ),
                         _react2.default.createElement(
                             'div',
@@ -12251,8 +12251,8 @@ var Intro = function (_React$Component) {
                             _react2.default.createElement(
                                 _Tabs.Tabs,
                                 { onChange: this.handleChange.bind(this), value: slideIndex, style: { height: '80px' } },
-                                _react2.default.createElement(_Tabs.Tab, { label: '\u4ECB\u7ECD', value: 0, style: { height: '80px' } }),
-                                _react2.default.createElement(_Tabs.Tab, { label: '\u8BE6\u60C5', value: 1, style: { height: '80px' } })
+                                _react2.default.createElement(_Tabs.Tab, { label: '\u4ECB\u7ECD', value: 0, style: { height: '80px', fontSize: '40px' } }),
+                                _react2.default.createElement(_Tabs.Tab, { label: '\u8BE6\u60C5', value: 1, style: { height: '80px', fontSize: '40px' } })
                             )
                         ),
                         _react2.default.createElement(
@@ -12261,7 +12261,7 @@ var Intro = function (_React$Component) {
                             _react2.default.createElement(
                                 'div',
                                 null,
-                                _react2.default.createElement('img', { src: contentImg, style: { width: "100%", height: '400px', backgroundColor: 'white' } }),
+                                _react2.default.createElement('img', { src: contentImg, style: { width: "100%", backgroundColor: 'white' } }),
                                 _react2.default.createElement(
                                     'div',
                                     { className: 'introWrap' },
@@ -13029,7 +13029,6 @@ var ConfirmSelect = function (_React$Component) {
                     _react2.default.createElement(
                         'div',
                         { className: 'conCoin' },
-                        _react2.default.createElement('div', { className: 'conCircleIcon' }),
                         _react2.default.createElement(
                             'span',
                             null,
@@ -13043,7 +13042,6 @@ var ConfirmSelect = function (_React$Component) {
                     _react2.default.createElement(
                         'div',
                         { className: 'conCoin' },
-                        _react2.default.createElement('div', { className: 'conCircleIcon' }),
                         _react2.default.createElement(
                             'span',
                             null,
@@ -19989,20 +19987,15 @@ function _inherits(subClass, superClass) { if (typeof superClass !== "function" 
 var history = (0, _createBrowserHistory2.default)();
 
 var slides = [{
-    background: "../imgs/1.jpg",
-    link: "www.baidu.com"
+    background: "/imgs/1.jpg"
 }, {
-    background: "../imgs/a2.png",
-    link: "www.baidu.com"
+    background: "/imgs/a2.png"
 }, {
-    background: "../imgs/3.jpg",
-    link: "www.baidu.com"
+    background: "/imgs/3.jpg"
 }, {
-    background: "../imgs/4.jpg",
-    link: "www.baidu.com"
+    background: "/imgs/4.jpg"
 }, {
-    background: '../imgs/a1.png',
-    link: "www.baidu.com"
+    background: '/imgs/a1.png'
 }];
 
 var BaseOptions = function (_React$Component) {
@@ -20064,7 +20057,7 @@ var BaseOptions = function (_React$Component) {
                     _react2.default.createElement(_reactRouterDom.Route, { path: '/home/cate', component: nodeMainCate }),
                     _react2.default.createElement(_reactRouterDom.Route, { path: '/home/myWallet', component: _WalletPage2.default })
                 ),
-                _react2.default.createElement(_BottomNav2.default, null)
+                _react2.default.createElement(_BottomNav2.default, { location: this.props.location })
             );
         }
     }]);
@@ -20094,6 +20087,8 @@ var _react2 = _interopRequireDefault(_react);
 var _GiftBagItems = __webpack_require__(150);
 
 var _GiftBagItems2 = _interopRequireDefault(_GiftBagItems);
+
+var _reactRouterDom = __webpack_require__(6);
 
 var _reactRedux = __webpack_require__(4);
 
@@ -20150,6 +20145,7 @@ var GiftBagDetail = function (_React$Component) {
     }, {
         key: 'handleGoBack',
         value: function handleGoBack() {
+            window.history.go(-1);
             console.log("www");
         }
     }, {
@@ -20173,6 +20169,7 @@ var GiftBagDetail = function (_React$Component) {
         key: 'render',
         value: function render() {
             var giftsDetail = this.props.afterReducer.giftsDetail;
+
 
             return _react2.default.createElement(
                 'div',
@@ -20387,9 +20384,9 @@ var OrderConfirm = function (_React$Component) {
                     'div',
                     { style: navStyle },
                     _react2.default.createElement(
-                        'div',
+                        'span',
                         { className: 'goBack', onClick: this.handleGoBack.bind(this) },
-                        '<'
+                        _react2.default.createElement('img', { src: '/imgs/leftArrow.png', style: { top: '40px' } })
                     ),
                     _react2.default.createElement(
                         'div',
@@ -21436,7 +21433,12 @@ var LogIn = function (_React$Component) {
     function LogIn(props) {
         _classCallCheck(this, LogIn);
 
-        return _possibleConstructorReturn(this, (LogIn.__proto__ || Object.getPrototypeOf(LogIn)).call(this, props));
+        var _this = _possibleConstructorReturn(this, (LogIn.__proto__ || Object.getPrototypeOf(LogIn)).call(this, props));
+
+        _this.state = {
+            getVeriCodeLeftTime: 0
+        };
+        return _this;
     }
 
     _createClass(LogIn, [{
@@ -21451,8 +21453,18 @@ var LogIn = function (_React$Component) {
     }, {
         key: 'handleClickCode',
         value: function handleClickCode() {
+            var _this2 = this;
+
             var phoneNumber = this.props.afterReducer.phoneNumber;
 
+            if (this.state.getVeriCodeLeftTime > 0) return;
+            if (!phoneNumber) return alert('\u8BF7\u586B\u5199\u624B\u673A\u53F7');
+            this.setState({ getVeriCodeLeftTime: 60 }, function () {
+                _this2.ivl = setInterval(function () {
+                    _this2.setState({ getVeriCodeLeftTime: _this2.state.getVeriCodeLeftTime - 1 });
+                    if (_this2.state.getVeriCodeLeftTime <= 0) clearInterval(_this2.ivl);
+                }, 1000);
+            });
             (0, _http.post)('/account/getMessage', {
                 telephone: phoneNumber
             }, function (res) {
@@ -21494,7 +21506,7 @@ var LogIn = function (_React$Component) {
     }, {
         key: 'weChartLogin',
         value: function weChartLogin() {
-            var redirectUrl = urlencoded("http://www.tangseng.shop/account/wechatLogin");
+            var redirectUrl = encodeURIComponent("http://www.tangseng.shop/account/wechatLogin");
             window.location.href = "https://open.weixin.qq.com/connect/oauth2/authorize?appid=wx1be0f2a1f512729a&redirect_uri=" + redirectUrl + "&response_type=code&scope=snsapi_userinfo&state=STATE#wechat_redirect";
         }
     }, {
@@ -21514,7 +21526,7 @@ var LogIn = function (_React$Component) {
                             'li',
                             null,
                             '\u624B\u673A\u53F7\uFF1A',
-                            _react2.default.createElement('input', { placeholder: '\u8BF7\u8F93\u5165\u624B\u673A\u53F7', onChange: this.handleChange.bind(this) })
+                            _react2.default.createElement('input', { type: 'number', placeholder: '\u8BF7\u8F93\u5165\u624B\u673A\u53F7', onChange: this.handleChange.bind(this) })
                         ),
                         _react2.default.createElement(
                             'li',
@@ -21523,8 +21535,8 @@ var LogIn = function (_React$Component) {
                             _react2.default.createElement('input', { placeholder: '\u8BF7\u8F93\u5165\u9A8C\u8BC1\u7801', onChange: this.onChangeCode.bind(this), style: { width: '321px' } }),
                             _react2.default.createElement(
                                 'button',
-                                { onClick: this.handleClickCode.bind(this) },
-                                '\u70B9\u51FB\u83B7\u53D6'
+                                { onClick: this.handleClickCode.bind(this), disabled: this.state.getVeriCodeLeftTime > 0 },
+                                this.state.getVeriCodeLeftTime > 0 ? '\u518D\u6B21\u83B7\u53D6(' + this.state.getVeriCodeLeftTime + ' s}' : "点击获取"
                             )
                         )
                     ),
@@ -21533,12 +21545,6 @@ var LogIn = function (_React$Component) {
                         { className: 'regButton', onClick: this.handleLogin.bind(this) },
                         '\u767B\u5F55'
                     ),
-                    _react2.default.createElement(
-                        'div',
-                        { className: 'regRapid' },
-                        '\u5FEB\u6377\u767B\u5F55'
-                    ),
-                    _react2.default.createElement('img', { onClick: this.weChartLogin.bind(this), className: 'regWeixin', src: '/imgs/weixin.jpg' }),
                     _react2.default.createElement(
                         'div',
                         { className: 'regBottom' },
@@ -21704,7 +21710,7 @@ var Register = function (_React$Component) {
                 if (res.data.code == 200) {
                     alert("注册成功");
                     // actions.changeItemsHref();
-                    var redirectUrl = urlencoded("http://www.tangseng.shop/account/wechatLogin");
+                    var redirectUrl = encodeURIComponent("http://www.tangseng.shop/account/wechatLogin");
                     window.location.href = "https://open.weixin.qq.com/connect/oauth2/authorize?appid=wx1be0f2a1f512729a&redirect_uri=" + redirectUrl + "&response_type=code&scope=snsapi_userinfo&state=STATE#wechat_redirect";
                 } else {
                     console.log("注册失败 请重试");
@@ -21763,12 +21769,6 @@ var Register = function (_React$Component) {
                         { className: 'regButton', onClick: this.handleRegister.bind(this) },
                         '\u6CE8\u518C'
                     ),
-                    _react2.default.createElement(
-                        'div',
-                        { className: 'regRapid' },
-                        '\u5FEB\u6377\u767B\u5F55'
-                    ),
-                    _react2.default.createElement('img', { className: 'regWeixin', src: '/imgs/weixin.jpg' }),
                     _react2.default.createElement(
                         'div',
                         { className: 'regBottom' },
@@ -22818,6 +22818,7 @@ var CarIndex = function (_React$Component) {
             }
 
             group(ordersInCart, 'shopId');
+            console.log(result);
             var itemsWrap = [];
             for (var key in result) {
                 var items = result[key].lists.map(function (ele, id) {
@@ -23507,10 +23508,10 @@ var CateMain = function (_React$Component) {
 
             return _react2.default.createElement(
                 'div',
-                { style: { position: 'absolute', right: '100px', width: '70%', top: "470px" } },
+                { style: { position: 'absolute', right: '0px', width: 'calc(100% - 180px)', top: "500px", display: "flex", justifyContent: "center" } },
                 _react2.default.createElement(
                     'div',
-                    { className: 'AllProduction', style: { backgroundColor: "#F2F2F2" } },
+                    { className: 'AllProduction', style: { backgroundColor: "#F2F2F2", position: "absolute", width: "80%" } },
                     listContainer
                 ),
                 _react2.default.createElement('div', { className: 'spaceBar' })
@@ -23608,10 +23609,38 @@ var Selector = function (_React$Component) {
             var actions = (0, _redux.bindActionCreators)(mallActions, this.props.dispatch);
 
             var selectorItems = classify.map(function (ele, id) {
+                var isCurrent = location.pathname.split('/').pop() == ele.id;
                 return _react2.default.createElement(
                     _reactRouterDom.Link,
                     { to: "/home/classify/" + ele.id, key: id },
-                    _react2.default.createElement(_MenuItem2.default, { style: { fontSize: "25px", minHeight: '60px', lineHeight: '60px', paddingLeft: '12px' }, primaryText: ele.classifyName, key: id })
+                    _react2.default.createElement(
+                        'div',
+                        null,
+                        isCurrent ? _react2.default.createElement('div', {
+                            style: {
+                                background: "linear-gradient(#0f5ea5, #6dddf1)",
+                                width: "5px",
+                                height: "80px",
+                                position: "absolute",
+                                zIndex: "200"
+                            } }) : null,
+                        _react2.default.createElement(_MenuItem2.default, {
+                            style: {
+                                // fontFamily: "Microsoft Yahei",
+                                fontWeight: "600",
+                                fontSize: "25px",
+                                minHeight: '80px',
+                                lineHeight: '80px',
+                                paddingLeft: '12px',
+                                width: "180px",
+                                borderBottom: "solid 0.5px lightgray",
+                                color: isCurrent ? '#0f5ca8' : 'black',
+                                backgroundColor: isCurrent ? '#f2f2f2' : ''
+                            },
+                            primaryText: ele.classifyName,
+                            key: id
+                        })
+                    )
                 );
             });
 
@@ -23640,8 +23669,8 @@ exports.default = (0, _reactRedux.connect)(function (state) {
 
 
 var style = {
-    display: 'inline-block',
-    margin: '116px 0 16px 0',
+    // display: 'inline-block',
+    margin: '116px 0 0 0',
     width: '180px',
     fontSize: '25px'
 };
@@ -24243,7 +24272,8 @@ var HomePage = function (_React$Component) {
                 _react2.default.createElement(_Advertising2.default, null),
                 _react2.default.createElement(_ShowYOU2.default, null),
                 _react2.default.createElement(_ShowBAO2.default, null),
-                _react2.default.createElement(_Suspension2.default, null)
+                _react2.default.createElement(_Suspension2.default, null),
+                _react2.default.createElement('div', { style: { position: 'relative', bottom: '400px', width: '100%', height: '200px' } })
             );
         }
     }]);
@@ -24311,23 +24341,22 @@ var BottomNav = function (_React$Component) {
 
         return _possibleConstructorReturn(this, (BottomNav.__proto__ || Object.getPrototypeOf(BottomNav)).call(this, props));
     }
-    // componentDidMount(){
-    //     let actions = bindActionCreators(mallActions, this.props.dispatch)
-    // }
 
     _createClass(BottomNav, [{
         key: 'render',
         value: function render() {
             var _this2 = this;
 
-            var items = this.props.afterReducer.items;
+            var bottomItems = this.props.afterReducer.bottomItems;
 
             var actions = (0, _redux.bindActionCreators)(mallActions, this.props.dispatch);
-            var bottomNavItems = items.map(function (ele, idx) {
+            var bottomNavItems = bottomItems.map(function (ele, idx) {
+                var e = Object.assign({}, ele);
+                if (ele.href == location.pathname) e.src = e.hoverSrc;else e.src = ele.src;
                 return _react2.default.createElement(
                     _reactRouterDom.Link,
                     { key: idx, to: ele.href },
-                    _react2.default.createElement(_BottomNavItem2.default, _extends({ key: idx, index: idx, element: ele }, _this2.props, { actions: actions }))
+                    _react2.default.createElement(_BottomNavItem2.default, _extends({ key: idx, index: idx, ele: e }, _this2.props))
                 );
             });
             return _react2.default.createElement(
@@ -24367,19 +24396,25 @@ var _react = __webpack_require__(0);
 
 var _react2 = _interopRequireDefault(_react);
 
+var _reactRouterDom = __webpack_require__(6);
+
+var _reactRedux = __webpack_require__(4);
+
+var _redux = __webpack_require__(3);
+
+var _mallActions = __webpack_require__(14);
+
+var mallActions = _interopRequireWildcard(_mallActions);
+
+function _interopRequireWildcard(obj) { if (obj && obj.__esModule) { return obj; } else { var newObj = {}; if (obj != null) { for (var key in obj) { if (Object.prototype.hasOwnProperty.call(obj, key)) newObj[key] = obj[key]; } } newObj.default = obj; return newObj; } }
+
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
 function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
 
 function _possibleConstructorReturn(self, call) { if (!self) { throw new ReferenceError("this hasn't been initialised - super() hasn't been called"); } return call && (typeof call === "object" || typeof call === "function") ? call : self; }
 
-function _inherits(subClass, superClass) { if (typeof superClass !== "function" && superClass !== null) { throw new TypeError("Super expression must either be null or a function, not " + typeof superClass); } subClass.prototype = Object.create(superClass && superClass.prototype, { constructor: { value: subClass, enumerable: false, writable: true, configurable: true } }); if (superClass) Object.setPrototypeOf ? Object.setPrototypeOf(subClass, superClass) : subClass.__proto__ = superClass; } /**
-                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                * Created by hcy on 2017/3/30.
-                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                */
-/**
- * Created by Acer on 2017/2/22.
- */
-
+function _inherits(subClass, superClass) { if (typeof superClass !== "function" && superClass !== null) { throw new TypeError("Super expression must either be null or a function, not " + typeof superClass); } subClass.prototype = Object.create(superClass && superClass.prototype, { constructor: { value: subClass, enumerable: false, writable: true, configurable: true } }); if (superClass) Object.setPrototypeOf ? Object.setPrototypeOf(subClass, superClass) : subClass.__proto__ = superClass; }
 
 var BottomNavItem = function (_React$Component) {
     _inherits(BottomNavItem, _React$Component);
@@ -24391,34 +24426,31 @@ var BottomNavItem = function (_React$Component) {
         return _possibleConstructorReturn(this, (BottomNavItem.__proto__ || Object.getPrototypeOf(BottomNavItem)).call(this, props));
     }
 
+    // handleClick(event){
+    //     this.props.actions.getBottomNav(this.props.ele.src,this.props.index);
+    //     if(event.target.itemID == this.props.index){
+    //         console.log("true")
+    //     }
+    //     console.log(event.target)
+    //     console.log(event.target.class)
+    //
+    //     console.log(this.props.index)
+    // }
+
+
     _createClass(BottomNavItem, [{
-        key: "componentWillMount",
-        value: function componentWillMount() {
-            this.props.actions.getBottomNav(this.props.element.src, this.props.index);
-        }
-    }, {
-        key: "handleTouch",
-        value: function handleTouch() {
-            this.props.actions.getBottomNav(this.props.element.hoverSrc, this.props.index);
-        }
-    }, {
-        key: "handleTouchMove",
-        value: function handleTouchMove(event) {
-            this.props.actions.getBottomNav(this.props.element.src, this.props.index);
-            console.log(this.props.actions.getBottomNav(this.props.element.src, this.props.index));
-            console.log(event.target);
-        }
-    }, {
-        key: "render",
+        key: 'render',
         value: function render() {
-            return _react2.default.createElement("img", { className: "bottomItems", index: this.props.index, src: this.props.homeReducer.bottomNavItemUrl[this.props.index], onTouchStart: this.handleTouch.bind(this), onTouchMove: this.handleTouchMove.bind(this), onTouchEnd: this.handleTouchMove.bind(this) });
+            return _react2.default.createElement('img', { className: 'bottomItems', itemID: this.props.index, src: this.props.ele.src });
         }
     }]);
 
     return BottomNavItem;
 }(_react2.default.Component);
 
-exports.default = BottomNavItem;
+exports.default = (0, _reactRedux.connect)(function (state) {
+    return state;
+})(BottomNavItem);
 
 /***/ }),
 /* 281 */
@@ -24615,8 +24647,8 @@ var Suspension = function (_React$Component) {
         value: function render() {
             var checkLogin = this.props.afterReducer.checkLogin;
 
-            if (!checkLogin) {
 
+            if (!checkLogin) {
                 return _react2.default.createElement(
                     'div',
                     { className: 'SusWrap', style: { fontSize: '30px', lineHeight: '280px', color: '#ef4036' } },
@@ -24717,13 +24749,17 @@ var ShowBAO = function (_React$Component) {
                     return _react2.default.createElement(
                         'div',
                         { className: 'showBanner' },
-                        _react2.default.createElement('img', { src: '../imgs/m2.png' }),
+                        _react2.default.createElement(
+                            'span',
+                            { className: 'classifyName' },
+                            this.props.classifyName
+                        ),
                         _react2.default.createElement(
                             _reactRouterDom.Link,
                             { to: "/home/classify/" + this.props.classifyId },
                             _react2.default.createElement(
                                 'span',
-                                null,
+                                { className: 'moreName' },
                                 '\xA0>more'
                             )
                         )
@@ -24732,6 +24768,8 @@ var ShowBAO = function (_React$Component) {
             });
             for (var i = 0; i < classify.length; i++) {
                 var classifyId = classify[i].id;
+                var classifyName = classify[i].classifyName;
+
                 var goodsArray = mainPageGoods[classifyId];
                 var productions = new Array();
                 if (goodsArray == null || goodsArray == undefined || goodsArray == []) {
@@ -24764,7 +24802,7 @@ var ShowBAO = function (_React$Component) {
                 finalComponent[i] = _react2.default.createElement(
                     'div',
                     { key: i },
-                    _react2.default.createElement(MyHead, { key: i, classifyId: classifyId }),
+                    _react2.default.createElement(MyHead, { key: i, classifyId: classifyId, classifyName: classifyName }),
                     productions
                 );
             }
@@ -25152,15 +25190,11 @@ var Slide = function (_React$Component) {
                 backgroundImage: "url(" + background + ")"
             };
 
-            return _react2.default.createElement(
-                'a',
-                { href: link },
-                _react2.default.createElement('div', { className: 'slider_slide', 'data-active': active, style: slideStyle, onTouchStart: function onTouchStart(ev) {
-                        _this2.touchStart(ev);
-                    }, onTouchEnd: function onTouchEnd(ev) {
-                        _this2.touchEnd(ev);
-                    } })
-            );
+            return _react2.default.createElement('div', { className: 'slider_slide', 'data-active': active, style: slideStyle, onTouchStart: function onTouchStart(ev) {
+                    _this2.touchStart(ev);
+                }, onTouchEnd: function onTouchEnd(ev) {
+                    _this2.touchEnd(ev);
+                } });
         }
     }]);
 
@@ -25264,7 +25298,7 @@ var Slider = function (_React$Component) {
             var _this = this;
             var slides = this.props.slides;
             var slide = slides.map(function (slide, index, array) {
-                return _react2.default.createElement(_Slide2.default, { background: slide.background, active: index === _this.state.activeSlider, link: slide.link, key: index, change: _this.onChildChange, 'this': _this });
+                return _react2.default.createElement(_Slide2.default, { background: slide.background, active: index === _this.state.activeSlider, key: index, change: _this.onChildChange, 'this': _this });
             });
 
             var path = window.location.pathname;
@@ -25719,7 +25753,7 @@ var AddressEditor = function (_React$Component) {
                     ),
                     _react2.default.createElement(
                         'ul',
-                        null,
+                        { className: 'editorLi', style: { backgroundColor: 'white', listStyle: 'none' } },
                         _react2.default.createElement(
                             'li',
                             null,
@@ -28501,7 +28535,7 @@ var initState = {
     giftsDetail: [],
     phoneNumber: '',
     authCode: '',
-    items: [{
+    bottomItems: [{
         src: '/imgs/b1.png',
         hoverSrc: '/imgs/b11.png',
         href: '/home/index'
@@ -28521,16 +28555,18 @@ var initState = {
     }, {
         src: '/imgs/b5.png',
         hoverSrc: '/imgs/b55.png',
-        href: '/home/myWallet'
+        href: '/home/MyWallet'
     }],
     userInfo: [],
     adminCode: '',
-    checkLogin: 'false',
+    checkLogin: false,
     allOrders: [],
     saveSearch: '富硒康',
     searchOut: [],
     historyItem: [],
-    jump: false
+    jump: false,
+    bottomSelectId: new Set()
+
 };
 
 function afterReducer() {
@@ -28624,6 +28660,10 @@ function afterReducer() {
 
         case "JUMP_NOT":
             clone.jump = false;
+            return clone;
+
+        case "BOTTOM_NAV_SELECT":
+            clone.bottomSelectId = payload;
             return clone;
     }
     return clone;
@@ -28894,6 +28934,7 @@ function homeReducer() {
                 totalPrice: payload
             };
             return clone;
+
         case "TARGET_SELECTED_ID":
             clone.selectedID = payload;
             return clone;
