@@ -88,8 +88,8 @@ a{
 
 /*Production*/
 .productionIcon{
-    width: 300px;
-    height: 273px;
+    /* width: 100%; */
+    height: 320px;
     border:1px solid gray;
     background: url("../imgs/p_bg.png") no-repeat;
     background-position: 40px 10px;
@@ -116,12 +116,11 @@ a{
     /* flex-wrap: wrap; */
 }
 .pBox img{
-    width: 200px;
-    height: 120px;
-    padding-left: 40px;
+    width: 50%;
+    /* height: 10%; */
+    padding-left: 25%;
     /* margin: 0 auto; */
-    margin-top: 40px;
-
+    margin-top: 10%;
 }
 .pDetail{
     font-size: 22px;
@@ -161,6 +160,7 @@ a{
     display: flex;
     margin-top: 20px;
     flex-wrap: wrap;
+    /*width: 100%;*/
     justify-content: space-around;
 }
 .AllProductionBox{
@@ -169,6 +169,7 @@ a{
     display: flex;
     justify-content: space-around;
 }
+
 .AllProduction{
     background-color: white;
     width: 100%;
@@ -292,12 +293,12 @@ a{
     padding-top: 10px;
 }
 /*.showBanner span{*/
-    /*!* float: right; *!*/
-    /*width: 50px;*/
-    /*height: 34px;*/
-    /*position: absolute;*/
-    /*right: 55px;*/
-    /*bottom: -10px;*/
+/*!* float: right; *!*/
+/*width: 50px;*/
+/*height: 34px;*/
+/*position: absolute;*/
+/*right: 55px;*/
+/*bottom: -10px;*/
 /*}*/
 .showBanner span{
     line-height: 44px;
