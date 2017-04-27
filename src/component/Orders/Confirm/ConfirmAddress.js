@@ -20,7 +20,14 @@ class ConfirmAddress extends React.Component{
     }
 
     render(){
-        const {defaultAddress} = this.props.homeReducer;
+        let {defaultAddress} = this.props.homeReducer;
+        if(defaultAddress == null || defaultAddress == undefined || defaultAddress == []){
+            defaultAddress = {
+                reciever:"不存在地址",
+                recieverTelephone:"",
+                address:""
+            }
+        }
         return(
             <div className="conAdd">
                 <img src="/imgs/add1.jpg"/>

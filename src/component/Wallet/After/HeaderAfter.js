@@ -26,8 +26,11 @@ import {Link} from 'react-router-dom'
     }
 
     handleLogOut(){
-        alert("退出登录成功！");
-        window.location.href="/home/walletBefore";
+        post("/account/logOut",{},(res)=>{
+            alert("退出登录成功!");
+            window.location.href="/home/index";
+        })
+
     }
 
      onClickInviteCode(){

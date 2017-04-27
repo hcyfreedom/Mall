@@ -21638,7 +21638,12 @@ var Register = function (_React$Component) {
     function Register(props) {
         _classCallCheck(this, Register);
 
-        return _possibleConstructorReturn(this, (Register.__proto__ || Object.getPrototypeOf(Register)).call(this, props));
+        var _this = _possibleConstructorReturn(this, (Register.__proto__ || Object.getPrototypeOf(Register)).call(this, props));
+
+        _this.state = {
+            getVeriCodeLeftTime: 0
+        };
+        return _this;
     }
 
     _createClass(Register, [{
@@ -21653,7 +21658,21 @@ var Register = function (_React$Component) {
     }, {
         key: 'handleClickCode',
         value: function handleClickCode() {
-            var phoneNumber = this.props.afterReducer.phoneNumber;
+            var _this2 = this;
+
+            var _props$afterReducer = this.props.afterReducer,
+                phoneNumber = _props$afterReducer.phoneNumber,
+                authCode = _props$afterReducer.authCode,
+                adminCode = _props$afterReducer.adminCode;
+
+            if (!phoneNumber) return alert('\u8BF7\u586B\u5199\u624B\u673A\u53F7');
+            //60s after click ok
+            this.setState({ getVeriCodeLeftTime: 60 }, function () {
+                _this2.ivl = setInterval(function () {
+                    _this2.setState({ getVeriCodeLeftTime: _this2.state.getVeriCodeLeftTime - 1 });
+                    if (_this2.state.getVeriCodeLeftTime <= 0) clearInterval(_this2.ivl);
+                }, 1000);
+            });
 
             (0, _http.post)('/account/getMessage', {
                 telephone: phoneNumber
@@ -21688,10 +21707,10 @@ var Register = function (_React$Component) {
     }, {
         key: 'handleRegister',
         value: function handleRegister() {
-            var _props$afterReducer = this.props.afterReducer,
-                phoneNumber = _props$afterReducer.phoneNumber,
-                authCode = _props$afterReducer.authCode,
-                adminCode = _props$afterReducer.adminCode;
+            var _props$afterReducer2 = this.props.afterReducer,
+                phoneNumber = _props$afterReducer2.phoneNumber,
+                authCode = _props$afterReducer2.authCode,
+                adminCode = _props$afterReducer2.adminCode;
 
             var actions = (0, _redux.bindActionCreators)(afterActions, this.props.dispatch);
             console.log("register");
@@ -21712,10 +21731,10 @@ var Register = function (_React$Component) {
     }, {
         key: 'render',
         value: function render() {
-            var _props$afterReducer2 = this.props.afterReducer,
-                phoneNumber = _props$afterReducer2.phoneNumber,
-                authCode = _props$afterReducer2.authCode,
-                adminCode = _props$afterReducer2.adminCode;
+            var _props$afterReducer3 = this.props.afterReducer,
+                phoneNumber = _props$afterReducer3.phoneNumber,
+                authCode = _props$afterReducer3.authCode,
+                adminCode = _props$afterReducer3.adminCode;
 
             return _react2.default.createElement(
                 'div',
@@ -21731,17 +21750,17 @@ var Register = function (_React$Component) {
                             'li',
                             null,
                             '\u624B\u673A\u53F7\uFF1A',
-                            _react2.default.createElement('input', { placeholder: '\u8BF7\u8F93\u5165\u624B\u673A\u53F7', value: phoneNumber, onChange: this.handleChange.bind(this) })
+                            _react2.default.createElement('input', { placeholder: '\u8BF7\u8F93\u5165\u624B\u673A\u53F7', type: 'number', style: { width: "570px" }, value: phoneNumber, onChange: this.handleChange.bind(this) })
                         ),
                         _react2.default.createElement(
                             'li',
                             null,
                             '\u9A8C\u8BC1\u7801\uFF1A',
-                            _react2.default.createElement('input', { placeholder: '\u8BF7\u8F93\u5165\u9A8C\u8BC1\u7801', value: authCode, style: { width: '321px' }, onChange: this.onChangeCode.bind(this) }),
+                            _react2.default.createElement('input', { placeholder: '\u8BF7\u8F93\u5165\u9A8C\u8BC1\u7801', type: 'number', value: authCode, style: { width: '321px' }, onChange: this.onChangeCode.bind(this) }),
                             _react2.default.createElement(
                                 'button',
-                                { onClick: this.handleClickCode.bind(this) },
-                                '\u70B9\u51FB\u83B7\u53D6'
+                                { disabled: this.state.getVeriCodeLeftTime > 0, onClick: this.handleClickCode.bind(this) },
+                                this.state.getVeriCodeLeftTime > 0 ? '\u518D\u6B21\u83B7\u53D6(' + this.state.getVeriCodeLeftTime + ')' : "点击获取"
                             )
                         ),
                         _react2.default.createElement(
@@ -26063,6 +26082,13 @@ var ConfirmAddress = function (_React$Component) {
         value: function render() {
             var defaultAddress = this.props.homeReducer.defaultAddress;
 
+            if (defaultAddress == null || defaultAddress == undefined || defaultAddress == []) {
+                defaultAddress = {
+                    reciever: "不存在地址",
+                    recieverTelephone: "",
+                    address: ""
+                };
+            }
             return _react2.default.createElement(
                 'div',
                 { className: 'conAdd' },
@@ -27985,8 +28011,10 @@ var HeaderAfter = function (_React$Component) {
     }, {
         key: 'handleLogOut',
         value: function handleLogOut() {
-            alert("退出登录成功！");
-            window.location.href = "/home/walletBefore";
+            (0, _http.post)("/account/logOut", {}, function (res) {
+                alert("退出登录成功!");
+                window.location.href = "/home/index";
+            });
         }
     }, {
         key: 'onClickInviteCode',
