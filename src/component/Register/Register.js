@@ -105,8 +105,8 @@ handleRegister(){
                     <div className="regButton" onClick={this.handleRegister.bind(this)}>
                         注册
                     </div>
-                    <div className="regRapid">快捷登录</div>
-                    <img className="regWeixin" src="/imgs/weixin.jpg"/>
+                    {/*<div className="regRapid">快捷登录</div>*/}
+                    {/*<img className="regWeixin" src="/imgs/weixin.jpg"/>*/}
                     <div className="regBottom">
                         <span className="regCircle"></span>注册表示您同意<span style={{color:'#0c4da2'}}>《服务协议》</span>
                     </div>
