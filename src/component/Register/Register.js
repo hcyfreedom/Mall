@@ -57,7 +57,7 @@ onChangeInviteCode(event){
 handleRegister(){
     let {phoneNumber,authCode,adminCode} = this.props.afterReducer;
     let actions = bindActionCreators(afterActions,this.props.dispatch);
-
+    console.log("register");
     post('/account/register',{
         telephone:phoneNumber,
         checkCode:authCode,

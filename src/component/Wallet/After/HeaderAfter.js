@@ -36,6 +36,15 @@ import {Link} from 'react-router-dom'
      }
     render(){
         let {userInfo} = this.props.afterReducer;
+        if(userInfo == null || userInfo == undefined){
+            userInfo = {
+                headImg:"",
+                userName:"未登录",
+                coin:0,
+                point:0,
+                diamond:0
+            }
+        }
         return(
         <div>
             <Nav navTitle="我的行囊"/>
@@ -53,7 +62,7 @@ import {Link} from 'react-router-dom'
                     <div className="triZuan">
                         <img src="/imgs/buluozuan.jpg"/>
                         <p>部落钻</p>
-                        <p>{}</p>
+                        <p>{userInfo.diamond}</p>
                     </div>
                     <div className="triZuan">
                         <img src="/imgs/buluobi.jpg"/>
