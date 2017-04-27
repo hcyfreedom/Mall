@@ -14,9 +14,10 @@ class ShowYOU extends React.Component{
 
     }
     componentDidMount(){
-        let actions = bindActionCreators(mallActions,this.props.dispatch);
-        get('/main/getMainPageGoods',(res) => {
+        let actions = bindActionCreators(mallActions, this.props.dispatch);
+        get('/main/getMainPageGoods', (res) => {
             actions.getMainPageGoods(res.data)
+            console.log(res.data)
         })
 
     }
@@ -25,8 +26,9 @@ class ShowYOU extends React.Component{
         let actions = bindActionCreators(mallActions,this.props.dispatch);
 
         let productions = new Array();
-        for(let i = 0;i < outstanding_shop_goods.length;i+=3){
-            let tmp = outstanding_shop_goods.slice(i,i+3).map((ele,id) =>{
+        console.log(mainPageGoods)
+        for(let i = 0;i < mainPageGoods.outstanding_shop_goods.length;i+=3){
+            let tmp = mainPageGoods.outstanding_shop_goods.slice(i,i+3).map((ele,id) =>{
                 console.log(i+id)
                 return <Link to={'/information/'+ele.shopId+"/"+ele.id} key={id+i}><div className="pRow" key={id+i}> <ProductionItem src={ele} key={id+i} actions={actions}/></div></Link>
             });

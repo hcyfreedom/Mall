@@ -47,7 +47,7 @@ console.log(i)
                 <ShowYOU/>
                 <Node/>
                 <Suspension/>
-                <ShowYOU/>
+                {/*<ShowYOU/>*/}
                 <ShowBAO/>
 
             </div>

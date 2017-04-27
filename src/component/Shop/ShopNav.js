@@ -33,7 +33,8 @@ export default class ShopNav extends React.Component{
                 <div style={parentStyle}>
                     <div style={divStyle} >
                         <img src="/imgs/searchIcon.png" style={imgStyle}/>
-                        <input style={searchStyle} value={this.state.value} onChange={(event) => this.handleChange(event)}/></div>搜索
+                        <input style={searchStyle} value={this.state.value} onChange={(event) => this.handleChange(event)}/></div>
+                    <span>搜索</span>
                 </div>
             </div>
         )
@@ -55,15 +56,16 @@ const navStyle = {
 const parentStyle = {
     float:'right',
     color:'white',
-    lineHeight:'80px',
-    // marginRight :'20px',
-    fontSize:'60px'
+    // lineHeight:'80px',
+    marginRight :'20px',
+    fontSize:'40px'
 }
 const divStyle = {
     height:'48px',
     width : '720px',
     display:'inline-block',
     marginRight:'10px',
+    marginTop:'15px',
     borderRadius:'30px',
     border : '1px white solid',
     position:'relative'
