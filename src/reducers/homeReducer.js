@@ -259,6 +259,7 @@ export default function homeReducer(state = initState, action = {}) {
                 totalPrice: payload,
             };
             return clone;
+
         case "TARGET_SELECTED_ID":
             clone.selectedID = payload;
             return clone;
@@ -305,6 +306,7 @@ export default function homeReducer(state = initState, action = {}) {
         case "GET_DEFAULT_ADDRESS":
             clone.defaultAddress = payload;
             return clone;
+
 
     }
     return clone;

@@ -11,16 +11,20 @@ class BottomNav extends React.Component {  //定义组件，也可以用React.cr
     constructor(props){
         super(props);
     }
-    // componentDidMount(){
-    //     let actions = bindActionCreators(mallActions, this.props.dispatch)
-    // }
+
+
 
     render() {
 
-        let {items} = this.props.afterReducer;
+        let {bottomItems} = this.props.afterReducer;
         let actions = bindActionCreators(mallActions,this.props.dispatch);
-        const bottomNavItems = items.map((ele,idx)=>{
-            return <Link key= {idx} to={ele.href}><BottomNavItem key={idx} index={idx} element={ele} {...this.props} actions={actions}/></Link>
+        const bottomNavItems = bottomItems.map((ele,idx)=>{
+            let e = Object.assign({}, ele);
+            if(ele.href == location.pathname)
+                e.src = e.hoverSrc;
+            else
+                e.src = ele.src;
+            return <Link key= {idx} to={ele.href}><BottomNavItem key={idx} index={idx} ele={e} {...this.props} /></Link>
         });
         return(
             <div style={{zIndex:'3'}}>

@@ -129,12 +129,12 @@ const divStyle = {
     fontSize:'28px',
     paddingLeft:'60px',
     background:'url(/imgs/searchIcon.png) 20px 10px no-repeat',
-    marginLeft:'400px',
+    marginLeft:'260px',
     outline:'medium'
 }
 const divStyle2 = {
     height:'48px',
-    width : '620px',
+    width : '560px',
     display:'inline-block',
     marginRight:'10px',
     borderRadius:'30px',
@@ -147,7 +147,7 @@ const divStyle2 = {
     fontSize:'28px',
     paddingLeft:'60px',
     background:'url(/imgs/searchIcon.png) 20px 10px no-repeat',
-    marginLeft:'200px',
+    marginLeft:'100px',
     outline:'medium'
 
 }

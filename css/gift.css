@@ -193,3 +193,18 @@
     color: white;
     font-size: 60px;
 }
+.editorLi li{
+    padding-left: 60px;
+    height: 80px;
+    line-height: 80px;
+    font-size: 28px;
+    color: grey;
+    border-bottom: 1px solid grey;
+}
+.editorLi input{
+    border:none;
+    outline:medium;
+    height: 60px;
+    font-size: 28px;
+    color: grey;
+}

@@ -61,6 +61,7 @@ class CarIndex extends React.Component{
         }
 
         group(ordersInCart,'shopId');
+        console.log(result)
         const itemsWrap = [];
         for(let key in result){
             const items  = result[key].lists.map((ele,id) => {
