@@ -32,9 +32,10 @@ class ShowBAO extends React.Component {
         let finalComponent = new Array();
         let MyHead = React.createClass({
             render(){
+                console.log(this.props)
                 return (
                     <div className="showBanner">
-                        <img src="../imgs/m2.png"/>
+                        <div>{this.props.classifyName}</div>
                         <Link to={"/home/classify/"+this.props.classifyId}><span>&nbsp;>more</span></Link>
                     </div>)
 

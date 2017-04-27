@@ -75,13 +75,13 @@ class Intro extends React.Component{
                         <span className="goBack"  onClick={this.handleClick.bind(this)}>&lt;</span>
                         <div style={{width:'50%',margin:'0 auto',position:'absolute',left:'25%',top:'0'}}>
                             <Tabs onChange={this.handleChange.bind(this)} value={slideIndex} style={{height:'80px'}} >
-                                <Tab label="介绍" value={0} style={{height:'80px'}}/>
-                                <Tab label="详情" value={1} style={{height:'80px'}}/>
+                                <Tab label="介绍" value={0} style={{height:'80px',fontSize:'40px'}}/>
+                                <Tab label="详情" value={1} style={{height:'80px',fontSize:'40px'}}/>
                             </Tabs>
                         </div>
                         <SwipeableViews index={slideIndex} onChangeIndex={this.handleChange.bind(this)} style={{position:"relative"}}>
                             <div>
-                                <img src={contentImg} style={{width:"100%",height:'400px',backgroundColor:'white'}}/>
+                                <img src={contentImg} style={{width:"100%",backgroundColor:'white'}}/>
                                 <div className="introWrap">
                                     <div className="introOne">
                                         <div className="introDetail">{introDetail}</div>

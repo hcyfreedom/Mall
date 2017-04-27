@@ -68,7 +68,7 @@ class AddressEditor extends React.Component {
             <MuiThemeProvider>
                 <div style={{position:'relative',top:'100px'}}>
                     <div className="addTitle" style={{textAlign:'center'}}>编辑收货地址</div>
-                    <ul>
+                    <ul className="editorLi" style={{backgroundColor:'white',listStyle:'none'}}>
                         <li>收件人：<input onChange={this.handleChange.bind(this)} className="reciever" name="reciever"
                                        style={styles.one} value={addressToEdit.reciever}/></li>
                         <li>收货地址：<input onChange={this.handleChange.bind(this)} className="address" name="address"

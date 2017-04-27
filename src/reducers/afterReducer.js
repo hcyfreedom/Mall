@@ -7,7 +7,7 @@ const initState = {
     giftsDetail:[],
     phoneNumber:'',
     authCode:'',
-    items: [
+    bottomItems: [
         {
             src: '/imgs/b1.png',
             hoverSrc: '/imgs/b11.png',
@@ -29,7 +29,7 @@ const initState = {
         }, {
             src: '/imgs/b5.png',
             hoverSrc: '/imgs/b55.png',
-            href: '/home/myWallet',
+            href: '/home/MyWallet',
         }
     ],
     userInfo:[],
@@ -39,7 +39,9 @@ const initState = {
     saveSearch:'富硒康',
     searchOut:[],
     historyItem:[],
-    jump:false
+    jump:false,
+    bottomSelectId:new Set(),
+
 }
 
 export default function afterReducer(state = initState, action = {}) {
@@ -133,6 +135,10 @@ export default function afterReducer(state = initState, action = {}) {
 
         case "JUMP_NOT":
             clone.jump = false;
+            return clone;
+
+        case "BOTTOM_NAV_SELECT":
+            clone.bottomSelectId = payload;
             return clone;
     }
     return clone;
