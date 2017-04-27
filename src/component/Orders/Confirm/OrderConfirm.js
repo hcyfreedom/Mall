@@ -29,9 +29,9 @@ class OrderConfirm extends React.Component{
         return(
            <div>
                <div style={navStyle}>
-                   <div className="goBack" onClick={this.handleGoBack.bind(this)}>
-                       &lt;
-                   </div>
+                   <span className="goBack" onClick={this.handleGoBack.bind(this)}>
+                       <img src="/imgs/leftArrow.png" style={{top:'40px'}} />
+                   </span>
                    <div style={navTitle}>
                        确认订单
                    </div>

@@ -6,6 +6,8 @@
  */
 import React from 'react';
 import GiftBagItems from './GiftBagItems'
+import {Switch, BrowserRouter as Router, Route, Redirect, Link} from 'react-router-dom';
+
 import {connect} from 'react-redux';
 import {bindActionCreators} from 'redux';
 import {get,post} from "../../http/http"
@@ -31,6 +33,7 @@ class  GiftBagDetail extends React.Component{
     }
 
     handleGoBack(){
+      window.history.go(-1)
         console.log("www")
     }
     handleExChange(){
@@ -51,8 +54,12 @@ class  GiftBagDetail extends React.Component{
     }
     render(){
         let {giftsDetail} = this.props.afterReducer;
+
+
         return(
+
             <div>
+
                 <div className="giftIntro">介绍</div>
                 <img className="giftBack" src="/imgs/back.png" onClick={this.handleGoBack.bind(this)} />
                 <img src={giftsDetail.headImg} style={{width:'100%'}}/>

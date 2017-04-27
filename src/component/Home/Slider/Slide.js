@@ -86,11 +86,9 @@ export default class Slide extends React.Component{
         };
 
         return(
-            <a href={link}>
-                <div className="slider_slide" data-active={active} style={slideStyle} onTouchStart={ev =>{this.touchStart(ev)}} onTouchEnd={ev =>{this.touchEnd(ev)}}>
+            <div className="slider_slide" data-active={active} style={slideStyle} onTouchStart={ev =>{this.touchStart(ev)}} onTouchEnd={ev =>{this.touchEnd(ev)}}>
 
-                </div>
-            </a>
+            </div>
         )
     }
 }

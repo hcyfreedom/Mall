@@ -181,6 +181,7 @@ a{
     bottom: 0;
     background-color: #e5e5e5;
     width: 100%;
+    z-index: 10;
 }
 .bBox a{
     width: 150px;

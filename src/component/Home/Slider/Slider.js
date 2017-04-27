@@ -49,7 +49,7 @@ export default class Slider extends React.Component{
         let slides = this.props.slides;
         let slide = slides.map(function (slide,index,array) {
             return(
-                <Slide background={slide.background} active={index === _this.state.activeSlider} link={slide.link} key={index} change={_this.onChildChange} this={_this} />
+                <Slide background={slide.background} active={index === _this.state.activeSlider} key={index} change={_this.onChildChange} this={_this} />
             )
         })
 

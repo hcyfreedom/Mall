@@ -19,20 +19,15 @@ const history = createHistory()
 
 import CartHomePage from './Cart/CartHomePage'
 let slides = [{
-    background: "../imgs/1.jpg",
-    link: "www.baidu.com"
+    background: "/imgs/1.jpg",
 }, {
-    background: "../imgs/a2.png",
-    link: "www.baidu.com"
+    background: "/imgs/a2.png",
 }, {
-    background: "../imgs/3.jpg",
-    link: "www.baidu.com"
+    background: "/imgs/3.jpg",
 }, {
-    background: "../imgs/4.jpg",
-    link: "www.baidu.com"
+    background: "/imgs/4.jpg",
 }, {
-    background: '../imgs/a1.png',
-    link: "www.baidu.com"
+    background: '/imgs/a1.png',
 }];
 
 export default class BaseOptions extends React.Component {

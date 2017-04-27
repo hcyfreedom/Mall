@@ -38,7 +38,7 @@ class Selector extends React.Component{
                     ?
                     <div
                         style={{
-                            background: "linear-gradient(lightblue, blue)",
+                            background: "linear-gradient(#0f5ea5, #6dddf1)",
                             width: "5px",
                             height: "80px",
                             position: "absolute",
@@ -51,7 +51,7 @@ class Selector extends React.Component{
                     }
                     <MenuItem
                         style={{
-                            fontFamily: "Microsoft Yahei",
+                            // fontFamily: "Microsoft Yahei",
                             fontWeight: "600",
                             fontSize:"25px",
                             minHeight:'80px',
@@ -59,7 +59,7 @@ class Selector extends React.Component{
                             paddingLeft:'12px',
                             width: "180px",
                             borderBottom: "solid 0.5px lightgray",
-                            color: isCurrent ? 'blue' : 'black',
+                            color: isCurrent ? '#0f5ca8' : 'black',
                             backgroundColor: isCurrent ? '#f2f2f2' : '',
                         }}
                         primaryText={ele.classifyName}
