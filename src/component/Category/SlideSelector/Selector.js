@@ -31,7 +31,42 @@ class Selector extends React.Component{
         let actions = bindActionCreators(mallActions,this.props.dispatch);
 
          const selectorItems = classify.map((ele,id) =>{
-             return <Link to={"/home/classify/"+ele.id} key={id}><MenuItem style={{fontSize:"25px",minHeight:'60px',lineHeight:'60px',paddingLeft:'12px'}} primaryText={ele.classifyName} key={id} /></Link>
+             const isCurrent = location.pathname.split('/').pop() == ele.id;
+             return <Link to={"/home/classify/"+ele.id} key={id}>
+                <div>
+                    {isCurrent
+                    ?
+                    <div
+                        style={{
+                            background: "linear-gradient(lightblue, blue)",
+                            width: "5px",
+                            height: "80px",
+                            position: "absolute",
+                            zIndex: "200",
+                        }}>
+
+                    </div>
+                    :
+                    null
+                    }
+                    <MenuItem
+                        style={{
+                            fontFamily: "Microsoft Yahei",
+                            fontWeight: "600",
+                            fontSize:"25px",
+                            minHeight:'80px',
+                            lineHeight:'80px',
+                            paddingLeft:'12px',
+                            width: "180px",
+                            borderBottom: "solid 0.5px lightgray",
+                            color: isCurrent ? 'blue' : 'black',
+                            backgroundColor: isCurrent ? '#f2f2f2' : '',
+                        }}
+                        primaryText={ele.classifyName}
+                        key={id}
+                    />
+                </div>
+                    </Link>
         });
 
         return(
@@ -49,8 +84,8 @@ class Selector extends React.Component{
 export default connect((state) => state)(Selector);
 
 const style = {
-    display: 'inline-block',
-    margin: '116px 0 16px 0',
+    // display: 'inline-block',
+    margin: '116px 0 0 0',
     width:'180px',
     fontSize:'25px'
 };

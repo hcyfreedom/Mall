@@ -94,6 +94,7 @@ a{
     background: url("../imgs/p_bg.png") no-repeat;
     background-position: 40px 10px;
     font-size: 18px;
+    font-weight: 600;
     background-color: white;
 }
 
@@ -125,6 +126,7 @@ a{
 .pDetail{
     font-size: 22px;
     text-align: center;
+    color:#404040;
 }
 .priceBox{
     display: flex;
@@ -144,12 +146,15 @@ a{
     color: red;
 }
 .minPrice span{
-    width: 150px;
-    border:1px red solid;
+    border: 2px red solid;
+    padding: 1px 15px;
     height: 20px;
-    line-height: 20px;
-    border-radius: 10px;
+    line-height: 18px;
+    border-radius: 8px;
     text-align: center;
+    font-size: 18px;
+    color: #E12735;
+    font-weight: bold;
 }
 
 .pRow{
