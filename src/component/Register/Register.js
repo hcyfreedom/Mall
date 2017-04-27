@@ -15,7 +15,10 @@ const history = createHistory()
 
  class Register extends React.Component{
 constructor(props){
-    super(props)
+    super(props);
+    this.state = {
+        getVeriCodeLeftTime: 0,
+    }
 }
 
 handleChange(event){
@@ -26,7 +29,18 @@ handleChange(event){
 }
 
 handleClickCode(){
-    let {phoneNumber} = this.props.afterReducer;
+    let {phoneNumber,authCode,adminCode} = this.props.afterReducer;
+    if(!phoneNumber)
+        return alert(`请填写手机号`)
+    //60s after click ok
+    this.setState({getVeriCodeLeftTime: 60}, () => {
+        this.ivl = setInterval(() => {
+        this.setState({getVeriCodeLeftTime: this.state.getVeriCodeLeftTime - 1})
+        if(this.state.getVeriCodeLeftTime <=0 )
+            clearInterval(this.ivl);
+    }, 1000);
+    });
+    
     post('/account/getMessage',{
         telephone:phoneNumber
     },(res) => {
@@ -79,9 +93,9 @@ handleRegister(){
                 <Nav navTitle="注册"/>
                 <div  style={{position:'relative',top:'80px',backgroundColor:'white',height:'100%'}}>
                     <ul>
-                        <li>手机号：<input placeholder="请输入手机号" value={phoneNumber} onChange={this.handleChange.bind(this)}/></li>
-                        <li>验证码：<input placeholder="请输入验证码" value={authCode} style={{width:'321px'}} onChange={this.onChangeCode.bind(this)}/>
-                            <button onClick={this.handleClickCode.bind(this)}>点击获取</button>
+                        <li>手机号：<input placeholder="请输入手机号" type="number" style={{width: "570px"}} value={phoneNumber} onChange={this.handleChange.bind(this)}/></li>
+                        <li>验证码：<input placeholder="请输入验证码" type="number" value={authCode} style={{width:'321px'}} onChange={this.onChangeCode.bind(this)}/>
+                            <button disabled={this.state.getVeriCodeLeftTime > 0} onClick={this.handleClickCode.bind(this)}>{this.state.getVeriCodeLeftTime > 0 ? `再次获取(${this.state.getVeriCodeLeftTime})` : "点击获取"}</button>
                         </li>
                         <li>邀请码：<input onChange={this.onChangeInviteCode.bind(this)} placeholder="88888" style={{width:'321px'}} value={adminCode}/>
                             <button onClick={this.onClickInviteCode.bind(this)}>借用邀请码</button>
