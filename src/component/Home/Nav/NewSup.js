@@ -26,6 +26,13 @@ class NewSup extends React.Component{
     }
     render(){
         let {userInfo} = this.props.afterReducer;
+        if(userInfo == null || userInfo == undefined){
+            userInfo = {
+                headImg:"",
+                coin:0,
+                point:0
+            }
+        }
         return(
             <div className="SusWrap">
                 <img src={userInfo.headImg}/>

@@ -257,3 +257,9 @@ export function getDefaultAddress(data) {
         payload:data
     }
 }
+
+export function bottomNavSelect(data) {
+    return{
+        type:"BOTTOM_NAV_SELECT"
+    }
+}
