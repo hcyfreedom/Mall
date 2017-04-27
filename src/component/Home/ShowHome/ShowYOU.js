@@ -14,6 +14,7 @@ class ShowYOU extends React.Component {
 
     }
 
+
     componentDidMount() {
         let actions = bindActionCreators(mallActions, this.props.dispatch);
         get('/main/getMainPageGoods', (res) => {
@@ -26,12 +27,10 @@ class ShowYOU extends React.Component {
         let {mainPageGoods} = this.props.homeReducer;
         let actions = bindActionCreators(mallActions, this.props.dispatch);
         let outstanding_shop_goods = mainPageGoods.outstanding_shop_goods;
-        console.log(mainPageGoods)
         let productions = new Array();
         if (outstanding_shop_goods != null && outstanding_shop_goods != undefined && outstanding_shop_goods != []) {
             for (let i = 0; i < outstanding_shop_goods.length; i += 3) {
                 let tmp = outstanding_shop_goods.slice(i, i + 3).map((ele, id) => {
-                    console.log(i + id)
                     return <Link to={'/information/'+ele.shopId+"/"+ele.id} key={id+i}>
                         <div className="pRow" key={id+i}><ProductionItem src={ele} key={id+i} actions={actions}/></div>
                     </Link>

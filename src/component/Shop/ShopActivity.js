@@ -18,7 +18,6 @@ class ShopActivity extends React.Component{
     }
     componentDidMount(){
         let actions = bindActionCreators(mallActions,this.props.dispatch);
-        console.log("活跃" +this.props.path.id)
 
         get('/shop/getActivityImgUrl/'+this.props.path.id,(res) => {
             actions.getActivityImgUrl(res.data)

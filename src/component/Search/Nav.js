@@ -65,11 +65,8 @@ import * as afterActions from '../../action/afterActions'
            return(
                <div style={navStyle}>
                    <Link to="/search/index">
-                       <div style={parentStyle}>
-                           <div style={divStyle} >
-                               <img src="/imgs/searchIcon.png" style={imgStyle}/>
-                               <input  style={searchStyle} value={saveSearch} onChange={(event) => this.handleChange(event)}/></div>搜索
-                       </div>
+                       <input ref="searchInput" className="searchInput" style={divStyle} value={saveSearch} onChange={(event) => this.handleChange(event)}/>
+                       <div className="searchWord" onClick={this.handleClick.bind(this)}>搜索</div>
                    </Link>
                </div>
            )
@@ -77,14 +74,22 @@ import * as afterActions from '../../action/afterActions'
            return(
                <div>
                    {jump ?　<Redirect to="/search/out" /> : null}
+                   {/*<div style={navStyle}>*/}
+                       {/*<Link to="/search/index">*/}
+                           {/*<div style={parentStyle}>*/}
+                               {/*/!*<div style={divStyle2} >*!/*/}
+                                   {/*<img src="/imgs/searchIcon.png" style={imgStyle}/>*/}
+                                   {/*<input ref="searchInput" style={searchStyle2} value={saveSearch} onChange={(event) => this.handleChange(event)}  />*/}
+                               {/*/!*</div>*!/*/}
+                               {/*<span className="searchWord" onClick={this.handleClick.bind(this)}>搜索</span>*/}
+                           {/*</div>*/}
+                       {/*</Link>*/}
+                   {/*</div>*/}
+
                    <div style={navStyle}>
                        <Link to="/search/index">
-                           <div style={parentStyle}>
-                               <div style={divStyle2} >
-                                   <img src="/imgs/searchIcon.png" style={imgStyle}/>
-                                   <input ref="searchInput" style={searchStyle2} value={saveSearch} onChange={(event) => this.handleChange(event)}  /></div>
-                               <span onClick={this.handleClick.bind(this)}>搜索</span>
-                           </div>
+                       <input ref="searchInput" className="searchInput" style={divStyle2} value={saveSearch} onChange={(event) => this.handleChange(event)}/>
+                       <div className="searchWord" onClick={this.handleClick.bind(this)}>搜索</div>
                        </Link>
                    </div>
 
@@ -108,13 +113,6 @@ const navStyle = {
 
 }
 
-const parentStyle = {
-    float:'right',
-    color:'white',
-    lineHeight:'80px',
-    marginRight :'20px',
-    fontSize:'60px'
-}
 
 const divStyle = {
     height:'48px',
@@ -123,42 +121,33 @@ const divStyle = {
     marginRight:'10px',
     borderRadius:'30px',
     border : '1px white solid',
-    position:'relative'
+    position:'relative',
+    marginTop:'15px',
+    backgroundColor:'transparent',
+    float:'left',
+    color:"white",
+    fontSize:'28px',
+    paddingLeft:'60px',
+    background:'url(/imgs/searchIcon.png) 20px 10px no-repeat',
+    marginLeft:'400px',
+    outline:'medium'
 }
 const divStyle2 = {
     height:'48px',
-    width : '720px',
+    width : '620px',
     display:'inline-block',
     marginRight:'10px',
     borderRadius:'30px',
     border : '1px white solid',
-    position:'relative'
-}
-const searchStyle = {
-    width:'375px',
-    height:'48px',
-    lineHeight:'80px',
-    outline : 'medium',
-    color:'white',
-    fontSize:'28px',
+    position:'relative',
+    marginTop:'15px',
     backgroundColor:'transparent',
-    float:'right',
-    border:'none'
-}
-const searchStyle2 = {
-    width:'675px',
-    height:'48px',
-    lineHeight:'80px',
-    outline : 'medium',
-    color:'white',
+    float:'left',
+    color:"white",
     fontSize:'28px',
-    backgroundColor:'transparent',
-    float:'right',
-    border:'none'
-}
-const imgStyle = {
-    display:'inline-block',
-    position:'absolute',
-    top:'10px',
-    left:'10px'
+    paddingLeft:'60px',
+    background:'url(/imgs/searchIcon.png) 20px 10px no-repeat',
+    marginLeft:'200px',
+    outline:'medium'
+
 }

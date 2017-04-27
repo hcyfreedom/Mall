@@ -22,7 +22,6 @@ class ShowClassify extends React.Component{
         let {mainPageGoods} = this.props.homeReducer;
         let actions = bindActionCreators(mallActions,this.props.dispatch);
         let goods = mainPageGoods[this.props.classifyId]
-console.log(this.props.classifyId)
 
         return(
             <div>
