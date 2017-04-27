@@ -44,7 +44,7 @@ console.log(i)
                 <Brand/>
                 <ClassifyBar/>
                 <Advertising/>
-                <ShowYOU/>
+                {/*<ShowYOU/>*/}
                 <Node/>
                 <Suspension/>
                 {/*<ShowYOU/>*/}

@@ -2,7 +2,7 @@
  * Created by hcy on 2017/4/6.
  */
 import React from 'react'
-import ShopNav from './Shop/ShopNav'
+import Nav from './Search/Nav'
 import ShowBlock from './Shop/ShowBlock'
 import ShowSelector from './Shop/ShowSelector'
 import ShowBottom from './Shop/ShowBottom'
@@ -31,7 +31,7 @@ import * as mallActions from '../action/mallActions'
 
         return(
             <div>
-                <ShopNav/>
+                <Nav location={this.props.location}/>
                 <ShowBlock src={shopHeadImgUrl}/>
                 <ShowSelector pathParams={this.props.match.params}/>
                 <div style={{width:'100%',height:'150px'}}></div>
