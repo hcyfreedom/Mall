@@ -32,17 +32,18 @@ class ShowBAO extends React.Component {
         let finalComponent = new Array();
         let MyHead = React.createClass({
             render(){
-                console.log(this.props)
                 return (
                     <div className="showBanner">
-                        <div>{this.props.classifyName}</div>
-                        <Link to={"/home/classify/"+this.props.classifyId}><span>&nbsp;>more</span></Link>
+                        <span className="classifyName">{this.props.classifyName}</span>
+                        <Link to={"/home/classify/"+this.props.classifyId}><span className="moreName">&nbsp;>more</span></Link>
                     </div>)
 
             }
         });
         for (let i = 0; i < classify.length; i++) {
             let classifyId = classify[i].id;
+           let  classifyName = classify[i].classifyName;
+
             let goodsArray = mainPageGoods[classifyId];
             let productions = new Array();
             if (goodsArray == null || goodsArray == undefined || goodsArray == []) {
@@ -59,7 +60,7 @@ class ShowBAO extends React.Component {
             }
             finalComponent[i] =
                 <div key={i}>
-                    <MyHead key={i} classifyId={classifyId}/>
+                    <MyHead key={i} classifyId={classifyId} classifyName={classifyName} />
                     {productions}
 
                 </div>

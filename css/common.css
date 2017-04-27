@@ -285,13 +285,27 @@ a{
     display: block;
     padding-top: 10px;
 }
+/*.showBanner span{*/
+    /*!* float: right; *!*/
+    /*width: 50px;*/
+    /*height: 34px;*/
+    /*position: absolute;*/
+    /*right: 55px;*/
+    /*bottom: -10px;*/
+/*}*/
 .showBanner span{
-    /* float: right; */
-    width: 50px;
-    height: 34px;
-    position: absolute;
-    right: 55px;
-    bottom: -10px;
+    line-height: 44px;
+}
+.classifyName{
+    color: #0f5ca8;
+    font-size: 30px;
+    position: relative;
+    left: 45%;
+}
+.moreName{
+    font-size: 20px;
+    left: 80%;
+    position: relative;
 }
 .showSpan{
     width: 50px;
