@@ -22,20 +22,20 @@ class ClassifyBar extends React.Component{
     render(){
 
         let {classifyItem} = this.props.homeReducer;
+        let productions = new Array();
+
+        for (let i = 0; i < classifyItem.length; i += 5) {
+            let tmp = classifyItem.slice(i, i + 5).map((ele, id) => {
+                return <ClassifyItem key={id + i} index={id+ i} src={ele}  />
+            });
+            productions[i / 5] = <div key={i/5} className="classifyBox">{tmp}</div>
+        }
 
 
-        const classifyItems = classifyItem.map((ele,idx) =>{
-            return <ClassifyItem key={idx} index={idx} src={ele}  />
-        });
 
         return(
            <div>
-               <div className="classifyBox">
-                   {classifyItems.slice(0,5)}
-               </div>
-               <div className="classifyBox">
-                   {classifyItems.slice(5)}
-               </div>
+               {productions}
            </div>
         )
     }
