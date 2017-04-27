@@ -184,14 +184,14 @@
     padding-right: 20px;
 }
 .headName{
-    width: 132px;
-    height: 132px;
+    /*width: 132px;*/
+    /*height: 132px;*/
     float: left;
     margin-left: 20px;
     position: relative;
-    margin-top: 110px;
+    margin-top: 150px;
     color: white;
-    font-size: 60px;
+    font-size: 40px;
 }
 .editorLi li{
     padding-left: 60px;
