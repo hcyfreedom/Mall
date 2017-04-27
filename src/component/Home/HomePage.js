@@ -29,7 +29,7 @@ class  HomePage extends React.Component{
                 <ShowYOU/>
                 <ShowBAO/>
                 <Suspension/>
-
+                <div style={{position:'relative',bottom:'400px',width:'100%',height:'200px'}}></div>
             </div>
         )
 

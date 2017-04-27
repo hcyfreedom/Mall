@@ -66,7 +66,7 @@ export default class BaseOptions extends React.Component {
                             <Route path="/home/cate" component = {nodeMainCate}/>
                             <Route path="/home/myWallet" component={WalletPage}/>
                         </Switch>
-                        <BottomNav/>
+                        <BottomNav location={this.props.location}/>
 
                     </div>
         )
