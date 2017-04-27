@@ -129,16 +129,16 @@ class ConfirmSelect extends React.Component {
             <div>
                 <div className="conSelect">
                     <div className="conCoin">
-                        <div className="conCircleIcon">
-                        </div>
+                        {/*<div className="conCircleIcon">*/}
+                        {/*</div>*/}
                         <span>使用部落币</span>
                         <input value={selectCoinValue} placeholder={"最多"+this.props.ele.maxCoin+"/件"}
                                onChange={(event) => this.changeCoin(event)}/>
                     </div>
 
                     <div className="conCoin">
-                        <div className="conCircleIcon">
-                        </div>
+                        {/*<div className="conCircleIcon">*/}
+                        {/*</div>*/}
                         <span>使用部落分</span>
                         <input value={selectPointValue} placeholder={"最多"+this.props.ele.maxPoint+"/件"}
                                onChange={(event) => this.changePoint(event)}/>
