@@ -461,12 +461,14 @@ a{
     line-height: 80px;
     height: 80px;
     background-color: white;
+    font-size: 30px;
 }
 .introWord{
     width: 80%;
     margin: 0 auto;
     height: auto;
     min-height: 800px;
+    font-size: 30px;
 }
 .introBottom{
     width: 100%;
