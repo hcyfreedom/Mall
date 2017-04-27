@@ -9,7 +9,10 @@ import {post,get} from "../../http/http"
 import * as afterActions from '../../action/afterActions'
 class LogIn extends React.Component{
     constructor(props){
-        super(props)
+        super(props);
+        this.state = {
+            getVeriCodeLeftTime: 0,
+        }
     }
 
     handleChange(event){
@@ -21,6 +24,17 @@ class LogIn extends React.Component{
 
     handleClickCode(){
         let {phoneNumber} = this.props.afterReducer;
+        if(this.state.getVeriCodeLeftTime > 0)
+            return;
+        if(!phoneNumber)
+            return alert(`请填写手机号`)
+        this.setState({getVeriCodeLeftTime: 60}, () => {
+            this.ivl = setInterval(() => {
+                this.setState({getVeriCodeLeftTime: this.state.getVeriCodeLeftTime - 1});
+                if(this.state.getVeriCodeLeftTime <= 0)
+                    clearInterval(this.ivl);
+            }, 1000);
+        })
         post('/account/getMessage',{
             telephone:phoneNumber
         },(res) => {
@@ -67,9 +81,9 @@ class LogIn extends React.Component{
                 <Nav navTitle="登录"/>
                 <div  style={{position:'relative',top:'80px',backgroundColor:'white',height:'100%'}}>
                     <ul>
-                        <li>手机号：<input placeholder="请输入手机号" onChange={this.handleChange.bind(this)}/></li>
+                        <li>手机号：<input type="number" placeholder="请输入手机号" onChange={this.handleChange.bind(this)}/></li>
                         <li>验证码：<input placeholder="请输入验证码" onChange={this.onChangeCode.bind(this)} style={{width:'321px'}} />
-                            <button onClick={this.handleClickCode.bind(this)}>点击获取</button>
+                            <button onClick={this.handleClickCode.bind(this)} disabled={this.state.getVeriCodeLeftTime > 0}>{this.state.getVeriCodeLeftTime > 0 ? `再次获取(${this.state.getVeriCodeLeftTime} s}` : "点击获取"}</button>
                         </li>
                     </ul>
                     <div className="regButton" onClick={this.handleLogin.bind(this)}>
