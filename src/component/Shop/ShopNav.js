@@ -28,7 +28,9 @@ export default class ShopNav extends React.Component{
     render(){
         return(
             <div style={navStyle}>
-                <span className="goBack" onClick={this.handleClick.bind(this)}>&lt;</span>
+                <div className="goBack" onClick={this.handleClick.bind(this)}>
+                    <img src="/imgs/leftArrow.png"/>
+                </div>
                     <div style={divStyle} >
                         <img src="/imgs/searchIcon.png" style={imgStyle}/>
                         <input className="searchInput" style={divStyle2} value={this.state.value} onChange={(event) => this.handleChange(event)}/>

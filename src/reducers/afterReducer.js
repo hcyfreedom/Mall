@@ -34,7 +34,7 @@ const initState = {
     ],
     userInfo:[],
     adminCode:'',
-    checkLogin:'false',
+    checkLogin:false,
     allOrders:[],
     saveSearch:'富硒康',
     searchOut:[],

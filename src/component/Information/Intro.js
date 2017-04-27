@@ -72,7 +72,9 @@ class Intro extends React.Component{
             <MuiThemeProvider>
                 <div>
                     <div style={{width:'100%',backgroundColor:'#00BCD4',height:'80px'}}>
-                        <span className="goBack"  onClick={this.handleClick.bind(this)}>&lt;</span>
+                        <span className="goBack"  onClick={this.handleClick.bind(this)}>
+                            <img src="/imgs/leftArrow.png" style={{top:'40px'}} />
+                        </span>
                         <div style={{width:'50%',margin:'0 auto',position:'absolute',left:'25%',top:'0'}}>
                             <Tabs onChange={this.handleChange.bind(this)} value={slideIndex} style={{height:'80px'}} >
                                 <Tab label="介绍" value={0} style={{height:'80px',fontSize:'40px'}}/>
