@@ -45,9 +45,9 @@ class ShowAllProduction extends React.Component{
 
         const listContainer = [];
 
-        for(let i = 0;i < productionItems.length; i= i +3){
+        for(let i = 0;i < productionItems.length; i= i +2){
 
-            listContainer.push(<div key={i} className="sRow">{productionItems.slice(i,i+3)}</div>) ;
+            listContainer.push(<div key={i} className="sRow">{productionItems.slice(i,i+2)}</div>) ;
         }
 
         return(
