@@ -64,12 +64,9 @@ import * as afterActions from '../../action/afterActions'
         if(path=="/home/index"){
            return(
                <div style={navStyle}>
-                   <Link to="/search/index">
-
-                   <div style={{display:'flex',margin:'0 auto',width:'60%'}}>
+                   <Link to="/search/index" style={{display:'flex',margin:'0 auto',width:'60%'}}>
                        <input ref="searchInput" className="searchInput" style={divStyle} value={saveSearch} onChange={(event) => this.handleChange(event)}/>
                        <div className="searchWord" onClick={this.handleClick.bind(this)}>搜索</div>
-                       </div>
                    </Link>
 
                </div>
@@ -80,11 +77,9 @@ import * as afterActions from '../../action/afterActions'
                    {jump ?　<Redirect to="/search/out" /> : null}
 
                    <div style={navStyle}>
-                       <Link to="/search/index">
-                       <div style={{display:'flex',margin:'0 auto',width:'70%'}}>
+                       <Link to="/search/index" style={{display:'flex',margin:'0 auto',width:'70%'}}>
                          <input ref="searchInput" className="searchInput" style={divStyle2} value={saveSearch} onChange={(event) => this.handleChange(event)}/>
                          <span className="searchWord" onClick={this.handleClick.bind(this)}>搜索</span>
-                     </div>
                        </Link>
 
                    </div>
@@ -112,9 +107,9 @@ const navStyle = {
 
 const divStyle = {
     height:'48px',
-    width : '80%',
+    width : '70%',
     display:'inline-block',
-    marginRight:'10px',
+    marginRight:'15px',
     borderRadius:'30px',
     border : '1px white solid',
     position:'relative',
@@ -132,7 +127,7 @@ const divStyle2 = {
     height:'48px',
     width : '80%',
     display:'inline-block',
-    marginRight:'10px',
+    marginRight:'15px',
     borderRadius:'30px',
     border : '1px white solid',
     position:'relative',

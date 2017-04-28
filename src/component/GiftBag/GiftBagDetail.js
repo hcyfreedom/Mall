@@ -44,12 +44,13 @@ class  GiftBagDetail extends React.Component{
             //成功的回调函数
             let data = res.data;
             if (data.code == 200){
+                alert("兑换成功~")
                 console.log("exchange success")
             }else {
                 console.log("exchange failed")
             }
         },()=>{
-            //失败的回调函数
+
         })
     }
     render(){

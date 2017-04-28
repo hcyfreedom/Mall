@@ -24,7 +24,6 @@ class Suspension extends React.Component{
     }
     render(){
         let {checkLogin} = this.props.afterReducer;
-
         if (!checkLogin){
             return <div className="SusWrap" style={{fontSize:'30px',lineHeight:'280px',color:'#ef4036'}}>请登录</div>
 

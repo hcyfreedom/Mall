@@ -87,6 +87,11 @@ class AddressEditor extends React.Component {
                                         onToggle={this.handleChange.bind(this)}
                                         defaultToggled={addressToEdit.status == 1}
                                         style={styles.toggle}
+                                        thumbStyle={styles.thumbOff}
+                                        trackStyle={styles.trackOff}
+                                        thumbSwitchedStyle={styles.thumbSwitched}
+                                        trackSwitchedStyle={styles.trackSwitched}
+                                        labelStyle={styles.labelStyle}
                                     />
                                 </span>
                         </li>
@@ -105,6 +110,20 @@ const styles = {
         width: '20%',
         left: '700px',
         top: '-60px'
+    },thumbOff: {
+        backgroundColor: '#ffcccc',
+    },
+    trackOff: {
+        backgroundColor: '#ff9d9d',
+    },
+    thumbSwitched: {
+        backgroundColor: 'red',
+    },
+    trackSwitched: {
+        backgroundColor: '#ff9d9d',
+    },
+    labelStyle: {
+        color: 'red',
     },
     one: {
         paddingLeft: '60px'
