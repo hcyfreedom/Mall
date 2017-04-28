@@ -47,6 +47,7 @@ class  GiftBagDetail extends React.Component{
                 alert("兑换成功~")
                 console.log("exchange success")
             }else {
+                alert("出错了，兑换失败~")
                 console.log("exchange failed")
             }
         },()=>{
