@@ -11,7 +11,7 @@ export default class ProductionItem extends React.Component{
          return(
              <span className="productionIcon">
                  <div className="pBox">
-                    <img src={this.props.src.contentImg}/>
+                    <img src={this.props.src.headImg}/>
                     <p className="pDetail">{this.props.src.name}</p>
                  </div>
                  <div className="priceBox">

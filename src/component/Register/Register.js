@@ -79,8 +79,9 @@ handleRegister(){
     },(res) => {
         if (res.data.code == 200){
             alert("注册成功");
+            var UUID = res.data.msg;
             // actions.changeItemsHref();
-            let redirectUrl = encodeURIComponent("http://www.tangseng.shop/account/wechatLogin");
+            let redirectUrl = encodeURIComponent("http://www.tangseng.shop/account/wechatLogin?UUID="+UUID);
             window.location.href = "https://open.weixin.qq.com/connect/oauth2/authorize?appid=wx1be0f2a1f512729a&redirect_uri="+redirectUrl+"&response_type=code&scope=snsapi_userinfo&state=STATE#wechat_redirect"
         }else {
             console.log("注册失败 请重试")
