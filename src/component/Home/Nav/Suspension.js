@@ -14,23 +14,27 @@ import {Link} from 'react-router-dom'
 class Suspension extends React.Component{
     constructor(props){
         super(props)
+        this.state={
+            checkLogin:false
+        }
     }
 
     componentDidMount(){
-        let actions = bindActionCreators(afterActions,this.props.dispatch);
         post('/account/checkLogin',(res) => {
-            actions.checkLogin(res.data)
+            this.setState({
+                checkLogin:res.data.msg
+            })
         });
     }
     render(){
         let {checkLogin} = this.props.afterReducer;
         console.log(checkLogin)
-        if (!checkLogin){
-            return <div className="SusWrap" style={{fontSize:'30px',lineHeight:'280px',color:'#ef4036'}}>请登录</div>
+        if (this.state.checkLogin){
+            return <NewSup/>
 
         }else{
+            return <div className="SusWrap" style={{fontSize:'30px',lineHeight:'280px',color:'#ef4036'}}>请登录</div>
 
-            return <NewSup/>
 
         }
 
