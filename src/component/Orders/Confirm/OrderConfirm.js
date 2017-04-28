@@ -30,7 +30,8 @@ class OrderConfirm extends React.Component{
                 resultPrice = 1*val + 1*resultPrice;
         }
         actions.totalPrice(resultPrice);
-        this.props.history.go("/payment")
+
+        this.props.history.replace("/payment")
     }
 
 
