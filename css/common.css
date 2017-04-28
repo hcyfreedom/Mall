@@ -88,12 +88,12 @@ a{
 
 /*Production*/
 .productionIcon{
-    /* width: 100%; */
+     width: 35vw; 
     /*height: 320px;*/
     border:1px solid gray;
     background: url("../imgs/p_bg.png") no-repeat;
     background-position: 40px 10px;
-    font-size: 18px;
+    font-size: 1.5vh;
     font-weight: 600;
     background-color: white;
     padding-bottom: 20px;
@@ -124,7 +124,7 @@ a{
     margin-top: 10%;
 }
 .pDetail{
-    font-size: 22px;
+    font-size: 1.5vh;
     text-align: center;
     color:#404040;
 }
@@ -149,11 +149,11 @@ a{
 .minPrice span{
     border: 2px red solid;
     padding: 1px 15px;
-    height: 20px;
-    line-height: 18px;
+    height: 1vh;
+    line-height: 1vh;
     border-radius: 8px;
     text-align: center;
-    font-size: 18px;
+    font-size: 1vh;
     color: #E12735;
     font-weight: bold;
 }
@@ -178,7 +178,7 @@ a{
     width: 100%;
 }
 .last{
-    width: 50%;
+    width: 35vw;
 }
 /*BottomNav*/
 .bBox{

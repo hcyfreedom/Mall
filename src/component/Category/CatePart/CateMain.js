@@ -52,8 +52,8 @@ class CateMain extends React.Component{
 
 
         return(
-            <div style={{position:'absolute',right:'0px',width:'calc(100% - 22vw)',top:"calc(50vw)", display: "flex", justifyContent: "center"}}>
-                <div className="AllProduction" style={{backgroundColor:"#F2F2F2", position: "absolute",  width: "80%"}}>
+            <div style={{position:'absolute',right:'0px',width:'calc(100% - 22vw)',top:"calc(28vh)", display: "flex", justifyContent: "center"}}>
+                <div className="AllProduction" style={{backgroundColor:"#F2F2F2", position: "absolute",  width: "90%"}}>
                     {listContainer}
                 </div>
                 <div className="spaceBar"></div>

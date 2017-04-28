@@ -1,7 +1,7 @@
 {
   "code": 200,
   "msg": {
-    "headImgUrl": "头图地址1",
+    "headImgUrl": "/imgs/1.jpg",
     "goods": [
       {
         "id": 1,
