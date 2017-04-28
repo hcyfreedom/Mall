@@ -3,12 +3,12 @@
     padding:0;
 }
 body{
-    font-size: 18px;
+    font-size: 1em;
     /*font-family: "微软雅黑";*/
     background-color: #f2f2f2;
 }
 html{
-    font-size: 62.5%;
+    font-size: 100%;
 }
 a{
     text-decoration: none;
@@ -89,13 +89,14 @@ a{
 /*Production*/
 .productionIcon{
     /* width: 100%; */
-    height: 320px;
+    /*height: 320px;*/
     border:1px solid gray;
     background: url("../imgs/p_bg.png") no-repeat;
     background-position: 40px 10px;
     font-size: 18px;
     font-weight: 600;
     background-color: white;
+    padding-bottom: 20px;
 }
 
 .space{
@@ -392,9 +393,8 @@ a{
 /*shop*/
 .goBack{
     color: white;
-    font-size: 5em;
     position: relative;
-    line-height: 60px;
+    /*line-height: 60px;*/
     padding-left: 50px;
 }
 .goBack img{
@@ -517,8 +517,8 @@ a{
 
 /*Search*/
 .searchWord{
-    float: left;
-    font-size: 28px;
+    /*float: left;*/
+    font-size: 1.2em;
     color: white;
     line-height: 80px;
 }

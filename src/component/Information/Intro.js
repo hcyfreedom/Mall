@@ -71,17 +71,17 @@ class Intro extends React.Component{
         return(
             <MuiThemeProvider>
                 <div>
-                    <div style={{width:'100%',backgroundColor:'#00BCD4',height:'80px'}}>
+                    <div style={{width:'100%',background:'linear-gradient(to left,#0f5ea5, #6dddf1)',height:'80px'}}>
                         <span className="goBack"  onClick={this.handleClick.bind(this)}>
-                            <img src="/imgs/leftArrow.png" style={{top:'40px'}} />
+                            <img src="/imgs/leftArrow.png"  />
                         </span>
                         <div style={{width:'50%',margin:'0 auto',position:'absolute',left:'25%',top:'0'}}>
-                            <Tabs onChange={this.handleChange.bind(this)} value={slideIndex} style={{height:'80px'}} >
-                                <Tab label="介绍" value={0} style={{height:'80px',fontSize:'40px'}}/>
-                                <Tab label="详情" value={1} style={{height:'80px',fontSize:'40px'}}/>
+                            <Tabs onChange={this.handleChange.bind(this)} value={slideIndex} style={{height:'80px'}} tabItemContainerStyle={{backgroundColor:'transparent'}} >
+                                <Tab label="介绍" value={0} style={{height:'80px',fontSize:'40px'}} />
+                                <Tab label="详情" value={1} style={{height:'80px',fontSize:'40px'}} />
                             </Tabs>
                         </div>
-                        <SwipeableViews index={slideIndex} onChangeIndex={this.handleChange.bind(this)} style={{position:"relative"}}>
+                        <SwipeableViews index={slideIndex} onChangeIndex={this.handleChange.bind(this)} style={{position:"relative",top:'57px'}}>
                             <div>
                                 <img src={contentImg} style={{width:"100%",backgroundColor:'white'}}/>
                                 <div className="introWrap">

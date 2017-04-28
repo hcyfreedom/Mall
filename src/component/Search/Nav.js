@@ -65,32 +65,28 @@ import * as afterActions from '../../action/afterActions'
            return(
                <div style={navStyle}>
                    <Link to="/search/index">
+
+                   <div style={{display:'flex',margin:'0 auto',width:'60%'}}>
                        <input ref="searchInput" className="searchInput" style={divStyle} value={saveSearch} onChange={(event) => this.handleChange(event)}/>
                        <div className="searchWord" onClick={this.handleClick.bind(this)}>搜索</div>
+                       </div>
                    </Link>
+
                </div>
            )
        }else {
            return(
                <div>
                    {jump ?　<Redirect to="/search/out" /> : null}
-                   {/*<div style={navStyle}>*/}
-                       {/*<Link to="/search/index">*/}
-                           {/*<div style={parentStyle}>*/}
-                               {/*/!*<div style={divStyle2} >*!/*/}
-                                   {/*<img src="/imgs/searchIcon.png" style={imgStyle}/>*/}
-                                   {/*<input ref="searchInput" style={searchStyle2} value={saveSearch} onChange={(event) => this.handleChange(event)}  />*/}
-                               {/*/!*</div>*!/*/}
-                               {/*<span className="searchWord" onClick={this.handleClick.bind(this)}>搜索</span>*/}
-                           {/*</div>*/}
-                       {/*</Link>*/}
-                   {/*</div>*/}
 
                    <div style={navStyle}>
                        <Link to="/search/index">
-                       <input ref="searchInput" className="searchInput" style={divStyle2} value={saveSearch} onChange={(event) => this.handleChange(event)}/>
-                       <div className="searchWord" onClick={this.handleClick.bind(this)}>搜索</div>
+                       <div style={{display:'flex',margin:'0 auto',width:'70%'}}>
+                         <input ref="searchInput" className="searchInput" style={divStyle2} value={saveSearch} onChange={(event) => this.handleChange(event)}/>
+                         <span className="searchWord" onClick={this.handleClick.bind(this)}>搜索</span>
+                     </div>
                        </Link>
+
                    </div>
 
                </div>
@@ -116,7 +112,7 @@ const navStyle = {
 
 const divStyle = {
     height:'48px',
-    width : '420px',
+    width : '80%',
     display:'inline-block',
     marginRight:'10px',
     borderRadius:'30px',
@@ -124,17 +120,17 @@ const divStyle = {
     position:'relative',
     marginTop:'15px',
     backgroundColor:'transparent',
-    float:'left',
+    // float:'left',
     color:"white",
     fontSize:'28px',
     paddingLeft:'60px',
     background:'url(/imgs/searchIcon.png) 20px 10px no-repeat',
-    marginLeft:'260px',
+    // marginLeft:'260px',
     outline:'medium'
 }
 const divStyle2 = {
     height:'48px',
-    width : '560px',
+    width : '80%',
     display:'inline-block',
     marginRight:'10px',
     borderRadius:'30px',
@@ -142,12 +138,12 @@ const divStyle2 = {
     position:'relative',
     marginTop:'15px',
     backgroundColor:'transparent',
-    float:'left',
+    // float:'left',
     color:"white",
     fontSize:'28px',
     paddingLeft:'60px',
     background:'url(/imgs/searchIcon.png) 20px 10px no-repeat',
-    marginLeft:'100px',
+    // marginLeft:'100px',
     outline:'medium'
 
 }
