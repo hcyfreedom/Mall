@@ -34,7 +34,7 @@ export default class OrderPage extends React.Component{
                     <div style={{position:'relative',top:'80px'}}>
                         <Tabs onChange={this.handleChange.bind(this)} value={this.state.slideIndex} >
                             <Tab label="全部订单" value={0}/>
-                            <Tab label="代付款" value={1}/>
+                            <Tab label="待付款" value={1}/>
                             <Tab label="待收货" value={2}/>
                             <Tab label="售后" value={3}/>
                         </Tabs>

@@ -2,6 +2,8 @@
  * Created by hcy on 2017/4/22.
  */
 import React from 'react'
+import Nav from '../../Cart/CartTopNav'
+
 import Bottom from '../AddressEditor/AddressBottom'
 import ConfirmAddress from './ConfirmAddress'
 import ConfirmOrder from './ConfirmOrder'
@@ -15,10 +17,9 @@ import {post} from '../../../http/http'
 import {get} from "../../../http/http"
 import * as mallActions from '../../../action/mallActions'
 class OrderConfirm extends React.Component{
-    handleGoBack(){
-        window.history.go(-1)
+    constructor(props){
+        super(props)
     }
-
 
     handleClick(){
         alert("付款接口没有给 给了之后凋一下接口 成功了之后 再回调url: good/payedOrder")
@@ -28,14 +29,8 @@ class OrderConfirm extends React.Component{
     render(){
         return(
            <div>
-               <div style={navStyle}>
-                   <span className="goBack" onClick={this.handleGoBack.bind(this)}>
-                       <img src="/imgs/leftArrow.png" style={{top:'40px'}} />
-                   </span>
-                   <div style={navTitle}>
-                       确认订单
-                   </div>
-               </div>
+               <Nav navTitle="确认订单"/>
+
                <div style={{position:"relative",top:'120px'}}>
                    <Link to="/address/manage">
                        <ConfirmAddress/>
