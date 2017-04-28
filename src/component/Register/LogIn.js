@@ -62,7 +62,7 @@ class LogIn extends React.Component{
             if (res.data.code == 200){
                 alert("登录成功");
                 // actions.changeItemsHref();
-                window.location.href='/'
+                window.location.href='/home/MyWallet'
 
             }else {
                 console.log("登录失败 请重试")
