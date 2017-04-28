@@ -26,6 +26,11 @@ class CateMain extends React.Component{
         })
 
     }
+
+    componentDidUpdate() {
+        console.log(`updated`);
+        console.log(Array.prototype.slice.call(document.querySelectorAll('.AllProduction')[0]));
+    }
     render(){
 
         let {classifyGOODS} = this.props.homeReducer;
@@ -43,8 +48,10 @@ class CateMain extends React.Component{
         const listContainer = [];
 
         for(let i = 0;i < listItems1.length; i= i +2){
-
-           listContainer.push(<div key={i} className="gRow">{listItems1.slice(i,i+2)}</div>) ;
+            if(i == listItems1.length - 1)
+                listContainer.push(<div key={i} className="gRow last">{listItems1.slice(i,i+2)}</div>)
+            else
+                listContainer.push(<div key={i} className="gRow">{listItems1.slice(i,i+2)}</div>) ;
         }
 
 
