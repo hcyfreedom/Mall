@@ -32,7 +32,7 @@ import * as mallActions from '../action/mallActions'
         return(
             <div>
                 <Nav location={this.props.location}/>
-                {/*<ShowBlock src={shopHeadImgUrl}/>*/}
+                <img src={shopHeadImgUrl} style={{width:'100%',marginTop:'80px'}}/>
                 <ShowSelector pathParams={this.props.match.params}/>
                 <div style={{width:'100%',height:'150px'}}></div>
                 <ShowBottom pathParams={this.props.match.params}/>
