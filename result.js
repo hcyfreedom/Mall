@@ -20857,7 +20857,37 @@ var OrderConfirm = function (_React$Component) {
     _createClass(OrderConfirm, [{
         key: 'handleClick',
         value: function handleClick() {
-            alert("付款接口没有给 给了之后凋一下接口 成功了之后 再回调url: good/payedOrder");
+            var actions = (0, _redux.bindActionCreators)(mallActions, this.props.dispatch);
+            var orderReallyPrice = this.props.homeReducer.orderReallyPrice;
+
+            var resultPrice = 0;
+            var _iteratorNormalCompletion = true;
+            var _didIteratorError = false;
+            var _iteratorError = undefined;
+
+            try {
+                for (var _iterator = orderReallyPrice[Symbol.iterator](), _step; !(_iteratorNormalCompletion = (_step = _iterator.next()).done); _iteratorNormalCompletion = true) {
+                    var val = _step.value;
+
+                    if (val % 1 === 0) resultPrice = 1 * val + 1 * resultPrice;
+                }
+            } catch (err) {
+                _didIteratorError = true;
+                _iteratorError = err;
+            } finally {
+                try {
+                    if (!_iteratorNormalCompletion && _iterator.return) {
+                        _iterator.return();
+                    }
+                } finally {
+                    if (_didIteratorError) {
+                        throw _iteratorError;
+                    }
+                }
+            }
+
+            actions.totalPrice(resultPrice);
+            this.props.history.go("/payment");
         }
     }, {
         key: 'render',
@@ -21263,9 +21293,7 @@ var Payment = function (_React$Component) {
                 ),
                 _react2.default.createElement(
                     'div',
-                    { onClick: function onClick() {
-                            _this2.handleClick("upacp_wap", totalPrice);
-                        }, className: 'addBottom' },
+                    { className: 'addBottom' },
                     '\u786E\u8BA4\u4ED8\u6B3E'
                 )
             );
@@ -21978,7 +22006,7 @@ var LogIn = function (_React$Component) {
                 if (res.data.code == 200) {
                     alert("登录成功");
                     // actions.changeItemsHref();
-                    window.location.href = '/';
+                    window.location.href = '/home/MyWallet';
                 } else {
                     console.log("登录失败 请重试");
                 }
@@ -21987,6 +22015,7 @@ var LogIn = function (_React$Component) {
     }, {
         key: 'weChartLogin',
         value: function weChartLogin() {
+
             var redirectUrl = encodeURIComponent("http://www.tangseng.shop/account/wechatLogin");
             window.location.href = "https://open.weixin.qq.com/connect/oauth2/authorize?appid=wx1be0f2a1f512729a&redirect_uri=" + redirectUrl + "&response_type=code&scope=snsapi_userinfo&state=STATE#wechat_redirect";
         }
@@ -22026,6 +22055,12 @@ var LogIn = function (_React$Component) {
                         { className: 'regButton', onClick: this.handleLogin.bind(this) },
                         '\u767B\u5F55'
                     ),
+                    _react2.default.createElement(
+                        'div',
+                        { className: 'regRapid' },
+                        '\u5FEB\u6377\u767B\u5F55'
+                    ),
+                    _react2.default.createElement('img', { onClick: this.weChartLogin.bind(this), className: 'regWeixin', src: '/imgs/weixin.jpg' }),
                     _react2.default.createElement(
                         'div',
                         { className: 'regBottom' },
@@ -22191,7 +22226,7 @@ var Register = function (_React$Component) {
                 if (res.data.code == 200) {
                     alert("注册成功");
                     var UUID = res.data.msg;
-                    // actions.changeItemsHref();
+
                     var redirectUrl = encodeURIComponent("http://www.tangseng.shop/account/wechatLogin?UUID=" + UUID);
                     window.location.href = "https://open.weixin.qq.com/connect/oauth2/authorize?appid=wx1be0f2a1f512729a&redirect_uri=" + redirectUrl + "&response_type=code&scope=snsapi_userinfo&state=STATE#wechat_redirect";
                 } else {
@@ -23979,8 +24014,11 @@ var CateMain = function (_React$Component) {
             var listContainer = [];
 
             for (var i = 0; i < listItems1.length; i = i + 2) {
-
-                listContainer.push(_react2.default.createElement(
+                if (i == listItems1.length - 1) listContainer.push(_react2.default.createElement(
+                    'div',
+                    { key: i, className: 'gRow last' },
+                    listItems1.slice(i, i + 2)
+                ));else listContainer.push(_react2.default.createElement(
                     'div',
                     { key: i, className: 'gRow' },
                     listItems1.slice(i, i + 2)
@@ -25241,12 +25279,8 @@ var ShowBAO = function (_React$Component) {
                         ),
                         _react2.default.createElement(
                             _reactRouterDom.Link,
-                            { to: "/home/classify/" + this.props.classifyId },
-                            _react2.default.createElement(
-                                'span',
-                                { className: 'moreName' },
-                                '\xA0>more'
-                            )
+                            { to: "/home/classify/" + this.props.classifyId, className: 'moreName' },
+                            '\xA0>more'
                         )
                     );
                 }
@@ -25390,12 +25424,8 @@ var ShowClassify = function (_React$Component) {
                     ),
                     _react2.default.createElement(
                         _reactRouterDom.Link,
-                        { to: '/home/cate' },
-                        _react2.default.createElement(
-                            'span',
-                            { className: 'showSpan' },
-                            '\xA0>more'
-                        )
+                        { to: '/home/cate', className: 'showSpan' },
+                        '\xA0>more'
                     )
                 ),
                 _react2.default.createElement('div', { style: { backgroundColor: 'white', paddingLeft: '10px', paddingRight: '10px' } })
@@ -25481,11 +25511,13 @@ var ShowYOU = function (_React$Component) {
             var actions = (0, _redux.bindActionCreators)(mallActions, this.props.dispatch);
             var outstanding_shop_goods = mainPageGoods.outstanding_shop_goods;
             var productions = new Array();
+            var shopId = undefined;
             if (outstanding_shop_goods != null && outstanding_shop_goods != undefined && outstanding_shop_goods != []) {
                 var outStandingItems = outstanding_shop_goods.slice(0, 9);
 
                 var _loop = function _loop(i) {
                     var tmp = outStandingItems.slice(i, i + 3).map(function (ele, id) {
+                        shopId = ele.shopId;
                         return _react2.default.createElement(
                             _reactRouterDom.Link,
                             { to: '/information/' + ele.shopId + "/" + ele.id, key: id + i },
@@ -25514,16 +25546,7 @@ var ShowYOU = function (_React$Component) {
                 _react2.default.createElement(
                     'div',
                     { className: 'showBanner' },
-                    _react2.default.createElement('img', { src: '../imgs/m1.png' }),
-                    _react2.default.createElement(
-                        _reactRouterDom.Link,
-                        { to: '/home/cate' },
-                        _react2.default.createElement(
-                            'span',
-                            null,
-                            '\xA0>more'
-                        )
-                    )
+                    _react2.default.createElement('img', { src: '../imgs/m1.png' })
                 ),
                 _react2.default.createElement(
                     'div',
@@ -25532,12 +25555,8 @@ var ShowYOU = function (_React$Component) {
                     '\xA0\xA0\xA0',
                     _react2.default.createElement(
                         _reactRouterDom.Link,
-                        { to: '/shop/' },
-                        _react2.default.createElement(
-                            'div',
-                            null,
-                            '>\u8FDB\u5165\u5E97\u94FA\xA0\xA0\xA0'
-                        )
+                        { to: /shop/ + shopId, style: { marginRight: '30px' } },
+                        ' >\u8FDB\u5165\u5E97\u94FA\xA0\xA0\xA0'
                     )
                 ),
                 productions
@@ -25934,7 +25953,7 @@ var AddToCar = function (_React$Component) {
                     console.log("add to cart failed");
                 }
             }, function () {
-                alert("加入购物车失败，请先登录！");
+                // alert("加入购物车失败，请先登录！")
             });
         }
     }, {
@@ -29117,7 +29136,8 @@ var initState = {
     searchOut: [],
     historyItem: [],
     jump: false,
-    bottomSelectId: new Set()
+    bottomSelectId: new Set(),
+    payPrice: 0
 
 };
 
@@ -29217,6 +29237,11 @@ function afterReducer() {
         case "BOTTOM_NAV_SELECT":
             clone.bottomSelectId = payload;
             return clone;
+
+        case "CHANGE_PRICE":
+            clone.payPrice = payload;
+            return clone;
+
     }
     return clone;
 }
