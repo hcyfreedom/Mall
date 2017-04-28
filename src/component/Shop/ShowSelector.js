@@ -26,12 +26,12 @@ export default class ShowSelector extends React.Component{
     render(){
         return(
             <MuiThemeProvider>
-                <div>
-                    <Tabs onChange={this.handleChange.bind(this)} value={this.state.slideIndex}>
-                        <Tab label="店铺首页" value={0}/>
-                        <Tab label="全部商品" value={1}/>
-                        <Tab label="热销产品" value={2}/>
-                        <Tab label="店铺活动" value={3}/>
+                <div style={{background:'linear-gradient(to left,#0f5ea5, #6dddf1)',height:'48px'}}>
+                    <Tabs onChange={this.handleChange.bind(this)} value={this.state.slideIndex} tabItemContainerStyle={{backgroundColor:'transparent'}} >
+                        <Tab label="店铺首页" value={0} style={{fontSize:'1.2em'}}/>
+                        <Tab label="全部商品" value={1} style={{fontSize:'1.2em'}} />
+                        <Tab label="热销产品" value={2} style={{fontSize:'1.2em'}} />
+                        <Tab label="店铺活动" value={3} style={{fontSize:'1.2em'}} />
                     </Tabs>
                     <SwipeableViews index={this.state.slideIndex} onChangeIndex={this.handleChange.bind(this)}>
                         <div>
