@@ -131,6 +131,7 @@ a{
 .priceBox{
     display: flex;
     justify-content: space-around;
+    text-align: center;
     padding-top: 10px;
     padding-bottom: 10px;
 }
@@ -160,7 +161,8 @@ a{
 .pRow{
     display: flex;
     margin-top: 20px;
-    flex-wrap: wrap;
+    /*flex-wrap: nowrap;*/
+    width: 90%;
     /*width: 100%;*/
     justify-content: space-around;
 }
@@ -362,8 +364,9 @@ a{
 .gRow{
     display: flex;
     margin-top: 20px;
-    flex-wrap: wrap;
-    justify-content: space-between;
+    flex-wrap: nowrap;
+    justify-content: center;
+    /*text-align: center;*/
 }
 .ggRow{
     display: flex;

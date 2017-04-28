@@ -53,11 +53,12 @@ class Selector extends React.Component{
                         style={{
                             // fontFamily: "Microsoft Yahei",
                             fontWeight: "600",
-                            fontSize:"25px",
+                            fontSize:"1.5vh",
                             minHeight:'80px',
+                            height: "4vh",
                             lineHeight:'80px',
-                            paddingLeft:'12px',
-                            width: "180px",
+                            paddingLeft:'3vw',
+                            width: "22vw",
                             borderBottom: "solid 0.5px lightgray",
                             color: isCurrent ? '#0f5ca8' : 'black',
                             backgroundColor: isCurrent ? '#f2f2f2' : '',
@@ -86,6 +87,6 @@ export default connect((state) => state)(Selector);
 const style = {
     // display: 'inline-block',
     margin: '116px 0 0 0',
-    width:'180px',
+    width:'22vw',
     fontSize:'25px'
 };
