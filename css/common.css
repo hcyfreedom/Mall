@@ -97,6 +97,7 @@ a{
     font-weight: 600;
     background-color: white;
     padding-bottom: 20px;
+    margin-bottom: 40px;
 }
 
 .space{
@@ -160,10 +161,8 @@ a{
 
 .pRow{
     display: flex;
-    margin-top: 20px;
-    /*flex-wrap: nowrap;*/
     width: 90%;
-    /*width: 100%;*/
+    margin:0 auto;
     justify-content: space-around;
 }
 .AllProductionBox{
