@@ -264,6 +264,3 @@ export function bottomNavSelect(data) {
 
 
 
-}
-
-

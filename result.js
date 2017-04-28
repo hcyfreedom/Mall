@@ -20857,7 +20857,37 @@ var OrderConfirm = function (_React$Component) {
     _createClass(OrderConfirm, [{
         key: 'handleClick',
         value: function handleClick() {
-            alert("付款接口没有给 给了之后凋一下接口 成功了之后 再回调url: good/payedOrder");
+            var actions = (0, _redux.bindActionCreators)(mallActions, this.props.dispatch);
+            var orderReallyPrice = this.props.homeReducer.orderReallyPrice;
+
+            var resultPrice = 0;
+            var _iteratorNormalCompletion = true;
+            var _didIteratorError = false;
+            var _iteratorError = undefined;
+
+            try {
+                for (var _iterator = orderReallyPrice[Symbol.iterator](), _step; !(_iteratorNormalCompletion = (_step = _iterator.next()).done); _iteratorNormalCompletion = true) {
+                    var val = _step.value;
+
+                    if (val % 1 === 0) resultPrice = 1 * val + 1 * resultPrice;
+                }
+            } catch (err) {
+                _didIteratorError = true;
+                _iteratorError = err;
+            } finally {
+                try {
+                    if (!_iteratorNormalCompletion && _iterator.return) {
+                        _iterator.return();
+                    }
+                } finally {
+                    if (_didIteratorError) {
+                        throw _iteratorError;
+                    }
+                }
+            }
+
+            actions.totalPrice(resultPrice);
+            this.props.history.go("/payment");
         }
     }, {
         key: 'render',
@@ -21263,9 +21293,7 @@ var Payment = function (_React$Component) {
                 ),
                 _react2.default.createElement(
                     'div',
-                    { onClick: function onClick() {
-                            _this2.handleClick("upacp_wap", totalPrice);
-                        }, className: 'addBottom' },
+                    { className: 'addBottom' },
                     '\u786E\u8BA4\u4ED8\u6B3E'
                 )
             );
@@ -21978,7 +22006,7 @@ var LogIn = function (_React$Component) {
                 if (res.data.code == 200) {
                     alert("登录成功");
                     // actions.changeItemsHref();
-                    window.location.href = '/';
+                    window.location.href = '/home/MyWallet';
                 } else {
                     console.log("登录失败 请重试");
                 }
@@ -23959,12 +23987,6 @@ var CateMain = function (_React$Component) {
             });
         }
     }, {
-        key: 'componentDidUpdate',
-        value: function componentDidUpdate() {
-            console.log('updated');
-            console.log(Array.prototype.slice.call(document.querySelectorAll('.AllProduction')[0]));
-        }
-    }, {
         key: 'render',
         value: function render() {
             var classifyGOODS = this.props.homeReducer.classifyGOODS;
@@ -25931,7 +25953,7 @@ var AddToCar = function (_React$Component) {
                     console.log("add to cart failed");
                 }
             }, function () {
-                alert("加入购物车失败，请先登录！");
+                // alert("加入购物车失败，请先登录！")
             });
         }
     }, {
@@ -29114,7 +29136,8 @@ var initState = {
     searchOut: [],
     historyItem: [],
     jump: false,
-    bottomSelectId: new Set()
+    bottomSelectId: new Set(),
+    payPrice: 0
 
 };
 
@@ -29214,6 +29237,11 @@ function afterReducer() {
         case "BOTTOM_NAV_SELECT":
             clone.bottomSelectId = payload;
             return clone;
+
+        case "CHANGE_PRICE":
+            clone.payPrice = payload;
+            return clone;
+
     }
     return clone;
 }
