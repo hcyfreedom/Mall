@@ -20887,7 +20887,8 @@ var OrderConfirm = function (_React$Component) {
             }
 
             actions.totalPrice(resultPrice);
-            this.props.history.go("/payment");
+
+            this.props.history.replace("/payment");
         }
     }, {
         key: 'render',
@@ -21248,7 +21249,7 @@ var Payment = function (_React$Component) {
     _createClass(Payment, [{
         key: 'handleClick',
         value: function handleClick(pay_way, price) {
-            pay_way(pay_way, price, function () {
+            (0, _payUtil2.default)(pay_way, price, function () {
                 alert("付款成功");
             }, function () {
                 this.props.history.go("/payment/succeed");
@@ -21275,7 +21276,7 @@ var Payment = function (_React$Component) {
                         'div',
                         { className: 'pay' },
                         _react2.default.createElement('img', { src: '/imgs/weixin2.png', onClick: function onClick() {
-                                _this2.handleClick("upacp_wap", totalPrice);
+                                console.log(totalPrice + " ttttt");_this2.handleClick("upacp_wap", totalPrice);
                             } }),
                         '\u4ED8\u6B3E\u65B9\u5F0F'
                     ),
@@ -22006,7 +22007,7 @@ var LogIn = function (_React$Component) {
                 if (res.data.code == 200) {
                     alert("登录成功");
                     // actions.changeItemsHref();
-                    window.location.href = '/home/MyWallet';
+                    window.location.href = '/';
                 } else {
                     console.log("登录失败 请重试");
                 }
@@ -22498,6 +22499,7 @@ var ShopPage = function (_React$Component) {
                 'div',
                 null,
                 _react2.default.createElement(_Nav2.default, { location: this.props.location }),
+                _react2.default.createElement('img', { src: shopHeadImgUrl, style: { width: '100%', marginTop: '80px' } }),
                 _react2.default.createElement(_ShowSelector2.default, { pathParams: this.props.match.params }),
                 _react2.default.createElement('div', { style: { width: '100%', height: '150px' } }),
                 _react2.default.createElement(_ShowBottom2.default, { pathParams: this.props.match.params })
@@ -24027,10 +24029,10 @@ var CateMain = function (_React$Component) {
 
             return _react2.default.createElement(
                 'div',
-                { style: { position: 'absolute', right: '0px', width: 'calc(100% - 22vw)', top: "calc(50vw)", display: "flex", justifyContent: "center" } },
+                { style: { position: 'absolute', right: '0px', width: 'calc(100% - 22vw)', top: "calc(28vh)", display: "flex", justifyContent: "center" } },
                 _react2.default.createElement(
                     'div',
-                    { className: 'AllProduction', style: { backgroundColor: "#F2F2F2", position: "absolute", width: "80%" } },
+                    { className: 'AllProduction', style: { backgroundColor: "#F2F2F2", position: "absolute", width: "90%" } },
                     listContainer
                 ),
                 _react2.default.createElement('div', { className: 'spaceBar' })
@@ -25154,15 +25156,23 @@ var Suspension = function (_React$Component) {
     function Suspension(props) {
         _classCallCheck(this, Suspension);
 
-        return _possibleConstructorReturn(this, (Suspension.__proto__ || Object.getPrototypeOf(Suspension)).call(this, props));
+        var _this = _possibleConstructorReturn(this, (Suspension.__proto__ || Object.getPrototypeOf(Suspension)).call(this, props));
+
+        _this.state = {
+            checkLogin: false
+        };
+        return _this;
     }
 
     _createClass(Suspension, [{
         key: 'componentDidMount',
         value: function componentDidMount() {
-            var actions = (0, _redux.bindActionCreators)(afterActions, this.props.dispatch);
+            var _this2 = this;
+
             (0, _http.post)('/account/checkLogin', function (res) {
-                actions.checkLogin(res.data);
+                _this2.setState({
+                    checkLogin: res.data.msg
+                });
             });
         }
     }, {
@@ -25171,15 +25181,14 @@ var Suspension = function (_React$Component) {
             var checkLogin = this.props.afterReducer.checkLogin;
 
             console.log(checkLogin);
-            if (!checkLogin) {
+            if (this.state.checkLogin) {
+                return _react2.default.createElement(_NewSup2.default, null);
+            } else {
                 return _react2.default.createElement(
                     'div',
                     { className: 'SusWrap', style: { fontSize: '30px', lineHeight: '280px', color: '#ef4036' } },
                     '\u8BF7\u767B\u5F55'
                 );
-            } else {
-
-                return _react2.default.createElement(_NewSup2.default, null);
             }
         }
     }]);

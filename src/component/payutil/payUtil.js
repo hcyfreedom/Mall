@@ -17,6 +17,7 @@ export  default  function pay(pay_way,price,successFun,errFun){
         }
         else{
             console.log(res.data.msg);
+            
             pingpp.createPayment(res.data.msg, function(result, err){
                 if (result == "success") {
                     // 只有微信公众账号 wx_pub 支付成功的结果会在这里返回，其他的支付结果都会跳转到 extra 中对应的 URL。
