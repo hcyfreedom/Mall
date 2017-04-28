@@ -39,7 +39,7 @@ export default class ShowBlock extends React.Component{
             return (
                 <MuiThemeProvider>
                     <div style={{position: "relative"}}>
-                        <img className="showBlock" src={this.props.src}/>
+                        <img className="showBlock222" src={this.props.src}/>
                         <RaisedButton label="分享" onTouchTap={this.handleOpen.bind(this)} style={ShareButton}/>
                         <Dialog
                             title="Dialog With Actions"

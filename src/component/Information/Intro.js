@@ -87,7 +87,7 @@ class Intro extends React.Component{
                                 <div className="introWrap">
                                     <div className="introOne">
                                         <div className="introDetail">{introDetail}</div>
-                                        <ShowBlock/>
+                                        {/*<ShowBlock/>*/}
                                     </div>
                                     <div className="introTwo">
                                         <div className="introTsprice" style={{fontSize:'28px'}}>市场价：<span style={{textDecoration:'line-through'}}>￥{introPrice}</span></div>
