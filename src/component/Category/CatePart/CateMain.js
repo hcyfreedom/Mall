@@ -27,10 +27,6 @@ class CateMain extends React.Component{
 
     }
 
-    componentDidUpdate() {
-        console.log(`updated`);
-        console.log(Array.prototype.slice.call(document.querySelectorAll('.AllProduction')[0]));
-    }
     render(){
 
         let {classifyGOODS} = this.props.homeReducer;
