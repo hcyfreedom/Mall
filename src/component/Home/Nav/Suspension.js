@@ -20,9 +20,11 @@ class Suspension extends React.Component{
     }
 
     componentDidMount(){
-        this.setState({
-            checkLogin:res.data.msg
-        })
+        post('/account/checkLogin',{},(res) => {
+            this.setState({
+                checkLogin:res.data.msg
+            })
+        });
     }
     render(){
         let {checkLogin} = this.props.afterReducer;

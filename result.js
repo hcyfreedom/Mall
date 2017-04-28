@@ -25167,12 +25167,8 @@ var Suspension = function (_React$Component) {
     _createClass(Suspension, [{
         key: 'componentDidMount',
         value: function componentDidMount() {
-            var _this2 = this;
-
-            (0, _http.post)('/account/checkLogin', function (res) {
-                _this2.setState({
-                    checkLogin: res.data.msg
-                });
+            this.setState({
+                checkLogin: res.data.msg
             });
         }
     }, {
@@ -27822,12 +27818,12 @@ var ShowAllProduction = function (_React$Component) {
 
             var listContainer = [];
 
-            for (var i = 0; i < productionItems.length; i = i + 3) {
+            for (var i = 0; i < productionItems.length; i = i + 2) {
 
                 listContainer.push(_react2.default.createElement(
                     'div',
                     { key: i, className: 'sRow' },
-                    productionItems.slice(i, i + 3)
+                    productionItems.slice(i, i + 2)
                 ));
             }
 
@@ -27958,12 +27954,12 @@ var ShopHotSale = function (_React$Component) {
 
             var listContainer = [];
 
-            for (var i = 0; i < productionItems.length; i = i + 3) {
+            for (var i = 0; i < productionItems.length; i = i + 2) {
 
                 listContainer.push(_react2.default.createElement(
                     'div',
                     { key: i, className: 'sRow' },
-                    productionItems.slice(i, i + 3)
+                    productionItems.slice(i, i + 2)
                 ));
             }
 
@@ -28075,12 +28071,12 @@ var ShopMain = function (_React$Component) {
 
             var listContainer = [];
 
-            for (var i = 0; i < productionItems.length; i = i + 3) {
+            for (var i = 0; i < productionItems.length; i = i + 2) {
 
                 listContainer.push(_react2.default.createElement(
                     'div',
                     { key: i, className: 'sRow' },
-                    productionItems.slice(i, i + 3)
+                    productionItems.slice(i, i + 2)
                 ));
             }
 
@@ -29071,7 +29067,7 @@ var pingpp = __webpack_require__(505);
  * Created by yujingyang on 2017/4/28.
  */
 function pay(pay_way, price, successFun, errFun) {
-    (0, _http.get)('/account/getCharge?channel=' + pay_way + "price=" + price, function (res) {
+    (0, _http.get)('/account/getCharge?channel=' + pay_way + "&price=" + price, function (res) {
         if (res.data.msg == "auth") {
             (0, _http.get)("/account/getUUID", function (res) {
                 var redirectUrl = encodeURIComponent("http://www.tangseng.shop/account/wechatLogin?UUID=" + res.data.msg);
