@@ -24,6 +24,7 @@
     "history": "^4.6.1",
     "jquery": "^3.2.0",
     "material-ui": "^0.17.1",
+    "pingpp-js": "^2.1.8",
     "piping": "^0.3.0",
     "react": "^15.4.2",
     "react-dom": "^15.4.2",
