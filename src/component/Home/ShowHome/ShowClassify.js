@@ -27,7 +27,7 @@ class ShowClassify extends React.Component{
             <div>
                 <div className="showBanner2">
                     <span className="showBannerWord">1111</span>
-                    <Link to="/home/cate"><span className="showSpan">&nbsp;>more</span></Link>
+                    <Link to="/home/cate" className="showSpan">&nbsp;>more</Link>
                 </div>
 
 

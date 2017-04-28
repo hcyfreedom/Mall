@@ -35,7 +35,7 @@ class ShowBAO extends React.Component {
                 return (
                     <div className="showBanner">
                         <span className="classifyName">{this.props.classifyName}</span>
-                        <Link to={"/home/classify/"+this.props.classifyId}><span className="moreName">&nbsp;>more</span></Link>
+                        <Link to={"/home/classify/"+this.props.classifyId} className="moreName">&nbsp;>more</Link>
                     </div>)
 
             }
