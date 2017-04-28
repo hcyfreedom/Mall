@@ -200,6 +200,7 @@ export default function homeReducer(state = initState, action = {}) {
                 bottom: '20px',
                 right: '50px',
                 display: 'block'
+
             };
             return clone;
 

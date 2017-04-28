@@ -63,6 +63,7 @@ class AddToCar extends React.Component{
                         badgeContent={addToCartCount}
                         primary={true}
                         style={badge}
+                        badgeStyle={{fontSize:'1.4em',width:'40px',height:'40px',right:'-20px'}}
                     >
                         <NotificationsIcon />
                     </Badge>

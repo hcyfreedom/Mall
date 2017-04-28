@@ -643,7 +643,7 @@ a{
 }
 
 .cartBody{
-    width: 60%;
+    width: 50%;
     height: 100%;
     float: left;
 }
@@ -653,7 +653,7 @@ a{
     height: 44px;
     border:1px solid grey;
     position: absolute;
-    right: 250px;
+    right: 20%;
     /* bottom: 570px; */
     transform: translateY(50px);
     line-height: 44px;
