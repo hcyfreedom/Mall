@@ -21252,9 +21252,9 @@ var Payment = function (_React$Component) {
             (0, _payUtil2.default)(pay_way, price, function () {
                 alert("付款成功");
             }, function () {
-                this.props.history.go("/payment/succeed");
+                this.props.history.replace("/payment/succeed");
             }, function () {
-                this.props.history.go("/payment/failure");
+                this.props.history.replace("/payment/failure");
             });
         }
     }, {
@@ -21274,10 +21274,10 @@ var Payment = function (_React$Component) {
                     { style: { position: 'relative', top: '120px' } },
                     _react2.default.createElement(
                         'div',
-                        { className: 'pay' },
-                        _react2.default.createElement('img', { src: '/imgs/weixin2.png', onClick: function onClick() {
-                                console.log(totalPrice + " ttttt");_this2.handleClick("upacp_wap", totalPrice);
-                            } }),
+                        { className: 'pay', onClick: function onClick() {
+                                _this2.handleClick("upacp_wap", totalPrice);
+                            } },
+                        _react2.default.createElement('img', { src: '/imgs/weixin2.png' }),
                         '\u4ED8\u6B3E\u65B9\u5F0F'
                     ),
                     _react2.default.createElement(
@@ -29079,6 +29079,7 @@ function pay(pay_way, price, successFun, errFun) {
             });
         } else {
             console.log(res.data.msg);
+
             pingpp.createPayment(res.data.msg, function (result, err) {
                 if (result == "success") {
                     // 只有微信公众账号 wx_pub 支付成功的结果会在这里返回，其他的支付结果都会跳转到 extra 中对应的 URL。
