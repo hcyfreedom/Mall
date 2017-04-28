@@ -14,6 +14,7 @@ module.exports = {
                     return;
                 }
                 if(res.data.code && res.data.code !== 200){
+                    
                     failCallback&&failCallback(res);
                     return;
                 }

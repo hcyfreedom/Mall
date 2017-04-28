@@ -24086,24 +24086,27 @@ var ClassifyBar = function (_React$Component) {
         value: function render() {
             var classifyItem = this.props.homeReducer.classifyItem;
 
+            var productions = new Array();
 
-            var classifyItems = classifyItem.map(function (ele, idx) {
-                return _react2.default.createElement(_ClassifyBarItem2.default, { key: idx, index: idx, src: ele });
-            });
+            var _loop = function _loop(i) {
+                var tmp = classifyItem.slice(i, i + 5).map(function (ele, id) {
+                    return _react2.default.createElement(_ClassifyBarItem2.default, { key: id + i, index: id + i, src: ele });
+                });
+                productions[i / 5] = _react2.default.createElement(
+                    'div',
+                    { key: i / 5, className: 'classifyBox' },
+                    tmp
+                );
+            };
+
+            for (var i = 0; i < classifyItem.length; i += 5) {
+                _loop(i);
+            }
 
             return _react2.default.createElement(
                 'div',
                 null,
-                _react2.default.createElement(
-                    'div',
-                    { className: 'classifyBox' },
-                    classifyItems.slice(0, 5)
-                ),
-                _react2.default.createElement(
-                    'div',
-                    { className: 'classifyBox' },
-                    classifyItems.slice(5)
-                )
+                productions
             );
         }
     }]);
@@ -24997,8 +25000,10 @@ var ShowYOU = function (_React$Component) {
             var outstanding_shop_goods = mainPageGoods.outstanding_shop_goods;
             var productions = new Array();
             if (outstanding_shop_goods != null && outstanding_shop_goods != undefined && outstanding_shop_goods != []) {
+                var outStandingItems = outstanding_shop_goods.slice(0, 9);
+
                 var _loop = function _loop(i) {
-                    var tmp = outstanding_shop_goods.slice(i, i + 3).map(function (ele, id) {
+                    var tmp = outStandingItems.slice(i, i + 3).map(function (ele, id) {
                         return _react2.default.createElement(
                             _reactRouterDom.Link,
                             { to: '/information/' + ele.shopId + "/" + ele.id, key: id + i },
@@ -25016,7 +25021,7 @@ var ShowYOU = function (_React$Component) {
                     );
                 };
 
-                for (var i = 0; i < outstanding_shop_goods.length; i += 3) {
+                for (var i = 0; i < outStandingItems.length; i += 3) {
                     _loop(i);
                 }
             }
