@@ -14,6 +14,7 @@ module.exports = {
                     return;
                 }
                 if(res.data.code && res.data.code !== 200){
+                    alert(res.data.msg);
                     failCallback&&failCallback(res);
                     return;
                 }
@@ -35,7 +36,7 @@ module.exports = {
                     return;
                 }
                 if(res.data.code && res.data.code !== 200){
-
+                    alert(res.data.msg);
                     failCallback&&failCallback(res);
                     return;
                 }

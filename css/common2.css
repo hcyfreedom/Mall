@@ -1,0 +1,710 @@
+*{
+    margin: 0;
+    padding:0;
+}
+body{
+    font-size: 1em;
+    /*font-family: "微软雅黑";*/
+    background-color: #f2f2f2;
+}
+html{
+    font-size: 100%;
+}
+a{
+    text-decoration: none;
+    color: black;
+}
+/*Brand组件的css*/
+.brandBox{
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    margin-top: 80px;
+    height: 80px;
+    background-color: white;
+}
+.item{
+    /*width: 10px;*/
+    /*height: 10px;*/
+    background-color: aqua;
+}
+
+.brandIcon{
+    /* background-color: red; */
+    /*padding: 10px;*/
+}
+.brandIcon img{
+    width: 30px;
+    height: 30px;
+}
+.brandIcon span{
+    font-size: 30px;
+    color: #000;
+    /* text-align: center; */
+    vertical-align: bottom;
+    margin-left: 15px;
+}
+
+/*ClassifyBar*/
+.classifyIcon{
+    width: 120px;
+    height: 120px;
+    border-radius: 30px;
+    background-color: #e6e6e6;
+    border: 1px solid black;
+    position: relative;
+}
+.classifyIcon img{
+    width: 80px;
+    height: 80px;
+    position: absolute;
+    left: 20px;
+    top: 20px;
+}
+.classifyIconP{
+    font-size: 22px;
+    text-align: center;
+    width: 120px;
+    padding-top: 15px;
+}
+.classifyBox{
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    height: 200px;
+    background-color: white;
+}
+/*Block*/
+.block{
+    width: 100%;
+    height: 253px;
+    margin-top: 10px;
+}
+.block img{
+    background-size: cover;
+    width: 100%;
+    height: 100%;
+}
+
+/*Production*/
+.productionIcon{
+    /* width: 100%; */
+    /*height: 320px;*/
+    border:1px solid gray;
+    background: url("../imgs/p_bg.png") no-repeat;
+    background-position: 40px 10px;
+    font-size: 18px;
+    font-weight: 600;
+    background-color: white;
+    padding-bottom: 20px;
+}
+
+.space{
+    width: 300px;
+    height: 273px;
+    border:1px solid transparent;
+    /*background: url("../imgs/p_bg.png") no-repeat;*/
+    background-position: left;
+    font-size: 18px;
+}
+.spaceBar{
+    width: 100%;
+    height: 80px;
+    margin-bottom: 80px;
+}
+.pBox{
+    /* display: flex; */
+    /* flex-wrap: wrap; */
+}
+.pBox img{
+    width: 50%;
+    /* height: 10%; */
+    padding-left: 25%;
+    /* margin: 0 auto; */
+    margin-top: 10%;
+}
+.pDetail{
+    font-size: 22px;
+    text-align: center;
+    color:#404040;
+}
+.priceBox{
+    display: flex;
+    justify-content: space-around;
+    padding-top: 10px;
+    padding-bottom: 10px;
+}
+.minPrice{
+    display: flex;
+    justify-content: center;
+}
+.fakePriceChild{
+    text-decoration: line-through;
+    color: grey;
+}
+.priceChild{
+    color: red;
+}
+.minPrice span{
+    border: 2px red solid;
+    padding: 1px 15px;
+    height: 20px;
+    line-height: 18px;
+    border-radius: 8px;
+    text-align: center;
+    font-size: 18px;
+    color: #E12735;
+    font-weight: bold;
+}
+
+.pRow{
+    display: flex;
+    margin-top: 20px;
+    flex-wrap: wrap;
+    /*width: 100%;*/
+    justify-content: space-around;
+}
+.AllProductionBox{
+    background-color: white;
+    width: 100%;
+    display: flex;
+    justify-content: space-around;
+}
+
+.AllProduction{
+    background-color: white;
+    width: 100%;
+}
+/*BottomNav*/
+.bBox{
+    display: flex;
+    justify-content: space-around;
+    position: fixed;
+    bottom: 0;
+    background-color: #e5e5e5;
+    width: 100%;
+    z-index: 10;
+}
+.bBox a{
+    width: 150px;
+    height: 98px;
+    text-align: center;
+}
+.bottomItems{
+    padding-top: 10px;
+}
+
+/*Suspension*/
+.SusWrap{
+    width: 122px ;
+    height: 324px;
+    position: fixed;
+    top:0;
+    left: 20px;
+    background-color: #989c9f;
+    border-radius: 0 0 60px 60px;
+    z-index: 300;
+    opacity: 0.8;
+    text-align: center;
+    font-size: 20px;
+    color: white;
+}
+.SusWrap img{
+    width: 105px;
+    height: 105px;
+}
+.SusCircle,.SusGradeCircle{
+    width: 26px;
+    height: 26px;
+    border: 5px solid white;
+    border-radius: 20px;
+    background-color: #fcb606;
+    display: inline-block;
+    vertical-align: middle;
+    margin-right: 8px;
+
+}
+.SusGradeCircle{
+    background-color: #83a4b2;
+}
+.SusCoin,.SusGrade{
+    font-size: 18px;
+    color: black;
+    width: 109px;
+    height: 17px;
+    position: relative;
+    background-color: white;
+    border-radius: 9px;
+    left: 5px;
+    margin-top: 10px;
+    margin-bottom: 10px;
+}
+.SusCoinChild,.SusGradeChild{
+    width: 80px;
+    height: 13px;
+    background-color: #f3d400;
+    border-radius: 6px 0 0 6px;
+    position: absolute;
+    top: 2px;
+    left: 4px;
+    line-height: 12px;
+}
+.SusGradeChild{
+    background-color: #ef4036;
+}
+.SusDetail{
+    font-size: 20px;
+    color: red;
+}
+
+/*ShowYOU*/
+.showIcon{
+    width: 300px;
+    height: 273px;
+    border:1px solid gray;
+    /*background: url("../imgs/p_bg.png") no-repeat;*/
+    /*background-position: 40px 10px;*/
+    font-size: 18px;
+}
+.showBox img {
+    width: 180px;
+    height: 180px;
+    margin: 0 auto;
+    display: inherit;
+}
+.showEnter{
+    width: 150px;
+    height: 32px;
+    background-color: #0f5ca8;
+    color: white;
+    font-size: 20px;
+    border-radius: 5px;
+    text-align: center;
+    margin: 0 auto;
+    line-height: 32px;
+}
+.showBanner,.showBanner2{
+    width: 100%;
+    height: 44px;
+    position: relative;
+}
+.showBanner img{
+    margin: 0 auto;
+    display: block;
+    padding-top: 10px;
+}
+/*.showBanner span{*/
+/*!* float: right; *!*/
+/*width: 50px;*/
+/*height: 34px;*/
+/*position: absolute;*/
+/*right: 55px;*/
+/*bottom: -10px;*/
+/*}*/
+.showBanner span{
+    line-height: 44px;
+}
+.classifyName{
+    color: #0f5ca8;
+    font-size: 30px;
+    position: relative;
+    left: 45%;
+}
+.moreName{
+    font-size: 20px;
+    left: 80%;
+    position: relative;
+}
+.showSpan{
+    width: 50px;
+    height: 34px;
+    position: absolute;
+    right: 55px;
+    bottom: -10px;
+}
+.showBannerWord{
+    color: #0f5ca8;
+    position: absolute;
+    line-height: 44px;
+    left: 47%;
+    font-size: 25px;
+}
+
+/*GoodBrand*/
+.goodBrandIcon{
+    width: 210px;
+    height: 210px;
+    background-color: white;
+    border-radius: 50px;
+}
+.goodBrandIcon img{
+    width: 100px;
+    height: 100px;
+    margin: 0 auto;
+    padding-top: 30px;
+    padding-bottom: 30px;
+    display: inherit;
+}
+.goodBrandIcon p{
+    text-align: center;
+}
+.goodBrandBox{
+    position: absolute;
+    left: 140px;
+    top: 480px;
+    width: 80%;
+    padding-bottom: 198px;
+}
+.spaceBrand{
+    width: 210px;
+    height: 210px;
+}
+.gRow{
+    display: flex;
+    margin-top: 20px;
+    flex-wrap: wrap;
+    justify-content: space-between;
+}
+.ggRow{
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+}
+.sRow{
+    display: flex;
+    margin-top: 20px;
+    flex-wrap: wrap;
+    justify-content: space-around;
+}
+/*HealthCare*/
+.HealthBox{
+    width: 70%;
+    position: absolute;
+    left: 200px;
+    top: 480px;
+    padding-bottom: 198px;
+}
+.pHeal{
+    display: flex;
+    margin-top: 20px;
+    flex-wrap: wrap;
+    justify-content: space-between;
+}
+/*shop*/
+.goBack{
+    color: white;
+    position: relative;
+    /*line-height: 60px;*/
+    padding-left: 50px;
+}
+.goBack img{
+    position: absolute;
+    top: 20px;
+}
+.showBlock{
+    width: 100%;
+    height: 320px;
+    margin-top: 80px;
+}
+.showBottom{
+    width: 100%;
+    height: 98px;
+    background-color: #e5e5e5;
+    text-align: center;
+    position: fixed;
+    bottom: 0;
+    font-size: 30px;
+    /* display: table-cell; */
+    /* vertical-align: middle; */
+}
+.showBottom img{
+    width: 43px;
+    height: 38px;
+    vertical-align: middle;
+}
+.showBottom span{
+    line-height: 98px;
+    color: grey;
+    /* font-size: 40px; */
+    /* vertical-align: middle; */
+    padding-left: 30px;
+}
+
+/*infromation*/
+.introWrap{
+    border-top: 1px solid grey;
+    background-color: white;
+}
+.introOne{
+    width: 100%;
+    height: 100px;
+    line-height: 100px;
+    display: inline-flex;
+    justify-content: space-between;
+}
+.introDetail{
+    color: #000;
+    font-size: 28px;
+    padding-left: 100px;
+}
+.introTwo{
+    display: flex;
+    color:grey;
+    height: 50px;
+    justify-content: space-between;
+    width: 80%;
+    margin: 0 auto;
+}
+.introThree{
+    display: flex;
+    color:grey;
+    height: 100px;
+    padding-top: 20px;
+    justify-content: space-between;
+    width: 80%;
+    margin: 0 auto;
+}
+.introLow{
+    border: 1px solid #EA2735;
+    font-size: 36px;
+    text-align: center;
+    width: 290px;
+    height: 48px;
+    line-height: 48px;
+    border-radius: 5px;
+    color: red;
+    font-weight:bold;
+}
+.introTitle{
+    width: 100%;
+    border: 1px solid grey;
+    text-align: center;
+    line-height: 80px;
+    height: 80px;
+    background-color: white;
+    font-size: 30px;
+}
+.introWord{
+    width: 80%;
+    margin: 0 auto;
+    height: auto;
+    min-height: 800px;
+    font-size: 30px;
+}
+.introBottom{
+    width: 100%;
+    height: 80px;
+    background-color: #e5e5e5;
+    position: fixed;
+    bottom:0;
+}
+.introBottomSpan span{
+    line-height: 120px;
+}
+.introAdd{
+    width: 58%;
+    height: 80px;
+    background-color: #0c4ca3;
+    color: white;
+    font-size: 36px;
+    position: relative;
+    left: 42%;
+    bottom: 159px;
+    text-align: center;
+    border: 1px solid white;
+    line-height: 80px;
+}
+
+/*Search*/
+.searchWord{
+    /*float: left;*/
+    font-size: 1.2em;
+    color: white;
+    line-height: 80px;
+}
+.searchInput{
+}
+.historySe{
+    width: 100%;
+    height: 61px;
+    font-size: 28px;
+    color: grey;
+    top: 80px;
+    position: relative;
+    background-color: white;
+    border-bottom: 1px solid grey;
+}
+.historySe span{
+    line-height: 61px;
+    padding-left: 20px;
+}
+
+/*Cart*/
+.cartShopName{
+    width: 100%;
+    height: 64px;
+    color: #115faa;
+    line-height: 64px;
+    font-size: 20px;
+    background-color: white;
+}
+.goTo{
+    color: grey;
+    font-size: 3em;
+    padding-left: 30px;
+    float: left;
+}
+.cartCircle{
+    width: 20px;
+    height: 20px;
+    float: left;
+    background-color: #ee4037;
+    border-radius: 10px;
+    margin-left: 20px;
+    margin-top: 22px;
+}
+.cartShopName img{
+    width: 22px;
+    height: 22px;
+    float: left;
+    margin-left: 8px;
+    margin-top: 20px;
+}
+.cartShopName p{
+    float: left;
+    padding-left: 20px;
+}
+.cartEditor{
+    float: right;
+    padding-right: 50px;
+    color: gray;
+    width: 50px;
+    height: 100%;
+    padding-left: 50px;
+}
+.cartWrap{
+    width: 100%;
+    height: 222px;
+    background-color: #f7f7f7;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    border-bottom: 30px solid white;
+}
+.cartItems{
+    width:100%;
+    height: 180px;
+    position: relative;
+}
+
+.cartCircleIcon{
+    width: 20px;
+    height: 20px;
+    -webkit-border-radius: 10px;
+    -moz-border-radius: 10px;
+    border-radius: 10px;
+    border:1px solid gray;
+    margin: 80px 20px 0 20px;
+    float: left;
+    /*background-color: transparent;*/
+}
+.cartImg{
+    width: 180px;
+    height: 180px;
+    float: left;
+}
+.cartContent{
+    float: left;
+    width: auto;
+    height: 180px;
+    margin-left: 20px;
+}
+.carItemsTitle{
+    font-size: 28px;
+    color: #000;
+    padding-bottom: 20px;
+    padding-top: 10px;
+}
+
+.carItemsReal{
+    font-size: 24px;
+    color: #EA2735;
+    padding-bottom: 20px;
+}
+.cartItemsLow{
+    width: 230px;
+    height: 32px;
+    border:1px solid #EA2735;
+    border-radius: 15px;
+    color: #EA2735;
+    font-weight:bold;
+    font-size: 24px;
+    text-align: center;
+}
+
+.cartBody{
+    width: 50%;
+    height: 100%;
+    float: left;
+}
+
+.changeWrap{
+    width: 154px;
+    height: 44px;
+    border:1px solid grey;
+    position: absolute;
+    right: 20%;
+    /* bottom: 570px; */
+    transform: translateY(50px);
+    line-height: 44px;
+}
+.changeSub , .changePlus{
+    width: 44px;
+    height: 44px;
+    float: left;
+    text-align: center;
+}
+.changeCount{
+    width: 62px;
+    height: 44px;
+    float: left;
+    border-left: 1px solid grey;
+    border-right:1px solid grey;
+    text-align: center;
+}
+.cartDelete{
+    width: 115px;
+    background-color: #EA2735;
+    position: absolute;
+    right:0;
+    height: 222px;
+    line-height: 222px;
+    color: white;
+    font-size: 25px;
+    text-align: center;
+}
+.cartTotal{
+    width: 100%;
+    height: 98px;
+    position: fixed;
+    bottom: 98px;
+    background-color: #eeeeee;
+    font-size: 24px;
+    color: grey;
+}
+.totalShow{
+    float: right;
+    text-align: right;
+    margin-top: 10px;
+    line-height: 40px;
+}
+.totalBtn{
+    width: 250px;
+    height: 100%;
+    float: right;
+    background-color: #EA2735;
+    line-height: 98px;
+    text-align: center;
+    margin-left: 30px;
+    color: white;
+}

@@ -44,7 +44,7 @@ class AddToCar extends React.Component{
                 console.log("add to cart failed")
             }
         },()=>{
-            //失败的回调函数
+            alert("加入购物车失败，请先登录！")
         })
 
     }

@@ -25,31 +25,6 @@
       "id": 5,
       "classifyName": "美容产品",
       "classifyImg":"/imgs/cc3.png"
-    },
-    {
-      "id": 6,
-      "classifyName": "美容产品",
-      "classifyImg":"/imgs/cc4.png"
-    },
-    {
-      "id": 7,
-      "classifyName": "美容产品",
-      "classifyImg":"/imgs/cc5.png"
-    },
-    {
-      "id": 8,
-      "classifyName": "美容产品",
-      "classifyImg":"/imgs/cc5.png"
-    },
-    {
-      "id": 9,
-      "classifyName": "美容产品",
-      "classifyImg":"/imgs/cc5.png"
-    },
-    {
-      "id": 10,
-      "classifyName": "美容产品",
-      "classifyImg":"/imgs/cc5.png"
     }
   ]
 }
