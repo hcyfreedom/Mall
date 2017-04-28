@@ -368,7 +368,7 @@ a{
     display: flex;
     margin-top: 20px;
     flex-wrap: nowrap;
-    justify-content: center;
+    justify-content: space-around;
     /*text-align: center;*/
 }
 .ggRow{
