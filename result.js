@@ -20887,7 +20887,8 @@ var OrderConfirm = function (_React$Component) {
             }
 
             actions.totalPrice(resultPrice);
-            this.props.history.go("/payment");
+
+            this.props.history.replace("/payment");
         }
     }, {
         key: 'render',
@@ -21248,12 +21249,12 @@ var Payment = function (_React$Component) {
     _createClass(Payment, [{
         key: 'handleClick',
         value: function handleClick(pay_way, price) {
-            pay_way(pay_way, price, function () {
+            (0, _payUtil2.default)(pay_way, price, function () {
                 alert("付款成功");
             }, function () {
-                this.props.history.go("/payment/succeed");
+                this.props.history.replace("/payment/succeed");
             }, function () {
-                this.props.history.go("/payment/failure");
+                this.props.history.replace("/payment/failure");
             });
         }
     }, {
@@ -21273,10 +21274,10 @@ var Payment = function (_React$Component) {
                     { style: { position: 'relative', top: '120px' } },
                     _react2.default.createElement(
                         'div',
-                        { className: 'pay' },
-                        _react2.default.createElement('img', { src: '/imgs/weixin2.png', onClick: function onClick() {
+                        { className: 'pay', onClick: function onClick() {
                                 _this2.handleClick("upacp_wap", totalPrice);
-                            } }),
+                            } },
+                        _react2.default.createElement('img', { src: '/imgs/weixin2.png' }),
                         '\u4ED8\u6B3E\u65B9\u5F0F'
                     ),
                     _react2.default.createElement(
@@ -22006,7 +22007,7 @@ var LogIn = function (_React$Component) {
                 if (res.data.code == 200) {
                     alert("登录成功");
                     // actions.changeItemsHref();
-                    window.location.href = '/home/MyWallet';
+                    window.location.href = '/';
                 } else {
                     console.log("登录失败 请重试");
                 }
@@ -22498,6 +22499,7 @@ var ShopPage = function (_React$Component) {
                 'div',
                 null,
                 _react2.default.createElement(_Nav2.default, { location: this.props.location }),
+                _react2.default.createElement('img', { src: shopHeadImgUrl, style: { width: '100%', marginTop: '80px' } }),
                 _react2.default.createElement(_ShowSelector2.default, { pathParams: this.props.match.params }),
                 _react2.default.createElement('div', { style: { width: '100%', height: '150px' } }),
                 _react2.default.createElement(_ShowBottom2.default, { pathParams: this.props.match.params })
@@ -24027,10 +24029,10 @@ var CateMain = function (_React$Component) {
 
             return _react2.default.createElement(
                 'div',
-                { style: { position: 'absolute', right: '0px', width: 'calc(100% - 22vw)', top: "calc(50vw)", display: "flex", justifyContent: "center" } },
+                { style: { position: 'absolute', right: '0px', width: 'calc(100% - 22vw)', top: "calc(28vh)", display: "flex", justifyContent: "center" } },
                 _react2.default.createElement(
                     'div',
-                    { className: 'AllProduction', style: { backgroundColor: "#F2F2F2", position: "absolute", width: "80%" } },
+                    { className: 'AllProduction', style: { backgroundColor: "#F2F2F2", position: "absolute", width: "90%" } },
                     listContainer
                 ),
                 _react2.default.createElement('div', { className: 'spaceBar' })
@@ -25154,15 +25156,19 @@ var Suspension = function (_React$Component) {
     function Suspension(props) {
         _classCallCheck(this, Suspension);
 
-        return _possibleConstructorReturn(this, (Suspension.__proto__ || Object.getPrototypeOf(Suspension)).call(this, props));
+        var _this = _possibleConstructorReturn(this, (Suspension.__proto__ || Object.getPrototypeOf(Suspension)).call(this, props));
+
+        _this.state = {
+            checkLogin: false
+        };
+        return _this;
     }
 
     _createClass(Suspension, [{
         key: 'componentDidMount',
         value: function componentDidMount() {
-            var actions = (0, _redux.bindActionCreators)(afterActions, this.props.dispatch);
-            (0, _http.post)('/account/checkLogin', function (res) {
-                actions.checkLogin(res.data);
+            this.setState({
+                checkLogin: res.data.msg
             });
         }
     }, {
@@ -25171,15 +25177,14 @@ var Suspension = function (_React$Component) {
             var checkLogin = this.props.afterReducer.checkLogin;
 
             console.log(checkLogin);
-            if (!checkLogin) {
+            if (this.state.checkLogin) {
+                return _react2.default.createElement(_NewSup2.default, null);
+            } else {
                 return _react2.default.createElement(
                     'div',
                     { className: 'SusWrap', style: { fontSize: '30px', lineHeight: '280px', color: '#ef4036' } },
                     '\u8BF7\u767B\u5F55'
                 );
-            } else {
-
-                return _react2.default.createElement(_NewSup2.default, null);
             }
         }
     }]);
@@ -27813,12 +27818,12 @@ var ShowAllProduction = function (_React$Component) {
 
             var listContainer = [];
 
-            for (var i = 0; i < productionItems.length; i = i + 3) {
+            for (var i = 0; i < productionItems.length; i = i + 2) {
 
                 listContainer.push(_react2.default.createElement(
                     'div',
                     { key: i, className: 'sRow' },
-                    productionItems.slice(i, i + 3)
+                    productionItems.slice(i, i + 2)
                 ));
             }
 
@@ -27949,12 +27954,12 @@ var ShopHotSale = function (_React$Component) {
 
             var listContainer = [];
 
-            for (var i = 0; i < productionItems.length; i = i + 3) {
+            for (var i = 0; i < productionItems.length; i = i + 2) {
 
                 listContainer.push(_react2.default.createElement(
                     'div',
                     { key: i, className: 'sRow' },
-                    productionItems.slice(i, i + 3)
+                    productionItems.slice(i, i + 2)
                 ));
             }
 
@@ -28066,12 +28071,12 @@ var ShopMain = function (_React$Component) {
 
             var listContainer = [];
 
-            for (var i = 0; i < productionItems.length; i = i + 3) {
+            for (var i = 0; i < productionItems.length; i = i + 2) {
 
                 listContainer.push(_react2.default.createElement(
                     'div',
                     { key: i, className: 'sRow' },
-                    productionItems.slice(i, i + 3)
+                    productionItems.slice(i, i + 2)
                 ));
             }
 
@@ -29062,7 +29067,7 @@ var pingpp = __webpack_require__(505);
  * Created by yujingyang on 2017/4/28.
  */
 function pay(pay_way, price, successFun, errFun) {
-    (0, _http.get)('/account/getCharge?channel=' + pay_way + "price=" + price, function (res) {
+    (0, _http.get)('/account/getCharge?channel=' + pay_way + "&price=" + price, function (res) {
         if (res.data.msg == "auth") {
             (0, _http.get)("/account/getUUID", function (res) {
                 var redirectUrl = encodeURIComponent("http://www.tangseng.shop/account/wechatLogin?UUID=" + res.data.msg);
@@ -29070,6 +29075,7 @@ function pay(pay_way, price, successFun, errFun) {
             });
         } else {
             console.log(res.data.msg);
+
             pingpp.createPayment(res.data.msg, function (result, err) {
                 if (result == "success") {
                     // 只有微信公众账号 wx_pub 支付成功的结果会在这里返回，其他的支付结果都会跳转到 extra 中对应的 URL。
