@@ -22,7 +22,15 @@ class OrderConfirm extends React.Component{
     }
 
     handleClick(){
-        alert("付款接口没有给 给了之后凋一下接口 成功了之后 再回调url: good/payedOrder")
+        let actions = bindActionCreators(mallActions, this.props.dispatch);
+        let {orderReallyPrice} = this.props.homeReducer;
+        let resultPrice = 0;
+        for (let val of orderReallyPrice) {
+            if (val % 1 === 0)
+                resultPrice = 1*val + 1*resultPrice;
+        }
+        actions.totalPrice(resultPrice);
+        this.props.history.go("/payment")
     }
 
 

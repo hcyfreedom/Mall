@@ -41,6 +41,7 @@ const initState = {
     historyItem:[],
     jump:false,
     bottomSelectId:new Set(),
+    payPrice:0
 
 }
 
@@ -140,6 +141,11 @@ export default function afterReducer(state = initState, action = {}) {
         case "BOTTOM_NAV_SELECT":
             clone.bottomSelectId = payload;
             return clone;
+
+        case "CHANGE_PRICE":
+            clone.payPrice=payload;
+            return clone;
+
     }
     return clone;
 

@@ -24,7 +24,7 @@ class Payment extends React.Component {
 
     render() {
         console.log(this.props)
-        let totalPrice = this.props.homeReducer.cartCircleIcon.totalPrice || this.props.homeReducer.totalPrice
+        let totalPrice = this.props.homeReducer.cartCircleIcon.totalPrice || this.props.homeReducer.totalPrice;
         let actions = bindActionCreators(mallActions, this.props.dispatch);
         return (
             <div>
@@ -39,7 +39,7 @@ class Payment extends React.Component {
                         付款金额：<span style={{color:'#EA2735'}}>￥{totalPrice}</span>
                     </div>
                 </div>
-                <div  onClick={()=>{this.handleClick("upacp_wap",totalPrice)}} className="addBottom">
+                <div  className="addBottom">
                     确认付款
                 </div>
             </div>

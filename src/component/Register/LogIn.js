@@ -71,6 +71,7 @@ class LogIn extends React.Component{
     }
 
     weChartLogin(){
+        
         let redirectUrl = encodeURIComponent("http://www.tangseng.shop/account/wechatLogin");
         window.location.href = "https://open.weixin.qq.com/connect/oauth2/authorize?appid=wx1be0f2a1f512729a&redirect_uri="+redirectUrl+"&response_type=code&scope=snsapi_userinfo&state=STATE#wechat_redirect"
     }
@@ -89,8 +90,8 @@ class LogIn extends React.Component{
                     <div className="regButton" onClick={this.handleLogin.bind(this)}>
                         登录
                     </div>
-                    {/*<div  className="regRapid">快捷登录</div>*/}
-                    {/*<img onClick={this.weChartLogin.bind(this)} className="regWeixin" src="/imgs/weixin.jpg"/>*/}
+                    <div  className="regRapid">快捷登录</div>
+                    <img onClick={this.weChartLogin.bind(this)} className="regWeixin" src="/imgs/weixin.jpg"/>
                     <div className="regBottom">
                         <span className="regCircle"></span>登录表示您同意<span style={{color:'#0c4da2'}}>《服务协议》</span>
                     </div>
