@@ -32,7 +32,9 @@ import {Provider} from 'react-redux';
 import configureStore from '../store/configureStore';
 import injectTapEventPlugin from 'react-tap-event-plugin';
 injectTapEventPlugin();
-
+window.alert = function(res) {
+    console.log(res);
+}
 
 let store = configureStore();
 const history = createHistory();

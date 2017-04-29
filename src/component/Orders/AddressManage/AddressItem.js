@@ -7,7 +7,7 @@ export default class AddressItem extends React.Component{
     render(){
         return(
             <div className="addWrap">
-                <div className="addCircleIcon"></div>
+                {/*<div className="addCircleIcon"></div>*/}
                 <div className="addDetail">
                     <div className="addDetailTop">
                         <span>{this.props.ele.reciever}</span><span style={{paddingLeft:'100px'}}>{this.props.ele.recieverTelephone}</span>

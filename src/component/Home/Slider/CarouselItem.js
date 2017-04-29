@@ -12,7 +12,7 @@ export default class CarouselItem extends React.Component{
                     <img width={"100%"} height={'440px'}  src="/imgs/1.jpg"/>
                 </Carousel.Item>
                 <Carousel.Item>
-                    <img width={'100%'} height={'440px'}  src="/imgs/2.jpg"/>
+                    <img width={'100%'} height={'440px'}  src="/imgs/1.jpg"/>
 
                 </Carousel.Item>
                 <Carousel.Item>

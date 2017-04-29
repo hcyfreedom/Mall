@@ -5,7 +5,7 @@ import React from 'react'
 
 export default  class CartTopNav extends React.Component{
     handleGoBack(){
-        this.props.history.go(-1)
+        window.history.go(-1)
     }
     render(){
         return(

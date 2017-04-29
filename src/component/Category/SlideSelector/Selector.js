@@ -86,7 +86,7 @@ export default connect((state) => state)(Selector);
 
 const style = {
     // display: 'inline-block',
-    margin: '116px 0 0 0',
+    // margin: '116px 0 0 0',
     width:'22vw',
     fontSize:'25px'
 };
