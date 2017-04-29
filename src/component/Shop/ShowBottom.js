@@ -14,9 +14,7 @@ class ShowBottom extends React.Component {
 
     constructor(props) {
         super(props);
-        // this.state = {
-        //     open: false,
-        // };
+
     }
     componentDidMount() {
         let actions = bindActionCreators(mallActions, this.props.dispatch);
@@ -31,7 +29,8 @@ class ShowBottom extends React.Component {
 
         let {shopTel} = this.props.homeReducer;
         let actions = bindActionCreators(mallActions,this.props.dispatch)
-        alert(shopTel)
+        window.location.href="tel:"+shopTel;
+        // alert(shopTel)
     }
 
     render() {
