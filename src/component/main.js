@@ -31,9 +31,13 @@ import createHistory from 'history/createBrowserHistory'
 import {Provider} from 'react-redux';
 import configureStore from '../store/configureStore';
 import injectTapEventPlugin from 'react-tap-event-plugin';
+import Snackbar from 'material-ui/Snackbar';
+import MuiThemeProvider from 'material-ui/styles/MuiThemeProvider';
 injectTapEventPlugin();
-window.alert = function(res) {
-    console.log(res);
+window.alert = function(str) {
+    const e = new Event('msg');
+    e.msg = str;
+    dispatchEvent(e);
 }
 
 let store = configureStore();
@@ -42,6 +46,16 @@ const history = createHistory();
 class Main extends React.Component {
     constructor(props) {
         super(props)
+        this.state = {
+            open: false,
+            msg: '',
+        }
+
+    }
+    componentDidMount() {
+        window.addEventListener('msg', (e) => {
+            this.setState({open: true, msg: e.msg})
+        })
     }
 
     render() {
@@ -71,7 +85,9 @@ class Main extends React.Component {
                             <Route path="/giftsBagMall/:id" component={GiftDetail}/>
                             <Redirect exact from="/" to="/home/index"/>
                         </Switch>
-
+                        <MuiThemeProvider>
+                            <Snackbar style={{fontSize: "5vw"}} bodyStyle={{width: document.body.clientWidth, height: "5vh", textAlign: "center", maxWidth: "100%", lineHeight: "5vh"}} contentStyle={{fontSize: "5vw"}} open={this.state.open} message={this.state.msg} autoHideDuration={4000} onRequestClose={this.handleRequestClose} />
+                        </MuiThemeProvider>
                     </div>
                 </Router>
             </Provider>

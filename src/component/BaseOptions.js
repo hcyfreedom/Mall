@@ -14,7 +14,7 @@ import CarouselItem from './Home/Slider/CarouselItem'
 
 import {BrowserRouter as Router, Route, Switch,Redirect, Link} from 'react-router-dom';
 import createHistory from 'history/createBrowserHistory'
-import Snackbar from 'material-ui/Snackbar';
+
 
 const history = createHistory()
 
@@ -34,7 +34,11 @@ let slides = [{
 export default class BaseOptions extends React.Component {
     constructor(props) {
         super(props);
+
     }
+
+
+
 
     render() {
         let node = ()=> (
