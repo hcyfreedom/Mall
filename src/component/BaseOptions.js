@@ -11,7 +11,6 @@ import Selector from './Category/SlideSelector/Selector'
 import CateMain from './Category/CatePart/CateMain'
 import WalletPage from './Wallet/WalletPage'
 
-
 import {BrowserRouter as Router, Route, Switch,Redirect, Link} from 'react-router-dom';
 import createHistory from 'history/createBrowserHistory'
 
@@ -37,11 +36,16 @@ export default class BaseOptions extends React.Component {
 
     render() {
         let node = ()=> (
-            <div><Nav location={this.props.location}/><Slider slides={slides} time="2000"/><HomePage/></div>
+            <div><Nav location={this.props.location}/>
+                <Slider slides={slides} time="2000"/>
+
+                <HomePage/></div>
         );
 
         let nodeMainCate = ()=> (
-            <div><Nav location={this.props.location}/><Slider slides={slides} time="2000"/><Selector/><CateMain location = {this.props.location}/></div>
+            <div><Nav location={this.props.location}/><Slider slides={slides} time="2000"/>
+                <Selector/>
+                <CateMain location = {this.props.location}/></div>
         );
 
         let nodeGift = () => (

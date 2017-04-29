@@ -40,6 +40,10 @@ class AddToCar extends React.Component{
             if (data.code == 200){
                 console.log("add to cart success")
                 actions.addGoodToCart(res.data)
+
+                setTimeout(function () {
+                    actions.hideAddTo();
+                },3000)
             }else {
                 console.log("add to cart failed")
             }
@@ -51,8 +55,7 @@ class AddToCar extends React.Component{
     render(){
         let actions = bindActionCreators(mallActions,this.props.dispatch);
         let {addToCartCount,badge} = this.props.homeReducer;
-        console.log(addToCartCount)
-        console.log(badge)
+
         return(
             <MuiThemeProvider>
                 <div  onClick={this.handleClick.bind(this)}>

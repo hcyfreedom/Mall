@@ -3,6 +3,7 @@
  */
 import React from 'react';
 import NewSup from './NewSup'
+import OldSup from './OldSup'
 
 import {connect} from 'react-redux';
 import {bindActionCreators} from 'redux';
@@ -33,8 +34,7 @@ class Suspension extends React.Component{
             return <NewSup/>
 
         }else{
-            return <div className="SusWrap" style={{fontSize:'30px',lineHeight:'280px',color:'#ef4036'}}>请登录</div>
-
+            return <OldSup/>
 
         }
 

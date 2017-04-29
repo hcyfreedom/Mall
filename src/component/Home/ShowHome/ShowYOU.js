@@ -43,7 +43,7 @@ class ShowYOU extends React.Component {
         }
 
         return (
-            <div>
+            <div style={{backgroundColor:'white'}}>
                 <div className="showBanner">
                     <img src="../imgs/m1.png"/>
                     {/*<Link to="/home/cate"><span>&nbsp;>more</span></Link>*/}

@@ -3,7 +3,7 @@
  */
 import React from 'react'
 
-import ProductionItem from "../../Home/Production/ProductionItem";
+import PartItem from "./PartItem";
 import {Link} from 'react-router-dom'
 import {connect} from 'react-redux';
 import {bindActionCreators} from 'redux';
@@ -38,25 +38,25 @@ class CateMain extends React.Component{
         }
 
          const listItems1 =   list.map((ele,id)=>{
-            return <Link to={'/information/'+ele.shopId+"/"+ele.id} key={id}><div className="pRow"> <ProductionItem src={ele} key={id} ctions={actions}/></div></Link>
+            return <Link to={'/information/'+ele.shopId+"/"+ele.id} key={id}><div className="pRow2"> <PartItem src={ele} key={id} ctions={actions}/></div></Link>
         })
 
         const listContainer = [];
 
         for(let i = 0;i < listItems1.length; i= i +2){
             if(i == listItems1.length - 1)
-                listContainer.push(<div key={i} className="gRow last">{listItems1.slice(i,i+2)}</div>)
+                listContainer.push(<div key={i} className="gRow2 last2">{listItems1.slice(i,i+2)}</div>)
             else
-                listContainer.push(<div key={i} className="gRow">{listItems1.slice(i,i+2)}</div>) ;
+                listContainer.push(<div key={i} className="gRow2">{listItems1.slice(i,i+2)}</div>) ;
         }
 
 
         return(
             <div style={{position:'absolute',right:'0px',width:'calc(100% - 22vw)',top:"calc(28vh)", display: "flex", justifyContent: "center"}}>
-                <div className="AllProduction" style={{backgroundColor:"#F2F2F2", position: "absolute",  width: "90%"}}>
+                <div className="AllProduction2" style={{backgroundColor:"#F2F2F2", position: "absolute",  width: "90%"}}>
                     {listContainer}
                 </div>
-                <div className="spaceBar"></div>
+                <div className="spaceBar2"></div>
             </div>
         )
     }

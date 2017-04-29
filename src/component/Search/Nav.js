@@ -65,7 +65,7 @@ import * as afterActions from '../../action/afterActions'
            return(
                <div style={navStyle}>
                    <Link to="/search/index" style={{display:'flex',margin:'0 auto',width:'60%'}}>
-                       <input ref="searchInput" className="searchInput" style={divStyle} value={saveSearch} onChange={(event) => this.handleChange(event)}/>
+                       <input ref="searchInput" placeholder="富硒康" className="searchInput" style={divStyle} value={saveSearch} onChange={(event) => this.handleChange(event)}/>
                        <div className="searchWord" onClick={this.handleClick.bind(this)}>搜索</div>
                    </Link>
 
@@ -78,7 +78,7 @@ import * as afterActions from '../../action/afterActions'
 
                    <div style={navStyle}>
                        <Link to="/search/index" style={{display:'flex',margin:'0 auto',width:'70%'}}>
-                         <input ref="searchInput" className="searchInput" style={divStyle2} value={saveSearch} onChange={(event) => this.handleChange(event)}/>
+                         <input ref="searchInput"  placeholder="富硒康" className="searchInput" style={divStyle2} value={saveSearch} onChange={(event) => this.handleChange(event)}/>
                          <span className="searchWord" onClick={this.handleClick.bind(this)}>搜索</span>
                        </Link>
 
