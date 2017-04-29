@@ -28,6 +28,7 @@ componentWillMount(){
             return item!=undefined
         });
         console.log(orderList)
+        
         const items = orderList.map((ele,id)=>{
             return <ConfirmOrderItem  ele={ele} key={id} index={id}/>
 
