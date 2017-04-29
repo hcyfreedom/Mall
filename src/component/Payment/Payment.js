@@ -53,13 +53,13 @@ class Payment extends React.Component {
                     <div style={{position:'relative',top:'120px'}}>
 
                     <div className="pay" onClick={()=>{this.handleClick("alipay_wap",totalPrice)}}>
-                        <img src="/imgs/zhifubao.png" />付款方式
+                        <img src="/imgs/zhifubao.png" />支付宝支付
                     </div>
                     <div className="pay" onClick={()=>{this.handleClick("upacp_wap",totalPrice)}}>
-                        <img src="/imgs/money.png" />付款方式
+                        <img src="/imgs/money.png" />银行卡支付
                     </div>
                     <div className="pay" onClick={()=>{this.handleClick("wx_pub",totalPrice)}}>
-                        <img src="/imgs/weixin2.png" />付款方式
+                        <img src="/imgs/weixin2.png" />微信支付
                     </div>
 
                         <div className="payAll">

@@ -1,7 +1,7 @@
 /**
  * Created by Acer on 2017/2/21.
  */
-// var webpack = require('webpack');
+var webpack = require('webpack');
 var path = require('path')
 var config = {
     entry: path.resolve(__dirname, './src/component/main.js'),
@@ -46,10 +46,9 @@ var config = {
             {test: /\.(jpg|png|svg)$/, loader: "url?limit=8192"},
         ]
     },
-    // plugins: [
-    //     new webpack.HotModuleReplacementPlugin(),
-    //     new webpack.NamedModulesPlugin(),
-    // ],
+    plugins: [
+        new webpack.optimize.UglifyJsPlugin()
+    ],
 
 }
 
