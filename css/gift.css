@@ -101,8 +101,10 @@
     width: 23px;
     height: 42px;
     margin-top: 12px;
-    padding-right: 110px;
+    /* padding-right: 230px; */
     vertical-align: top;
+    /* z-index: 99999; */
+    margin-right: 90px;
 }
 .wrapOptions{
     display: flex;
