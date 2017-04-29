@@ -2,13 +2,7 @@
 const nodemailer = require('nodemailer');
 
 // create reusable transporter object using the default SMTP transport
-let transporter = nodemailer.createTransport({
-    service: '163',
-    auth: {
-        user: 'w549390379@163.com',
-        pass: 'MsgBox("555751")'
-    }
-});
+
 
 // setup email data with unicode symbols
 
