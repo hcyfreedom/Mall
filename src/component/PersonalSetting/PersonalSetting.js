@@ -59,7 +59,7 @@ class PersonalSetting extends React.Component {
     uploadPic(pic) {
         const fd = new FormData();
         fd.append('file', pic)
-        fetch('http://localhost:8080/account/uploadHeadImg', {
+        fetch('/account/uploadHeadImg', {
             method: 'POST',
             headers: {
                 'Content-Type': 'Content-Type: multipart/form-data',
