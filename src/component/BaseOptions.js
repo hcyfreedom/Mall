@@ -10,6 +10,7 @@ import HomePage from './Home/HomePage'
 import Selector from './Category/SlideSelector/Selector'
 import CateMain from './Category/CatePart/CateMain'
 import WalletPage from './Wallet/WalletPage'
+import CarouselItem from './Home/Slider/CarouselItem'
 
 import {BrowserRouter as Router, Route, Switch,Redirect, Link} from 'react-router-dom';
 import createHistory from 'history/createBrowserHistory'
@@ -37,8 +38,8 @@ export default class BaseOptions extends React.Component {
     render() {
         let node = ()=> (
             <div><Nav location={this.props.location}/>
-                <Slider slides={slides} time="2000"/>
-
+                {/*<Slider slides={slides} time="2000"/>*/}
+                <CarouselItem/>
                 <HomePage/></div>
         );
 
