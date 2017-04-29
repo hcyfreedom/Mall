@@ -67,7 +67,7 @@ class ShowBAO extends React.Component {
         }
 
         return (
-            <div>
+            <div style={{backgroundColor:'white'}}>
                 {finalComponent}
             </div>
         )

@@ -132,6 +132,12 @@ export function addGoodToCart(data) {
     }
 }
 
+export  function hideAddTo() {
+    return{
+        type:'HIDE_ADD_TO'
+    }
+}
+
 export function getOrdersInCart(data) {
     return {
         type: 'ORDERS_IN_CART',

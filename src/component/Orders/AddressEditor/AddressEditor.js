@@ -112,15 +112,23 @@ const styles = {
         top: '-60px'
     },thumbOff: {
         backgroundColor: '#ffcccc',
+        width:'50px',
+        height:'50px'
     },
     trackOff: {
         backgroundColor: '#ff9d9d',
+        width:'100px',
+        height:'40px'
     },
     thumbSwitched: {
         backgroundColor: 'red',
+        width:'50px',
+        height:"50px"
     },
     trackSwitched: {
         backgroundColor: '#ff9d9d',
+        width:'80px',
+        height:'40px'
     },
     labelStyle: {
         color: 'red',

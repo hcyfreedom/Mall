@@ -9,26 +9,26 @@ const initState = {
     authCode:'',
     bottomItems: [
         {
-            src: '/imgs/b1.png',
-            hoverSrc: '/imgs/b11.png',
+            src: '/imgs/b11.png',
+            hoverSrc: '/imgs/b1.png',
             href: '/home/index',
         },
         {
-            src: '/imgs/b2.png',
-            hoverSrc: '/imgs/b22.png',
+            src: '/imgs/b22.png',
+            hoverSrc: '/imgs/b2.png',
             href: '/home/cate',
         }, {
-            src: '/imgs/b3.png',
-            hoverSrc: '/imgs/b33.png',
+            src: '/imgs/b33.png',
+            hoverSrc: '/imgs/b3.png',
             href: '/home/cart',
 
         }, {
-            src: '/imgs/b4.png',
-            hoverSrc: '/imgs/b44.png',
+            src: '/imgs/b44.png',
+            hoverSrc: '/imgs/b4.png',
             href: '/home/giftBagMall',
         }, {
-            src: '/imgs/b5.png',
-            hoverSrc: '/imgs/b55.png',
+            src: '/imgs/b55.png',
+            hoverSrc: '/imgs/b5.png',
             href: '/home/MyWallet',
         }
     ],
@@ -36,7 +36,7 @@ const initState = {
     adminCode:'',
     checkLogin:false,
     allOrders:[],
-    saveSearch:'富硒康',
+    saveSearch:'',
     searchOut:[],
     historyItem:[],
     jump:false,

@@ -52,7 +52,7 @@ class Selector extends React.Component{
                     <MenuItem
                         style={{
                             // fontFamily: "Microsoft Yahei",
-                            fontWeight: "600",
+                            // fontWeight: "600",
                             fontSize:"1.5vh",
                             minHeight:'80px',
                             height: "4vh",

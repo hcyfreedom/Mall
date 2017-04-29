@@ -70,7 +70,7 @@ const initState = {
             detail: '品牌直供'
         }, {
             src: '../imgs/icon3.png',
-            detail: '地道品质'
+            detail: '道地品质'
         }
 
     ],
@@ -200,6 +200,16 @@ export default function homeReducer(state = initState, action = {}) {
                 bottom: '20px',
                 right: '50px',
                 display: 'block'
+
+            };
+            return clone;
+
+        case 'HIDE_ADD_TO' :
+            clone.badge = {
+                position: 'absolute',
+                bottom: '20px',
+                right: '50px',
+                display: 'none'
 
             };
             return clone;
