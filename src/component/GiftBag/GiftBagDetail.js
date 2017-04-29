@@ -29,12 +29,14 @@ class  GiftBagDetail extends React.Component{
 
     handleClick(){
         let {giftsDetail} = this.props.afterReducer;
-        alert(giftsDetail.telephone);
+        window.location.href="tel:"+giftsDetail.telephone;
+
+        // alert(giftsDetail.telephone);
     }
 
     handleGoBack(){
       window.history.go(-1)
-        console.log("www")
+        // console.log("www")
     }
     handleExChange(){
         let {giftsDetail} = this.props.afterReducer;

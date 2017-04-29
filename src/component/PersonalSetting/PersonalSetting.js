@@ -10,7 +10,7 @@ class PersonalSetting extends React.Component {
     constructor(props) {
         super(props);
         this.lineStyle = {
-            height: "5vh",
+            // height: "5vh",
             lineHeight: "5vh",
             fontSize: "3vh",
             color: "rgb(100, 100, 100)",
