@@ -14,6 +14,7 @@ import CarouselItem from './Home/Slider/CarouselItem'
 
 import {BrowserRouter as Router, Route, Switch,Redirect, Link} from 'react-router-dom';
 import createHistory from 'history/createBrowserHistory'
+import Snackbar from 'material-ui/Snackbar';
 
 const history = createHistory()
 
@@ -44,13 +45,20 @@ export default class BaseOptions extends React.Component {
         );
 
         let nodeMainCate = ()=> (
-            <div><Nav location={this.props.location}/><Slider slides={slides} time="2000"/>
+            <div><Nav location={this.props.location}/>
+                {/*<Slider slides={slides} time="2000"/>*/}
+                <CarouselItem/>
+
                 <Selector/>
                 <CateMain location = {this.props.location}/></div>
         );
 
         let nodeGift = () => (
-            <div><Nav location={this.props.location}/><Slider slides={slides} time="2000"/><GiftBagMall/></div>
+            <div><Nav location={this.props.location}/>\
+                {/*<Slider slides={slides} time="2000"/>*/}
+                <CarouselItem/>
+
+                <GiftBagMall/></div>
 
         );
 

@@ -13,9 +13,8 @@ import MuiThemeProvider from 'material-ui/styles/MuiThemeProvider';
 import Snackbar from 'material-ui/Snackbar';
 
 
-
 class Payment extends React.Component {
-    constructor(props){
+    constructor(props) {
         super(props);
         this.state = {
             open: false,
@@ -27,16 +26,14 @@ class Payment extends React.Component {
     handleClick(pay_way, price) {
         pay(pay_way, price, function () {
             alert("付款成功");
-            this.setState({
-                open: true,
-            });
+
             this.props.history.replace("/payment/succeed")
         }, function () {
-            this.props.history.replace("/payment/succeed")
+            this.props.history.replace("/payment/failed")
         })
     }
 
-    handleRequestClose () {
+    handleRequestClose() {
         this.setState({
             open: false,
         });
@@ -51,16 +48,16 @@ class Payment extends React.Component {
                 <div>
                     <Nav navTitle="结账付款"/>
                     <div style={{position:'relative',top:'120px'}}>
+                        <div className="pay">
+                            <img src="/imgs/money.png"/>付款方式
+                        </div>
+                        <div className="pay" onClick={()=>{this.handleClick("alipay_wap",totalPrice)}}>
+                            <img src="/imgs/zhifubao.png"/>支付宝支付
+                        </div>
 
-                    <div className="pay" onClick={()=>{this.handleClick("alipay_wap",totalPrice)}}>
-                        <img src="/imgs/zhifubao.png" />支付宝支付
-                    </div>
-                    <div className="pay" onClick={()=>{this.handleClick("upacp_wap",totalPrice)}}>
-                        <img src="/imgs/money.png" />银行卡支付
-                    </div>
-                    <div className="pay" onClick={()=>{this.handleClick("wx_pub",totalPrice)}}>
-                        <img src="/imgs/weixin2.png" />微信支付
-                    </div>
+                        <div className="pay" onClick={()=>{this.handleClick("wx_pub",totalPrice)}}>
+                            <img src="/imgs/weixin2.png"/>微信支付
+                        </div>
 
                         <div className="payAll">
                             付款金额：<span style={{color:'#EA2735'}}>￥{totalPrice}</span>
@@ -69,12 +66,7 @@ class Payment extends React.Component {
                     <div className="addBottom">
                         确认付款
                     </div>
-                    <Snackbar
-                        open={this.state.open}
-                        message="Event added to your calendar"
-                        autoHideDuration={4000}
-                        onRequestClose={this.handleRequestClose.bind(this)}
-                    />
+
 
                 </div>
             </MuiThemeProvider>

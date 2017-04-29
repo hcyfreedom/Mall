@@ -15,7 +15,7 @@ export default class ProductionItem extends React.Component{
                     <p className="pDetail">{this.props.src.name}</p>
                  </div>
                  <div className="priceBox">
-                     <p className="fakePrice">市场价<span className="fakePriceChild">￥{this.props.src.originPrice}</span></p>
+                     <p className="fakePrice" style={{paddingLeft:'5px'}}>市场价<span className="fakePriceChild">￥{this.props.src.originPrice}</span></p>
                      <p className="price">唐僧价<span className="priceChild">￥{this.props.src.newPrice}</span></p>
                  </div>
                  <div className="minPrice"><span>最低实付￥{this.props.src.minPrice}</span></div>
