@@ -62,7 +62,9 @@ class Intro extends React.Component{
 
     handleOnClick(){
         let {introShopTel} = this.props.homeReducer;
-        alert(introShopTel)
+        window.location.href="tel:"+introShopTel;
+
+        // alert(introShopTel)
     }
 
     render(){
