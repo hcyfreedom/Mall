@@ -2,12 +2,20 @@
  * Created by hcy on 2017/4/15.
  */
 import React from 'react'
+import {BrowserRouter as Router, Route, Switch,Redirect, Link} from 'react-router-dom';
+import createHistory from 'history/createBrowserHistory'
+
+
+const history = createHistory()
+
 
 export default  class CartTopNav extends React.Component{
     handleGoBack(){
-        window.history.go(-1)
+        history.go(-1)
     }
     render(){
+        // console.log(history)
+
         return(
             <div style={navStyle}>
                 <div className="goBack" onClick={this.handleGoBack.bind(this)}>

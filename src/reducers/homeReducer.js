@@ -64,7 +64,7 @@ const initState = {
     brandItem: [
         {
             src: '../imgs/icon1.png',
-            detail: "众品联动"
+            detail: "众企联动"
         }, {
             src: '../imgs/icon2.png',
             detail: '品牌直供'
