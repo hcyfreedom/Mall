@@ -59,7 +59,7 @@ class PersonalSetting extends React.Component {
     uploadPic(pic) {
         const fd = new FormData();
         fd.append('file', pic)
-        fetch('/account/uploadHeadImg', {
+        fetch('http://localhost:8080/account/uploadHeadImg', {
             method: 'POST',
             headers: {
                 'Content-Type': 'Content-Type: multipart/form-data',
@@ -68,9 +68,14 @@ class PersonalSetting extends React.Component {
         })
             .then(res => {
                 console.log(`upload photo api response: `, res);
-                return res.text();
+                return res.json();
             })
-            .then(res => console.log(res))
+            .then(res => {
+                if(res.code !== 200)
+                    alert("上传失败")
+                else
+                    alert("上传成功")
+            })
                 .catch( err => alert(`网络错误，上传头像失败`));
     }
 
