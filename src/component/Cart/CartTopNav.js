@@ -34,7 +34,7 @@ const navStyle = {
 
 }
 const navTitle = {
-    width:"200px",
+    width:"280px",
     height:"100px",
     margin:'0 auto',
     fontSize:'40px',

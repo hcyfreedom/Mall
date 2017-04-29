@@ -55,7 +55,7 @@ class Main extends React.Component {
     componentDidMount() {
         window.addEventListener('msg', (e) => {
             this.setState({open: true, msg: e.msg})
-            setTimeout(() => this.setState({open: false}), 4000);
+            setTimeout(()    => this.setState({open: false}), 4000);
         })
     }
 
