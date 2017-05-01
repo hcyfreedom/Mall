@@ -7,6 +7,12 @@ import {connect} from 'react-redux';
 import {bindActionCreators} from 'redux';
 import {post,get} from "../../http/http"
 import * as afterActions from '../../action/afterActions'
+import {BrowserRouter as Router, Route, Switch,Redirect, Link} from 'react-router-dom';
+import createHistory from 'history/createBrowserHistory'
+
+
+const history = createHistory()
+
 class LogIn extends React.Component{
     constructor(props){
         super(props);
@@ -62,7 +68,7 @@ class LogIn extends React.Component{
             if (res.data.code == 200){
                 alert("登录成功");
                 // actions.changeItemsHref();
-                window.location.href='/'
+                history.push('/')
 
             }else {
                 console.log("登录失败 请重试")

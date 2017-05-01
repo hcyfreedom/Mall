@@ -12,7 +12,10 @@ import {connect} from 'react-redux';
 import {bindActionCreators} from 'redux';
 import {get,post} from "../../http/http"
 import * as afterActions from '../../action/afterActions'
+import createHistory from 'history/createBrowserHistory'
 
+
+const history = createHistory()
 class  GiftBagDetail extends React.Component{
     constructor(props){
         super(props)
@@ -35,7 +38,7 @@ class  GiftBagDetail extends React.Component{
     }
 
     handleGoBack(){
-      window.history.go(-1)
+      history.go(-1)
         // console.log("www")
     }
     handleExChange(){

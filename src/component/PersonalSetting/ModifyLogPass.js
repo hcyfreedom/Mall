@@ -22,7 +22,6 @@ export default class ModifyLogPass extends React.Component {
                 <CommonInput type="text" label="新密码" onChange={(e, v) => this.setState({newTel: v})} value={this.state.newTel} />
                 <span style={{fontSize: "24px", margin: "20px 5%", color: "gray"}}>密码由6-20位英文字母、数字或符号组成</span>
                 <CommonButton onClick={() => (e) => {
-                    console.log(`click`)
                     }} label="确认修改" />
             </div>
         )

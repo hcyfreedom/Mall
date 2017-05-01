@@ -25,7 +25,6 @@ class WalletPage extends React.Component{
         });
     }
     render(){
-        console.log(this.props)
 
         let {checkLogin} = this.props.afterReducer;
         if (!checkLogin){

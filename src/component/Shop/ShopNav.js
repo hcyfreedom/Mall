@@ -7,7 +7,11 @@
 import React from 'react'
 import {Link} from 'react-router-dom';
 
+import {BrowserRouter as Router, Route, Switch,Redirect, Link} from 'react-router-dom';
+import createHistory from 'history/createBrowserHistory'
 
+
+const history = createHistory()
 export default class ShopNav extends React.Component{
     constructor(){
         super();
@@ -22,7 +26,7 @@ export default class ShopNav extends React.Component{
         })
     }
     handleClick(){
-        window.history.go(-1)
+        history.go(-1)
     }
 
     render(){

@@ -12,13 +12,16 @@ import IntroDetail from './IntroDetail'
 import Snackbar from 'material-ui/Snackbar';
 import RaisedButton from 'material-ui/RaisedButton';
 import AddToCar from './AddToCar'
-import {Link} from 'react-router-dom'
 import ShowBlock from "../Shop/ShowBlock"
 import {connect} from 'react-redux';
 import {bindActionCreators} from 'redux';
 import {get,post} from "../../http/http"
 import * as mallActions from '../../action/mallActions'
+import {BrowserRouter as Router, Route, Switch,Redirect, Link} from 'react-router-dom';
+import createHistory from 'history/createBrowserHistory'
 
+
+const history = createHistory()
 class Intro extends React.Component{
     constructor(props){
         super(props);
@@ -57,12 +60,12 @@ class Intro extends React.Component{
         actions.getSileIndex(value);
     };
     handleClick(){
-        window.history.go(-1)
+        history.go(-1)
     }
 
     handleOnClick(){
         let {introShopTel} = this.props.homeReducer;
-        window.location.href="tel:"+introShopTel;
+        location.href="tel:"+introShopTel;
 
         // alert(introShopTel)
     }

@@ -8,7 +8,12 @@ import {connect} from 'react-redux';
 import {bindActionCreators} from 'redux';
 import {post,get} from "../../../http/http"
 import * as afterActions from '../../../action/afterActions'
-import {Link} from 'react-router-dom'
+import copy from 'copy-to-clipboard';
+import {BrowserRouter as Router, Route, Switch,Redirect, Link} from 'react-router-dom';
+import createHistory from 'history/createBrowserHistory'
+
+
+const history = createHistory()
  class HeaderAfter extends React.Component{
     constructor(props){
         super(props)
@@ -35,7 +40,9 @@ import {Link} from 'react-router-dom'
 
      onClickInviteCode(){
          let {adminCode} = this.props.afterReducer;
-         alert("您的邀请码为"+adminCode)
+         copy(adminCode);
+         alert('已复制到剪贴板');
+
      }
     render(){
         let {userInfo} = this.props.afterReducer;

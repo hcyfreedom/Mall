@@ -39,7 +39,6 @@ class PersonalSetting extends React.Component {
 
     componentDidMount() {
         get('/main/getUserInfo', res => {
-            console.log(res);''
             this.setState({headIcon: res.data.msg.headImg})
         })
     }
