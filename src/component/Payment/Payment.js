@@ -24,9 +24,10 @@ class Payment extends React.Component {
 
 
     handleClick(pay_way, price) {
+
         pay(pay_way, price, function () {
             alert("付款成功");
-
+            
             this.props.history.replace("/payment/succeed")
         }, function () {
             this.props.history.replace("/payment/failed")

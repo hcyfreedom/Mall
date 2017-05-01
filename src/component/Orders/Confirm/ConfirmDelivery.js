@@ -16,8 +16,6 @@ constructor(props){
 
 
     render(){
-
-        let actions = bindActionCreators(mallActions,this.props.dispatch);
         let {deliveryWay} = this.props.homeReducer;
         return(
             <div style={{width:'100%',backgroundColor:'white'}}>

@@ -62,7 +62,7 @@ class PersonalSetting extends React.Component {
         fetch('/account/uploadHeadImg', {
             method: 'POST',
             headers: {
-                'Content-Type': 'Content-Type: multipart/form-data',
+                
             },
             body: fd
         })
