@@ -9,6 +9,12 @@ import {bindActionCreators} from 'redux';
 import * as mallActions from '../../../action/mallActions';
 import {get, post} from '../../../http/http';
 import AddressBottom from './AddressBottom'
+import {BrowserRouter as Router, Route, Switch,Redirect, Link} from 'react-router-dom';
+import createHistory from 'history/createBrowserHistory'
+
+
+const history = createHistory()
+
 class AddressEditor extends React.Component {
     constructor(props) {
         super(props);
@@ -20,7 +26,6 @@ class AddressEditor extends React.Component {
         let params = pathname[pathname.length - 1];
         if (params % 1 == 0) {
             get('/account/getOneAddress/' + params, (res)=> {
-                console.log(res)
                 actions.getAddressToEdit(res.data.msg)
             })
         }
@@ -31,11 +36,11 @@ class AddressEditor extends React.Component {
         let addressToEdit = this.props.homeReducer.addressToEdit;
         if (addressToEdit.id != undefined && addressToEdit.id != null)
             post('/account/updateAddress', addressToEdit, (res)=> {
-                window.history.go(-1);
+                history.go(-1);
             })
         else{
             post('/account/addAddress', addressToEdit, (res)=> {
-                window.history.go(-1);
+                history.go(-1);
             })
 
         }

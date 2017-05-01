@@ -41,7 +41,6 @@ class Payment extends React.Component {
     };
 
     render() {
-        console.log(this.props)
         let totalPrice = this.props.homeReducer.cartCircleIcon.totalPrice || this.props.homeReducer.totalPrice;
         let actions = bindActionCreators(mallActions, this.props.dispatch);
         return (

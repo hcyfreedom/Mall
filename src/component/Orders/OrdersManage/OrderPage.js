@@ -31,12 +31,12 @@ export default class OrderPage extends React.Component{
                 <div >
                     <Nav navTitle="订单管理"/>
 
-                    <div style={{position:'relative',top:'80px'}}>
-                        <Tabs onChange={this.handleChange.bind(this)} value={this.state.slideIndex} >
-                            <Tab label="全部订单" value={0}/>
-                            <Tab label="待付款" value={1}/>
-                            <Tab label="待收货" value={2}/>
-                            <Tab label="售后" value={3}/>
+                    <div style={{position:'relative',top:'80px',background:'linear-gradient(to left,#0f5ea5, #6dddf1)',height:'48px'}}>
+                        <Tabs onChange={this.handleChange.bind(this)} value={this.state.slideIndex} tabItemContainerStyle={{backgroundColor:'transparent'}}>
+                            <Tab label="全部订单" value={0} style={{fontSize:'25px'}}/>
+                            <Tab label="待付款" value={1} style={{fontSize:'25px'}}/>
+                            <Tab label="待收货" value={2} style={{fontSize:'25px'}}/>
+                            <Tab label="售后" value={3} style={{fontSize:'25px'}}/>
                         </Tabs>
                         <SwipeableViews index={this.state.slideIndex} onChangeIndex={this.handleChange.bind(this)}>
                             <div>
