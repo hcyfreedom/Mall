@@ -1,0 +1,84 @@
+/**
+ * Created by hcy on 2017/5/1.
+ */
+import React from 'react'
+import {Navbar,Nav,NavItem,NavDropdown,MenuItem,FormControl} from 'react-bootstrap'
+import {Link} from 'react-router-dom'
+
+export default class NavDetail extends React.Component{
+    constructor(props){
+        super(props);
+        this.state = {
+            value:''
+        }
+    }
+
+    handleChange(e) {
+        this.setState({ value: e.target.value });
+    }
+
+
+    render(){
+        return(
+            <div>
+                <Navbar  collapseOnSelect>
+                    <Navbar.Toggle />
+
+                    <Navbar.Collapse>
+                        <Nav pullRight>
+                            <NavItem eventKey={1} href="#">用户名</NavItem>
+                            <NavItem eventKey={2} href="#">我的订单</NavItem>
+
+                            <NavDropdown eventKey={3} title="我的部落" id="basic-nav-dropdown">
+                                <MenuItem eventKey={3.1}>部落钻：10</MenuItem>
+                                <MenuItem eventKey={3.2}>部落分：10</MenuItem>
+                                <MenuItem eventKey={3.3}>部落币：10</MenuItem>
+                            </NavDropdown>
+                            <NavItem eventKey={4} href="#">部落会员</NavItem>
+                            <NavDropdown eventKey={5} title="手机商城" id="basic-nav-dropdown">
+                                <MenuItem eventKey={5.1}><img src="/imgs/1.jpg" style={{width:'100px',height:'100px'}} /></MenuItem>
+                            </NavDropdown>
+
+                        </Nav>
+                    </Navbar.Collapse>
+                </Navbar>
+                <div style={{marginTop:'-20px'}}>
+                    <Navbar  collapseOnSelect style={{height:'70px',background:'linear-gradient(to right,#6dddf1, #0f5ea5)'}}>
+                        <Navbar.Header >
+                            <Navbar.Brand>
+                                <Link to="/pc/index" style={{height:'70px',lineHeight:'35px',color:'white',fontSize:'30px'}}>唐僧商城</Link>
+                            </Navbar.Brand>
+                            <Navbar.Toggle />
+                        </Navbar.Header>
+                        <Navbar.Collapse>
+                            <Nav style={{height:'70px'}}>
+                                <Navbar.Brand>
+                                    <Link to="/pc/index" style={{height:'70px',lineHeight:'35px',color:'white',fontSize:'20px'}}>我的部落</Link>
+                                </Navbar.Brand>
+                                <Navbar.Brand>
+                                    <Link to="/pc/index" style={{height:'70px',lineHeight:'35px',color:'white',fontSize:'20px'}}>首页</Link>
+                                </Navbar.Brand>
+                                <NavDropdown eventKey={1} title="账户设置" id="basic-nav-dropdown">
+                                    <MenuItem eventKey={1.1}>修改登录密码</MenuItem>
+                                    <MenuItem eventKey={1.2}>修改支付密码</MenuItem>
+                                </NavDropdown>
+                            </Nav>
+                            <Nav pullRight>
+                                <NavItem eventKey={1} href="#">
+                                    <FormControl
+                                        type="text"
+                                        value={this.state.value}
+                                        placeholder="Enter text"
+                                        onChange={this.handleChange.bind(this)}
+                                        style={{width:'100px'}}
+                                    />
+                                </NavItem>
+                                <NavItem eventKey={2} href="#">Link Right</NavItem>
+                            </Nav>
+                        </Navbar.Collapse>
+                    </Navbar>
+                </div>
+            </div>
+        )
+    }
+}

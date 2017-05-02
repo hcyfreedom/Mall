@@ -15,6 +15,8 @@ class ShopMain extends React.Component{
     }
     componentDidMount(){
         let actions = bindActionCreators(mallActions,this.props.dispatch);
+        console.log(this.props)
+
         get('/shop/getShopMainPage/'+this.props.path.id,(res) => {
             actions.getShopMainPage(res.data)
         })

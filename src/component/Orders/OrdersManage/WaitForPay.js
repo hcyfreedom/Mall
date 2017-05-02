@@ -16,7 +16,7 @@ class WaitForPay extends React.Component{
     componentDidMount(){
         let actions = bindActionCreators(afterActions,this.props.dispatch);
 
-        get('/getOrderInfo/'+'wait4pay',(res) => {
+        get('/good/getOrderInfo/'+'wait4pay',(res) => {
             actions.allOrders(res.data)
         })
 

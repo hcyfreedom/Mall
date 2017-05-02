@@ -18,6 +18,7 @@ class Delivery extends React.Component{
     }
     handleClick(){
         let actions = bindActionCreators(mallActions,this.props.dispatch);
+
     }
     render(){
         return(

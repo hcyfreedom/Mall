@@ -33,6 +33,12 @@ import configureStore from '../store/configureStore';
 import injectTapEventPlugin from 'react-tap-event-plugin';
 import Snackbar from 'material-ui/Snackbar';
 import MuiThemeProvider from 'material-ui/styles/MuiThemeProvider';
+// pc
+import PcHomePage from '../pcComponent/pcIndex/PcHomePage'
+
+
+
+
 injectTapEventPlugin();
 window.alert = function(str) {
     const e = new Event('msg');
@@ -84,6 +90,9 @@ class Main extends React.Component {
                             <Route path="/orderConfirm" component={OrderConfirm}/>
                             <Route path="/orderPage" component={OrderPage}/>
                             <Route path="/giftsBagMall/:id" component={GiftDetail}/>
+
+                            <Route path="/pc/index" component={PcHomePage}/>
+
                             <Redirect exact from="/" to="/home/index"/>
                         </Switch>
                         <MuiThemeProvider>

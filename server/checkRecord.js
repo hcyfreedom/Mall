@@ -79,7 +79,7 @@ module.exports = function (app) {
     app.use("/account/checkLogin",(req,res) =>{
         res.json(require('./json/CheckLogin.json'))
     })
-    app.use("/getOrderInfo/*",(req,res) =>{
+    app.use("/good/getOrderInfo/*",(req,res) =>{
         res.json(require('./json/OrderInfo.json'))
     })
     app.use("/good/search",(req,res) =>{
