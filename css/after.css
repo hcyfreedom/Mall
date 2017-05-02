@@ -279,8 +279,8 @@ ul li .inputAdd{
     padding-right: 40px;
 }
 .paySuccess img{
-    width: 290px;
-    height: 360px;
+    /*width: 290px;*/
+    /*height: 360px;*/
     margin: 0 auto;
     display: flex;
     padding-top: 220px;

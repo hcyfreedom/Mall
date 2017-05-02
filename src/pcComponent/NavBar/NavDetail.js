@@ -46,7 +46,9 @@ export default class NavDetail extends React.Component{
                     <Navbar  collapseOnSelect style={{height:'70px',background:'linear-gradient(to right,#6dddf1, #0f5ea5)'}}>
                         <Navbar.Header >
                             <Navbar.Brand>
-                                <Link to="/pc/index" style={{height:'70px',lineHeight:'35px',color:'white',fontSize:'30px'}}>唐僧商城</Link>
+                                <Link to="/pc/index" style={{height:'70px',lineHeight:'35px',color:'white',fontSize:'30px'}}>
+                                    <img src="/imgs/logo.png" style={{width:'160px',height:'40px'}}/>
+                                </Link>
                             </Navbar.Brand>
                             <Navbar.Toggle />
                         </Navbar.Header>
@@ -58,7 +60,7 @@ export default class NavDetail extends React.Component{
                                 <Navbar.Brand>
                                     <Link to="/pc/index" style={{height:'70px',lineHeight:'35px',color:'white',fontSize:'20px'}}>首页</Link>
                                 </Navbar.Brand>
-                                <NavDropdown eventKey={1} title="账户设置" id="basic-nav-dropdown">
+                                <NavDropdown style={{marginTop:'8px'}} eventKey={1} title="账户设置" id="basic-nav-dropdown">
                                     <MenuItem eventKey={1.1}>修改登录密码</MenuItem>
                                     <MenuItem eventKey={1.2}>修改支付密码</MenuItem>
                                 </NavDropdown>

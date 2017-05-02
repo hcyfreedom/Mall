@@ -29,7 +29,7 @@ class PaymentSuccess extends React.Component {
             <div className="paySuccess">
                 <img src="/imgs/succeed.png"/>
                 <div className="payBtnWrap">
-                    <Link to="/home/MyWallet">
+                    <Link to="/orderPage">
                         <div className="payButton" style={{color:"grey",backgroundColor:'#d2d2d2'}}>
                             查看订单
                         </div>
