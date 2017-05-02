@@ -14,9 +14,10 @@ constructor(props){
     super(props)
 }
 
-componentWillMount(){
+componentDidMount(){
+
     let actions = bindActionCreators(mallActions,this.props.dispatch);
-    actions.targetOrders();
+    // actions.targetOrders();
     let {confirmOrders} = this.props.homeReducer;
     actions.confirmOrders(confirmOrders);
 }

@@ -3,12 +3,23 @@
  */
 import React from 'react'
 import {Link} from 'react-router-dom'
-export default class AddressItem extends React.Component{
+import {connect} from 'react-redux';
+import * as mallActions from '../../../action/mallActions'
+import {bindActionCreators} from 'redux';
+
+class AddressItem extends React.Component{
+    handleClick(element){
+
+        let actions = bindActionCreators(mallActions,this.props.dispatch);
+        actions.getDefaultAddress(element);
+        this.props.history.go(-1);
+    }
     render(){
+
         return(
-            <div className="addWrap">
+            <div className="addWrap"  >
                 {/*<div className="addCircleIcon"></div>*/}
-                <div className="addDetail">
+                <div className="addDetail" onClick={()=>{this.handleClick(this.props.ele)}}>
                     <div className="addDetailTop">
                         <span>{this.props.ele.reciever}</span><span style={{paddingLeft:'100px'}}>{this.props.ele.recieverTelephone}</span>
                     </div>
@@ -23,3 +34,5 @@ export default class AddressItem extends React.Component{
         )
     }
 }
+
+export default connect((state)=>state)(AddressItem)

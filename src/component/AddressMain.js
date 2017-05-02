@@ -7,6 +7,9 @@ import Address from './Orders/AddressManage/Address'
 import AddressEditor from './Orders/AddressEditor/AddressEditor'
 export default class AddressMain extends React.Component{
     render(){
+        console.log("props")
+        console.log(this.props)
+        let history = this.props.history;
         let Node = React.createClass({
             render(){
                 return(
@@ -14,14 +17,12 @@ export default class AddressMain extends React.Component{
                 )
             }
         })
-        console.log(this.props)
-
         if(this.props.match.params.id == "manage"){
 
             Node = React.createClass({
                 render(){
 
-                    return  <Address/>
+                    return  <Address history={history} />
                 }
             })
 
@@ -29,7 +30,7 @@ export default class AddressMain extends React.Component{
             let location = this.props.location;
             Node = React.createClass({
                 render(){
-                    return <AddressEditor location = {location}/>
+                    return <AddressEditor history={history} location = {location}/>
                 }
             })
         }

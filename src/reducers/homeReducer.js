@@ -93,6 +93,8 @@ const initState = {
         status: 0
     },
     defaultAddress:{},
+    transportWay : "",
+    order4pay:""
 }
 
 export default function homeReducer(state = initState, action = {}) {
@@ -298,7 +300,7 @@ export default function homeReducer(state = initState, action = {}) {
             return clone;
 
         case "GET_DELIVERY_WAY":
-            clone.deliveryWay = payload[0];
+            clone.deliveryWay = payload;
             return clone;
 
         case "CHANGE_REALLY_PRICE":
@@ -317,7 +319,12 @@ export default function homeReducer(state = initState, action = {}) {
         case "GET_DEFAULT_ADDRESS":
             clone.defaultAddress = payload;
             return clone;
-
+        case "CHANGE_TRANSPORT_WAY":
+            clone.transportWay = payload;
+            return clone;
+        case "PAY_ORDER_NUMBER":
+            clone.order4pay = payload;
+            return clone;
 
     }
     return clone;

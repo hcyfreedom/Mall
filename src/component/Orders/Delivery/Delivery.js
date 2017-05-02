@@ -16,9 +16,12 @@ class Delivery extends React.Component{
     componentWillMount(){
 
     }
-    handleClick(){
+    handleClick(msg){
+        console.log(msg);
         let actions = bindActionCreators(mallActions,this.props.dispatch);
 
+        actions.getDeliveryWay(msg);
+        this.props.history.go("-1")
     }
     render(){
         return(
@@ -26,9 +29,9 @@ class Delivery extends React.Component{
                 <Nav navTitle="配送方式"/>
                 <ul style={{position:'relative',top:'100px'}}>
                     <li><img src="/imgs/deli.png" style={{transform:'translateX(-30px)'}}/>配送方式</li>
-                    <li>商家提供快递</li>
-                    <li>顺丰速运<span style={{marginLeft:'60%'}}>￥23</span></li>
-                    <li>门店自提</li>
+                    <li onClick={()=>{this.handleClick("商家提供快递")}}>商家提供快递</li>
+                    <li onClick={()=>{this.handleClick("顺丰速运")}}>顺丰速运<span style={{marginLeft:'60%'}}>￥23</span></li>
+                    <li onClick={()=>{this.handleClick("门店自提")}}>门店自提</li>
                 </ul>
             </div>
         )

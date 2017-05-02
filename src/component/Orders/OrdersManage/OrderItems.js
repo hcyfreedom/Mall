@@ -58,7 +58,8 @@ class OrderItems extends React.Component{
                     <span style={{paddingLeft:'60px'}}>{this.props.ele.shopName}</span>
                     <span style={style}>{this.props.ele.describeStatus}</span>
                 </div>
-                <div style={{width:'100%',height:'189px',backgroundColor:'#f9f9f9'}}>
+                <div  style={{width:'100%',height:'189px',backgroundColor:'#f9f9f9'}}>
+                    <Link to={'/information/'+this.props.ele.shopId+'/'+this.props.ele.goodId}>
                     <img className="orderImg" src={this.props.ele.headImg}/>
                     <div className="orderName">{this.props.ele.name}</div>
                     <div className="orderWord">
@@ -66,6 +67,7 @@ class OrderItems extends React.Component{
                         <p style={{textDecoration:'line-through',fontSize:'28px',color:'grey'}}>{this.props.ele.originPrice}</p>
                         <p>x&nbsp;&nbsp;{this.props.ele.goodCount}</p>
                     </div>
+                    </Link>
                 </div>
                 <div className="orderCar">
                     <div className="orderCarChild">
