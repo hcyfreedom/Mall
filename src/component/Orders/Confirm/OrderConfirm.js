@@ -79,6 +79,7 @@ class OrderConfirm extends React.Component {
                         <ConfirmDelivery/>
                     </Link>
                     <ConfirmMessage/>
+                    <div style={{width:'100%',height:'30px',marginTop:"400px"}}></div>
                 </div>
                 <Bottom detail="确认下单" handleClick={this.handleClick.bind(this)}/>
             </div>
