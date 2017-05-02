@@ -7,20 +7,20 @@ import {connect} from 'react-redux';
 import {post} from '../../http/http';
 class PaymentSuccess extends React.Component {
     componentWillMount() {
-        let {lastOrder} = this.props.homeReducer;
-        if(lastOrder == undefined)
-            lastOrder = [];
-        let result = [];
-        for (let i = 0; i < lastOrder.length; i++) {
-            result[i] = lastOrder[i].orderId;
-        }
-        post("/good/commitOrder",{
-            orderIds:result
-        },()=>{
-
-        },()=>{
-
-        })
+        // let {lastOrder} = this.props.homeReducer;
+        // if(lastOrder == undefined)
+        //     lastOrder = [];
+        // let result = [];
+        // for (let i = 0; i < lastOrder.length; i++) {
+        //     result[i] = lastOrder[i].orderId;
+        // }
+        // post("/good/commitOrder",{
+        //     orderIds:result
+        // },()=>{
+        //
+        // },()=>{
+        //
+        // })
     }
 
     render() {

@@ -51,7 +51,8 @@ class OrderConfirm extends React.Component {
         if (lastOrders != [] && lastOrders != null && lastOrders != undefined) {
             post("/good/confirmOrder", {
                 lastOrders
-            },()=>{
+            },(res)=>{
+                actions.payment(res.data.msg);
                 this.props.history.push("/payment");
             },()=>{
                 this.props.history.push("/payment/failed");

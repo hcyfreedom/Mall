@@ -268,5 +268,12 @@ export function bottomNavSelect(data) {
     }
 }
 
+export function payment(data){
+    return {
+        type:"PAY_ORDER_NUMBER",
+        payload: data
+    }
+}
+
 
 
