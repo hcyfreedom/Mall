@@ -16,7 +16,7 @@ class Receive extends React.Component{
     componentDidMount(){
         let actions = bindActionCreators(afterActions,this.props.dispatch);
 
-        get('/getOrderInfo/'+'wait4receive',(res) => {
+        get('/good/getOrderInfo/'+'wait4receive',(res) => {
             actions.allOrders(res.data)
         })
 

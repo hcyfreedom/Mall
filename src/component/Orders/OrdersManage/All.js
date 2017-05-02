@@ -16,7 +16,7 @@ class All extends React.Component{
     componentDidMount(){
         let actions = bindActionCreators(afterActions,this.props.dispatch);
 
-        get('/getOrderInfo/'+'All',(res) => {
+        get('/good/getOrderInfo/'+'All',(res) => {
             actions.allOrders(res.data)
         })
 
