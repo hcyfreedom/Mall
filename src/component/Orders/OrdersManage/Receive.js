@@ -16,17 +16,17 @@ class Receive extends React.Component{
     componentDidMount(){
         let actions = bindActionCreators(afterActions,this.props.dispatch);
 
-        get('/good/getOrderInfo/'+'wait4receive',(res) => {
-            actions.allOrders(res.data)
+        get('/order/getOrderInfo/'+'wait4receive',(res) => {
+            actions.receiverOrders(res.data)
         })
 
 
     }
 
     render(){
-        let {allOrders} = this.props.afterReducer;
+        let {receiverOrders} = this.props.afterReducer;
 
-        const items = allOrders.map((ele,id)=>{
+        const items = receiverOrders.map((ele,id)=>{
             return <Items key ={id} ele={ele}/>
         })
         return(

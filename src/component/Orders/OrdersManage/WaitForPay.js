@@ -17,16 +17,16 @@ class WaitForPay extends React.Component{
         let actions = bindActionCreators(afterActions,this.props.dispatch);
 
         get('/good/getOrderInfo/'+'wait4pay',(res) => {
-            actions.allOrders(res.data)
+            actions.waitOrders(res.data)
         })
 
 
     }
 
     render(){
-        let {allOrders} = this.props.afterReducer;
+        let {waitOrders} = this.props.afterReducer;
 
-        const items = allOrders.map((ele,id)=>{
+        const items = waitOrders.map((ele,id)=>{
             return <Items key ={id} ele={ele}/>
         })
         return(

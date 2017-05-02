@@ -36,6 +36,8 @@ const initState = {
     adminCode:'',
     checkLogin:false,
     allOrders:[],
+    receiverOrders:[],
+    waitOrders:[],
     saveSearch:'',
     searchOut:[],
     historyItem:[],
@@ -115,6 +117,14 @@ export default function afterReducer(state = initState, action = {}) {
 
         case "ALL_ORDERS":
             clone.allOrders = payload.msg;
+            return clone;
+
+        case "RE_ORDERS":
+            clone.receiverOrders = payload.msg;
+            return clone;
+
+        case "WAIT_ORDERS":
+            clone.waitOrders = payload.msg;
             return clone;
 
         case "SAVE_SEARCH":

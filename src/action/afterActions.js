@@ -69,6 +69,21 @@ export function allOrders(data) {
     }
 }
 
+export function receiverOrders(data) {
+    return{
+        type:'RE_ORDERS',
+        payload:data
+    }
+}
+
+
+export function waitOrders(data) {
+    return{
+        type:'WAIT_ORDERS',
+        payload:data
+    }
+}
+
 export function saveSearch(data) {
     return{
         type:'SAVE_SEARCH',

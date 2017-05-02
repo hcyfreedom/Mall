@@ -49,11 +49,10 @@ class ShowYOU extends React.Component {
                     {/*<Link to="/home/cate"><span>&nbsp;>more</span></Link>*/}
                 </div>
 
-                <div
-                    style={{width:"100%",height:'60px',backgroundColor:'white',display:'flex',justifyContent:'space-between',borderBottom:'1px solid grey',fontSize:'20px',lineHeight:'60px'}}>
+                <div style={{width:"100%",height:'60px',backgroundColor:'white',display:'flex',justifyContent:'space-between',borderBottom:'1px solid grey',fontSize:'20px',lineHeight:'60px'}}>
                     &nbsp;&nbsp;&nbsp;
-                    <Link to={/shop/+shopId} style={{marginRight:'30px'}}> &gt;进入店铺&nbsp;&nbsp;&nbsp;
-                    </Link>
+                    {/*<Link to={/shop/+shopId} style={{marginRight:'30px'}}> &gt;进入店铺&nbsp;&nbsp;&nbsp;*/}
+                    {/*</Link>*/}
                 </div>
                 {productions}
 
