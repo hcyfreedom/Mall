@@ -4,8 +4,8 @@
 import React from 'react'
 import {Navbar,Nav,NavItem,NavDropdown,MenuItem,FormControl,Button} from 'react-bootstrap'
 import {Link} from 'react-router-dom'
-import Login from '../pcIndex/Login'
-import Register from '../pcIndex/Register'
+import Login from '../Login/Login'
+import Register from '../Login/Register'
 
 export default class NavDetail extends React.Component{
     constructor(props){
@@ -62,10 +62,13 @@ export default class NavDetail extends React.Component{
                         <Navbar.Collapse>
                             <Nav style={{height:'70px'}}>
                                 <Navbar.Brand>
-                                    <Link to="/pc/index" style={{height:'70px',lineHeight:'35px',color:'white',fontSize:'20px'}}>我的部落</Link>
+                                    <Link to="/pc/index" style={{height:'70px',lineHeight:'35px',color:'white',fontSize:'20px'}}>首页</Link>
                                 </Navbar.Brand>
                                 <Navbar.Brand>
-                                    <Link to="/pc/index" style={{height:'70px',lineHeight:'35px',color:'white',fontSize:'20px'}}>首页</Link>
+                                    <Link to="/pc/index" style={{height:'70px',lineHeight:'35px',color:'white',fontSize:'20px'}}>分类</Link>
+                                </Navbar.Brand>
+                                <Navbar.Brand>
+                                    <Link to="/pc/index" style={{height:'70px',lineHeight:'35px',color:'white',fontSize:'20px'}}>礼包商城</Link>
                                 </Navbar.Brand>
                                 <NavDropdown style={{marginTop:'8px'}} eventKey={1} title="账户设置" id="basic-nav-dropdown">
                                     <MenuItem eventKey={1.1}>修改登录密码</MenuItem>

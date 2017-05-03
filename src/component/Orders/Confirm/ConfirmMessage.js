@@ -35,7 +35,10 @@ class ConfirmMessage extends React.Component {
             if (val % 1 === 0)
                 resultPrice = 1*val + 1*resultPrice;
         }
-
+        let {deliveryWay} = this.props.homeReducer;
+        if(deliveryWay == "顺丰速运"){
+            resultPrice += 23;
+        }
         return (
             <div style={{float:'right',paddingRight:'60px',color:'grey',fontSize:'2em',lineHeight:'60px'}}>
                 {/*<div>运费</div>*/}

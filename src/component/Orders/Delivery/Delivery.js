@@ -21,6 +21,7 @@ class Delivery extends React.Component{
         let actions = bindActionCreators(mallActions,this.props.dispatch);
 
         actions.getDeliveryWay(msg);
+
         this.props.history.go("-1")
     }
     render(){

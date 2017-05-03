@@ -43,7 +43,7 @@ export default class Login extends React.Component{
                         <Modal.Header closeButton>
                             <Modal.Title>登录</Modal.Title>
                         </Modal.Header>
-                        <Modal.Body>
+                        <Modal.Body style={{height:'260px'}}>
                            <div style={{width:'40%'}}>
                                <form>
                                        <ControlLabel>请输入您的手机号</ControlLabel>
@@ -52,21 +52,27 @@ export default class Login extends React.Component{
                                            value={this.state.value}
                                            onChange={this.handleChange}
                                        />
-                                   <ControlLabel>验证码:
+                                   <div style={{marginTop:'30px'}}>
+                                       <ControlLabel>验证码:
                                        </ControlLabel>
-                                   <Button bsStyle="info" style={{}} bsSize="small">点击获取</Button>
+                                       <Button bsStyle="info" style={{marginLeft:'20px',marginBottom:'5px'}} bsSize="small">点击获取</Button>
                                        <FormControl
                                            type="text"
                                            value={this.state.value}
                                            onChange={this.handleChange}
                                        />
-                                   <Button bsStyle="success" bsSize="small">登录</Button>
+                                   </div>
+                                   <div style={wellStyles}>
+                                       <Button bsStyle="success" block>登录</Button>
+                                   </div>
                                </form>
                             </div>
                             <div style={{transform:'translateX(50%) translateY(-140px)',borderLeft:'1px solid #eee',height:'140px',paddingLeft:'30px'}}>
                                 第三方登录合作
-                                <img src="/imgs/weixin2.png"/>
-                                <img src="/imgs/zhifubao.png"/>
+                                <div style={{marginTop:'30px'}}>
+                                    <img src="/imgs/weixin2.png" style={{marginRight:'20px'}}/>
+                                    <img src="/imgs/zhifubao.png"/>
+                                </div>
 
                             </div>
                         </Modal.Body>
@@ -78,3 +84,5 @@ export default class Login extends React.Component{
         )
     }
 }
+
+const wellStyles = {maxWidth: 400, margin: '30px auto 10px'};

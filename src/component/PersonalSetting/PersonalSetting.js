@@ -92,8 +92,8 @@ class PersonalSetting extends React.Component {
                     {title: '修改头像', ev: () => this.setState({modal: !this.state.modal})},
                     {title: '用户名', ev: () => ''},
                     // {title: '修改登录密码', ev: () => this.setState({redirect: 'person/logpass'})},
-                    {title: '修改支付密码', ev: () => this.setState({redirect: 'person/paypass'})},
-                    {title: '修改手机验证', ev: () => this.setState({redirect: "person/phone"})}
+                    // {title: '修改支付密码', ev: () => this.setState({redirect: 'person/paypass'})},
+                    // {title: '修改手机验证', ev: () => this.setState({redirect: "person/phone"})}
                 ].map( (e, idx) => {
                     let arraw = idx != 1 ? <span style={this.arrawStyle}>></span> : null;
                     let rightAppend = null;
