@@ -64,16 +64,16 @@ export default class NavDetail extends React.Component{
                                 <Navbar.Brand>
                                     <Link to="/pc/index" style={{height:'70px',lineHeight:'35px',color:'white',fontSize:'20px'}}>首页</Link>
                                 </Navbar.Brand>
-                                <Navbar.Brand>
-                                    <Link to="/pc/index" style={{height:'70px',lineHeight:'35px',color:'white',fontSize:'20px'}}>分类</Link>
-                                </Navbar.Brand>
+
                                 <Navbar.Brand>
                                     <Link to="/pc/index" style={{height:'70px',lineHeight:'35px',color:'white',fontSize:'20px'}}>礼包商城</Link>
                                 </Navbar.Brand>
-                                <NavDropdown style={{marginTop:'8px'}} eventKey={1} title="账户设置" id="basic-nav-dropdown">
-                                    <MenuItem eventKey={1.1}>修改登录密码</MenuItem>
-                                    <MenuItem eventKey={1.2}>修改支付密码</MenuItem>
+
+                                <NavDropdown style={{marginTop:'8px'}} eventKey={1} title="分类" id="my-basic-nav-dropdown">
+                                    <MenuItem eventKey={1.1} style={{color:'white'}}>优品牌</MenuItem>
+                                    <MenuItem eventKey={1.2}>保健坊</MenuItem>
                                 </NavDropdown>
+
                             </Nav>
                             <Nav pullRight>
                                 <NavItem eventKey={1} href="#">

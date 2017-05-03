@@ -12,9 +12,7 @@ class CartItems extends React.Component{
         super(props)
     }
 
-    componentWillMount(){
 
-    }
 
 
     handlePlusClick(){
@@ -45,7 +43,7 @@ class CartItems extends React.Component{
                     //for(let item in result) {
                     let re = ordersInCart.find(e => e.goodId == i);
                     if (re)
-                        total += re.minPrice * re.goodCount;
+                        total += re.newPrice * re.goodCount;
 
                     orderList.push(re);
                     //}
@@ -92,7 +90,7 @@ class CartItems extends React.Component{
                         //for(let item in result) {
                         let re = ordersInCart.find(e => e.goodId == i);
                         if (re)
-                            total += re.minPrice * re.goodCount;
+                            total += re.newPrice * re.goodCount;
 
                         orderList.push(re);
                         //}

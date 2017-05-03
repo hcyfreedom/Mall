@@ -1,3 +1,7 @@
-#basic-nav-dropdown{
-    color: white;
+
+a#my-basic-nav-dropdown.dropdown-toggle{
+    color:white;
+    background-color: transparent;
+
 }
+
