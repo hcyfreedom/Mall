@@ -36,7 +36,7 @@ export default class Username extends React.Component {
             <div>
                 <Nav navTitle="修改用户名" />
                 <div style={{height: "100px"}}></div>
-                <CommonInput type="text" label="新用户名" onChange={(e, v) => this.setState({newTel: v})} value={this.state.newTel} />
+                <CommonInput type="text" label="新用户名"  onChange={(e, v) => this.setState({newName: v})} value={this.state.newName} />
                 <CommonButton onClick={this.changeUserName.bind(this)} label="确认修改" />
             </div>
         )

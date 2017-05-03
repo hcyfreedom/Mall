@@ -41,6 +41,7 @@ class ConfirmMessage extends React.Component {
         if(deliveryWay == "顺丰速运"){
             resultPrice += 23;
         }
+        console.log(resultPrice)
 
         actions.resultPrice(resultPrice);
 
