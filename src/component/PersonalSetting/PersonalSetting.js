@@ -59,10 +59,8 @@ class PersonalSetting extends React.Component {
         const fd = new FormData();
         fd.append('file', pic)
         fetch('/account/uploadHeadImg', {
+            credentials: 'include',
             method: 'POST',
-            headers: {
-                
-            },
             body: fd
         })
             .then(res => {

@@ -9,34 +9,43 @@ import {post} from '../../../http/http'
 import {get} from "../../../http/http"
 import * as mallActions from '../../../action/mallActions'
 
-class ConfirmAddress extends React.Component{
+class ConfirmAddress extends React.Component {
 
-    componentDidMount(){
-        let actions = bindActionCreators(mallActions,this.props.dispatch);
+    componentDidMount() {
+        let actions = bindActionCreators(mallActions, this.props.dispatch);
+        let {defaultAddress} = this.props.homeReducer;
 
-        get('/account/getDefaultAddress',(res)=>{
-            actions.getDefaultAddress(res.data.msg)
-        })
+        if(defaultAddress.reciever == null || defaultAddress.reciever == undefined || defaultAddress.reciever == ""){
+            get('/account/getDefaultAddress', (res)=> {
+                actions.getDefaultAddress(res.data.msg)
+            })
+        }
+
+
     }
 
-    render(){
+    render() {
         let {defaultAddress} = this.props.homeReducer;
-        if(defaultAddress == null || defaultAddress == undefined || defaultAddress == []){
-            defaultAddress = {
-                reciever:"不存在地址",
-                recieverTelephone:"",
-                address:""
+        let showAddress = Object.assign({}, defaultAddress);
+
+        if (showAddress == null || showAddress == undefined || showAddress == []) {
+            showAddress = {
+                reciever: "不存在地址",
+                recieverTelephone: "",
+                address: "",
+                tag: "noAddress"
             }
         }
-        return(
+        return (
             <div className="conAdd">
                 <img src="/imgs/add1.jpg"/>
-                <div className="addDetail" style={{marginTop:'15px'}} >
+                <div className="addDetail" style={{marginTop:'15px'}}>
                     <div className="addDetailTop">
-                        <span>{defaultAddress.reciever}</span><span style={{paddingLeft:'100px'}}>{defaultAddress.recieverTelephone}</span>
+                        <span>{showAddress.reciever}</span><span
+                        style={{paddingLeft:'100px'}}>{showAddress.recieverTelephone}</span>
                     </div>
                     <div className="addDetailBottom">
-                        {defaultAddress.address}
+                        {showAddress.address}
                     </div>
                 </div>
 
