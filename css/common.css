@@ -664,7 +664,7 @@ a{
     border:1px solid grey;
     position: absolute;
     right: 20%;
-    /* bottom: 570px; */
+     bottom: 30px;
     /* transform: translateY(50px); */
     line-height: 44px;
 }
@@ -687,6 +687,7 @@ a{
     background-color: #EA2735;
     position: absolute;
     right:0;
+    top:0;
     height: 222px;
     line-height: 222px;
     color: white;
