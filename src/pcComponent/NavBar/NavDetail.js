@@ -66,12 +66,12 @@ export default class NavDetail extends React.Component{
                                 </Navbar.Brand>
 
                                 <Navbar.Brand>
-                                    <Link to="/pc/index" style={{height:'70px',lineHeight:'35px',color:'white',fontSize:'20px'}}>礼包商城</Link>
+                                    <Link to="/home/giftBagMall" style={{height:'70px',lineHeight:'35px',color:'white',fontSize:'20px'}}>礼包商城</Link>
                                 </Navbar.Brand>
 
                                 <NavDropdown style={{marginTop:'8px'}}  eventKey={1} title="分类" id="my-basic-nav-dropdown">
                                     <MenuItem eventKey={1.1} style={{color:'white'}}>
-                                        <Link to="/home/classify">
+                                        <Link to="/home/classify/1">
                                             优品牌
                                         </Link>
                                     </MenuItem>

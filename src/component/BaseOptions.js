@@ -14,6 +14,7 @@ import CarouselItem from './Home/Slider/CarouselItem'
 // pc
 import PcHomePage from '../pcComponent/pcIndex/PcHomePage'
 import PcClassify from '../pcComponent/Classify/ClassifyHome'
+import PcGift from '../pcComponent/Gift/GiftPage'
 
 
 import {BrowserRouter as Router, Route, Switch,Redirect, Link} from 'react-router-dom';
@@ -56,6 +57,7 @@ export default class BaseOptions extends React.Component {
                 <Switch>
                     <Route path="/home/index" component={PcHomePage}/>
                     <Route path="/home/classify/:id" component={PcClassify}/>
+                    <Route path="/home/giftBagMall" component={PcGift}/>
 
                 </Switch>
             </div>
