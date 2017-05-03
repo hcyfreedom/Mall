@@ -6,6 +6,11 @@ import CommonInput from './CommonInput';
 import CommonButton from './CommonButton';
 import Nav from '../Cart/CartTopNav'
 import {post} from '../../http/http'
+import {BrowserRouter as Router, Route, Switch,Redirect, Link} from 'react-router-dom';
+import createHistory from 'history/createBrowserHistory'
+
+
+const history = createHistory()
 
 export default class Username extends React.Component {
     constructor(props) {
@@ -21,6 +26,7 @@ export default class Username extends React.Component {
         }, res => {
 
         })
+        history.go("-1")
 
     }
 
