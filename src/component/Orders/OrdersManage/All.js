@@ -26,7 +26,7 @@ class All extends React.Component{
 
     render(){
         let {allOrders} = this.props.afterReducer;
-
+console.log(allOrders)
         const items = allOrders.map((ele,id)=>{
 
             return <Items key ={id} ele={ele}/>

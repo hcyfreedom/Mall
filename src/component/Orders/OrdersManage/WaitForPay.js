@@ -25,7 +25,7 @@ class WaitForPay extends React.Component{
 
     render(){
         let {waitOrders} = this.props.afterReducer;
-
+console.log(waitOrders)
         const items = waitOrders.map((ele,id)=>{
             return <Items key ={id} ele={ele}/>
         })
