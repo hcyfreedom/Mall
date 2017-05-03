@@ -24,7 +24,6 @@ class ConfirmMessage extends React.Component {
         let resultCoin = 0;
         let resultPoint = 0;
         let resultPrice = 0;
-        console.log(orderReallyPrice);
         for (let val of selectCoin) {
             if (val % 1 === 0)
                 resultCoin = 1*val+1*resultCoin
@@ -41,9 +40,7 @@ class ConfirmMessage extends React.Component {
         if(deliveryWay == "顺丰速运"){
             resultPrice += 23;
         }
-        console.log(resultPrice)
 
-        actions.resultPrice(resultPrice);
 
 
         return (
