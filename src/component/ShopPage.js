@@ -6,10 +6,15 @@ import Nav from './Search/Nav'
 import ShowBlock from './Shop/ShowBlock'
 import ShowSelector from './Shop/ShowSelector'
 import ShowBottom from './Shop/ShowBottom'
+// pc
+import PcShopIndex from '../pcComponent/Shop/ShopIndex'
+
 import {connect} from 'react-redux';
 import {bindActionCreators} from 'redux';
 import {get} from "../http/http"
 import * as mallActions from '../action/mallActions'
+
+
  class ShopPage extends React.Component{
     constructor(props){
         super(props)
@@ -24,7 +29,22 @@ import * as mallActions from '../action/mallActions'
         })
 
     }
-    render(){
+
+     render() {
+         const result = matchMedia('(orientation: landscape)').matches;
+         if(result)
+             return this.pcRender()
+         return this.mobRender();
+     }
+     // pc端
+        pcRender(){
+            return(
+                <PcShopIndex/>
+            )
+        }
+
+    // 手机端
+    mobRender(){
 
         let {shopHeadImgUrl,shopMainShopId} = this.props.homeReducer;
         let actions = bindActionCreators(mallActions,this.props.dispatch)

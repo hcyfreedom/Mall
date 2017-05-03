@@ -27,7 +27,7 @@ class PaymentSuccess extends React.Component {
 
         return (
             <div className="paySuccess">
-                <img src="/imgs/succeed.png"/>
+                <img src="/imgs/ts.png"/>
                 <div className="payBtnWrap">
                     <Link to="/orderPage">
                         <div className="payButton" style={{color:"grey",backgroundColor:'#d2d2d2'}}>

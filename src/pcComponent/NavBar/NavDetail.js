@@ -88,7 +88,9 @@ export default class NavDetail extends React.Component{
                                         onChange={this.handleChange.bind(this)}
                                         style={{width:'200px',position:'relative',paddingRight:'60px'}}
                                     />
-                                    <Button style={{position:'absolute',top:'15px',right:'10px',height:'34px',backgroundColor:'#EEEEEE'}}>搜索</Button>
+                                    <Button style={{position:'absolute',top:'15px',right:'10px',height:'34px',backgroundColor:'#EEEEEE'}}>
+                                        <Link to="/search/out">搜索</Link>
+                                    </Button>
 
                                 </NavItem>
                                 <Button style={{marginTop:'15px'}}>我的购物车</Button>

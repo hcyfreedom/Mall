@@ -61,14 +61,14 @@
 }
 .minPrice2 span{
     border: 2px red solid;
-    padding: 1px 15px;
-    height: 25px;
-    line-height: 15px;
+    padding: 0px 15px;
+    height: 2vh;
+    line-height: 2vh;
     border-radius: 8px;
     text-align: center;
     font-size: 1vh;
     color: #E12735;
-    font-weight: bold;;
+    font-weight: bold;
 }
 
 .pRow2{

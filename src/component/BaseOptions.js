@@ -16,7 +16,6 @@ import PcHomePage from '../pcComponent/pcIndex/PcHomePage'
 import PcClassify from '../pcComponent/Classify/ClassifyHome'
 import PcGift from '../pcComponent/Gift/GiftPage'
 
-
 import {BrowserRouter as Router, Route, Switch,Redirect, Link} from 'react-router-dom';
 import createHistory from 'history/createBrowserHistory'
 

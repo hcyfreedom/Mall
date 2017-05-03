@@ -8,7 +8,7 @@ export default class PaymentFail extends React.Component {
     render() {
         return (
             <div className="paySuccess">
-                <img src="/imgs/failed.png"/>
+                <img src="/imgs/ts.png"/>
                 <div className="payBtnWrap">
                     <Link to="/">
                         <div className="payButton" style={{color:"grey",backgroundColor:'#d2d2d2'}}>

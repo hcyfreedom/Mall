@@ -36,7 +36,7 @@ import injectTapEventPlugin from 'react-tap-event-plugin';
 import Snackbar from 'material-ui/Snackbar';
 import MuiThemeProvider from 'material-ui/styles/MuiThemeProvider';
 // pc
-import PcHomePage from '../pcComponent/pcIndex/PcHomePage'
+import PcSearchOut from '../pcComponent/Search/SearchOut'
 
 
 
