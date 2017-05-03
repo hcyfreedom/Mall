@@ -25,6 +25,8 @@ import OrderConfirm from './Orders/Confirm/OrderConfirm'
 import Intro from './Information/Intro'
 import OrderPage from './Orders/OrdersManage/OrderPage'
 import GiftDetail from './GiftBag/GiftBagDetail'
+import UserName from './PersonalSetting/Username'
+
 
 import {Switch, BrowserRouter as Router, Route, Redirect, Link} from 'react-router-dom';
 import createHistory from 'history/createBrowserHistory'
@@ -84,6 +86,8 @@ class Main extends React.Component {
                             <Route path="/person/logpass" component={ModifyLogPass}/>
                             <Route path="/person/paypass" component={ModifyPayPass}/>
                             <Route path="/person/phone" component={ModifyPhoneVeri}/>
+                            <Route path="/person/username" component={UserName}/>
+
                             <Route exact path="/payment" component={Payment}/>
                             <Route path="/payment/succeed" component={PaymentSuccess}/>
                             <Route path="/payment/failed" component={PaymentFail}/>

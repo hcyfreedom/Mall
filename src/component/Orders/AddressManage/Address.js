@@ -33,7 +33,6 @@ class Address extends React.Component {
 
     render() {
         let {allAddress} = this.props.afterReducer;
-
         let items = allAddress.map((ele, id) => {
             return <AddressItem history={this.props.history} ele={ele} key={id} index={ele.id}/>
         })
