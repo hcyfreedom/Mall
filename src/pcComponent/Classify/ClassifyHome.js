@@ -2,7 +2,7 @@
  * Created by hcy on 2017/5/3.
  */
 import React from 'react'
-import Nav from '../NavBar/NavDetail'
+import NavDetail from '../NavBar/NavDetail'
 
 export default class ClassifyHome extends React.Component{
     render(){

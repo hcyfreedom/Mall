@@ -102,7 +102,7 @@ class PersonalSetting extends React.Component {
                     if(idx == 1)
                         rightAppend = <span>{this.state.username}</span>
                     return (
-                        <div key={idx} style={this.lineStyle} onClick={e.ev}><span>{e.title}</span>{arraw}<span style={{float: "right", marginRight: "2vw", width:"15%"}}>{rightAppend ? rightAppend : null}</span></div>
+                        <div key={idx} style={this.lineStyle} onClick={e.ev}><span>{e.title}</span>{arraw}<span style={{float: "right", marginRight: "2vw"}}>{rightAppend ? rightAppend : null}</span></div>
                     )
                 })}
                 {this.state.redirect ? <Redirect push to={this.state.redirect} /> : null}

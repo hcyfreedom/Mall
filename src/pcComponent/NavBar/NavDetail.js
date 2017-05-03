@@ -62,15 +62,19 @@ export default class NavDetail extends React.Component{
                         <Navbar.Collapse>
                             <Nav style={{height:'70px'}}>
                                 <Navbar.Brand>
-                                    <Link to="/pc/index" style={{height:'70px',lineHeight:'35px',color:'white',fontSize:'20px'}}>首页</Link>
+                                    <Link to="" style={{height:'70px',lineHeight:'35px',color:'white',fontSize:'20px'}}>首页</Link>
                                 </Navbar.Brand>
 
                                 <Navbar.Brand>
                                     <Link to="/pc/index" style={{height:'70px',lineHeight:'35px',color:'white',fontSize:'20px'}}>礼包商城</Link>
                                 </Navbar.Brand>
 
-                                <NavDropdown style={{marginTop:'8px'}} eventKey={1} title="分类" id="my-basic-nav-dropdown">
-                                    <MenuItem eventKey={1.1} style={{color:'white'}}>优品牌</MenuItem>
+                                <NavDropdown style={{marginTop:'8px'}}  eventKey={1} title="分类" id="my-basic-nav-dropdown">
+                                    <MenuItem eventKey={1.1} style={{color:'white'}}>
+                                        <Link to="/home/classify">
+                                            优品牌
+                                        </Link>
+                                    </MenuItem>
                                     <MenuItem eventKey={1.2}>保健坊</MenuItem>
                                 </NavDropdown>
 
