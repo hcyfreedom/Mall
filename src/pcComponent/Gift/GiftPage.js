@@ -3,7 +3,7 @@
  */
 import React from 'react'
 import NavDetail from '../NavBar/NavDetail'
-import GiftItems from './GiftItem'
+import GiftItem from './GiftItem'
 
 export default class GiftPage extends React.Component{
     render(){

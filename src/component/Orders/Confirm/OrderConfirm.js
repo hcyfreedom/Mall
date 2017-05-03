@@ -68,7 +68,7 @@ class OrderConfirm extends React.Component {
         console.log(this.props.homeReducer);
         return (
             <div>
-                <Nav navTitle="确认订单"/>
+                <Nav navTitle="管理收货地址"/>
 
                 <div style={{position:"relative",top:'120px'}}>
                     <Link to="/address/manage">
@@ -81,7 +81,7 @@ class OrderConfirm extends React.Component {
                     <ConfirmMessage/>
                     <div style={{width:'100%',height:'30px',marginTop:"400px"}}></div>
                 </div>
-                <Bottom detail="确认下单" handleClick={this.handleClick.bind(this)}/>
+                <Bottom detail="确认" handleClick={this.handleClick.bind(this)}/>
             </div>
         )
     }
