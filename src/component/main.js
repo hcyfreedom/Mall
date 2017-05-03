@@ -95,7 +95,6 @@ class Main extends React.Component {
                             <Route path="/orderPage" component={OrderPage}/>
                             <Route path="/giftsBagMall/:id" component={GiftDetail}/>
 
-                            <Route path="/pc/index" component={PcHomePage}/>
 
                             <Redirect exact from="/" to="/home/index"/>
                         </Switch>

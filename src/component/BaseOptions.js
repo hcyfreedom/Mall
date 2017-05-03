@@ -11,6 +11,10 @@ import Selector from './Category/SlideSelector/Selector'
 import CateMain from './Category/CatePart/CateMain'
 import WalletPage from './Wallet/WalletPage'
 import CarouselItem from './Home/Slider/CarouselItem'
+// pc
+import PcHomePage from '../pcComponent/pcIndex/PcHomePage'
+import PcClassify from '../pcComponent/Classify/ClassifyHome'
+
 
 import {BrowserRouter as Router, Route, Switch,Redirect, Link} from 'react-router-dom';
 import createHistory from 'history/createBrowserHistory'
@@ -39,8 +43,26 @@ export default class BaseOptions extends React.Component {
 
 
 
-
     render() {
+        const result = matchMedia('(orientation: landscape)').matches;
+        if(result)
+            return this.pcRender()
+        return this.mobRender();
+    }
+
+    pcRender() {
+        return (
+            <div>
+                <Switch>
+                    <Route path="/home/index" component={PcHomePage}/>
+                    <Route path="/home/classify/:id" component={PcClassify}/>
+
+                </Switch>
+            </div>
+        )
+    }
+
+    mobRender() {
         let node = ()=> (
             <div><Nav location={this.props.location}/>
                 {/*<Slider slides={slides} time="2000"/>*/}

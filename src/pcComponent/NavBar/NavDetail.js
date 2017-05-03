@@ -53,7 +53,7 @@ export default class NavDetail extends React.Component{
                     <Navbar  collapseOnSelect style={{height:'70px',background:'linear-gradient(to right,#6dddf1, #0f5ea5)'}}>
                         <Navbar.Header >
                             <Navbar.Brand>
-                                <Link to="/pc/index" style={{height:'70px',lineHeight:'35px',color:'white',fontSize:'30px'}}>
+                                <Link to="/home/index" style={{height:'70px',lineHeight:'35px',color:'white',fontSize:'30px'}}>
                                     <img src="/imgs/logo.png" style={{width:'160px',height:'40px'}}/>
                                 </Link>
                             </Navbar.Brand>

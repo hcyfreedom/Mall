@@ -42,6 +42,7 @@ class Payment extends React.Component {
 
     render() {
         let totalPrice = this.props.homeReducer.cartCircleIcon.totalPrice || this.props.homeReducer.totalPrice;
+        let resultPrice = this.props.homeReducer.resultPrice;
         let actions = bindActionCreators(mallActions, this.props.dispatch);
         return (
             <MuiThemeProvider>
@@ -51,16 +52,16 @@ class Payment extends React.Component {
                         <div className="pay">
                             <img src="/imgs/money.png"/>付款方式
                         </div>
-                        <div className="pay" onClick={()=>{this.handleClick("alipay_wap",totalPrice)}}>
+                        <div className="pay" onClick={()=>{this.handleClick("alipay_wap",resultPrice)}}>
                             <img src="/imgs/zhifubao.png"/>支付宝支付
                         </div>
 
-                        <div className="pay" onClick={()=>{this.handleClick("wx_pub",totalPrice)}}>
+                        <div className="pay" onClick={()=>{this.handleClick("wx_pub",resultPrice)}}>
                             <img src="/imgs/weixin2.png"/>微信支付
                         </div>
 
                         <div className="payAll">
-                            付款金额：<span style={{color:'#EA2735'}}>￥{totalPrice}</span>
+                            付款金额：<span style={{color:'#EA2735'}}>￥{resultPrice}</span>
                         </div>
                     </div>
                     <div className="addBottom">

@@ -43,6 +43,7 @@ const initState = {
     cartDelete: {display: 'none'},
     editorFlag: "编辑",
     totalPrice: "0.00",
+    resultPrice:'0.0',
     selectedID: new Set(),
     orderList: [],
     confirmOrders: [],
@@ -324,6 +325,10 @@ export default function homeReducer(state = initState, action = {}) {
             return clone;
         case "PAY_ORDER_NUMBER":
             clone.order4pay = payload;
+            return clone;
+
+        case "RESULT_PRICE":
+            clone.resultPrice = payload;
             return clone;
 
     }

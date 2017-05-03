@@ -18,6 +18,8 @@ class ConfirmMessage extends React.Component {
     }
 
     render() {
+        let actions = bindActionCreators(mallActions, this.props.dispatch);
+
         let {selectCoin, selectPoint,orderReallyPrice} = this.props.homeReducer;
         let resultCoin = 0;
         let resultPoint = 0;
@@ -39,6 +41,10 @@ class ConfirmMessage extends React.Component {
         if(deliveryWay == "顺丰速运"){
             resultPrice += 23;
         }
+
+        actions.resultPrice(resultPrice);
+
+
         return (
             <div style={{float:'right',paddingRight:'60px',color:'grey',fontSize:'2em',lineHeight:'60px'}}>
                 {/*<div>运费</div>*/}

@@ -276,4 +276,9 @@ export function payment(data){
 }
 
 
-
+export function resultPrice(data) {
+    return{
+        type:"RESULT_PRICE",
+        payload:'data'
+    }
+}

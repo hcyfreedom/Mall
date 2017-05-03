@@ -20,7 +20,7 @@ export default class OldSup extends React.Component{
                         0
                     </div>
                 </div>
-                <p className="SusDetail" style={{color:'white',webkitTextStroke:'black'}}>可当0元使用</p>
+                <p className="SusDetail" style={{color:'white'}}>可当0元使用</p>
             </div>
         )
     }
