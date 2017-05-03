@@ -39,7 +39,9 @@ class PersonalSetting extends React.Component {
 
     componentDidMount() {
         get('/main/getUserInfo', res => {
+            console.log(res.data.msg)
             this.setState({headIcon: res.data.msg.headImg})
+            this.setState({username:res.data.msg.userName})
         })
     }
 
@@ -88,7 +90,7 @@ class PersonalSetting extends React.Component {
                 null}
                 {[
                     {title: '修改头像', ev: () => this.setState({modal: !this.state.modal})},
-                    {title: '用户名', ev: () => ''},
+                    {title: '用户名', ev: () => this.setState({redirect:'person/username'})},
                     // {title: '修改登录密码', ev: () => this.setState({redirect: 'person/logpass'})},
                     // {title: '修改支付密码', ev: () => this.setState({redirect: 'person/paypass'})},
                     // {title: '修改手机验证', ev: () => this.setState({redirect: "person/phone"})}
