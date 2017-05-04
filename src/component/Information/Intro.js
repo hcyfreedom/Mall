@@ -109,7 +109,7 @@ class Intro extends React.Component{
                                     {introDetail}
                                 </div>
                                 <div className="introWord">
-                                    {introContent}
+                                    <img src={introContent} style={{width:'100%'}}/>
                                 </div>
                             </div>
                         </SwipeableViews>
