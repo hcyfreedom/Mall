@@ -15,6 +15,9 @@ import CarouselItem from './Home/Slider/CarouselItem'
 import PcHomePage from '../pcComponent/pcIndex/PcHomePage'
 import PcClassify from '../pcComponent/Classify/ClassifyHome'
 import PcGift from '../pcComponent/Gift/GiftPage'
+import PcCart from '../pcComponent/Cart/Cart'
+import PcWallet from '../pcComponent/Wallet/WalletPage'
+
 
 import {BrowserRouter as Router, Route, Switch,Redirect, Link} from 'react-router-dom';
 import createHistory from 'history/createBrowserHistory'
@@ -57,6 +60,8 @@ export default class BaseOptions extends React.Component {
                     <Route path="/home/index" component={PcHomePage}/>
                     <Route path="/home/classify/:id" component={PcClassify}/>
                     <Route path="/home/giftBagMall" component={PcGift}/>
+                    <Route path="/home/cate" component = {PcCart}/>
+                    <Route path="/home/myWallet" component={WalletPage}/>
 
                 </Switch>
             </div>

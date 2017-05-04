@@ -120,8 +120,8 @@ a{
     /* flex-wrap: wrap; */
 }
 .pBox img{
-    width: 50%;
-    /* height: 10%; */
+    width: 75%;
+    height: 100px;
     padding-left: 25%;
     /* margin: 0 auto; */
     margin-top: 10%;
@@ -442,6 +442,7 @@ a{
 .introWrap{
     border-top: 1px solid grey;
     background-color: white;
+    padding-bottom: 200px;
 }
 .introOne{
     width: 100%;
@@ -453,7 +454,7 @@ a{
 .introDetail{
     color: #000;
     font-size: 28px;
-    padding-left: 100px;
+    padding-left: 10%;
 }
 .introTwo{
     display: flex;

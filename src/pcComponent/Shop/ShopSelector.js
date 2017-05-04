@@ -4,6 +4,7 @@
 /**
  * Created by hcy on 2017/4/7.
  */
+// pc
 import React from 'react'
 import {Tabs, Tab} from 'material-ui/Tabs';
 import MuiThemeProvider from 'material-ui/styles/MuiThemeProvider';

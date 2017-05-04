@@ -5,25 +5,22 @@ import React from 'react'
 import {Link} from "react-router-dom"
 import {connect} from 'react-redux';
 import {post} from '../../http/http';
+import PcSuccess from '../../pcComponent/Payment/PaySuccess'
+
 class PaymentSuccess extends React.Component {
-    componentWillMount() {
-        // let {lastOrder} = this.props.homeReducer;
-        // if(lastOrder == undefined)
-        //     lastOrder = [];
-        // let result = [];
-        // for (let i = 0; i < lastOrder.length; i++) {
-        //     result[i] = lastOrder[i].orderId;
-        // }
-        // post("/good/commitOrder",{
-        //     orderIds:result
-        // },()=>{
-        //
-        // },()=>{
-        //
-        // })
+    render() {
+        const result = matchMedia('(orientation: landscape)').matches;
+        if(result)
+            return this.pcRender()
+        return this.mobRender();
+    }
+    pcRender(){
+        return(
+            <PcSuccess/>
+        )
     }
 
-    render() {
+    mobRender() {
 
         return (
             <div className="paySuccess">

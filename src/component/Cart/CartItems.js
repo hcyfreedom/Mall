@@ -142,7 +142,7 @@ class CartItems extends React.Component{
                         </div>
                         <Link to={'/information/' + this.props.ele.shopId +'/'+ this.props.ele.goodId} >
                             <div className="cartBody">
-                                <img className="cartImg" src="/imgs/a1.png"/>
+                                <img className="cartImg" src={this.props.ele.headImg}/>
                                 <div className="cartContent">
                                     <div className="carItemsTitle">{this.props.ele.name}</div>
                                     <div className="carItemsReal">￥{this.props.ele.newPrice}</div>

@@ -10,7 +10,7 @@ export default class ShopIndex extends React.Component{
         return(
             <div>
                 <Nav/>
-                <img src="/imgs/1.jpg"  style={{width:'100%',marginTop:'80px'}}/>
+                <img src="/imgs/872EC922-8787-4E14-B5D1-241F1BCA27BE.png"  style={{width:'100%',marginTop:'150px'}}/>
                 <ShopSelector/>
             </div>
         )

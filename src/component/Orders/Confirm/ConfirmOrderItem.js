@@ -30,7 +30,7 @@ class ConfirmOrderItem extends React.Component{
                 <div className="cartItems" style={{marginTop:'15px',borderBottom:'20px solid white',height:'252px'}}>
                     <Link to={'/information/' + this.props.ele.shopId +'/'+ this.props.ele.goodId} >
                         <div className="cartBody" style={{marginLeft:'60px',height:"50%"}}>
-                            <img className="cartImg" src="/imgs/a1.png" style={{width:'120px',height:'120px'}}/>
+                            <img className="cartImg" src={this.props.ele.headImg} style={{width:'120px',height:'120px'}}/>
                             <div className="cartContent">
                                 <div className="carItemsTitle">{this.props.ele.name}</div>
                                 <div>唐僧价：<span className="carItemsReal">￥{this.props.ele.newPrice}</span>

@@ -3,9 +3,23 @@
  */
 import React from 'react'
 import {Link} from "react-router-dom"
+import PcFail from '../../pcComponent/Payment/PayFailed'
 
 export default class PaymentFail extends React.Component {
     render() {
+        const result = matchMedia('(orientation: landscape)').matches;
+        if(result)
+            return this.pcRender()
+        return this.mobRender();
+    }
+    pcRender(){
+        return(
+            <PcFail/>
+
+        )
+    }
+
+    mobRender() {
         return (
             <div className="paySuccess">
                 <img src="/imgs/ts.png"/>

@@ -1,15 +1,18 @@
 /**
  * Created by hcy on 2017/5/3.
  */
+/**
+ * Created by hcy on 2017/5/3.
+ */
 import React from 'react'
 import {Thumbnail,Button} from 'react-bootstrap'
-export default class ClassifyItems extends React.Component{
+export default class ShopItems extends React.Component{
     constructor(props){
         super(props)
     }
     render(){
         return(
-            <Thumbnail style={{width:'20%'}} src="/imgs/1.jpg" alt="242x200">
+            <Thumbnail style={{width:'18%'}} src="/imgs/1.jpg" alt="242x200">
                 <h3>name</h3>
                 <p style={{color:"red"}}>minPrice</p>
                 <p>

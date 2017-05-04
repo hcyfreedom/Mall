@@ -22,20 +22,24 @@ export default class NavDetail extends React.Component{
 
     render(){
         return(
-            <div style={{position:'fixed',top:'0',width:'100%',zIndex:'1'}}>
+            <div style={{position:'fixed',top:'0',width:'100%',zIndex:'5'}}>
                 <Navbar  collapseOnSelect>
                     <Navbar.Toggle />
 
                     <Navbar.Collapse>
                         <Nav pullRight>
                             <NavItem eventKey={1} href="#">用户名</NavItem>
-                            <NavItem eventKey={2} href="#">我的订单</NavItem>
+                            <NavItem eventKey={4} href="#">
+                                <Link to="/orderPage" >
+                                    我的订单
+                                </Link>
+                            </NavItem>
+                                <NavItem eventKey={4} href="#">
+                                    <Link to="/home/MyWallet" >
+                                        我的部落
+                                    </Link>
+                                </NavItem>
 
-                            <NavDropdown eventKey={3} title="我的部落" id="basic-nav-dropdown">
-                                <MenuItem eventKey={3.1}>部落钻：10</MenuItem>
-                                <MenuItem eventKey={3.2}>部落分：10</MenuItem>
-                                <MenuItem eventKey={3.3}>部落币：10</MenuItem>
-                            </NavDropdown>
                             <NavDropdown eventKey={5} title="手机商城" id="basic-nav-dropdown">
                                 <MenuItem eventKey={5.1}><img src="/imgs/1.jpg" style={{width:'100px',height:'100px'}} /></MenuItem>
                             </NavDropdown>
@@ -93,7 +97,8 @@ export default class NavDetail extends React.Component{
                                     </Button>
 
                                 </NavItem>
-                                <Button style={{marginTop:'15px'}}>我的购物车</Button>
+                                <Button style={{marginTop:'15px'}}>
+                                    <Link to="/home/cate">我的购物车</Link></Button>
                             </Nav>
                         </Navbar.Collapse>
                     </Navbar>

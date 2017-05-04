@@ -68,7 +68,7 @@ class OrderConfirm extends React.Component {
         console.log(this.props.homeReducer);
         return (
             <div>
-                <Nav navTitle="管理收货地址"/>
+                <Nav navTitle="确认订单信息"/>
 
                 <div style={{position:"relative",top:'120px'}}>
                     <Link to="/address/manage">

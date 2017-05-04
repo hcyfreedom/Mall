@@ -12,7 +12,7 @@ export default class CartHomePage extends React.Component{
                 <CartTopNav navTitle="购物车"/>
                 <Cart/>
                 <div style={{width:'100%',height:'280px'}}></div>
-                <CartTotal/>
+                <CartTotal className="cartTotal"/>
             </div>
         )
     }

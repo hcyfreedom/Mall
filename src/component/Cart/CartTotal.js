@@ -14,7 +14,7 @@ class CartTotal extends React.Component{
         let totalPrice = this.props.homeReducer.cartCircleIcon.totalPrice || this.props.homeReducer.totalPrice
         let actions = bindActionCreators(mallActions,this.props.dispatch);
         return(
-            <div className="cartTotal">
+            <div className={this.props.className}>
 
                 <Link to="/orderConfirm">
                     <div className="totalBtn">
