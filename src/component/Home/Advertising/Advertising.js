@@ -39,7 +39,7 @@ class Advertising extends React.Component{
 
         return(
             <div style={{backgroundColor:'white'}}>
-                <img src="/imgs/a2.png" className="block"/>
+                <img src="/imgs/advertising.png" className="block"/>
                 <div className="AllProductionBox">
                     {advertisement}
                 </div>
