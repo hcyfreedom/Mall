@@ -106,15 +106,15 @@ class PersonalSetting extends React.Component {
                     )
                 })}
                 {this.state.redirect ? <Redirect push to={this.state.redirect} /> : null}
-                <div style={{zIndex: 2, position: "absolute", bottom: "0px", display: this.state.modal ? 'block': 'none', width: "100%", height: "25%", transition: "all 0.5s"}}>
-                <div style={{zIndex: 2, width: "90%", marginLeft: "5%", backgroundColor: "white", height: "60%", textAlign: "center", fontSize: "3vh", borderRadius: "5px", lineHeight: "250%"}}>
-                    <div style={{borderBottom: "solid 1px rgb(200, 200, 200)", height: "50%"}} onClick={() => {
+                <div style={{zIndex: 2, position: "absolute", bottom: "2%", display: this.state.modal ? 'block': 'none', width: "100%", height: "12%", transition: "all 0.5s"}}>
+                <div style={{zIndex: 2, width: "90%", marginLeft: "5%", backgroundColor: "white", textAlign: "center", height: "50%", fontSize: "3vh", borderRadius: "5px", lineHeight: "150%"}}>
+                    {/*<div style={{borderBottom: "solid 1px rgb(200, 200, 200)", height: "50%"}} onClick={() => {
                         this.setState({caping: true});
                         this.capture();
-                        }}>拍照上传</div>
-                    <div style={{borderBottom: "solid 1px rgb(200, 200, 200)", height: "50%"}} onClick={() => this.refs.fileInput.click()}>本地上传</div>
+                        }}>拍照上传</div>*/}
+                    <div style={{borderBottom: "solid 1px rgb(200, 200, 200)", height: "100%"}} onClick={() => this.refs.fileInput.click()}>本地上传</div>
                 </div>
-                <div style={{zIndex: 2, width: "90%", marginLeft: "5%", backgroundColor: "white", marginTop: "1%", height: "30%", textAlign: "center", fontSize: "3vh", borderRadius: "5px", lineHeight: "250%", transition: "all 1s"}}>
+                <div style={{zIndex: 2, width: "90%", marginLeft: "5%", backgroundColor: "white", marginTop: "1%", height: "50%", textAlign: "center", fontSize: "3vh", borderRadius: "5px", lineHeight: "150%", transition: "all 1s"}}>
                     <div onClick={() => this.setState({modal: false})}>取消</div>
                 </div>
                 </div>
