@@ -86,7 +86,7 @@ export default class BaseOptions extends React.Component {
         );
 
         let nodeGift = () => (
-            <div><Nav location={this.props.location}/>\
+            <div><Nav location={this.props.location}/>
                 {/*<Slider slides={slides} time="2000"/>*/}
                 <CarouselItem/>
 
