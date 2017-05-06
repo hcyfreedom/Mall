@@ -24,7 +24,7 @@ const history = createHistory()
         get('/main/getUserInfo',(res) => {
             actions.getUserInfo(res.data)
         });
-        get("/account/getAdminCode",(res) => {
+        get("/account/getInvitationCode",(res) => {
             actions.getInviteCode(res.data);
         });
 
@@ -44,8 +44,7 @@ const history = createHistory()
          console.log(suc);
          if(suc)
             alert('已复制到剪贴板');
-         else
-            alert('unable')
+
      }
     render(){
         let {userInfo} = this.props.afterReducer;

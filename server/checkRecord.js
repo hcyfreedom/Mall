@@ -73,6 +73,9 @@ module.exports = function (app) {
     app.use("/account/getAdminCode",(req,res) =>{
         res.json(require('./json/GetAdminCode.json'))
     })
+    app.use("/account/getInvitationCode",(req,res) =>{
+        res.json(require('./json/GetAdminCode.json'))
+    })
     app.use("/main/getUserInfo",(req,res) =>{
         res.json(require('./json/GetUserInfo.json'))
     })

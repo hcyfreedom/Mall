@@ -19,7 +19,7 @@ class NewSup extends React.Component{
         get('/main/getUserInfo',(res) => {
             actions.getUserInfo(res.data)
         });
-        get("/account/getAdminCode",(res) => {
+        get("/account/getInvitataionCode",(res) => {
             actions.getInviteCode(res.data);
         });
 
