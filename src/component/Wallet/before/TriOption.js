@@ -21,7 +21,7 @@ export default class TriOption extends React.Component{
                 </div>
                 <div className="triZuan">
                     <img src="/imgs/wdrm.png"/>
-                    <p>我的人脉</p>
+                    <p>酋长之路</p>
                 </div>
 
             </div>

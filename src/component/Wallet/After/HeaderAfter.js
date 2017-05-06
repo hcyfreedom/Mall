@@ -40,9 +40,12 @@ const history = createHistory()
 
      onClickInviteCode(){
          let {adminCode} = this.props.afterReducer;
-         copy(adminCode);
-         alert('已复制到剪贴板');
-
+         let suc = copy(adminCode);
+         console.log(suc);
+         if(suc)
+            alert('已复制到剪贴板');
+         else
+            alert('unable')
      }
     render(){
         let {userInfo} = this.props.afterReducer;
