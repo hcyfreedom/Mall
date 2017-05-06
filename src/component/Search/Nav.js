@@ -63,12 +63,16 @@ import * as afterActions from '../../action/afterActions'
 
         if(path=="/home/index"){
            return(
+               <div>
                <div style={navStyle}>
                    <Link to="/search/index" style={{display:'flex',margin:'0 auto',width:'60%'}}>
                        <input ref="searchInput" placeholder="富硒康" className="searchInput" style={divStyle} value={saveSearch} onChange={(event) => this.handleChange(event)}/>
                        <div className="searchWord" onClick={this.handleClick.bind(this)}>搜索</div>
                    </Link>
-
+               </div>
+               <div style={{height: "80px", width: "100%"}}>
+                       {/*占位*/}
+                </div>
                </div>
            )
        }else {
@@ -81,7 +85,9 @@ import * as afterActions from '../../action/afterActions'
                          <input ref="searchInput"  placeholder="富硒康" className="searchInput" style={divStyle2} value={saveSearch} onChange={(event) => this.handleChange(event)}/>
                          <span className="searchWord" onClick={this.handleClick.bind(this)}>搜索</span>
                        </Link>
-
+                   </div>
+                   <div style={{height: "80px", width: "100%"}}>
+                       {/*占位*/}
                    </div>
 
                </div>
