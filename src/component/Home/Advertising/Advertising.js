@@ -18,11 +18,14 @@ class Advertising extends React.Component{
         get('/main/getMainPageGoods',(res) => {
             actions.getMainPageGoods(res.data)
         })
+        get('/main/getAdvertisingShop',(res) => {
+            actions.getAdvertisingShop(res.data)
+        })
 
     }
     render(){
 
-        let {mainPageGoods} = this.props.homeReducer;
+        let {mainPageGoods,advertiseId} = this.props.homeReducer;
 
 
         const advertisementList = [];
@@ -39,7 +42,7 @@ class Advertising extends React.Component{
 
         return(
             <div style={{backgroundColor:'white'}}>
-                <img src="/imgs/advertising.png" className="block"/>
+                <Link to={"/shop/"+advertiseId}><img src="/imgs/advertising.png" className="block"/></Link>
                 <div className="AllProductionBox">
                     {advertisement}
                 </div>

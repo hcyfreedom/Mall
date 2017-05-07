@@ -55,6 +55,7 @@ const initState = {
     pointRate: '',
     coinRate: '',
     deliveryWay: '',
+    advertiseId:'',
     badge: {
         position: 'absolute',
         bottom: '20px',
@@ -195,6 +196,9 @@ export default function homeReducer(state = initState, action = {}) {
             clone.outstanding_shop_info = payload.msg['outstanding_shop_info'];
             return clone;
 
+        case "ADVERTISE_SHOP_ID":
+            clone.advertiseId = payload.msg;
+            return clone;
 
         case  "ADD_TO_CART" :
             clone.addToCartCount = payload.msg['count'];

@@ -88,4 +88,7 @@ module.exports = function (app) {
     app.use("/good/search",(req,res) =>{
         res.json(require('./json/Search.json'))
     })
+    app.use("/main/getAdvertisingShop",(req,res) =>{
+        res.json(require('./json/AdvertiseShopId.json'))
+    })
 }

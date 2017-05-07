@@ -124,6 +124,12 @@ export function getMainPageGoods(data) {
     }
 }
 
+export function getAdvertisingShop(data) {
+    return{
+        type:"ADVERTISE_SHOP_ID",
+        payload:data
+    }
+}
 
 export function addGoodToCart(data) {
     return {
