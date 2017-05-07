@@ -67,7 +67,7 @@ export default class Login extends React.Component{
                                    </div>
                                </form>
                             </div>
-                            <div style={{transform:'translateX(50%) translateY(-140px)',borderLeft:'1px solid #eee',height:'140px',paddingLeft:'30px'}}>
+                            <div style={{transform:'translateX(50%) translateY(-200px)',borderLeft:'1px solid #eee',height:'140px',paddingLeft:'30px'}}>
                                 第三方登录合作
                                 <div style={{marginTop:'30px'}}>
                                     <img src="/imgs/weixin2.png" style={{marginRight:'20px'}}/>

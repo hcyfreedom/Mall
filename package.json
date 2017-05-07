@@ -44,6 +44,6 @@
     "webpack-dev-middleware": "^1.4.0",
     "webpack-dev-server": "^2.4.2",
     "webpack-hot-middleware": "^2.6.0",
-    "wechat-jssdk": "^3.0.8",
+    "wechat-jssdk": "^3.0.8"
   }
 }

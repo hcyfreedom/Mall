@@ -44,7 +44,7 @@ class ConfirmMessage extends React.Component {
 
 
         return (
-            <div style={{float:'right',paddingRight:'60px',color:'grey',fontSize:'2em',lineHeight:'60px'}}>
+            <div style={{float:'right',paddingRight:'60px',color:'grey',fontSize:'1.2em',lineHeight:'60px'}}>
                 {/*<div>运费</div>*/}
                 <div>部落币：{resultCoin}</div>
                 <div>部落分：{resultPoint}</div>

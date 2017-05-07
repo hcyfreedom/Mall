@@ -101,7 +101,7 @@ const history = createHistory()
                 </div>                    </Link>
 
                 <div className="optionsWallet">
-                    <span  onTouchStart={this.onClickInviteCode.bind(this)} style={{paddingLeft:'95px'}}><img style={{width:'28px',height:'31px'}} src="/imgs/sendIntivate.png"/>&nbsp;&nbsp;发送邀请</span>
+                    <span  onClick={this.onClickInviteCode.bind(this)} style={{paddingLeft:'95px'}}><img style={{width:'28px',height:'31px'}} src="/imgs/sendIntivate.png"/>&nbsp;&nbsp;发送邀请</span>
                     <span style={{color:'#ffc388',lineHeight:'68px',fontSize:'20px'}}>送朋友188部落分，自得88部落分<img  className="walletImgs" src="/imgs/rightArrow.png"/></span>
                 </div>
 

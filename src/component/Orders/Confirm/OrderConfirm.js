@@ -10,6 +10,10 @@ import ConfirmOrder from './ConfirmOrder'
 import ConfirmDelivery from './ConfirmDelivery'
 import ConfirmMessage from './ConfirmMessage'
 
+// pc
+import PcNav from '../../../pcComponent/NavBar/NavDetail'
+import {Button} from 'react-bootstrap'
+
 import {Link} from 'react-router-dom'
 import {connect} from 'react-redux';
 import {bindActionCreators} from 'redux';
@@ -62,10 +66,35 @@ class OrderConfirm extends React.Component {
 
     }
 
-
     render() {
-        console.log("state tree")
-        console.log(this.props.homeReducer);
+        const result = matchMedia('(orientation: landscape)').matches;
+        if(result)
+            return this.pcRender()
+        return this.mobRender();
+    }
+    pcRender(){
+        return(
+            <div>
+                <PcNav/>
+               <div style={{width:'80%',margin:'0 auto',position:'relative',top:'150px'}}>
+                   <Link to="/address/manage">
+                       <ConfirmAddress/>
+                   </Link>
+                   <ConfirmOrder/>
+                   <Link to="/delivery">
+                       <ConfirmDelivery/>
+                   </Link>
+                   <ConfirmMessage/>
+                   <div className="well" style={wellStyles}>
+                       <Button bsStyle="primary" bsSize="large" block handleClick={this.handleClick.bind(this)}>确认</Button>
+                   </div>
+               </div>
+
+            </div>
+        )
+    }
+
+    mobRender() {
         return (
             <div>
                 <Nav navTitle="确认订单信息"/>
@@ -109,3 +138,5 @@ const navTitle = {
     marginTop: '-45px',
     textAlign: 'center'
 }
+
+const wellStyles = {maxWidth: 400, margin: '50px auto 10px'};

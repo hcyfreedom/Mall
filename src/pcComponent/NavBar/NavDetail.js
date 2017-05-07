@@ -98,7 +98,7 @@ export default class NavDetail extends React.Component{
 
                                 </NavItem>
                                 <Button style={{marginTop:'15px'}}>
-                                    <Link to="/home/cate">我的购物车</Link></Button>
+                                    <Link to="/home/cart">我的购物车</Link></Button>
                             </Nav>
                         </Navbar.Collapse>
                     </Navbar>
