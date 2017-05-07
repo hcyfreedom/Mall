@@ -59,7 +59,7 @@ onChangeCode(event){
 
 onClickInviteCode(){
     let actions = bindActionCreators(afterActions,this.props.dispatch);
-    get("/account/getInviteCode",(res) => {
+    get("/account/getAdminCode",(res) => {
         actions.getInviteCode(res.data);
     })
 }
