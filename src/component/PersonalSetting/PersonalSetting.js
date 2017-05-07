@@ -89,7 +89,7 @@ class PersonalSetting extends React.Component {
                 :
                 null}
                 {[
-                    {title: '修改头像', ev: () => this.setState({modal: !this.state.modal})},
+                    // {title: '修改头像', ev: () => this.setState({modal: !this.state.modal})},
                     {title: '用户名', ev: () => this.setState({redirect:'person/username'})},
                     // {title: '修改登录密码', ev: () => this.setState({redirect: 'person/logpass'})},
                     // {title: '修改支付密码', ev: () => this.setState({redirect: 'person/paypass'})},

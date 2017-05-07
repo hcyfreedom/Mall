@@ -92,7 +92,7 @@ class Main extends React.Component {
                             <Route path="/payment/succeed" component={PaymentSuccess}/>
                             <Route path="/payment/failed" component={PaymentFail}/>
                             <Route path="/orderConfirm" component={OrderConfirm}/>
-                            <Route path="/orderPage" component={OrderPage}/>
+                            <Route path="/orderPage/:id" component={OrderPage}/>
                             <Route path="/giftsBagMall/:id" component={GiftDetail}/>
 
 

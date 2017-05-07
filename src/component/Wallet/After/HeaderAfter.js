@@ -87,11 +87,12 @@ const history = createHistory()
                         <p>{userInfo.point}</p>
                     </div>
                 </div>
-                <Link to="/orderPage"><TriOption/></Link>
-                <Link to="/orderPage"><div className="optionsWallet">
-                    <span style={{paddingLeft:'95px'}}><img style={{width:'28px',height:'31px'}} src="/imgs/icon.png"/>&nbsp;&nbsp;全部订单</span>
-                    <img  className="walletImgs" src="/imgs/rightArrow.png"/>
-                </div>                    </Link>
+                <TriOption/>
+                {/*<Link to="/orderPage/0"><div className="optionsWallet">*/}
+                    {/*<span style={{paddingLeft:'95px'}}><img style={{width:'28px',height:'31px'}} src="/imgs/icon.png"/>&nbsp;&nbsp;全部订单</span>*/}
+                    {/*<img  className="walletImgs" src="/imgs/rightArrow.png"/>*/}
+                {/*</div>                    */}
+                {/*</Link>*/}
 
 
                 <Link to="/orderConfirm">
