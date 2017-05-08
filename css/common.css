@@ -539,7 +539,7 @@ a:active, a:hover{
     height: 61px;
     font-size: 28px;
     color: grey;
-    top: 80px;
+    /*top: 80px;*/
     position: relative;
     background-color: white;
     border-bottom: 1px solid grey;
